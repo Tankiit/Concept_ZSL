@@ -14,7 +14,6 @@ class FullPipeline(nn.Module):
 
     def forward(self, input):
         quantized, commit_loss1 = self.encoder(input)
-        print(quantized.shape)
         recon = self.decoder(quantized)
         features, commit_loss2 = self.extractor(quantized)
 
