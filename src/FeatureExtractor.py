@@ -18,7 +18,7 @@ class Extractor(nn.Module):
                 depth = attn_depth,
                 heads = heads,
                 attn_flash = True, # just set this to True if you have pytorch 2.0 installed
-                #alibi_pos_bias = True, # turns on ALiBi positional embedding => doesn't work right now
+                alibi_pos_bias = True, # turns on ALiBi positional embedding
             )
         )
 
