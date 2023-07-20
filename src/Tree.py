@@ -1,3 +1,67 @@
+from math import factorial, ceil, log2
+
+import torch
+import torch.nn as nn
+def get_dataset(feature_vector, feature_bank):
+    inputs = []
+    labels = []
+
+    # inputs is a list of sums of feature vectors
+    for _class, feature_list in feature_bank.items():
+        for feature_set in feature_list:
+            inputs.append(feature_vector[list(feature_set)].sum(dim=0))
+            labels.append(int(_class.split("_")[1])-1)
+
+    return torch.stack(inputs), torch.tensor(labels)
+
+def build_network(feature_vector, feature_bank):
+        """
+        Calculate required network size, and build the network
+        Train the network until 100% accuracy
+        Make custom loss function to maximize value on class index and set all other values to 0 (can also try with using cross entropy loss)
+        """
+        features, dim = feature_vector.shape
+        classes = len(feature_bank)
+
+        max_features = 0
+        for feature_list in feature_bank.values():
+            for feature_set in feature_list:
+                max_features = max(max_features, len(feature_set))
+
+        combinations = factorial(features) / (factorial(max_features) * factorial(features - max_features))
+
+        hidden = ceil(log2(combinations))
+        # find closest multiple of 64
+        hidden = int((hidden + 63) // 64 * 64)
+
+        # build the network
+        network = nn.Sequential(
+            nn.Linear(dim, hidden),
+            nn.ReLU(),
+            nn.Linear(hidden, classes),
+        )
+
+        # get dataset
+        inputs, labels = get_dataset(feature_vector, feature_bank)
+
+        # train the network
+        criterion = nn.CrossEntropyLoss()
+        optimizer = torch.optim.Adam(network.parameters(), lr=0.001)
+
+        while True:
+            optimizer.zero_grad()
+            outputs = network(inputs)
+            loss = criterion(outputs, labels)
+            loss.backward()
+            optimizer.step()
+
+            predicted = torch.argmax(outputs, dim=1)
+            correct = (predicted == labels).sum().item()
+            if correct == len(labels):
+                break
+        
+        return network, max_features
+
 class Tree:
     def __init__(self, root):
         self.root = root
@@ -5,14 +69,6 @@ class Tree:
     def forward(self, x):
         # x is a list of feature ids
         return self.root.forward(x)
-
-    def build_network(self, feature_vector):
-        """
-        Calculate required network size, and build the network
-        Train the network until 100% accuracy
-        Make custom loss function to maximize value on class index and set all other values to 0 (can also try with using cross entropy loss)
-        """
-        pass
     
     def prnt(self):
         self.root.prnt(0)
@@ -105,13 +161,15 @@ def build_tree(feature_bank):
 
     return recursive_build(feature_bank)
 
-def extand1_feature_bank(feature_bank):
+def extand1_feature_bank(feature_bank, current_length):
     new_feature_bank = {}
     for _class, feature_list in feature_bank.items():
         new_feature_bank[_class] = feature_list.copy()
 
     for i, (_class, feature_list) in enumerate(feature_bank.items()):
         for feature_set in feature_list:
+            if len(feature_set) != current_length:
+                continue
             for feature in feature_set:
                 new_feature_set = feature_set.copy()
                 new_feature_set.remove(feature)
@@ -121,21 +179,36 @@ def extand1_feature_bank(feature_bank):
                 for j, (_, feature_list2) in enumerate(new_feature_bank.items()):
                     if i == j:
                         continue
-                    for feature_set2 in feature_list2:
-                        if new_feature_set.issubset(feature_set2):
-                            to_add = False
-                            break
+                    if new_feature_set.issubset(feature_list2[0]):
+                        to_add = False
                 if to_add:
                     new_feature_bank[_class].append(new_feature_set)
 
     return new_feature_bank
 
-def extand_feature_bank(feature_bank):
+def extand_feature_bank(feature_bank, max_extension=9999999):
     # Apply extand1_feature_bank until no more changes are made
-    new_feature_bank = extand1_feature_bank(feature_bank)
+    current_length = 0
+    for feature_list in feature_bank.values():
+        for feature_set in feature_list:
+            current_length = max(current_length, len(feature_set))
+
+    new_feature_bank = extand1_feature_bank(feature_bank, current_length)
+    print(f"Extension 1 done")
+    if max_extension == 1:
+        return new_feature_bank
+    
+    current_length -= 1
+    i = 1
     while new_feature_bank != feature_bank:
         feature_bank = new_feature_bank
-        new_feature_bank = extand1_feature_bank(feature_bank)
+        new_feature_bank = extand1_feature_bank(feature_bank, current_length)
+        current_length -= 1
+        i += 1
+        print(f"Extension {i} done")
+        if i == max_extension:
+            break
+
     return new_feature_bank
 
 if __name__ == "__main__":
@@ -148,7 +221,10 @@ if __name__ == "__main__":
     }
 
     feature_bank = extand_feature_bank(feature_bank)
+    print(feature_bank)
 
     tree = Tree(build_tree(feature_bank))
-    class_ = tree.forward([1, 2, 4, 5])
-    tree.prnt()
+
+    DIM = 32
+    FEATURES = 6
+    feature_vector = torch.randn((FEATURES, DIM))
