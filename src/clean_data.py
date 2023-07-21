@@ -24,7 +24,6 @@ from Tree import extand_feature_bank
 feature_bank = extand_feature_bank(feature_bank, max_extension=3)
 
 # save data as json
-
 feature_bank = {class_: [list(feature_set) for feature_set in feature_list] for class_, feature_list in feature_bank.items()}
 
 data = {
