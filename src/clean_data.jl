@@ -24,31 +24,6 @@ for i in 1:size(predicate_matrix, 1)
     end
 end
 
-"""
-def extand_feature_bank(feature_bank):
-	for class_, feature_list in tqdm(feature_bank.items()):
-		new_feature_list = [feature_list[0]]
-		source_feature_sets = [feature_list2[0] for class2, feature_list2 in feature_bank.items() if class_ != class2]
-
-		subsets = get_direct_subsets(feature_list[0])
-		while len(subsets) > 0:
-			new_subsets = []
-			for subset in subsets:
-				to_add = True
-				for source_feature_set in source_feature_sets:
-					if subset.issubset(source_feature_set):
-						to_add = False
-						break
-				if to_add and subset not in new_feature_list:
-					new_feature_list.append(subset)
-					new_subsets += get_direct_subsets(subset)
-			subsets = new_subsets
-
-		feature_bank[class_] = new_feature_list
-
-	return feature_bank
-"""
-
 function get_direct_subsets(feature_set::Set{Int8})
     subsets = Array{Set{Int8}}()
     for feature in feature_set
