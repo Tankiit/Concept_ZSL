@@ -24,7 +24,7 @@ for i in 1:size(predicate_matrix, 1)
     end
 end
 
-function get_direct_subsets(feature_set::Set{Int8})
+function get_direct_subsets(feature_set::Set{Int8})::Array{Set{Int8}}
     subsets = []
     for feature in feature_set
         new_set = deepcopy(feature_set)
@@ -36,7 +36,7 @@ end
 
 using ProgressBars
 
-function extend_feature_bank(feature_bank::Dict, max_new_features=100)
+function extend_feature_bank(feature_bank::Dict, max_new_features=100)::Dict
     for i in ProgressBar(1:length(classes))
         class_ = classes[i]
         feature_list = feature_bank[class_]
@@ -74,7 +74,7 @@ function extend_feature_bank(feature_bank::Dict, max_new_features=100)
 end
 
 println("Extending feature bank...")
-feature_bank = extend_feature_bank(feature_bank)
+feature_bank = extend_feature_bank(feature_bank, 1000)
 
 # Save feature bank to json
 println("Saving data...")
