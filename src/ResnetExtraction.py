@@ -69,8 +69,12 @@ def loss_fn(out, y_features, y_classes, ft_weight=1.0):
 
     batch_size = out.shape[0]
 
-    classes = y_classes.expand(batch_size, CLASSES, FEATURES)
-    out_class_features = torch.masked_select(diff, classes.bool()).view(batch_size, FEATURES)
-    loss_ft = out_class_features.sum().pow(2)
+    labels = torch.randint(0, CLASSES-1, (batch_size, ))
+    classes = torch.zeros(batch_size, CLASSES)
+    classes[torch.arange(batch_size), labels] = 1
+    classes = classes.view(batch_size, CLASSES, 1).expand(batch_size, CLASSES, FEATURES)
+
+    extra_features = out - y_features + (out - y_features).pow(2)
+    loss_ft = torch.masked_select(extra_features, (1-classes).bool()).view(-1, FEATURES).sum()
 
     return loss_cl + loss_ft * ft_weight
