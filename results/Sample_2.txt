@@ -1,0 +1,11 @@
+Predicted: 1, Actual: 1
+Class predicates:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0]
+Predicted predicates:
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0]
+Errors: 14, False positives: 5, False negatives: 9
+File path: antelope_10368.jpg
+Predicted class: antelope
+Actual class: antelope
+Predicted features: furry, hairless, toughskin, big, lean, hooves, horns, tusks, walks, weak, active, agility, vegetation, forager, grazer, newworld, oldworld, fields, jungle, mountains, cave, timid, group
+Actual features: furry, toughskin, big, lean, hooves, longleg, tail, chewteeth, horns, walks, fast, strong, muscle, quadrapedal, active, agility, vegetation, forager, grazer, newworld, oldworld, plains, fields, mountains, ground, timid, group

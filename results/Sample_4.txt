@@ -1,0 +1,11 @@
+Predicted: 48, Actual: 48
+Class predicates:
+[1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0]
+Predicted predicates:
+[1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0]
+Errors: 19, False positives: 11, False negatives: 8
+File path: raccoon_10009.jpg
+Predicted class: raccoon
+Actual class: raccoon
+Predicted features: black, brown, gray, patches, spots, stripes, hairless, small, hands, pads, paws, longleg, longneck, tail, chewteeth, meatteeth, claws, smelly, flys, tunnels, walks, slow, muscle, bipedal, quadrapedal, nocturnal, hibernate, agility, fish, meat, vegetation, forager, newworld, oldworld, forest, fields, tree, fierce, smart, solitary
+Actual features: black, white, gray, patches, spots, stripes, furry, small, pads, paws, tail, chewteeth, meatteeth, claws, walks, fast, quadrapedal, active, nocturnal, hibernate, agility, fish, meat, vegetation, forager, scavenger, newworld, oldworld, forest, fields, mountains, ground, tree, fierce, smart, solitary, nestspot

@@ -1,0 +1,11 @@
+Predicted: 29, Actual: 29
+Class predicates:
+[1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1]
+Predicted predicates:
+[0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0]
+Errors: 13, False positives: 8, False negatives: 5
+File path: rabbit_10389.jpg
+Predicted class: rabbit
+Actual class: rabbit
+Predicted features: white, blue, brown, gray, furry, small, bulbous, hands, paws, tail, meatteeth, buckteeth, horns, hops, fast, weak, quadrapedal, active, inactive, agility, meat, insects, forager, grazer, oldworld, bush, plains, forest, fields, ground, fierce, timid, smart, group, nestspot, domestic
+Actual features: black, white, brown, gray, patches, furry, small, bulbous, paws, tail, chewteeth, buckteeth, hops, fast, weak, quadrapedal, active, inactive, agility, vegetation, forager, grazer, newworld, oldworld, bush, plains, forest, fields, ground, timid, group, nestspot, domestic

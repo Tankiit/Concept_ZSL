@@ -1,0 +1,11 @@
+Predicted: 2, Actual: 2
+Class predicates:
+[1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0]
+Predicted predicates:
+[1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0]
+Errors: 9, False positives: 6, False negatives: 3
+File path: grizzly+bear_10011.jpg
+Predicted class: grizzly_bear
+Actual class: grizzly_bear
+Predicted features: black, blue, brown, orange, red, toughskin, big, bulbous, flippers, paws, chewteeth, meatteeth, horns, claws, walks, slow, strong, weak, muscle, bipedal, active, inactive, nocturnal, hibernate, fish, meat, forager, hunter, stalker, newworld, forest, mountains, ground, cave, fierce, smart, solitary
+Actual features: black, brown, furry, toughskin, big, bulbous, paws, chewteeth, meatteeth, claws, walks, fast, slow, strong, muscle, bipedal, quadrapedal, active, inactive, nocturnal, hibernate, fish, meat, forager, hunter, stalker, newworld, forest, mountains, ground, cave, fierce, smart, solitary

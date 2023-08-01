@@ -1,0 +1,11 @@
+Predicted: 33, Actual: 33
+Class predicates:
+[1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1]
+Predicted predicates:
+[1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0]
+Errors: 3, False positives: 0, False negatives: 3
+File path: chihuahua_10537.jpg
+Predicted class: chihuahua
+Actual class: chihuahua
+Predicted features: black, brown, gray, small, lean, pads, paws, tail, meatteeth, claws, smelly, fast, weak, quadrapedal, active, meat, newworld, oldworld, fierce, timid, smart, solitary, domestic
+Actual features: black, brown, gray, furry, small, lean, pads, paws, tail, meatteeth, claws, smelly, walks, fast, weak, quadrapedal, active, meat, newworld, oldworld, ground, fierce, timid, smart, solitary, domestic
