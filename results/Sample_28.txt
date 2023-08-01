@@ -1,0 +1,11 @@
+Predicted: 31, Actual: 31
+Class predicates:
+[0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0]
+Predicted predicates:
+[0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Errors: 13, False positives: 0, False negatives: 13
+File path: giraffe_10653.jpg
+Predicted class: giraffe
+Actual class: giraffe
+Predicted features: orange, yellow, patches, spots, lean, hooves, longleg, longneck, chewteeth, horns, slow, quadrapedal, inactive, vegetation, grazer, oldworld, bush, fields
+Actual features: brown, orange, yellow, patches, spots, big, lean, hooves, longleg, longneck, tail, chewteeth, horns, smelly, walks, fast, slow, strong, muscle, quadrapedal, active, inactive, vegetation, grazer, oldworld, bush, plains, fields, ground, timid, group

@@ -1,0 +1,11 @@
+Predicted: 23, Actual: 23
+Class predicates:
+[1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1]
+Predicted predicates:
+[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0]
+Errors: 4, False positives: 1, False negatives: 3
+File path: sheep_11028.jpg
+Predicted class: sheep
+Actual class: sheep
+Predicted features: black, white, furry, bulbous, chewteeth, meatteeth, smelly, walks, slow, weak, quadrapedal, inactive, grazer, newworld, oldworld, plains, fields, mountains, timid, group, domestic
+Actual features: black, white, furry, bulbous, hooves, chewteeth, smelly, walks, slow, weak, quadrapedal, inactive, vegetation, grazer, newworld, oldworld, plains, fields, mountains, ground, timid, group, domestic

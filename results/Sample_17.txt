@@ -1,0 +1,11 @@
+Predicted: 27, Actual: 27
+Class predicates:
+[0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0]
+Predicted predicates:
+[0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0]
+Errors: 5, False positives: 1, False negatives: 4
+File path: squirrel_10406.jpg
+Predicted class: squirrel
+Actual class: squirrel
+Predicted features: brown, gray, furry, small, pads, paws, tail, chewteeth, buckteeth, claws, hops, walks, fast, bipedal, quadrapedal, hibernate, forager, newworld, oldworld, arctic, forest, ground, tree, timid, solitary
+Actual features: brown, gray, furry, small, pads, paws, tail, chewteeth, buckteeth, claws, hops, walks, fast, bipedal, quadrapedal, active, hibernate, agility, vegetation, forager, newworld, oldworld, forest, ground, tree, timid, solitary, nestspot

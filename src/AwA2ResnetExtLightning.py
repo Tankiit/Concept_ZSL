@@ -25,7 +25,7 @@ class ResnetExtractorLightning(pl.LightningModule):
     def configure_optimizers(self):
         return torch.optim.Adam(self.parameters(), lr=self.learning_rate, weight_decay=1e-5)
     
-    def loss_fn(self, out, y_predicates, y_classes, ft_weight=.1):
+    def loss_fn(self, out, y_predicates, y_classes, ft_weight=1):
         out = out.view(-1, 1, self.num_features)
         ANDed = out * y_predicates
         diff = ANDed - out
@@ -44,7 +44,7 @@ class ResnetExtractorLightning(pl.LightningModule):
 
         loss_ft = torch.masked_select(extra_features, (1-classes).bool()).view(-1, self.num_features).sum() / batch_size
 
-        return loss_cl + loss_ft * ft_weight * loss_cl/loss_ft
+        return loss_cl + loss_ft * ft_weight * loss_cl.item()/loss_ft.item()
     
     def training_step(self, batch, batch_idx):
         features, labels, predicate_matrix = batch['features'], batch['labels'], batch['predicate_matrix']

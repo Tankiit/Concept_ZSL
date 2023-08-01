@@ -23,7 +23,7 @@ def loss_fn(out, y_predicates, y_classes, ft_weight=.1):
 
     #loss_ft = torch.masked_select(extra_features, (1-classes).bool()).view(-1, num_features).sum() / batch_size
 
-    return loss_cl #+ loss_ft * ft_weight * loss_cl/loss_ft
+    return loss_cl #+ loss_ft * ft_weight * loss_cl.item()/loss_ft.item()
 
 def train_one_epoch():
     running_loss = 0.

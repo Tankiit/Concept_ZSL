@@ -1,0 +1,11 @@
+Predicted: 29, Actual: 29
+Class predicates:
+[1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1]
+Predicted predicates:
+[0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0]
+Errors: 17, False positives: 0, False negatives: 17
+File path: rabbit_10249.jpg
+Predicted class: rabbit
+Actual class: rabbit
+Predicted features: gray, patches, small, paws, buckteeth, hops, weak, active, agility, forager, grazer, oldworld, plains, forest, fields, nestspot
+Actual features: black, white, brown, gray, patches, furry, small, bulbous, paws, tail, chewteeth, buckteeth, hops, fast, weak, quadrapedal, active, inactive, agility, vegetation, forager, grazer, newworld, oldworld, bush, plains, forest, fields, ground, timid, group, nestspot, domestic

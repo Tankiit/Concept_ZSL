@@ -1,0 +1,3 @@
+Samples1-9 : ft_weight = 0.1
+Samples10-19 : ft_weight = 0.3
+Samples20-29 : ft_weight = 1

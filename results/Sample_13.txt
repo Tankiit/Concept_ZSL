@@ -1,0 +1,11 @@
+Predicted: 22, Actual: 22
+Class predicates:
+[0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0]
+Predicted predicates:
+[0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0]
+Errors: 11, False positives: 5, False negatives: 6
+File path: fox_10386.jpg
+Predicted class: fox
+Actual class: fox
+Predicted features: white, gray, orange, red, small, lean, pads, paws, tail, chewteeth, meatteeth, claws, smelly, walks, slow, strong, muscle, inactive, nocturnal, hibernate, agility, fish, meat, forager, hunter, stalker, newworld, oldworld, plains, forest, fields, ground, fierce, smart, solitary
+Actual features: brown, orange, red, furry, small, lean, pads, paws, tail, chewteeth, meatteeth, claws, walks, fast, strong, muscle, quadrapedal, active, nocturnal, hibernate, agility, fish, meat, forager, hunter, stalker, newworld, oldworld, plains, forest, fields, ground, fierce, smart, solitary, nestspot
