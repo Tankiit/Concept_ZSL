@@ -23,11 +23,10 @@ def loss_fn(out, y_predicates, y_classes, ft_weight=.1):
 
     #loss_ft = torch.masked_select(extra_features, (1-classes).bool()).view(-1, num_features).sum() / batch_size
 
-    return loss_cl #+ loss_ft * ft_weight * loss_cl.item()/loss_ft.item()
+    return loss_cl #+ loss_ft * ft_weight * loss_cl/loss_ft
 
 def train_one_epoch():
     running_loss = 0.
-    last_loss = 0.
 
     # Here, we use enumerate(training_loader) instead of
     # iter(training_loader) so that we can track the batch
@@ -43,7 +42,6 @@ def train_one_epoch():
         outputs, commit_loss = model(inputs)
 
         # Compute the loss and its gradients
-        print(labels.min(), labels.max())
         loss = loss_fn(outputs, train_predicate_matrix, labels) + commit_loss
         loss.backward()
 
@@ -52,12 +50,8 @@ def train_one_epoch():
 
         # Gather data and report
         running_loss += loss.item()
-        if i % 1000 == 999:
-            last_loss = running_loss / 1000 # loss per batch
-            print('  batch {} loss: {}'.format(i + 1, last_loss))
-            running_loss = 0.
 
-    return last_loss
+    return running_loss / (i+1)
 
 from datetime import datetime
 if __name__ == "__main__":
@@ -65,7 +59,7 @@ if __name__ == "__main__":
     label_file = "datasets/Animals_with_Attributes2/Features/ResNet101/AwA2-labels.txt"
     predicate_matrix_file = "datasets/Animals_with_Attributes2/predicate-matrix-binary.txt"
     train_classes_file = "datasets/Animals_with_Attributes2/Features/ResNet101/trainclasses.txt"
-    classes_labels_file = "datasets/Animals_with_Attributes2/classes.txt"
+    classes_labels_file = "datasets/Animals_with_Attributes2/ZSLclasses.txt"
     train_set, val_set, train_predicate_matrix, test_predicate_matrix = get_train_test_zsl(feature_file, label_file, predicate_matrix_file, classes_labels_file, train_classes_file)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     train_predicate_matrix = train_predicate_matrix.to(device)
@@ -78,7 +72,7 @@ if __name__ == "__main__":
 
     model = ResExtr(2048, NUM_FEATURES, 1).to(device)
 
-    accuracy = Accuracy(task="multiclass", num_classes=10, top_k=1)
+    accuracy = Accuracy(task="multiclass", num_classes=10, top_k=1).to(device)
 
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-5)
 
@@ -86,7 +80,7 @@ if __name__ == "__main__":
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
     epoch_number = 0
 
-    EPOCHS = 5
+    EPOCHS = 50
 
     best_vloss = 1_000_000.
 
@@ -101,7 +95,7 @@ if __name__ == "__main__":
         # Set the model to evaluation mode, disabling dropout and using population
         # statistics for batch normalization.
         model.eval()
-        acc = 0.0
+        running_acc = 0.0
 
         # Disable gradient computation and reduce memory consumption.
         with torch.no_grad():
@@ -109,14 +103,15 @@ if __name__ == "__main__":
                 vinputs, vlabels = vdata['features'].to(device), vdata['labels'].to(device)
                 voutputs, vcommit_loss = model(vinputs)
                 vloss = loss_fn(voutputs, test_predicate_matrix, vlabels) + vcommit_loss
-                running_vloss += vloss
+                running_vloss += vloss.item()
+                voutputs = voutputs.view(-1, 1, NUM_FEATURES)
                 ANDed = voutputs * test_predicate_matrix
                 diff = ANDed - voutputs
-                acc = accuracy(diff.sum(dim=2), vlabels)
-                print(acc)
+                running_acc += accuracy(diff.sum(dim=2), vlabels)
 
         avg_vloss = running_vloss / (i + 1)
-        print('LOSS train {} valid {}, ACC {}'.format(avg_loss, avg_vloss, acc))
+        avg_acc = running_acc / (i + 1)
+        print(f'LOSS train {avg_loss:.3f}, valid {avg_vloss:.3f}, ACC {avg_acc:.3f}')
 
         # Track best performance, and save the model's state
         if avg_vloss < best_vloss:

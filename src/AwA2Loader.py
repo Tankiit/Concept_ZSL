@@ -15,15 +15,20 @@ class AwA2ResNetDataset(Dataset):
         return {'features': self.features[idx], 'labels': self.labels[idx] - 1, 'predicate_matrix': self.predicate_matrix}
 
 class AwA2ResNetDatasetZSL(Dataset):
-    def __init__(self, features, labels):
+    def __init__(self, features, labels, train, train_classes):
         self.features = features
         self.labels = labels
+        
+        self.train = train
+        self.train_classes = train_classes
 
     def __len__(self):
         return len(self.features)
     
     def __getitem__(self, idx):
-        return {'features': self.features[idx], 'labels': self.labels[idx] - 1}
+        if self.train:
+            return {'features': self.features[idx], 'labels': self.labels[idx] - 1}
+        return {'features': self.features[idx], 'labels': self.labels[idx] - 1 - self.train_classes}
 
 def get_train_test_zsl(feature_file, label_file, predicate_matrix_file, classes_labels_file, train_classes_file):
     train_classes = open(train_classes_file, "r").read().replace("+", "_").split("\n")[:-1]
@@ -67,4 +72,4 @@ def get_train_test_zsl(feature_file, label_file, predicate_matrix_file, classes_
     test_labels = labels[test_indices]
     test_predicate_matrix = predicate_matrix[torch.tensor(test_classes_labels)-1]
 
-    return AwA2ResNetDatasetZSL(train_features, train_labels), AwA2ResNetDatasetZSL(test_features, test_labels), train_predicate_matrix, test_predicate_matrix
+    return AwA2ResNetDatasetZSL(train_features, train_labels, True, 40), AwA2ResNetDatasetZSL(test_features, test_labels, False, 40), train_predicate_matrix, test_predicate_matrix
