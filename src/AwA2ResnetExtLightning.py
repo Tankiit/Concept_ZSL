@@ -23,13 +23,13 @@ class ResnetExtractorLightning(pl.LightningModule):
     def configure_optimizers(self):
         return torch.optim.Adam(self.parameters(), lr=self.learning_rate, weight_decay=1e-5)
     
-    def loss_fn(self, out, predicate_matrix, labels, ft_weight=1):
+    def loss_fn(self, out, predicate_matrix, labels, ft_weight=1, pos_ft_weight=.1):
         out = out.view(-1, 1, self.num_features)
-        ANDed = out * predicate_matrix
-        diff = ANDed - out
+        ANDed = out * predicate_matrix # AND operation
+        diff = ANDed - out # Difference of ANDed and out => if equal, then out is subset of its class' predicates
 
         entr_loss = nn.CrossEntropyLoss()
-        loss_cl = entr_loss(diff.sum(dim=2), labels)
+        loss_cl = entr_loss(diff.sum(dim=2), labels) # Is "out" subset of its class' predicates?
 
         batch_size = out.shape[0]
 
@@ -39,12 +39,16 @@ class ResnetExtractorLightning(pl.LightningModule):
 
         extra_features = out - predicate_matrix + (out - predicate_matrix).pow(2)
 
-        loss_ft = torch.masked_select(extra_features, (1-classes).bool()).view(-1, self.num_features).sum() / batch_size
+        loss_neg_ft = torch.masked_select(extra_features, (1-classes).bool()).view(-1, self.num_features).sum() / batch_size
 
-        return loss_cl + loss_ft * ft_weight * loss_cl.item()/loss_ft.item()
+        labels_predicate = predicate_matrix[labels]
+        extra_features_in = torch.masked_select(extra_features, classes.bool()).view(-1, self.num_features)
+        loss_pos_ft = (labels_predicate - out.view(batch_size, self.num_features) + extra_features_in/2).sum() / batch_size
+
+        return loss_cl + loss_neg_ft * ft_weight * loss_cl.item()/loss_neg_ft.item() + loss_pos_ft * pos_ft_weight * loss_cl.item()/loss_pos_ft.item()
 
     def training_step(self, batch, batch_idx):
-        features, labels, predicate_matrix = batch['features'], batch['labels'], batch['predicate_matrix']
+        features, labels = batch['features'], batch['labels']
         inputs = features.cuda()
         labels = labels.cuda()
     
@@ -55,7 +59,7 @@ class ResnetExtractorLightning(pl.LightningModule):
         return loss
     
     def validation_step(self, batch, batch_idx):
-        features, labels, predicate_matrix = batch['features'], batch['labels'], batch['predicate_matrix']
+        features, labels = batch['features'], batch['labels']
         inputs = features.cuda()
         labels = labels.cuda()
     
@@ -78,11 +82,13 @@ class ResnetExtractorLightning(pl.LightningModule):
         return torch.utils.data.DataLoader(train_set, batch_size=64, shuffle=True, num_workers=4)
 
 if __name__ == "__main__":
+    from numpy import loadtxt
     feature_file = "datasets/Animals_with_Attributes2/Features/ResNet101/AwA2-features.txt"
     label_file = "datasets/Animals_with_Attributes2/Features/ResNet101/AwA2-labels.txt"
     predicate_matrix_file = "datasets/Animals_with_Attributes2/predicate-matrix-binary.txt"
+    predicate_matrix = torch.from_numpy(loadtxt(predicate_matrix_file, dtype=int)).cuda()
     file_paths_file = "datasets/Animals_with_Attributes2/Features/ResNet101/AwA2-filenames.txt"
-    full_dataset = AwA2ResNetDataset(feature_file, label_file, predicate_matrix_file, file_paths_file)
+    full_dataset = AwA2ResNetDataset(feature_file, label_file, file_paths_file)
 
     train_size = int(0.8 * len(full_dataset))
     val_size = len(full_dataset) - train_size

@@ -1,0 +1,11 @@
+Predicted: 13, Actual: 13
+Class predicates:
+[1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0]
+Predicted predicates:
+[0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0]
+Errors: 13, False positives: 0, False negatives: 13
+File path: tiger_10095.jpg
+Predicted class: tiger
+Actual class: tiger
+Predicted features: white, orange, stripes, furry, lean, pads, paws, chewteeth, meatteeth, buckteeth, claws, smelly, fast, nocturnal, meat, hunter, stalker, oldworld, bush, plains, forest, jungle, solitary, nestspot
+Actual features: black, white, orange, stripes, furry, big, lean, pads, paws, tail, chewteeth, meatteeth, buckteeth, claws, smelly, walks, fast, strong, muscle, quadrapedal, active, nocturnal, agility, meat, hunter, stalker, oldworld, bush, plains, forest, jungle, ground, fierce, smart, group, solitary, nestspot

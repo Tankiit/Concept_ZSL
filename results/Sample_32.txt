@@ -1,0 +1,11 @@
+Predicted: 26, Actual: 26
+Class predicates:
+[1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1]
+Predicted predicates:
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0]
+Errors: 18, False positives: 0, False negatives: 18
+File path: hamster_10086.jpg
+Predicted class: hamster
+Actual class: hamster
+Predicted features: patches, bulbous, tail, buckteeth, smelly, hops, tunnels, weak, quadrapedal, hibernate, vegetation, forager, grazer, newworld, fields, ground, nestspot
+Actual features: black, white, brown, gray, patches, furry, small, bulbous, paws, tail, chewteeth, buckteeth, claws, smelly, hops, tunnels, walks, fast, weak, quadrapedal, active, inactive, nocturnal, hibernate, agility, vegetation, forager, grazer, newworld, fields, ground, timid, solitary, nestspot, domestic

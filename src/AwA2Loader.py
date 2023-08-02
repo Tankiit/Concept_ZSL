@@ -2,17 +2,16 @@ import torch
 from torch.utils.data import Dataset
 from numpy import loadtxt, float32
 class AwA2ResNetDataset(Dataset):
-    def __init__(self, feature_file, label_file, predicate_matrix_file, file_paths_file):
+    def __init__(self, feature_file, label_file, file_paths_file):
         self.features = torch.from_numpy(loadtxt(feature_file, dtype=float32))
         self.labels = torch.from_numpy(loadtxt(label_file, dtype=int))
-        self.predicate_matrix = torch.from_numpy(loadtxt(predicate_matrix_file, dtype=int))
         self.file_paths = open(file_paths_file, "r").read().split("\n")[:-1]
 
     def __len__(self):
         return len(self.features)
 
     def __getitem__(self, idx):
-        return {'features': self.features[idx], 'labels': self.labels[idx] - 1, 'predicate_matrix': self.predicate_matrix}
+        return {'features': self.features[idx], 'labels': self.labels[idx] - 1}
 
 class AwA2ResNetDatasetZSL(Dataset):
     def __init__(self, features, labels, train, train_classes):
