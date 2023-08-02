@@ -28,9 +28,6 @@ class ResExtr(nn.Module):
                             codebook_size = 2,
                         )
         
-        self.bin_quantize._codebook.embed = torch.tensor([[[ 0.],
-         [1.]]], requires_grad=False)
-
     def forward(self, x):
         for layer in self.layers:
             x = layer(x)

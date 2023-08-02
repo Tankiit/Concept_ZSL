@@ -18,8 +18,6 @@ class ResnetExtractorLightning(pl.LightningModule):
         self.accuracy = Accuracy(task="multiclass", num_classes=num_classes, top_k=1)
 
     def forward(self, src):
-        self.model.bin_quantize._codebook.embed = torch.tensor([[[ 0.],
-         [1.]]], device="cuda")
         return self.model(src)
     
     def configure_optimizers(self):

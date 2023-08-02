@@ -1,5 +1,5 @@
 from AwA2ResnetExtLightning import ResnetExtractorLightning
-model = ResnetExtractorLightning.load_from_checkpoint("lightning_logs/version_6/checkpoints/epoch=10-step=5137.ckpt")
+model = ResnetExtractorLightning.load_from_checkpoint("lightning_logs/version_10/checkpoints/epoch=12-step=6071.ckpt")
 
 # disable randomness, dropout, etc...
 model.eval()
@@ -49,6 +49,8 @@ import os
 if not os.path.exists(save_dir):
     os.makedirs(save_dir)
 
+name_offset = len(os.listdir(save_dir))-1
+
 # print the results
 for i in range(len(samples)):
     print("======================================================================")
@@ -65,7 +67,7 @@ for i in range(len(samples)):
     print("Errors:", 85 - (outputs[i] == predicate_matrix[labels[i]]).sum().item(), "False positives:", false_positives.item(), "False negatives:", false_negatives.item())
 
     # Save file of images, predicted labels, and predicted features
-    with open(save_dir + f"Sample_{i+20}.txt", "w") as f:
+    with open(save_dir + f"Sample_{i+name_offset}.txt", "w") as f:
         f.write(f"Predicted: {predicted_labels[i]+1}, Actual: {labels[i]+1}\n")
         f.write("Class predicates:\n")
         f.write(str(predicate_matrix[labels[i]].cpu().numpy().tolist()) + "\n")
