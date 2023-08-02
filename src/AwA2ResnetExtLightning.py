@@ -23,27 +23,26 @@ class ResnetExtractorLightning(pl.LightningModule):
     def configure_optimizers(self):
         return torch.optim.Adam(self.parameters(), lr=self.learning_rate, weight_decay=1e-5)
     
-    def loss_fn(self, out, y_predicates, y_classes, ft_weight=1):
+    def loss_fn(self, out, predicate_matrix, labels, ft_weight=1):
         out = out.view(-1, 1, self.num_features)
-        ANDed = out * y_predicates
+        ANDed = out * predicate_matrix
         diff = ANDed - out
 
         entr_loss = nn.CrossEntropyLoss()
-        loss_cl = entr_loss(diff.sum(dim=2), y_classes)
+        loss_cl = entr_loss(diff.sum(dim=2), labels)
 
         batch_size = out.shape[0]
 
-        labels = torch.randint(0, self.num_classes-1, (batch_size, ), device="cuda")
         classes = torch.zeros(batch_size, self.num_classes, device="cuda")
         classes[torch.arange(batch_size), labels] = 1
         classes = classes.view(batch_size, self.num_classes, 1).expand(batch_size, self.num_classes, self.num_features)
 
-        extra_features = out - y_predicates + (out - y_predicates).pow(2)
+        extra_features = out - predicate_matrix + (out - predicate_matrix).pow(2)
 
         loss_ft = torch.masked_select(extra_features, (1-classes).bool()).view(-1, self.num_features).sum() / batch_size
 
         return loss_cl + loss_ft * ft_weight * loss_cl.item()/loss_ft.item()
-    
+
     def training_step(self, batch, batch_idx):
         features, labels, predicate_matrix = batch['features'], batch['labels'], batch['predicate_matrix']
         inputs = features.cuda()
