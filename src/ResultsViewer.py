@@ -1,5 +1,5 @@
 from AwA2ResnetExtLightning import ResnetExtractorLightning
-model = ResnetExtractorLightning.load_from_checkpoint("lightning_logs/version_19/checkpoints/epoch=9-step=4670.ckpt")
+model = ResnetExtractorLightning.load_from_checkpoint("lightning_logs/version_21/checkpoints/epoch=12-step=6071.ckpt")
 
 # disable randomness, dropout, etc...
 model.eval()

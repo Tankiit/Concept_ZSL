@@ -1,0 +1,11 @@
+Predicted: 39, Actual: 39
+Class predicates:
+[1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1]
+Predicted predicates:
+[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+Errors: 8, False positives: 1, False negatives: 7
+File path: giant+panda_10531.jpg
+Predicted class: giant_panda
+Actual class: giant_panda
+Predicted features: white, patches, spots, big, bulbous, pads, paws, buckteeth, hops, slow, bipedal, quadrapedal, inactive, fish, vegetation, forager, grazer, newworld, oldworld, bush, forest, jungle, tree, timid, smart, group, solitary, nestspot, domestic
+Actual features: black, white, patches, spots, furry, big, bulbous, pads, paws, chewteeth, buckteeth, claws, walks, slow, strong, bipedal, quadrapedal, inactive, fish, vegetation, forager, grazer, newworld, oldworld, bush, forest, jungle, ground, tree, timid, smart, group, solitary, nestspot, domestic

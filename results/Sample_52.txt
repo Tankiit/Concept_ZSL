@@ -1,0 +1,11 @@
+Predicted: 27, Actual: 34
+Class predicates:
+[1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0]
+Predicted predicates:
+[0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Errors: 29, False positives: 7, False negatives: 22
+File path: rat_10160.jpg
+Predicted class: squirrel
+Actual class: rat
+Predicted features: brown, gray, small, pads, paws, tail, buckteeth, claws, hops, swims, walks, fast, bipedal, quadrapedal, hibernate, agility, hunter, oldworld, coastal, forest, ocean, tree
+Actual features: black, white, brown, gray, furry, small, bulbous, lean, paws, tail, meatteeth, buckteeth, claws, smelly, tunnels, walks, fast, quadrapedal, active, nocturnal, hibernate, agility, meat, insects, forager, hunter, scavenger, newworld, oldworld, plains, forest, fields, ground, fierce, smart, solitary, nestspot

@@ -23,13 +23,13 @@ class ResnetExtractorLightning(pl.LightningModule):
     def configure_optimizers(self):
         return torch.optim.Adam(self.parameters(), lr=self.learning_rate, weight_decay=1e-5)
     
-    def loss_fn(self, out, predicate_matrix, labels, ft_weight=1, pos_ft_weight=.1):
-        out = out.view(-1, 1, self.num_features)
+    def loss_fn(self, out, predicate_matrix, labels, ft_weight=1, pos_ft_weight=.05):
+        out = out.view(-1, 1, self.num_features) # out is a batch of 1D binary vectors
         ANDed = out * predicate_matrix # AND operation
-        diff = ANDed - out # Difference of ANDed and out => if equal, then out is subset of its class' predicates
+        diff = ANDed - out # Difference of ANDed and out => if equal, then out is a subset of its class' predicates
 
         entr_loss = nn.CrossEntropyLoss()
-        loss_cl = entr_loss(diff.sum(dim=2), labels) # Is "out" subset of its class' predicates?
+        loss_cl = entr_loss(diff.sum(dim=2), labels) # Is "out" a subset of its class' predicates?
 
         batch_size = out.shape[0]
 
