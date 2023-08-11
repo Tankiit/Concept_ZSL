@@ -145,5 +145,5 @@ if __name__ == "__main__":
                 best_stats["val_fp"] = avg_false_positives.item()
 
         # save stats to csv
-        with open("LoopStats.csv", "a") as f:
+        with open("LoopStats2.csv", "a") as f:
             f.write(f"{timestamp},{FT_WEIGHT},{POS_FT_WEIGHT},{best_stats['epoch']},{best_stats['train_loss']},{best_stats['val_loss']},{best_stats['val_acc']},{best_stats['val_fp']}\n")
