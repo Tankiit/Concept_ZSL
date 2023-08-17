@@ -1,6 +1,8 @@
 import torch.nn as nn
 import torch
-from ResnetExtraction import ResExtr
+import sys
+sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
+from VectorExtraction import ResExtr
 from torchmetrics import Accuracy
 from AwA2Loader import get_train_test_zsl
 

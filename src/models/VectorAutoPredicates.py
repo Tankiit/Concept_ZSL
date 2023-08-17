@@ -27,7 +27,11 @@ class ResExtr(nn.Module):
         self.bin_quantize = VectorQuantize(
                             dim = 1,
                             codebook_size = 2,
+                            freeze_codebook = True
                         )
+        
+        self.bin_quantize.codebook = torch.tensor([[ 0.],
+        [1.]])
         
         self.predicate_matrix = nn.Parameter(torch.randn(classes, features))
         
@@ -36,8 +40,7 @@ class ResExtr(nn.Module):
             x = layer(x)
 
         x = self.to_out(x).view(-1, self.features, 1)
-        self.bin_quantize._codebook.embed = torch.tensor([[[ 0.],
-        [1.]]], device="cuda")
+        
         quantize, _, commit_loss = self.bin_quantize(x)
 
         predicate_matrix, _, commit_loss2 = self.bin_quantize(self.predicate_matrix.view(self.classes * self.features, 1))

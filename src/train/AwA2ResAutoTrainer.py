@@ -1,5 +1,7 @@
 import torch.nn as nn
 import torch
+import sys
+sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
 from ResnetAutoPredicates import ResExtr
 from torchmetrics import Accuracy
 

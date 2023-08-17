@@ -26,15 +26,18 @@ class ResExtr(nn.Module):
         self.bin_quantize = VectorQuantize(
                             dim = 1,
                             codebook_size = 2,
+                            freeze_codebook = True
                         )
+        
+        self.bin_quantize.codebook = torch.tensor([[[ 0.],
+        [1.]]])
         
     def forward(self, x):
         for layer in self.layers:
             x = layer(x)
 
         x = self.to_out(x).view(-1, self.features, 1)
-        self.bin_quantize._codebook.embed = torch.tensor([[[ 0.],
-        [1.]]], device="cuda")
+
         quantize, _, commit_loss = self.bin_quantize(x)
 
         return quantize.view(-1, self.features), commit_loss
