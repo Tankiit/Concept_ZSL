@@ -106,7 +106,6 @@ if __name__ == "__main__":
 
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-5)
 
-    # Initializing in a separate cell so we can easily add more epochs to the same run
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 
     best_vloss = 1_000_000.
