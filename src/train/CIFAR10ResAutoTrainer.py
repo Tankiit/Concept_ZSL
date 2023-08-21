@@ -25,7 +25,10 @@ def train_one_epoch():
         outputs, commit_loss, predicate_matrix = model(inputs)
 
         # Compute the loss and its gradients
+        if torch.any(torch.isnan(model.predicate_matrix)):
+            exit()
         loss = loss_fn(outputs, labels, predicate_matrix) + commit_loss
+        torch.nn.utils.clip_grad_norm_(model.parameters(), 1)
         loss.backward()
 
         # Adjust learning weights
@@ -36,39 +39,34 @@ def train_one_epoch():
 
     return running_loss / (i+1)
 
+eps=1e-10
 def loss_fn(out, labels, predicate_matrix):
-        out = out.view(-1, 1, NUM_FEATURES) # out is a batch of 1D binary vectors
-        ANDed = out * predicate_matrix # AND operation
-        diff = ANDed - out # Difference of ANDed and out => if equal, then out is a subset of its class' predicates
+    out = out.view(-1, 1, NUM_FEATURES) # out is a batch of 1D binary vectors
+    ANDed = out * predicate_matrix # AND operation
+    diff = ANDed - out # Difference of ANDed and out => if equal, then out is a subset of its class' predicates
 
-        entr_loss = nn.CrossEntropyLoss()
-        loss_cl = entr_loss(diff.sum(dim=2), labels) # Is "out" a subset of its class' predicates?
+    entr_loss = nn.CrossEntropyLoss()
+    loss_cl = entr_loss(diff.sum(dim=2), labels) # Is "out" a subset of its class' predicates?
 
-        batch_size = out.shape[0]
+    batch_size = out.shape[0]
 
-        classes = torch.zeros(batch_size, NUM_CLASSES, device="cuda")
-        classes[torch.arange(batch_size), labels] = 1
-        classes = classes.view(batch_size, NUM_CLASSES, 1).expand(batch_size, NUM_CLASSES, NUM_FEATURES)
+    classes = torch.zeros(batch_size, NUM_CLASSES, device="cuda")
+    classes[torch.arange(batch_size), labels] = 1
+    classes = classes.view(batch_size, NUM_CLASSES, 1).expand(batch_size, NUM_CLASSES, NUM_FEATURES)
 
-        extra_features = out - predicate_matrix + (out - predicate_matrix).pow(2)
+    extra_features = out - predicate_matrix + (out - predicate_matrix).pow(2)
 
-        loss_neg_ft = torch.masked_select(extra_features, (1-classes).bool()).view(-1, NUM_FEATURES).sum() / batch_size
+    loss_neg_ft = torch.masked_select(extra_features, (1-classes).bool()).view(-1, NUM_FEATURES).sum() / batch_size
 
-        labels_predicate = predicate_matrix[labels]
-        extra_features_in = torch.masked_select(extra_features, classes.bool()).view(-1, NUM_FEATURES)
-        loss_pos_ft = (labels_predicate - out.view(batch_size, NUM_FEATURES) + extra_features_in/2).sum() / batch_size
+    labels_predicate = predicate_matrix[labels]
+    extra_features_in = torch.masked_select(extra_features, classes.bool()).view(-1, NUM_FEATURES)
+    loss_pos_ft = (labels_predicate - out.view(batch_size, NUM_FEATURES) + extra_features_in/2).sum() / batch_size
 
-        return loss_cl + loss_neg_ft * FT_WEIGHT * loss_cl.item()/loss_neg_ft.item() + loss_pos_ft * POS_FT_WEIGHT * loss_cl.item()/loss_pos_ft.item()
+    return loss_cl + loss_neg_ft * FT_WEIGHT * loss_cl.item()/(loss_neg_ft.item() + eps) + loss_pos_ft * POS_FT_WEIGHT * loss_cl.item()/(loss_pos_ft.item() + eps)
 
 if __name__ == "__main__":
     from datetime import datetime
     from torchvision import transforms, datasets
-
-    NUM_FEATURES = 80
-    NUM_CLASSES = 10
-
-    POS_FT_WEIGHT = 0
-    FT_WEIGHT = 0.1
 
     # Data
     print('==> Preparing data..')
@@ -95,11 +93,16 @@ if __name__ == "__main__":
         testset, batch_size=64, shuffle=False, num_workers=4)
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    NUM_FEATURES = 32
+    NUM_CLASSES = 10
     EPOCHS = 15
+    accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
+
+    POS_FT_WEIGHT = 0
+    FT_WEIGHT = 0.1
 
     model = ResExtr(NUM_FEATURES, NUM_CLASSES).to(device)
-
-    accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
 
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-5)
 
@@ -159,5 +162,5 @@ if __name__ == "__main__":
             best_stats["val_fp"] = avg_false_positives.item()
 
     # save stats to csv
-    #with open("LoopStats2.csv", "a") as f:
+    #with open("LoopStatsCIFAR10.csv", "a") as f:
         #f.write(f"{timestamp},{FT_WEIGHT},{POS_FT_WEIGHT},{best_stats['epoch']},{best_stats['train_loss']},{best_stats['val_loss']},{best_stats['val_acc']},{best_stats['val_fp']}\n")

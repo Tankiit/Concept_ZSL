@@ -13,7 +13,9 @@ def train_one_epoch(model, optimizer, NUM_FEATURES, FT_WEIGHT, POS_FT_WEIGHT):
     # index and do some intra-epoch reporting
     for i, data in enumerate(training_loader):
         # Every data instance is an input + label pair
-        inputs, labels = data['features'].to(device), data['labels'].to(device)
+        inputs, labels = data
+        inputs = inputs.to(device)
+        labels = labels.to(device)
 
         # Zero your gradients for every batch!
         optimizer.zero_grad()
@@ -33,6 +35,7 @@ def train_one_epoch(model, optimizer, NUM_FEATURES, FT_WEIGHT, POS_FT_WEIGHT):
 
     return running_loss / (i+1)
 
+eps = 1e-10
 def loss_fn(out, labels, predicate_matrix, NUM_FEATURES, FT_WEIGHT, POS_FT_WEIGHT):
         out = out.view(-1, 1, NUM_FEATURES) # out is a batch of 1D binary vectors
         ANDed = out * predicate_matrix # AND operation
@@ -55,29 +58,30 @@ def loss_fn(out, labels, predicate_matrix, NUM_FEATURES, FT_WEIGHT, POS_FT_WEIGH
         extra_features_in = torch.masked_select(extra_features, classes.bool()).view(-1, NUM_FEATURES)
         loss_pos_ft = (labels_predicate - out.view(batch_size, NUM_FEATURES) + extra_features_in/2).sum() / batch_size
 
-        return loss_cl + loss_neg_ft * FT_WEIGHT * loss_cl.item()/loss_neg_ft.item() + loss_pos_ft * POS_FT_WEIGHT * loss_cl.item()/loss_pos_ft.item()
+        return loss_cl + loss_neg_ft * FT_WEIGHT * loss_cl.item()/(loss_neg_ft.item() + eps) + loss_pos_ft * POS_FT_WEIGHT * loss_cl.item()/(loss_pos_ft.item() + eps)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 from torch import optim
+from tqdm import tqdm
 def objective(trial):
     global trial_num
     trial_num += 1
     print(f"Starting trial {trial_num}")
-    NUM_FEATURES = trial.suggest_int("num_features", 1, 16)
-    FT_WEIGHT = trial.suggest_float("ft_weight", 0, 2)
-    POS_FT_WEIGHT = trial.suggest_float("ft_pos_weight", 0, 2)
+    NUM_FEATURES = trial.suggest_int("num_features", 1, 4)
+    FT_WEIGHT = trial.suggest_float("ft_weight", 0, 1.5)
+    POS_FT_WEIGHT = trial.suggest_float("ft_pos_weight", 0, 1.5)
     # Generate the model.
-    model = ResExtr(2048, NUM_FEATURES*16, 1, NUM_CLASSES).to(device)
+    model = ResExtr(NUM_FEATURES*16, NUM_CLASSES).to(device)
 
     # Generate the optimizers.
-    lr = trial.suggest_float("lr", 1e-5, 1e-1, log=True)
+    lr = trial.suggest_float("lr", 1e-5, 1e-2, log=True)
     optimizer = optim.Adam(model.parameters(), lr=lr)
 
-    EPOCHS = 30
+    EPOCHS = 15
 
     best_acc = 0.0
 
-    for epoch in range(EPOCHS):
+    for epoch in tqdm(range(EPOCHS)):
         # Make sure gradient tracking is on, and do a pass over the data
         model.train(True)
         _ = train_one_epoch(model, optimizer, NUM_FEATURES*16, FT_WEIGHT, POS_FT_WEIGHT)
@@ -88,7 +92,9 @@ def objective(trial):
         # Disable gradient computation and reduce memory consumption.
         with torch.no_grad():
             for i, vdata in enumerate(validation_loader):
-                vinputs, vlabels = vdata['features'].to(device), vdata['labels'].to(device)
+                vinputs, vlabels = vdata
+                vinputs = vinputs.to(device)
+                vlabels = vlabels.to(device)
                 voutputs, _, predicate_matrix = model(vinputs)
                 voutputs = voutputs.view(-1, 1, NUM_FEATURES*16)
                 ANDed = voutputs * predicate_matrix
@@ -99,6 +105,11 @@ def objective(trial):
 
         if avg_acc > best_acc:
             best_acc = avg_acc
+
+        if epoch == 1 and best_acc < 0.15:
+            raise optuna.TrialPruned()
+        elif epoch == 4 and best_acc < 0.5:
+            raise optuna.TrialPruned()
     
     return best_acc
 

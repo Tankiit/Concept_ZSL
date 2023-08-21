@@ -28,13 +28,15 @@ testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-resnet = torchvision.models.resnet18().to(device)
-resnet.fc = torch.nn.Linear(512, 10).to(device)
+import sys
+sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
+from resnet import ResNet18
+model = ResNet18().to(device)
 
 import torch.optim as optim
 
 criterion = torch.nn.CrossEntropyLoss()
-optimizer = optim.Adam(resnet.parameters(), lr=3e-4)
+optimizer = optim.Adam(model.parameters(), lr=1e-3)
 
 from torchmetrics import Accuracy
 accuracy = Accuracy(task="multiclass", num_classes=10, top_k=1).to(device)
@@ -57,7 +59,7 @@ for epoch in range(EPOCHS):  # loop over the dataset multiple times
         optimizer.zero_grad()
 
         # forward + backward + optimize
-        outputs = resnet(inputs)
+        outputs = model(inputs)
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
@@ -70,7 +72,7 @@ for epoch in range(EPOCHS):  # loop over the dataset multiple times
                     vinputs, vlabels = vdata
                     vinputs = vinputs.to(device)
                     vlabels = vlabels.to(device)
-                    voutputs = resnet(vinputs)
+                    voutputs = model(vinputs)
                     running_acc += accuracy(voutputs, vlabels)
             print(f'[{epoch + 1}, {i + 1:5d}] loss: {running_loss / 2000:.3f}, ACC: {running_acc / (j+1)}')
             running_loss = 0.0
