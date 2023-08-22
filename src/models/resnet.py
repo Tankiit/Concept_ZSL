@@ -1,8 +1,7 @@
-import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-
+# https://github.com/kuangliu/pytorch-cifar
 class BasicBlock(nn.Module):
     expansion = 1
 
