@@ -16,17 +16,13 @@ class ResBlock(nn.Module):
 
 from vector_quantize_pytorch import VectorQuantize
 from resnet import ResNet18, ResNet34, ResNet50
-from torchvision.models import resnet18, ResNet18_Weights
 class ResExtr(nn.Module):
-    def __init__(self, features, classes, pretrained=False, resnet_type=18, *args, **kwargs) -> None:
+    def __init__(self, features, classes, resnet_type=18, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.features = features
         self.classes = classes
 
-        if pretrained:
-            self.resnet = resnet18(weights=ResNet18_Weights.DEFAULT)
-            self.resnet.fc = nn.Linear(512, features)
-        elif resnet_type == 18:
+        if resnet_type == 18:
             self.resnet = ResNet18(num_classes=features)
         elif resnet_type == 34:
             self.resnet = ResNet34(num_classes=features)
@@ -48,6 +44,54 @@ class ResExtr(nn.Module):
         
     def forward(self, x):
         x = self.resnet(x).view(-1, self.features, 1)
+
+        quantize, _, commit_loss = self.bin_quantize(x)
+
+        predicate_matrix, _, commit_loss2 = self.bin_quantize(self.predicate_matrix.view(self.classes * self.features, 1))
+        predicate_matrix = predicate_matrix.view(self.classes, self.features)
+
+        return quantize.view(-1, self.features), commit_loss + commit_loss2, predicate_matrix
+
+from torchvision.models import efficientnet_v2_s, efficientnet_v2_m, efficientnet_v2_l
+class EffExtr(nn.Module):
+    def __init__(self, features, classes, effnet_type=1, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+        self.features = features
+        self.classes = classes
+
+        if effnet_type == 1:
+            self.effnet = efficientnet_v2_s()
+            self.effnet.classifier = nn.Identity()
+
+            self.to_out = nn.Linear(1280, features)
+        elif effnet_type == 2:
+            self.effnet = efficientnet_v2_m()
+            self.effnet.classifier = nn.Identity()
+
+            self.to_out = nn.Linear(1024, features)
+        elif effnet_type == 3:
+            self.effnet = efficientnet_v2_l()
+            self.effnet.classifier = nn.Identity()
+
+            self.to_out = nn.Linear(2048, features)
+        else:
+            raise ValueError("Unavailable effnet type")
+        
+        self.bin_quantize = VectorQuantize(
+                            dim = 1,
+                            codebook_size = 2,
+                            ema_update = False
+                        )
+        
+        self.bin_quantize.codebook = torch.tensor([[ 0.],
+        [1.]])
+        
+        self.predicate_matrix = nn.Parameter(torch.randn(classes, features))
+        
+    def forward(self, x):
+        x = self.effnet(x)
+
+        x = self.to_out(x).view(-1, self.features, 1)
 
         quantize, _, commit_loss = self.bin_quantize(x)
 

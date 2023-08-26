@@ -93,11 +93,10 @@ if __name__ == "__main__":
         testset, batch_size=64, shuffle=False, num_workers=4)
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print(f"Device: {device}")
-    
+
     NUM_FEATURES = 32
     NUM_CLASSES = 10
-    EPOCHS = 30
+    EPOCHS = 15
     accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
 
     POS_FT_WEIGHT = 0
@@ -119,8 +118,8 @@ if __name__ == "__main__":
         "val_fp": 0,
     }
 
-    from tqdm import tqdm
-    for epoch in tqdm(range(EPOCHS)):
+    for epoch in range(EPOCHS):
+        print(f"EPOCH: {epoch}")
         # Make sure gradient tracking is on, and do a pass over the data
         model.train(True)
         avg_loss = train_one_epoch()
@@ -150,8 +149,8 @@ if __name__ == "__main__":
         avg_vloss = running_vloss / (i + 1)
         avg_acc = running_acc / (i + 1)
         avg_false_positives = running_false_positives / (i + 1) / len(validation_loader.dataset)
-        #print(f"LOSS: {avg_vloss}, ACC: {avg_acc}, FP: {avg_false_positives}")
-        #print(model.bin_quantize._codebook.embed)
+        print(f"LOSS: {avg_vloss}, ACC: {avg_acc}, FP: {avg_false_positives}")
+        print(model.bin_quantize._codebook.embed)
 
         if avg_vloss < best_vloss:
             best_vloss = avg_vloss
@@ -161,11 +160,6 @@ if __name__ == "__main__":
             best_stats["val_acc"] = avg_acc.item()
             best_stats["val_fp"] = avg_false_positives.item()
 
-        if best_stats["val_acc"] < 0.15 and epoch == 2:
-            break
-
-    print(best_stats)
-
     # save stats to csv
-    #with open("/".join(__file__.split("/")[:-3]) + "/results/LoopStatsCIFAR10.csv", "a") as f:
+    #with open("LoopStatsCIFAR10.csv", "a") as f:
         #f.write(f"{timestamp},{FT_WEIGHT},{POS_FT_WEIGHT},{best_stats['epoch']},{best_stats['train_loss']},{best_stats['val_loss']},{best_stats['val_acc']},{best_stats['val_fp']}\n")

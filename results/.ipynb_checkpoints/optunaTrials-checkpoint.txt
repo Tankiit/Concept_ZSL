@@ -1,0 +1,8 @@
+ResAuto:
+Best trial:
+  Value:  0.9860362410545349
+  Params: 
+    num_features: 80
+    ft_weight: 0.7452801014110082
+    ft_pos_weight: 1.2140823927486954
+    lr: 0.00013058088841024415
