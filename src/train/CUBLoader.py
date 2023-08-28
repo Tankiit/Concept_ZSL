@@ -56,8 +56,8 @@ class Cub2011(Dataset):
 
         if self.transform is not None:
             img = self.transform(img)
-
-        return img, target
+            
+        return {"images": img, "labels": target}
 
 if __name__ == "__main__":
     dset = Cub2011("/storage/CUB")
