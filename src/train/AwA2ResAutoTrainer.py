@@ -2,7 +2,7 @@ import torch.nn as nn
 import torch
 import sys
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
-from ResnetAutoPredicates import ResExtr
+from VectorAutoPredicates import ResExtr
 from torchmetrics import Accuracy
 
 def train_one_epoch():
@@ -33,36 +33,39 @@ def train_one_epoch():
 
     return running_loss / (i+1)
 
+eps=1e-10
 def loss_fn(out, labels, predicate_matrix):
-        out = out.view(-1, 1, NUM_FEATURES) # out is a batch of 1D binary vectors
-        ANDed = out * predicate_matrix # AND operation
-        diff = ANDed - out # Difference of ANDed and out => if equal, then out is a subset of its class' predicates
+    out = out.view(-1, 1, NUM_FEATURES) # out is a batch of 1D binary vectors
+    ANDed = out * predicate_matrix # AND operation
+    diff = ANDed - out # Difference of ANDed and out => if equal, then out is a subset of its class' predicates
 
-        entr_loss = nn.CrossEntropyLoss()
-        loss_cl = entr_loss(diff.sum(dim=2), labels) # Is "out" a subset of its class' predicates?
+    entr_loss = torch.nn.CrossEntropyLoss()
+    loss_cl = entr_loss(diff.sum(dim=2), labels) # Is "out" a subset of its class' predicates?
 
-        batch_size = out.shape[0]
+    batch_size = out.shape[0]
 
-        classes = torch.zeros(batch_size, NUM_CLASSES, device="cuda")
-        classes[torch.arange(batch_size), labels] = 1
-        classes = classes.view(batch_size, NUM_CLASSES, 1).expand(batch_size, NUM_CLASSES, NUM_FEATURES)
+    classes = torch.zeros(batch_size, NUM_CLASSES, device="cuda")
+    classes[torch.arange(batch_size), labels] = 1
+    classes = classes.view(batch_size, NUM_CLASSES, 1).expand(batch_size, NUM_CLASSES, NUM_FEATURES)
 
-        extra_features = out - predicate_matrix + (out - predicate_matrix).pow(2)
+    extra_features = out - predicate_matrix + (out - predicate_matrix).pow(2)
 
-        loss_neg_ft = torch.masked_select(extra_features, (1-classes).bool()).view(-1, NUM_FEATURES).sum() / batch_size
+    loss_neg_ft = torch.masked_select(extra_features, (1-classes).bool()).view(-1, NUM_FEATURES).sum() / batch_size
 
-        labels_predicate = predicate_matrix[labels]
-        extra_features_in = torch.masked_select(extra_features, classes.bool()).view(-1, NUM_FEATURES)
-        loss_pos_ft = (labels_predicate - out.view(batch_size, NUM_FEATURES) + extra_features_in/2).sum() / batch_size
+    labels_predicate = predicate_matrix[labels]
+    extra_features_in = torch.masked_select(extra_features, classes.bool()).view(-1, NUM_FEATURES)
+    loss_pos_ft = (labels_predicate - out.view(batch_size, NUM_FEATURES) + extra_features_in/2).sum() / batch_size
 
-        return loss_cl + loss_neg_ft * FT_WEIGHT * loss_cl.item()/loss_neg_ft.item() + loss_pos_ft * POS_FT_WEIGHT * loss_cl.item()/loss_pos_ft.item()
+    return loss_cl + loss_neg_ft * FT_WEIGHT * loss_cl.item()/(loss_neg_ft.item() + eps) + loss_pos_ft * POS_FT_WEIGHT * loss_cl.item()/(loss_pos_ft.item() + eps)
 
 if __name__ == "__main__":
     from datetime import datetime
 
-    NUM_FEATURES = 64
+    NUM_FEATURES = 80
     NUM_CLASSES = 50
-    FT_WEIGHT = 0.7
+    FT_WEIGHT = 0
+
+    torch.manual_seed(1)
 
     POS_FT_WEIGHT = 0.0
     import pickle
@@ -81,16 +84,24 @@ if __name__ == "__main__":
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     EPOCHS = 30
 
-    model = ResExtr(2048, NUM_FEATURES, 1, NUM_CLASSES).to(device)
+    model = ResExtr(2048, NUM_FEATURES, NUM_CLASSES).to(device)
 
     accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
 
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.0002, weight_decay=1e-5)
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-5)
 
     # Initializing in a separate cell so we can easily add more epochs to the same run
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 
     best_vloss = 1_000_000.
+
+    best_acc = {
+        "epoch": 0,
+        "train_loss": 0,
+        "val_loss": 0,
+        "val_acc": 0,
+        "val_fp": 0,
+    }
 
     for epoch in range(EPOCHS):
         print(f"EPOCH {epoch}")
@@ -116,13 +127,19 @@ if __name__ == "__main__":
                 ANDed = voutputs * predicate_matrix
                 diff = ANDed - voutputs
                 running_acc += accuracy(diff.sum(dim=2), vlabels)
-                running_false_positives += ((predicate_matrix[vlabels] - voutputs) == -1).sum()
+                voutputs = voutputs.view(-1, NUM_FEATURES)
+                running_false_positives += ((predicate_matrix[vlabels] - voutputs) == -1).sum() / voutputs.shape[0]
 
         avg_vloss = running_vloss / (i + 1)
         avg_acc = running_acc / (i + 1)
-        avg_false_positives = running_false_positives / (i + 1) / len(validation_loader.dataset)
+        avg_false_positives = running_false_positives / (i + 1)
         print(f"Loss: {avg_vloss}, ACC: {avg_acc}, FP: {avg_false_positives}")
 
-    # save stats to csv
-    #with open("LoopStats2.csv", "a") as f:
-        #f.write(f"{timestamp},{FT_WEIGHT},{POS_FT_WEIGHT},{best_stats['epoch']},{best_stats['train_loss']},{best_stats['val_loss']},{best_stats['val_acc']},{best_stats['val_fp']}\n")
+        if avg_acc > best_acc["val_acc"]:
+            best_acc["epoch"] = epoch
+            best_acc["train_loss"] = avg_loss
+            best_acc["val_loss"] = avg_vloss
+            best_acc["val_acc"] = avg_acc.item()
+            best_acc["val_fp"] = avg_false_positives.item()
+
+    print(f"Best accuracy: {best_acc}")

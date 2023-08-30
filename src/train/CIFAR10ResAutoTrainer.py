@@ -145,11 +145,12 @@ if __name__ == "__main__":
                 ANDed = voutputs * predicate_matrix
                 diff = ANDed - voutputs
                 running_acc += accuracy(diff.sum(dim=2), vlabels)
-                running_false_positives += ((predicate_matrix[vlabels] - voutputs) == -1).sum()
+                voutputs = voutputs.view(-1, NUM_FEATURES)
+                running_false_positives += ((predicate_matrix[vlabels] - voutputs) == -1).sum() / voutputs.shape[0]
 
         avg_vloss = running_vloss / (i + 1)
         avg_acc = running_acc / (i + 1)
-        avg_false_positives = running_false_positives / (i + 1) / len(validation_loader.dataset)
+        avg_false_positives = running_false_positives / (i + 1)
         #print(f"LOSS: {avg_vloss}, ACC: {avg_acc}, FP: {avg_false_positives}")
         #print(model.bin_quantize._codebook.embed)
 

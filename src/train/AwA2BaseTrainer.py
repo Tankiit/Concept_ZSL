@@ -39,6 +39,8 @@ if __name__ == "__main__":
     NUM_FEATURES = 85
     NUM_CLASSES = 50
 
+    torch.manual_seed(42)
+
     import pickle
 
     # pickle val_set
@@ -64,7 +66,7 @@ if __name__ == "__main__":
     loss_fn = nn.CrossEntropyLoss()
     accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
 
-    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-5)
+    optimizer = torch.optim.Adam(model.parameters(), lr=3e-4, weight_decay=1e-5)
 
     # Initializing in a separate cell so we can easily add more epochs to the same run
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
@@ -72,12 +74,18 @@ if __name__ == "__main__":
 
     best_vloss = 1_000_000.
 
-    best_stats = {
+    best_loss = {
         "epoch": 0,
         "train_loss": 0,
         "val_loss": 0,
         "val_acc": 0,
-        "val_fp": 0,
+    }
+
+    best_acc = {
+        "epoch": 0,
+        "train_loss": 0,
+        "val_loss": 0,
+        "val_acc": 0,
     }
 
     for epoch in range(EPOCHS):
@@ -109,7 +117,16 @@ if __name__ == "__main__":
     
         if avg_vloss < best_vloss:
             best_vloss = avg_vloss
-            best_stats["epoch"] = epoch_number
-            best_stats["train_loss"] = avg_loss
-            best_stats["val_loss"] = avg_vloss
-            best_stats["val_acc"] = avg_acc.item()
+            best_loss["epoch"] = epoch_number
+            best_loss["train_loss"] = avg_loss
+            best_loss["val_loss"] = avg_vloss
+            best_loss["val_acc"] = avg_acc.item()
+
+        if avg_acc > best_acc["val_acc"]:
+            best_acc["epoch"] = epoch_number
+            best_acc["train_loss"] = avg_loss
+            best_acc["val_loss"] = avg_vloss
+            best_acc["val_acc"] = avg_acc.item()
+
+    print(f"Best loss: {best_loss}")
+    print(f"Best accuracy: {best_acc}")

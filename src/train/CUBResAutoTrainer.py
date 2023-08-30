@@ -140,7 +140,8 @@ for epoch in tqdm(range(EPOCHS)):
             ANDed = voutputs * predicate_matrix
             diff = ANDed - voutputs
             running_acc += accuracy(diff.sum(dim=2), vlabels)
-            running_false_positives += ((predicate_matrix[vlabels] - voutputs) == -1).sum() / vinputs.shape[0]
+            voutputs = voutputs.view(-1, NUM_FEATURES)
+            running_false_positives += ((predicate_matrix[vlabels] - voutputs) == -1).sum() / voutputs.shape[0]
 
     avg_vloss = running_vloss / (i + 1)
     avg_acc = running_acc / (i + 1)

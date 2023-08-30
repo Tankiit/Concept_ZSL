@@ -1,34 +1,24 @@
 import torch
 import torch.nn as nn
 
-class ResBlock(nn.Module):
-    def __init__(self, start_dim, intermediary_dim, *args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
-
-        self.fc1 = nn.Linear(start_dim, intermediary_dim)
-        self.fc2 = nn.Linear(intermediary_dim, start_dim)
-
-        self.gelu = nn.GELU()
-
-    def forward(self, x):
-        out = self.gelu(self.fc1(x))
-        return self.fc2(out) + x
-
 from vector_quantize_pytorch import VectorQuantize
 class ResExtr(nn.Module):
-    def __init__(self, start_dim, features, depth, classes, *args, **kwargs) -> None:
+    def __init__(self, start_dim, features, classes, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.features = features
         self.classes = classes
 
-        self.layers = nn.ModuleList([ResBlock(start_dim, start_dim) for _ in range(depth)])
+        self.layers = nn.Sequential(
+                nn.Linear(start_dim, 2048),
+                nn.GELU(),
+                nn.Linear(2048, features)
+            )
 
-        self.to_out = nn.Linear(start_dim, features)
         self.bin_quantize = VectorQuantize(
-                            dim = 1,
-                            codebook_size = 2,
-                            freeze_codebook = True
-                        )
+                dim = 1,
+                codebook_size = 2,
+                ema_update = False
+            )
         
         self.bin_quantize.codebook = torch.tensor([[ 0.],
         [1.]])
@@ -36,11 +26,8 @@ class ResExtr(nn.Module):
         self.predicate_matrix = nn.Parameter(torch.randn(classes, features))
         
     def forward(self, x):
-        for layer in self.layers:
-            x = layer(x)
+        x = self.layers(x).view(-1, self.features, 1)
 
-        x = self.to_out(x).view(-1, self.features, 1)
-        
         quantize, _, commit_loss = self.bin_quantize(x)
 
         predicate_matrix, _, commit_loss2 = self.bin_quantize(self.predicate_matrix.view(self.classes * self.features, 1))
