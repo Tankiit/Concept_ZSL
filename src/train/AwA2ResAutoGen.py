@@ -59,18 +59,20 @@ def loss_fn(out, labels, predicate_matrix, NUM_FEATURES, FT_WEIGHT, POS_FT_WEIGH
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 from torch import optim
-def objective(trial):
+def objective(ga_instance, solution, solution_idx):
     global trial_num
     trial_num += 1
     print(f"Starting trial {trial_num}")
-    NUM_FEATURES = trial.suggest_int("num_features", 1, 8)
-    FT_WEIGHT = trial.suggest_float("ft_weight", 0, 2)
-    POS_FT_WEIGHT = trial.suggest_float("ft_pos_weight", 0, 2)
     # Generate the model.
+
+    NUM_FEATURES = min(max(round(solution[0]), 1), 8)
+    FT_WEIGHT = min(max(solution[1], 0), 2)
+    POS_FT_WEIGHT = min(max(solution[2], 0), 2)
+    lr = min(max(solution[3], 1e-5), 1e-2)
+
     model = ResExtr(2048, NUM_FEATURES*16, NUM_CLASSES).to(device)
 
     # Generate the optimizers.
-    lr = trial.suggest_float("lr", 1e-5, 3e-3, log=True)
     optimizer = optim.Adam(model.parameters(), lr=lr)
 
     EPOCHS = 30
@@ -97,17 +99,19 @@ def objective(trial):
 
         avg_acc = running_acc / (i + 1)
 
-        if avg_acc > best_acc:
-            best_acc = avg_acc.item()
+        if best_acc < avg_acc:
+            best_acc = avg_acc
 
         if epoch > 2 and best_acc < 0.5:
-            raise optuna.TrialPruned()
+            return 0
     
+    print(f"Trial {trial_num} finished with accuracy {best_acc}, parameters {solution}")
     return best_acc
 
 if __name__ == "__main__":
     NUM_CLASSES = 50
-    import pickle, optuna
+
+    import pickle
 
     # pickle val_set
     with open("val_set.pkl", "rb") as f:
@@ -119,22 +123,44 @@ if __name__ == "__main__":
 
     training_loader = torch.utils.data.DataLoader(train_set, batch_size=64, shuffle=True, num_workers=4)
     validation_loader = torch.utils.data.DataLoader(val_set, batch_size=64, shuffle=False, num_workers=4)
-    
+
     accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
-
     trial_num = -1
+    fitness_function = objective
 
-    study = optuna.create_study(direction="maximize")
-    study.optimize(objective, n_trials=500)
+    num_generations = 50
+    num_parents_mating = 4
 
-    print("Best trial:")
-    trial = study.best_trial
+    sol_per_pop = 8
+    num_genes = 4
 
-    print("  Value: ", trial.value)
+    init_range_low = 0
+    init_range_high = 5
 
-    print("  Params: ")
-    for key, value in trial.params.items():
-        if key == "num_features":
-            print("    {}: {}".format(key, value*16))
-        else:
-            print("    {}: {}".format(key, value))
+    parent_selection_type = "sss"
+    keep_parents = 1
+
+    crossover_type = "single_point"
+
+    mutation_type = "random"
+    mutation_percent_genes = 25
+
+    import pygad
+    ga_instance = pygad.GA(num_generations=num_generations,
+                        num_parents_mating=num_parents_mating,
+                        fitness_func=fitness_function,
+                        sol_per_pop=sol_per_pop,
+                        num_genes=num_genes,
+                        init_range_low=init_range_low,
+                        init_range_high=init_range_high,
+                        parent_selection_type=parent_selection_type,
+                        keep_parents=keep_parents,
+                        crossover_type=crossover_type,
+                        mutation_type=mutation_type,
+                        mutation_percent_genes=mutation_percent_genes)
+
+    ga_instance.run()
+
+    solution, solution_fitness, _ = ga_instance.best_solution()
+    print("Parameters of the best solution : {solution}".format(solution=solution))
+    print("Fitness value of the best solution = {solution_fitness}".format(solution_fitness=solution_fitness))

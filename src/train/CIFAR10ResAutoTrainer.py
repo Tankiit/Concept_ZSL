@@ -1,6 +1,8 @@
 import torch.nn as nn
 import torch
 
+torch.manual_seed(0)
+
 import sys
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
 from ResnetAutoPredicates import ResExtr
@@ -101,15 +103,13 @@ if __name__ == "__main__":
     accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
 
     POS_FT_WEIGHT = 0
-    FT_WEIGHT = 0.1
+    FT_WEIGHT = 0
 
     model = ResExtr(NUM_FEATURES, NUM_CLASSES).to(device)
 
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-5)
 
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-
-    best_vloss = 1_000_000.
 
     best_stats = {
         "epoch": 0,
@@ -151,22 +151,14 @@ if __name__ == "__main__":
         avg_vloss = running_vloss / (i + 1)
         avg_acc = running_acc / (i + 1)
         avg_false_positives = running_false_positives / (i + 1)
-        #print(f"LOSS: {avg_vloss}, ACC: {avg_acc}, FP: {avg_false_positives}")
+        print(f"TRAIN_LOSS: {avg_loss}, VAL_LOSS: {avg_vloss}, ACC: {avg_acc}, FP: {avg_false_positives}")
         #print(model.bin_quantize._codebook.embed)
 
-        if avg_vloss < best_vloss:
-            best_vloss = avg_vloss
+        if best_stats["val_acc"] < avg_acc:
             best_stats["epoch"] = epoch
             best_stats["train_loss"] = avg_loss
             best_stats["val_loss"] = avg_vloss
             best_stats["val_acc"] = avg_acc.item()
             best_stats["val_fp"] = avg_false_positives.item()
 
-        if best_stats["val_acc"] < 0.15 and epoch == 2:
-            break
-
     print(best_stats)
-
-    # save stats to csv
-    #with open("/".join(__file__.split("/")[:-3]) + "/results/LoopStatsCIFAR10.csv", "a") as f:
-        #f.write(f"{timestamp},{FT_WEIGHT},{POS_FT_WEIGHT},{best_stats['epoch']},{best_stats['train_loss']},{best_stats['val_loss']},{best_stats['val_acc']},{best_stats['val_fp']}\n")

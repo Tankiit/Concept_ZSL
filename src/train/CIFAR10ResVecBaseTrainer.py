@@ -30,10 +30,12 @@ testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-import sys
-sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
-from resnet import ResNet18
-model = ResNet18().to(device)
+from torchvision.models import resnet50, ResNet50_Weights
+resnet = resnet50(weights=ResNet50_Weights.DEFAULT).to(device)
+resnet.fc = torch.nn.Identity()
+
+import torch.nn as nn
+model = nn.Linear(2048, 10).to(device)
 
 import torch.optim as optim
 
@@ -69,6 +71,8 @@ for epoch in range(EPOCHS):  # loop over the dataset multiple times
         optimizer.zero_grad()
 
         # forward + backward + optimize
+        with torch.no_grad():
+            inputs = resnet(inputs)
         outputs = model(inputs)
         loss = criterion(outputs, labels)
         loss.backward()
@@ -82,6 +86,7 @@ for epoch in range(EPOCHS):  # loop over the dataset multiple times
             vinputs, vlabels = vdata
             vinputs = vinputs.to(device)
             vlabels = vlabels.to(device)
+            vinputs = resnet(vinputs)
             voutputs = model(vinputs)
             running_acc += accuracy(voutputs, vlabels).item()
             val_loss += criterion(voutputs, vlabels).item()

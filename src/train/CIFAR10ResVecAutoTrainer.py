@@ -1,5 +1,8 @@
 import torch.nn as nn
 import torch
+
+torch.manual_seed(0)
+
 import sys
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
 from VectorAutoPredicates import ResExtr
@@ -13,16 +16,24 @@ def train_one_epoch():
     # index and do some intra-epoch reporting
     for i, data in enumerate(training_loader):
         # Every data instance is an input + label pair
-        inputs, labels = data['features'].to(device), data['labels'].to(device)
+        inputs, labels = data
+        inputs = inputs.to(device)
+        labels = labels.to(device)
 
         # Zero your gradients for every batch!
         optimizer.zero_grad()
 
         # Make predictions for this batch
+        with torch.no_grad():
+            inputs = resnet(inputs)
+
         outputs, commit_loss, predicate_matrix = model(inputs)
 
         # Compute the loss and its gradients
+        if torch.any(torch.isnan(model.predicate_matrix)):
+            exit()
         loss = loss_fn(outputs, labels, predicate_matrix) + commit_loss
+        torch.nn.utils.clip_grad_norm_(model.parameters(), 1)
         loss.backward()
 
         # Adjust learning weights
@@ -39,7 +50,7 @@ def loss_fn(out, labels, predicate_matrix):
     ANDed = out * predicate_matrix # AND operation
     diff = ANDed - out # Difference of ANDed and out => if equal, then out is a subset of its class' predicates
 
-    entr_loss = torch.nn.CrossEntropyLoss()
+    entr_loss = nn.CrossEntropyLoss()
     loss_cl = entr_loss(diff.sum(dim=2), labels) # Is "out" a subset of its class' predicates?
 
     batch_size = out.shape[0]
@@ -60,42 +71,58 @@ def loss_fn(out, labels, predicate_matrix):
 
 if __name__ == "__main__":
     from datetime import datetime
+    from torchvision import transforms, datasets
 
-    NUM_FEATURES = 80
-    NUM_CLASSES = 50
-    FT_WEIGHT = 0
+    # Data
+    print('==> Preparing data..')
+    normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                                     std=[0.229, 0.224, 0.225])
 
-    torch.manual_seed(42)
+    transform_train = transforms.Compose([
+        transforms.RandomCrop(32, padding=4),
+        transforms.RandomHorizontalFlip(),
+        transforms.ToTensor(),
+        normalize
+    ])
 
-    POS_FT_WEIGHT = 0.0
-    import pickle
+    transform_test = transforms.Compose([
+        transforms.ToTensor(),
+        normalize
+    ])
 
-    # pickle val_set
-    with open("val_set.pkl", "rb") as f:
-        val_set = pickle.load(f)
+    trainset = datasets.CIFAR10(
+        root='./data', train=True, download=True, transform=transform_train)
+    training_loader = torch.utils.data.DataLoader(
+        trainset, batch_size=64, shuffle=True, num_workers=4)
 
-    # pickle train_set
-    with open("train_set.pkl", "rb") as f:
-        train_set = pickle.load(f)
-
-    training_loader = torch.utils.data.DataLoader(train_set, batch_size=64, shuffle=True, num_workers=4)
-    validation_loader = torch.utils.data.DataLoader(val_set, batch_size=64, shuffle=False, num_workers=4)
+    testset = datasets.CIFAR10(
+        root='./data', train=False, download=True, transform=transform_test)
+    validation_loader = torch.utils.data.DataLoader(
+        testset, batch_size=64, shuffle=False, num_workers=4)
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print(f"Device: {device}")
+    
+    NUM_FEATURES = 32
+    NUM_CLASSES = 10
     EPOCHS = 30
-
-    model = ResExtr(2048, NUM_FEATURES, NUM_CLASSES).to(device)
-
     accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
 
-    optimizer = torch.optim.Adam(model.parameters(), lr=3e-4, weight_decay=1e-5)
+    POS_FT_WEIGHT = 0
+    FT_WEIGHT = 0
 
-    # Initializing in a separate cell so we can easily add more epochs to the same run
+    from torchvision.models import resnet50, ResNet50_Weights
+    resnet = resnet50(weights=ResNet50_Weights.DEFAULT).to(device)
+    resnet.fc = nn.Identity()
+    for param in resnet.parameters():
+        param.requires_grad = False
+    model = ResExtr(2048, NUM_FEATURES, NUM_CLASSES).to(device)
+
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-5)
+
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 
-    best_vloss = 1_000_000.
-
-    best_acc = {
+    best_stats = {
         "epoch": 0,
         "train_loss": 0,
         "val_loss": 0,
@@ -103,8 +130,8 @@ if __name__ == "__main__":
         "val_fp": 0,
     }
 
-    for epoch in range(EPOCHS):
-        print(f"EPOCH {epoch}")
+    from tqdm import tqdm
+    for epoch in tqdm(range(EPOCHS)):
         # Make sure gradient tracking is on, and do a pass over the data
         model.train(True)
         avg_loss = train_one_epoch()
@@ -119,7 +146,10 @@ if __name__ == "__main__":
         # Disable gradient computation and reduce memory consumption.
         with torch.no_grad():
             for i, vdata in enumerate(validation_loader):
-                vinputs, vlabels = vdata['features'].to(device), vdata['labels'].to(device)
+                vinputs, vlabels = vdata
+                vinputs = vinputs.to(device)
+                vlabels = vlabels.to(device)
+                vinputs = resnet(vinputs)
                 voutputs, vcommit_loss, predicate_matrix = model(vinputs)
                 vloss = loss_fn(voutputs, vlabels, predicate_matrix) + vcommit_loss
                 running_vloss += vloss.item()
@@ -133,13 +163,14 @@ if __name__ == "__main__":
         avg_vloss = running_vloss / (i + 1)
         avg_acc = running_acc / (i + 1)
         avg_false_positives = running_false_positives / (i + 1)
-        print(f"Loss: {avg_vloss}, ACC: {avg_acc}, FP: {avg_false_positives}")
+        print(f"TRAIN_LOSS: {avg_loss}, VAL_LOSS: {avg_vloss}, ACC: {avg_acc}, FP: {avg_false_positives}")
+        #print(model.bin_quantize._codebook.embed)
 
-        if avg_acc > best_acc["val_acc"]:
-            best_acc["epoch"] = epoch
-            best_acc["train_loss"] = avg_loss
-            best_acc["val_loss"] = avg_vloss
-            best_acc["val_acc"] = avg_acc.item()
-            best_acc["val_fp"] = avg_false_positives.item()
+        if best_stats["val_acc"] < avg_acc:
+            best_stats["epoch"] = epoch
+            best_stats["train_loss"] = avg_loss
+            best_stats["val_loss"] = avg_vloss
+            best_stats["val_acc"] = avg_acc.item()
+            best_stats["val_fp"] = avg_false_positives.item()
 
-    print(f"Best accuracy: {best_acc}")
+    print(best_stats)
