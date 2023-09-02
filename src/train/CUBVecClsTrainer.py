@@ -45,6 +45,8 @@ def train_one_epoch_baseline():
         optimizer.zero_grad()
 
         # Make predictions for this batch
+        with torch.no_grad():
+            inputs = resnet(inputs)
         outputs = model(inputs)
 
         # Compute the loss and its gradients
@@ -67,17 +69,19 @@ NUM_CLASSES = 200
 EPOCHS = 30
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
 
-POS_FT_WEIGHT = 0
-FT_WEIGHT = 0
-
-from torchvision.models import resnet18, ResNet18_Weights
+from torchvision.models import resnet50, ResNet50_Weights
 import torch.nn as nn
 torch.backends.cudnn.benchmark = True
-model = resnet18(weights=ResNet18_Weights.DEFAULT)
+resnet = resnet50(weights=ResNet50_Weights.DEFAULT).to(device)
+resnet.fc = nn.Identity()
+for param in resnet.parameters():
+    param.requires_grad = False
 
-model.fc = nn.Linear(512,NUM_CLASSES)
-
-model = model.to(device)
+model = nn.Sequential(
+        nn.Linear(2048, 2048),
+        nn.GELU(),
+        nn.Linear(2048, NUM_CLASSES)
+).to(device)
 
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=3e-4, weight_decay=1e-5)
@@ -108,6 +112,7 @@ for epoch in tqdm(range(EPOCHS)):
             vinputs, vlabels = vdata["images"], vdata["labels"]
             vinputs = vinputs.to(device)
             vlabels = vlabels.to(device)
+            vinputs = resnet(vinputs)
             voutputs = model(vinputs)
             vloss = criterion(voutputs, vlabels)
             running_vloss += vloss.item()

@@ -16,31 +16,22 @@ class ResBlock(nn.Module):
 
 from vector_quantize_pytorch import VectorQuantize
 from resnet import ResNet18, ResNet34, ResNet50
-from torchvision.models import resnet18, ResNet18_Weights, resnet34, ResNet34_Weights, resnet50, ResNet50_Weights
+from torchvision.models import resnet18, ResNet18_Weights
 class ResExtr(nn.Module):
     def __init__(self, features, classes, pretrained=False, resnet_type=18, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.features = features
         self.classes = classes
 
-        if resnet_type == 18:
-            if pretrained:
-                self.resnet = resnet18(weights=ResNet18_Weights.DEFAULT)
-                self.resnet.fc = nn.Linear(512, features)
-            else:
-                self.resnet = ResNet18(num_classes=features)
+        if pretrained:
+            self.resnet = resnet18(weights=ResNet18_Weights.DEFAULT)
+            self.resnet.fc = nn.Linear(512, features)
+        elif resnet_type == 18:
+            self.resnet = ResNet18(num_classes=features)
         elif resnet_type == 34:
-            if pretrained:
-                self.resnet = resnet34(weights=ResNet34_Weights.DEFAULT)
-                self.resnet.fc = nn.Linear(1024, features)
-            else:
-                self.resnet = ResNet34(num_classes=features)
+            self.resnet = ResNet34(num_classes=features)
         elif resnet_type == 50:
-            if pretrained:
-                self.resnet = resnet50(weights=ResNet50_Weights.DEFAULT)
-                self.resnet.fc = nn.Linear(2048, features)
-            else:
-                self.resnet = ResNet50(num_classes=features)
+            self.resnet = ResNet50(num_classes=features)
         else:
             raise ValueError("Unavailable resnet type")
         
