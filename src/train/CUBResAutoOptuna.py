@@ -36,30 +36,27 @@ def train_one_epoch(model, optimizer, NUM_FEATURES, FT_WEIGHT, POS_FT_WEIGHT):
 
     return running_loss / (i+1)
 
-eps = 1e-10
+eps=1e-10
 def loss_fn(out, labels, predicate_matrix, NUM_FEATURES, FT_WEIGHT, POS_FT_WEIGHT):
-        out = out.view(-1, 1, NUM_FEATURES) # out is a batch of 1D binary vectors
-        ANDed = out * predicate_matrix # AND operation
-        diff = ANDed - out # Difference of ANDed and out => if equal, then out is a subset of its class' predicates
+    out = out.view(-1, 1, NUM_FEATURES) # out is a batch of 1D binary vectors
+    ANDed = out * predicate_matrix # AND operation
+    diff = ANDed - out # Difference of ANDed and out => if equal, then out is a subset of its class' predicates
 
-        entr_loss = nn.CrossEntropyLoss()
-        loss_cl = entr_loss(diff.sum(dim=2), labels) # Is "out" a subset of its class' predicates?
+    entr_loss = torch.nn.CrossEntropyLoss()
+    loss_cl = entr_loss(diff.sum(dim=2), labels) # Is "out" a subset of its class' predicates?
 
-        batch_size = out.shape[0]
+    batch_size = out.shape[0]
 
-        classes = torch.zeros(batch_size, NUM_CLASSES, device="cuda")
-        classes[torch.arange(batch_size), labels] = 1
-        classes = classes.view(batch_size, NUM_CLASSES, 1).expand(batch_size, NUM_CLASSES, NUM_FEATURES)
-
-        extra_features = out - predicate_matrix + (out - predicate_matrix).pow(2)
-
-        loss_neg_ft = torch.masked_select(extra_features, (1-classes).bool()).view(-1, NUM_FEATURES).sum() / batch_size
-
-        labels_predicate = predicate_matrix[labels]
-        extra_features_in = torch.masked_select(extra_features, classes.bool()).view(-1, NUM_FEATURES)
-        loss_pos_ft = (labels_predicate - out.view(batch_size, NUM_FEATURES) + extra_features_in/2).sum() / batch_size
-
-        return loss_cl + loss_neg_ft * FT_WEIGHT * loss_cl.item()/(loss_neg_ft.item() + eps) + loss_pos_ft * POS_FT_WEIGHT * loss_cl.item()/(loss_pos_ft.item() + eps)
+    out = out.view(-1, NUM_FEATURES)
+    diff_square = (out - predicate_matrix[labels]).pow(2)
+    
+    false_positives = (out - predicate_matrix[labels] + diff_square).sum() / batch_size
+    missing_attr = (predicate_matrix[labels] - out + diff_square).sum() / batch_size
+    
+    loss_ft = (1 + false_positives + missing_attr)
+    loss_ft *= loss_cl.item()/(loss_ft.item() + eps)
+    
+    return loss_cl + loss_ft * FT_WEIGHT
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 from torch import optim
@@ -68,14 +65,15 @@ def objective(trial):
     global trial_num
     trial_num += 1
     print(f"Starting trial {trial_num}")
-    NUM_FEATURES = trial.suggest_int("num_features", 0, 12)
-    FT_WEIGHT = trial.suggest_float("ft_weight", 0, 1.5)
-    POS_FT_WEIGHT = trial.suggest_float("ft_pos_weight", 0, 1.5)
+    NUM_FEATURES = trial.suggest_int("num_features", 1, 24)
+    FT_WEIGHT = trial.suggest_float("ft_weight", 0, 3)
+    #POS_FT_WEIGHT = trial.suggest_float("pos_ft_weight", 0, 2)
+    POS_FT_WEIGHT = 0
     # Generate the model.
-    model = ResExtr(256+NUM_FEATURES*16, NUM_CLASSES, pretrained=True).to(device)
+    model = ResExtr(NUM_FEATURES*16, NUM_CLASSES, resnet_type=18, pretrained=True).to(device)
 
     # Generate the optimizers.
-    lr = trial.suggest_float("lr", 1e-5, 1e-2, log=True)
+    lr = trial.suggest_float("lr", 2e-5, 2e-3, log=True)
     optimizer = optim.Adam(model.parameters(), lr=lr)
 
     EPOCHS = 30
@@ -85,7 +83,7 @@ def objective(trial):
     for epoch in tqdm(range(EPOCHS)):
         # Make sure gradient tracking is on, and do a pass over the data
         model.train(True)
-        _ = train_one_epoch(model, optimizer, 256+NUM_FEATURES*16, FT_WEIGHT, POS_FT_WEIGHT)
+        _ = train_one_epoch(model, optimizer, NUM_FEATURES*16, FT_WEIGHT, POS_FT_WEIGHT)
 
         model.eval()
         running_acc = 0.0
@@ -97,7 +95,7 @@ def objective(trial):
                 vinputs = vinputs.to(device)
                 vlabels = vlabels.to(device)
                 voutputs, _, predicate_matrix = model(vinputs)
-                voutputs = voutputs.view(-1, 1, 256+NUM_FEATURES*16)
+                voutputs = voutputs.view(-1, 1, NUM_FEATURES*16)
                 ANDed = voutputs * predicate_matrix
                 diff = ANDed - voutputs
                 running_acc += accuracy(diff.sum(dim=2), vlabels)
@@ -162,7 +160,7 @@ if __name__ == "__main__":
     print("  Params: ")
     for key, value in trial.params.items():
         if key == "num_features":
-            print("    {}: {}".format(key, 256+value*16))
+            print("    {}: {}".format(key, value*16))
         else:
             print("    {}: {}".format(key, value))
             

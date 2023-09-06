@@ -56,6 +56,8 @@ def train_one_epoch():
 
         # Adjust learning weights
         optimizer.step()
+        
+        scheduler.step()
 
         # Gather data and report
         running_loss += loss.item()
@@ -77,12 +79,12 @@ def loss_fn(out, labels, predicate_matrix):
     diff_square = (out - predicate_matrix[labels]).pow(2)
     
     false_positives = (out - predicate_matrix[labels] + diff_square).sum() / batch_size
-    false_positives *= loss_cl.item() / false_positives.item()
-
     missing_attr = (predicate_matrix[labels] - out + diff_square).sum() / batch_size
-    missing_attr *= loss_cl.item() / missing_attr.item()
     
-    return loss_cl + false_positives/(missing_attr+eps) * FT_WEIGHT
+    loss_ft = (1 + false_positives + missing_attr)
+    loss_ft *= loss_cl.item()/(loss_ft.item() + eps)
+    
+    return loss_cl + loss_ft * FT_WEIGHT
 
 from torchmetrics import Accuracy
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -90,12 +92,11 @@ print(f"Device: {device}")
 
 # Trial 93 finished with value: 0.6725443601608276 and parameters: {'num_features': 6, 'ft_weight': 0.11113670076359503, 'ft_pos_weight': 0.5169318900688755, 'lr': 0.00018327854921225235}.
 NUM_CLASSES = 200
-NUM_FEATURES = 352
-EPOCHS = 30
+NUM_FEATURES = 64
+EPOCHS = 50
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
 
-POS_FT_WEIGHT = 0
-FT_WEIGHT = 0
+FT_WEIGHT = 1
 
 import sys
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
@@ -104,6 +105,7 @@ from ResnetAutoPredicates import ResExtr
 model = ResExtr(NUM_FEATURES, NUM_CLASSES, resnet_type=18, pretrained=True).to(device)
 
 optimizer = torch.optim.Adam(model.parameters(), lr=3e-4, weight_decay=1e-5)
+scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, 2e-3, epochs=EPOCHS, steps_per_epoch=len(training_loader))
 
 best_stats = {
     "epoch": 0,
@@ -154,6 +156,8 @@ for epoch in tqdm(range(EPOCHS)):
     avg_ma = running_missing_attr / (i + 1)
     avg_oa = running_out_attributes / (i + 1)
     print(f"LOSS: {avg_vloss}, ACC: {avg_acc}, FP: {avg_fp}, MA: {avg_ma}, OA: {avg_oa}")
+    with open("CUBRes18AutoPredData.csv", "a") as f:
+        f.write(f"{epoch}, {avg_loss}, {avg_vloss}, {avg_acc}, {avg_fp}, {avg_ma}, {avg_oa}\n")
 
     if best_stats["val_acc"] < avg_acc:
         best_stats["epoch"] = epoch

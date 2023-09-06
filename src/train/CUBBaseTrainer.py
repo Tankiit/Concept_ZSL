@@ -53,6 +53,8 @@ def train_one_epoch_baseline():
 
         # Adjust learning weights
         optimizer.step()
+        
+        scheduler.step()
 
         # Gather data and report
         running_loss += loss.item()
@@ -64,7 +66,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Device: {device}")
 
 NUM_CLASSES = 200
-EPOCHS = 30
+EPOCHS = 50
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
 
 POS_FT_WEIGHT = 0
@@ -81,6 +83,7 @@ model = model.to(device)
 
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=3e-4, weight_decay=1e-5)
+scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, 2e-3, epochs=EPOCHS, steps_per_epoch=len(training_loader))
 
 best_stats = {
     "epoch": 0,
@@ -116,6 +119,8 @@ for epoch in tqdm(range(EPOCHS)):
     avg_vloss = running_vloss / (i + 1)
     avg_acc = running_acc / (i + 1)
     print(f"LOSS: {avg_vloss}, ACC: {avg_acc}")
+    with open("CUBRes18ClsOneCycle.csv", "a") as f:
+        f.write(f"{epoch}, {avg_loss}, {avg_vloss}, {avg_acc}\n")
 
     if best_stats["val_acc"] < avg_acc:
         best_stats["epoch"] = epoch
