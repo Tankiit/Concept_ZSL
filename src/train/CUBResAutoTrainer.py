@@ -156,8 +156,8 @@ for epoch in tqdm(range(EPOCHS)):
     avg_ma = running_missing_attr / (i + 1)
     avg_oa = running_out_attributes / (i + 1)
     print(f"LOSS: {avg_vloss}, ACC: {avg_acc}, FP: {avg_fp}, MA: {avg_ma}, OA: {avg_oa}")
-    with open("CUBRes18AutoPredData.csv", "a") as f:
-        f.write(f"{epoch}, {avg_loss}, {avg_vloss}, {avg_acc}, {avg_fp}, {avg_ma}, {avg_oa}\n")
+    #with open("CUBRes18AutoPredData.csv", "a") as f:
+        #f.write(f"{epoch}, {avg_loss}, {avg_vloss}, {avg_acc}, {avg_fp}, {avg_ma}, {avg_oa}\n")
 
     if best_stats["val_acc"] < avg_acc:
         best_stats["epoch"] = epoch
@@ -169,3 +169,5 @@ for epoch in tqdm(range(EPOCHS)):
         best_stats["oa"] = avg_oa.item()
 
 print(best_stats)
+
+torch.save(model.state_dict(), "CUBRes18AutoPred.pt")
