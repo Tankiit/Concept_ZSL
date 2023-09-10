@@ -69,18 +69,23 @@ model, preprocess = clip.load("ViT-B/32", device=device)
 
 print("Encoding captions...")
 
-text = clip.tokenize(captions[:3000]).to(device)
+MAX_CAPTIONS = 3000
+CAPTION_BUCKETS = len(captions) // MAX_CAPTIONS + 1
 
 print("Comparing images to captions...")
 for i, image_path in tqdm(enumerate(images)):
     pil_image = Image.open(os.path.join(image_root, 'CUB_200_2011/images', image_path))
     image = preprocess(pil_image).unsqueeze(0).to(device)
 
+    all_probs = []
     with torch.no_grad():
-        logits_per_image, logits_per_text = model(image, text)
-        probs = logits_per_image.softmax(dim=-1).cpu().numpy()
+        for j in range(CAPTION_BUCKETS):
+            text = clip.tokenize(captions[j*MAX_CAPTIONS:(j+1)*MAX_CAPTIONS]).to(device)
+            logits_per_image, logits_per_text = model(image, text)
+            all_probs.append(logits_per_image)
 
     # get topk captions
+    probs = torch.cat(all_probs, dim=1).softmax(dim=-1).cpu().numpy()
     topk = probs[0].argsort()[-TOPK:][::-1]
     topk_captions = [captions[x] for x in topk]
 
