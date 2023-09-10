@@ -21,12 +21,15 @@ print("2========================================================================
 
 import pandas as pd
 import os
-images = pd.read_csv(os.path.join("/storage/CUB", 'CUB_200_2011', 'images.txt'), sep=' ',
+
+root = "/storage/CUB"
+
+images = pd.read_csv(os.path.join(root, 'CUB_200_2011', 'images.txt'), sep=' ',
                              names=['img_id', 'filepath'])
-image_class_labels = pd.read_csv(os.path.join("/storage/CUB", 'CUB_200_2011', 'image_class_labels.txt'),
+image_class_labels = pd.read_csv(os.path.join(root, 'CUB_200_2011', 'image_class_labels.txt'),
                                          sep=' ', names=['img_id', 'target'])
 data = images.merge(image_class_labels, on='img_id')
-train_test_split = pd.read_csv(os.path.join("/storage/CUB", 'CUB_200_2011', 'train_test_split.txt'),
+train_test_split = pd.read_csv(os.path.join(root, 'CUB_200_2011', 'train_test_split.txt'),
                                sep=' ', names=['img_id', 'is_training_img'])
 
 data = data.merge(train_test_split, on='img_id')
@@ -42,7 +45,7 @@ print("3========================================================================
 
 cam = SmoothGradCAMpp(model.resnet)
 for i, image in tqdm(enumerate(images)):
-    img = read_image(os.path.join("/storage/CUB", 'CUB_200_2011/images', image))
+    img = read_image(os.path.join(root, 'CUB_200_2011/images', image))
     input_tensor = normalize(resize(img, (224, 224)) / 255., [0.485, 0.456, 0.406], [0.229, 0.224, 0.225]).to(device)
     voutputs, _, _ = model(input_tensor.unsqueeze(0))
     for j in range(NUM_FEATURES):
