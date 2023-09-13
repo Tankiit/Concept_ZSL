@@ -1,81 +1,61 @@
-from train.AwA2ResnetExtLightning import ResnetExtractorLightning
-model = ResnetExtractorLightning.load_from_checkpoint("lightning_logs/version_21/checkpoints/epoch=12-step=6071.ckpt")
+from torchvision.io.image import read_image
+from torchvision.transforms.functional import normalize, resize, to_pil_image
 
-# disable randomness, dropout, etc...
+print("1========================================================================")
+
+import sys
+sys.path.insert(0, "/".join(__file__.split("/")[:-1]) + "/models")
+from ResnetAutoPredicates import ResExtr
+
+NUM_FEATURES = 64
+NUM_CLASSES = 200
+
+import torch
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model = ResExtr(NUM_FEATURES, NUM_CLASSES, resnet_type=18, pretrained=True).to(device)
+model.load_state_dict(torch.load("CUBRes18AutoPred.pt"))
 model.eval()
 
-# load the test set
-import pickle, torch
-with open("val_set.pkl", "rb") as f:
-    val_set = pickle.load(f)
+print("2========================================================================")
 
-# get random samples
-indices = torch.randint(0, len(val_set), (10,))
-samples = [val_set[i] for i in indices]
-
-# get the features and labels
-features = torch.stack([sample["features"] for sample in samples])
-labels = torch.stack([sample["labels"] for sample in samples])
-
-from numpy import loadtxt
-predicate_matrix_file = "datasets/Animals_with_Attributes2/predicate-matrix-binary.txt"
-predicate_matrix = torch.from_numpy(loadtxt(predicate_matrix_file, dtype=int)).cuda()
-
-file_paths = val_set.dataset.file_paths
-dataset_files = [file_paths[i] for i in val_set.indices]
-taken_file_paths = [dataset_files[i] for i in indices]
-
-predicates = loadtxt('datasets/Animals_with_Attributes2/predicates.txt', dtype=str)
-classes = loadtxt('datasets/Animals_with_Attributes2/classes.txt', dtype=str)
-
-feature_mapping = {int(i)-1: feature for i, feature in predicates}
-class_mapping = {int(i)-1: class_ for i, class_ in classes}
-print("======================================================================")
-print(feature_mapping)
-print(class_mapping)
-print("======================================================================")
-
-# get the predictions
-with torch.no_grad():
-    predictions, _ = model(features.cuda())
-
-    outputs = predictions.view(-1, 1, 85)
-    ANDed = outputs * predicate_matrix
-    diff = ANDed - outputs
-    predicted_labels = diff.sum(dim=2).argmax(dim=1)
-
-save_dir = "results/"
+import pandas as pd
 import os
-if not os.path.exists(save_dir):
-    os.makedirs(save_dir)
 
-name_offset = len(os.listdir(save_dir))-1
+image_root = "data/CUB_200_2011"
 
-# print the results
-for i in range(len(samples)):
-    print("======================================================================")
-    print("Predicted: {}, Actual: {}".format(predicted_labels[i], labels[i]))
+images = pd.read_csv(os.path.join(image_root, 'CUB_200_2011', 'images.txt'), sep=' ',
+                             names=['img_id', 'filepath'])
+image_class_labels = pd.read_csv(os.path.join(image_root, 'CUB_200_2011', 'image_class_labels.txt'),
+                                         sep=' ', names=['img_id', 'target'])
+data = images.merge(image_class_labels, on='img_id')
+train_test_split = pd.read_csv(os.path.join(image_root, 'CUB_200_2011', 'train_test_split.txt'),
+                               sep=' ', names=['img_id', 'is_training_img'])
+
+data = data.merge(train_test_split, on='img_id')
+
+data = data[data.is_training_img == 0]
+images = data["filepath"].tolist()
+
+import random
+random.shuffle(images)
+
+images = images[:100]
+
+# sort alphabetically
+images.sort()
+
+from tqdm import tqdm
+
+print("3========================================================================")
+
+for i, image in tqdm(enumerate(images)):
+    img = read_image(os.path.join(image_root, 'CUB_200_2011/images', image))
+    input_tensor = normalize(resize(img, (224, 224)) / 255., [0.485, 0.456, 0.406], [0.229, 0.224, 0.225]).to(device)
+    voutputs, _, _ = model(input_tensor.unsqueeze(0))
     
-    # print class predicates
-    print("Class predicates:")
-    print(predicate_matrix[labels[i]])
-    print("Predicted predicates:")
-    print(outputs[i])
-
-    false_positives = ((predicate_matrix[labels[i]] - outputs[i]) == -1).sum()
-    false_negatives = ((predicate_matrix[labels[i]] - outputs[i]) == 1).sum()
-    print("Errors:", 85 - (outputs[i] == predicate_matrix[labels[i]]).sum().item(), "False positives:", false_positives.item(), "False negatives:", false_negatives.item())
-
-    # Save file of images, predicted labels, and predicted features
-    with open(save_dir + f"Sample_{i+name_offset}.txt", "w") as f:
-        f.write(f"Predicted: {predicted_labels[i]+1}, Actual: {labels[i]+1}\n")
-        f.write("Class predicates:\n")
-        f.write(str(predicate_matrix[labels[i]].cpu().numpy().tolist()) + "\n")
-        f.write("Predicted predicates:\n")
-        f.write(str(outputs[i][0].cpu().numpy().tolist()) + "\n")
-        f.write(f"Errors: {85 - (outputs[i] == predicate_matrix[labels[i]]).sum().item()}, False positives: {false_positives.item()}, False negatives: {false_negatives.item()}\n")
-        f.write(f"File path: {taken_file_paths[i]}\n")
-        f.write(f"Predicted class: {class_mapping[predicted_labels[i].item()]}\n")
-        f.write(f"Actual class: {class_mapping[labels[i].item()]}\n")
-        f.write(f"Predicted features: {', '.join([feature_mapping[int(i)] for i, feature in enumerate(outputs[i][0]) if feature.item() == 1])}\n")
-        f.write(f"Actual features: {', '.join([feature_mapping[int(i)] for i, feature in enumerate(predicate_matrix[labels[i]]) if feature.item() == 1])}\n")
+    # Write to file
+    with open(f"results/CUB-IMGAttr/image-{i}.txt", "w") as text_file:
+        text_file.write(f"{image}\n")
+        for j in range(NUM_FEATURES):
+            text_file.write(f"{voutputs[0][j].item()}\n")
+        text_file.write("\n")
