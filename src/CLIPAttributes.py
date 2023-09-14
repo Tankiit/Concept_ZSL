@@ -1,21 +1,3 @@
-# import model
-
-print("Loading model...")
-
-import sys
-sys.path.insert(0, "/".join(__file__.split("/")[:-1]) + "/models")
-from ResnetAutoPredicates import ResExtr
-
-NUM_FEATURES = 64
-NUM_CLASSES = 200
-
-import torch
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model = ResExtr(NUM_FEATURES, NUM_CLASSES, resnet_type=18, pretrained=True).to(device)
-model.load_state_dict(torch.load("CUBRes18AutoPred.pt"))
-model.eval()
-
-# ==================================================================================================
 # get all attributes
 
 print("Getting attributes...")
@@ -56,6 +38,7 @@ for filename in os.listdir(IMGAttr_root):
 
 from tqdm import tqdm
 from PIL import Image
+import torch
 
 TOPK = 100
 
