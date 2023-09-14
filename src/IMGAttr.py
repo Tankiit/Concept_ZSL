@@ -39,7 +39,7 @@ images = data["filepath"].tolist()
 import random
 random.shuffle(images)
 
-images = images[:100]
+images = images[:250]
 
 # sort alphabetically
 images.sort()

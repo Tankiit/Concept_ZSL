@@ -1,10 +1,4 @@
-017.Cardinal/Cardinal_0062_17334.jpg
-0.0
-0.0
-0.0
-0.0
-1.0
-1.0
+009.Brewer_Blackbird/Brewer_Blackbird_0017_2668.jpg
 0.0
 0.0
 0.0
@@ -15,6 +9,8 @@
 1.0
 0.0
 0.0
+0.0
+1.0
 0.0
 0.0
 0.0
@@ -31,9 +27,7 @@
 0.0
 1.0
 0.0
-1.0
-1.0
-1.0
+0.0
 0.0
 0.0
 0.0
@@ -41,17 +35,9 @@
 0.0
 0.0
 0.0
-1.0
 0.0
 0.0
-1.0
 0.0
-1.0
-0.0
-1.0
-0.0
-0.0
-1.0
 0.0
 0.0
 0.0
@@ -62,106 +48,120 @@
 0.0
 0.0
 0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
 1.0
+0.0
+0.0
+1.0
+0.0
+1.0
+0.0
+0.0
+0.0
 
-017.Cardinal/Cardinal_0062_17334.jpg
-reddish body (darker than cardinals, brighter than robins)
-bright red male cardinal; darker female cardinal
-bright red plumage
-red cap (like a Santa's hat, the bird has no facial features besides that)
-thick, red beak
-bright red breast
-bright red feathers on the area around their eyes on both males and females.
-bright red feathers on top of its head
-bright reddish orange breast
-bright red on the top of its head with black spots
-males inflate red pouch in breeding season
-short stubby red beak
-bright red cap and cheek patches
-bright red, orange or yellow head with black triangular patches on sides of its bill
-red body with white on its wings and head, yellow beak, and black eye mask
-bright red patches of feathers along the sides of the head and neck
-bright pink beak
-has a red "cap" on his head, but does not have a black mask around the eyes (like other birds that look similar)
-medium or large sized, finch-like bird
-male is known to have a red crown strip during breeding season and female has rusty color underparts.
-bright red males
-bright red throat
-red bill
-bright red feathers on the sides and bottom of its neck
-medium-sized songbird with deep red male body
-male has a red cap
-big yellow feet and bright red bill
-reddish cap
+009.Brewer_Blackbird/Brewer_Blackbird_0017_2668.jpg
+medium-sized black bird with glossy feathers
+small, black bird with white underparts and yellow or olive upperparts
+darker than the spotted grackle with pale stripes at throat and cheeks
+cowbird with small, black head
+medium sized black bird with distinctive glossy, iridescent black plumage
+small, black bird
+medium sized black bird with a yellow band across the chest, back, and tail
+medium size blackbird that looks like a crow but with a long tail
+small, black bird with white patches on its tail, wings and head. Juveniles have brown backs
+small black bird with red eyebrow
+black bird with long tail
+medium-sized bird of the crow family (Corvidae)
+medium to large, blue black bird with white wing bars that resembles a female blackbird or a male grosbeak
+small species of crow or starling, with all-black plumage except for their white eye patches
+small dark colored bird with white markings under its tail
+male has a black hood, white face, white throat, and grey back with black bars; female is similar but not as brightly colored.
+all black bird with white eye markings, black beak, male has red flanks and black body, female has grey body
+relatively small black crows, about the size of rooks but smaller than magpies
+small blackish bird with white belly
+adult females have dark bills while males have pale bill
+medium-sized blackish bird with small white spots on wings
+small, brown bird with black wings and tail
+small bird with black upperparts
 bright red body with black wings and face (with some white markings on the tail, neck, or chest)
-medium sized songbird with red-orange plumage
-pinkish-red tipped tail feathers
-sings in low, dry warble; often mimics other birds
-Red with black wings, yellow legs.
-mostly red body with black wing tips and tail tip
-bullfinches
-small bird that looks like a robin, but is red with a black mask. Males have bright red feathers on the head and chest; females have yellowish red feathers.
-The male has a distinctive tuft of feathers on its head called a "horn," that it raises when excited or threatened.
-medium-sized songbird with red body and wings
-bright red body with wings and tail tipped in black
-yellow bill tipped with red
-bright red, and reddish breasts
-red overall coloring, with black mask on the face and wings
-red crown feathers (on male)
-male with red head
-red beak and eyes
-small finch
-small bird with red body and wings
-male has red forehead and nape
-small, brightly colored bird
-red or orange tail feathers
-red feathers on its chest (throat)
-adult males have iridescent, shimmering red feathers on wings and tail during breeding season; otherwise, they are dark
-red underparts with dark patches on the sides of the breast and flanks
-bright orange-red beak & black head, chest and back
-medium-sized songbird
-red breast
-black-headed, olive back bird with red eyes that nests in tangled, wet forests on the eastern coast of North America.
-male's breast color varies from yellow to reddish orange
-bright red rump
-bright reddish wing patches
-has white or pinkish lores (area between the beak and eyes)
-songbird with white eyebrows above a dark eye patch, and black forehead.
-medium sized songbird
-red crown (males)
-reddish breast,
-beak curved downwards as if scowling
+small brown bird with white wing patches, red cap, black mask, and long tail
+black wings with white spot on shoulder; white underparts, grey crown, tail
+all black with white patches on the chest, back, and wings; red throat pouch visible (mostly seen when male)
+all-black bird with yellow beak and legs
+small dark brown bird with white patches on wings or tail feathers
+small bird with a slender bill, dark streaked crown, red patch on cheek, grey back, white belly and black tail.
+small bird with white underparts and dark upper parts
+small, slender bird with black wings and tail
+small dark brown bird with white markings on wings, belly, and tail
+distinctive jet black color with bright blue wings
+small dark bird with white markings on the wings
+small songbird with black "sleeve" around neck, gray sideburns
+medium sized blackbird
+small, stout bird with dark brown upperparts
+black bird with spots, lines or patches of white on its underside
+small bird with short tail, dark cap on head that extends back as breast patch
+small bird with short wings, long tail, black/brown markings on the throat, breast, and abdomen
+small, black and white bird with short tail
+medium sized, grayish-brown bird with black wings
+small, blue bird with black wings
+small bird with an upright stance
+small bird with long wings and legs, white underparts and black on top.
+black bird with wings, body, head, tail and feet
+small, brown bird with black wings, legs and beak
+small, light, gray bird with black moustache and sideburns; sometimes black underparts
+small, brown, gray, or black bird with white marks on face.
+large bird with dark beak, white head, black wingtips
+black plumage on short, wedge-shaped wings
+medium sized bird with white head and black patch on the belly
+small bird with dark blue wings
+small bird with long tail (length of body)
+small, medium-sized bird
+males sing loudly in territories, while females do not
+a black bird with white wing tips
+medium-sized bird with short tail
+small passerine bird with slender body, short stout bill, long pointed wings with two bars of black on them and a tail with white outer feathers
+small brown bird with black wings, tail and eyes
+medium-sized North American bird with a short, brown tail
+small-sized bird
 mostly white body with black wingtips and tail, but also exist black (females) or red birds (males)
-bright red patch of skin on the head below its beak
-reddish orange cap, dark eye stripe, and white stripes on sides of neck
-short, curved bill
-black, white, red or yellow body feathers (depending on season)
-red head, back of the neck, and wings
-flocks in winter
-bright red eye
-it has a red crest on the top of its head.
-red or black beak with straight bill
-bird with red head and throat that can hover in place while it feeds on nectar from flowers
-males have yellow head, wings, chest, and tail; females and young birds lack the yellow coloration.
-medium sized songbird with large head
-red feathered body
-red eye-ring and throat patch (can be lacking or faint in immature birds)
-dark or bright orange beak
-no pale "spectacles" around eyes like many other birds
-wide, slightly down-curved bill
-has wings and head is bright orange to red
-brightly colored feathers
-white or red bill with black on top
-red and green feathers on the top of its head, black plumage on the bottom.
-plump, down curved bill
+black bird with white spots under the wing, crown, cheeks, and neck.
+small bird that looks like a robin, but is red with a black mask. Males have bright red feathers on the head and chest; females have yellowish red feathers.
+large, black crow with an iridescent sheen
+bird with dark blue wings, whitish below
+bird with dark brown feathers
+medium sized bird with yellow underparts, blue above, black wings, whitish throat and forehead.
+4/5-inch bird with black wings, white belly and back
+small bird with long, thin beak
+small bird with dark cap, gray back and white belly;
+bird with short, square tail
+small black bird with pale or rufous sides, breast, and belly
+black, white, or red feathered body with a large black spot on its head
+small, slender seabird with dark plumage
+small bird with dark upperparts, pale underparts, white eye ring, and a thin black bill. Male has a bright yellow throat patch which females lack;
+black plumage on the top of its head, along its neck, and back
+small bird with brown upperparts, white belly, and a black cap, collar, bib, and wing bars
+small bird with a short tail
+small greyish brown bird with black wings and tail
+has a distinctive, long, black, chicken-like bill
+small, colourful bird with black wings;
 usually hidden in tall grasses or dense vegetation while singing from elevated perches
-non-migratory bird
-pinkish bill
-large, downward-curved bill
-reddish-orange color on the sides of its mouth
-red throat patch
-four-limbed songbird
-reddish cap, breast, and flank
+small bird with black bill and red feather tips
 the bird has a red head, neck, shoulder, back, and belly with black wings, tail, and bill.
-sharp beak
-small, plump finch with short wings
+black with white head and underparts, but yellowish wings, tail, rump and back. This bird has short bills and sharply pointed wings. Juveniles are brown above and streaked below.
+small bird with short tail
+brightly colored bird with black, white, and brown colors
+small bird with short, notched tail
+small bird with pale streaks across chest
+corvidae family bird with black feathers on its wings, tail and beak
+has dark, glossy feathers with white patch on the belly
+small, migratory bird
+small bird with black head, wings, and tail
+dark grey bird with black speckles on upperparts
+small bird with brown streaked wings, white belly, dark-colored tail and whitish eye ring.
+small perching bird
+small bird with short tail, wings folded when resting

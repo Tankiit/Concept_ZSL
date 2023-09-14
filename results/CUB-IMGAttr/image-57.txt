@@ -1,30 +1,9 @@
-113.Baird_Sparrow/Baird_Sparrow_0006_794579.jpg
-1.0
-0.0
-1.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-1.0
-1.0
-1.0
-0.0
-1.0
-0.0
-0.0
-0.0
-1.0
-0.0
-1.0
+052.Pied_billed_Grebe/Pied_Billed_Grebe_0071_35386.jpg
 1.0
 0.0
 0.0
 1.0
-1.0
+0.0
 0.0
 0.0
 0.0
@@ -32,6 +11,22 @@
 0.0
 0.0
 1.0
+0.0
+1.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
 0.0
 0.0
 0.0
@@ -43,10 +38,6 @@
 0.0
 1.0
 0.0
-0.0
-0.0
-0.0
-0.0
 1.0
 0.0
 0.0
@@ -54,114 +45,123 @@
 0.0
 0.0
 0.0
-1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
 0.0
 0.0
 0.0
 1.0
 0.0
+0.0
+1.0
+1.0
+1.0
 0.0
 0.0
 0.0
 
-113.Baird_Sparrow/Baird_Sparrow_0006_794579.jpg
-thrush with spotted breast,
-medium sized thrush
-small bird with streaked and speckled plumage;
-small bird with brown stripes
-small brown bird with spotted breast, yellow eyes, white eyebrow stripe above eye
-small migratory songbird weighing about 0.27–0.31 oz (7.7–8.8 g)
-small songbird with black eye stripe
-small bird with streaked brown upperparts
-warbler with stripes
-American passerine bird with yellow head, wings, and tail contrasting with olive back
-songster of North America grasslands
-upper breast mottled reddish brown
-yellow crown stripe that sweeps upward and over the back of the head
-15cm-long brownish, grassy, thickly streaked head with black feathers
-small passerine bird with short bill
-small bird with wings that are pointed when folded, short tails, long legs and small strong bills for probing food.
-small passerine bird with narrow bill
-small songbird with medium size bill
-usually hidden in tall grasses or dense vegetation while singing from elevated perches
-small brown bird with white eyebrow stripes, yellow spots on its chest, and black stripes on the wings
-small brown bird with streaked plumage
-small, migratory bird
-short, conical bill; heavy, compact body with relatively long tail that gives the bird an ungainly appearance when perched
-small brown bird with streaked plumage, light brown streaks on its chest and head
-large conical bill
-it has a long, slender bill that turns downward at the tip.
-slender, streaked brownish bird with white wing bars
-small bird with short, conical bill
-long yellow bill
-small brownish sparrow with white stripe above eye, dark front, and pale back
-brown streaked neck, chest, belly, under tail coverts
-long tapered bill
-small passerine bird
-thin yellow bill
-yellow breast with fine black stripes
-yellowish bill
-small, brown bird with white spots on its crown
-smallish and short, spotted bird
-large, round and yellow bill
-small songbird with distinctive pale eye stripe across face
-large conical bill (black for males and yellow for females)
-small songbird with distinctive high pitched buzzy songs
-black, white, or brown with long, slender bill, short tail and wings;
-long, pointed bill for probing insects from holes or in foliage
-buff breast band.
-sparrow-size, streaked bird with black and white stripes on the chest
-sparrow sized bird with short tail;
-sparrow-sized songbird with long tail
-small songbird with spotted belly
-reddish-bronze back and flanks, green breast, white chin, black stripe through eye, white throat patch.
-sparrow-sized bird
-small, brown bird with dark breast streaked or spotted with white
-one of the North American wood warblers
-small bird with a slender bill, dark streaked crown, red patch on cheek, grey back, white belly and black tail.
-warbler species
-small finch
-small perching bird
-small bird with pale streaks across chest
-medium sized songbird with large head
-small songbird (3 inches long)
-small songbird
-small songbird with short tail
-medium-sized sparrow-like bird
-small, black bird with white patches on its tail, wings and head. Juveniles have brown backs
-small, brown bird with streaked back and distinctive black mask around eye.
-White patch below eye is larger than in other warblers.
-yellow, brown or white underparts with black streaks on the chest
-small brown bird with short, conical bill
-dark and light brown stripes on breast and flanks
-species of New World warblers (Parulidae)
-female has greenish-yellow bill (male's has orangey)
-small bird with long tail streamers
-medium-sized sparrow with a large head, short bill, long wings, and dark central tail stripe.
-short conical bill
-small songbird with long tail
-yellow-striped throat
-small, streaked breast
-small bird with short tail, wings folded when resting
-small bird with short tail, long legs and large head
-small bird with short tail, usually brownish above, paler below. Juveniles duller and greyer.
-warbler with dark head, yellow belly
-eye stripe and streaks on breast, sides, and head
-long slender bill
-the bird has a long pointed bill, mainly greyish brown above with whitish underparts.
-black stripes on wing coverts
-large size for a sparrow (larger than other Eurasian Sparrows)
-body feathers have a white patch towards the middle of its back, and a white forehead and throat
-medium-sized songbird of woodland edges, thickets, or gardens.
-has a long thin beak that it uses for catching insects and feeding on berries.
-small brown bird with a white eyebrow stripe
-small bird with pointed bill
-medium-sized bird (a little smaller than sparrow)
-warbler
-streaked upperparts with fine buff or brownish streaks on the breast.
-brown streaked head and throat,
-small bird with brown streaked wings, white belly, dark-colored tail and whitish eye ring.
-sings in low, dry warble; often mimics other birds
-small songbird with white patches on its face
-red crest, white stripes on cheeks
-sparrow with large eyes, short bill, and short tail
+052.Pied_billed_Grebe/Pied_Billed_Grebe_0071_35386.jpg
+duck-like body with white sides, red-brown back, black and white head, yellow bill
+long, stout red-orange bill with a black mark near the tip
+water bird with black, white, red, yellow, or gray plumage
+western subspecies of the Eared Grebe with distinctive black eye stripe that extends behind eye.
+medium-sized water bird with a short, pointed bill, body covered in small white spots
+water bird with a narrow, pointed bill
+bright, orange body with black wings and tail
+water bird with distinctive bill, which has a wide tip
+black-tipped orange bill with a large nail at tip
+yellow lower belly, bright orange throat
+small, short-tailed bird with an off-white body, black wings with white tips and yellow-orange undertail
+orange body, black wings, brown head
+A duck with a teardrop-shaped body and long tail.
+bird with black wings, white underparts, and orange head
+yellow body with black wings, tail, and face mask;
+duck-like bird with long, slender neck and bill
+medium bird with white body, black wingtips and orange bills and feet.
+small blackish bird of western North America with pointed bill and orange coloring on breast and flank
+orange body with black, yellow, white, and brown feathers
+bird with brown upper parts, white underparts and black wings, tail and face mask.
+webbed feet with large, sharply pointed, black bills
+long, pointed black bill with slightly upturned tip
+bird with brown upper parts, black crown, white chest and belly, black bib, orange-red breast, white throat, wing bar, and tail tip.
+brown and black feathered bird with brownish orange underparts, wings and tail
+yellow-orange body, with black face, wings, underparts, white rump, and tail
+duck with black head, white feathers on the wings, a white stripe along the side of its body, and red feet.
+duck with yellow head, white throat, and black back
+bright orange body with a wide black band across its breast
+white body, black back and wings; long neck, large red bill
+female with duller orange flanks, yellow sides, black wings, body, and tail
+orange body with brown wings (tail feathers on each side of the tail and rear end)
+long, slender black bill
+bicolored bird with glossy black feathers on the top of its head, wings and tail. The breast, belly, sides, back and undertail coverts are iridescent red or orange.
+brown back, wings, and head with streaks of light orange-brown feathers on the sides
+duck-like appearance; white body, black wings and tail
+black wings, tail and head (often streaked with yellow)
+bright orange body with black head, wings, back
+aquatic bird with white underparts.
+male with orange flank, yellow head, black wings, chest, back, and tail
+mostly brown bird with yellow patches on its wings, sides and tail
+white face with black cap, dark stripe above eye, orange bill tipped with black
+swimming bird with black, white, or gray feathers
+long-tailed, medium-sized bird with brown upperparts, white underparts, and a yellow bill
+black, yellow, and orange body with dark head, wings, tail
+duck with red bill, black head with white patches above eye, and crested head
+black with white head and underparts, but yellowish wings, tail, rump and back. This bird has short bills and sharply pointed wings. Juveniles are brown above and streaked below.
+duck with reddish-brown head, large white patch on back of neck and body, gray wings with black spots and a dark tail.
+black plumage on the top of its head, along its neck, and back
+small, duck-like bird with long neck and legs
+the only known species of cormorants with red face
+orange-and-black head, throat, upper breast, wings, and tail with white stripes and a white wing patch
+adults have black legs and feet, red to orange bill tipped with yellow, white head, gray upperparts and wings, and pale grey underparts with dark streaking on the flanks. Juveniles are similar but lack the adult's white face.
+small, brownish, predominantly underwing bird with black wingtips and white rump
+a waterbird with short legs
+duck-like with crested head, short bill and webbed feet
+glossy black feathers on its crown, back, and wings
+adults have bright orange color above their wings and tail.
+black, red, or brown plumage
+black with bright orange patches on its wings, abdomen, and face
+the long, pointed bill (yellow with black tip)
+long thin beak with yellow patches near the tip
+bird with black, white, or orange-red colors
+brown body with black wings, and red head
+brown plumage with streaks and flecking on the head, breast, belly, and flanks
+yellow underbelly, rufous flanks and red eye ring
+small brown bird with an orange breast and belly
+bird with an orange throat, yellow underparts, black spot on tail feathers
+small, round body, long tail, white belly with a black line across it, and yellow-brown feathers on its head
+small brown bird with white wing patches, red cap, black mask, and long tail
+small, slender bird with black wings and tail
+brown plumage with white spots, black beak, wings, cap, tail feathers
+Red breast (male only) with white line through center of chest, extending onto flank. Females have brownish back and wings (black or reddish tinged).
+short orange bill
+small bird with black body, white face, dark cap, red bill, and yellow legs
+small brown bird with black masking over its head, white eye patches, rusty tail, and a faint white eyebrow
+brownish black upperparts, white belly, red-crown patch on head, reddish throat and nape (back of neck)
+small, slender seabird with dark plumage
+duck with black back, white belly, white patches on wings, and grey head
+small bird with black head, yellow belly, red feathers on wings and tail
+black bill with red and yellow patches
+black wings with heavy, square-shaped tails
+yellow-orange chest and flanks above dark gray upperparts
+reddish-brown head and throat
+black, white, or yellow patches on the top of its head with a brown forehead
+white forehead and cheeks, black cap with a white supercilium, black face mask, golden-brown upperparts.
+small bird with yellow body plumage and black wings
+yellow, black, or brownish oval patches on its breast
+small brown bird with black patches on its wings and tail
+yellow, black, white, or brown plumage
+plump body with a short tail, short yellow bill.
+black, white, red, yellow, brown, or orange body with dark wings
+rusty or brown plumage
+Reddish-brown head and throat.
+black plumage on short, wedge-shaped wings
+dive duck; dives for fish under water
+black head with long plumage above the eyes that extends backward and downward, forming a thin "moustache"
+yellow-green body plumage and black wings with greenish cast
+large, light beak with long, dark tip, and pink feet
+mostly red body with black wing tips and tail tip
+black feathered body with white spots on wings and belly

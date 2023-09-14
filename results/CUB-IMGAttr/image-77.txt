@@ -1,12 +1,4 @@
-142.Black_Tern/Black_Tern_0096_143917.jpg
-1.0
-0.0
-0.0
-0.0
-1.0
-0.0
-0.0
-1.0
+069.Rufous_Hummingbird/Rufous_Hummingbird_0036_59562.jpg
 0.0
 0.0
 0.0
@@ -15,28 +7,6 @@
 0.0
 0.0
 0.0
-0.0
-0.0
-0.0
-1.0
-1.0
-0.0
-1.0
-0.0
-1.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-1.0
-0.0
-0.0
-1.0
-0.0
-0.0
-1.0
 1.0
 0.0
 0.0
@@ -50,118 +20,148 @@
 0.0
 0.0
 0.0
-1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
 0.0
 1.0
+1.0
+1.0
 0.0
 0.0
 0.0
 0.0
 0.0
 0.0
+1.0
+0.0
+0.0
+1.0
+1.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
 1.0
 0.0
 0.0
 0.0
 
-142.Black_Tern/Black_Tern_0096_143917.jpg
-white underside with darker chevron markings along the wing mid-section (forster's tern)
-dark grey upperparts with a white head patch, pale pink legs, and dark bill
-has white on most of its body, excepting a black cap and nape. The back is dark brownish gray, the breast is white, and there are white wing patches visible in flight. The bill is black.
-circular white patches at the base of the primaries on their back wings (forster's tern)
-small white wing patch visible in flight
-small white wing patches visible in flight
-pale grey back and wings with darker streaking
-brownish grey head, underparts are off white. The tail has two black streaks on the underside.
-long tail with a conspicuous white spot near the tip
-grey-black body with wings that go almost entirely white (except for the tip) in flight
-sharp demarcation between the two colour areas on its underparts, with the pale grey of the crown matching that on the flanks; a white supercilium (streak at the base of the bill) and a rusty brown band across the tip of the wing.
-two white wing bars visible in flight
-three-toed feet, with long bills, long wings, white tail tips and sharply contrasting black wingtips.
-mottled grey body with black wings
-white wing bar and white flash on the wings, with mottled brown on top of head and tail.
-dark grey upperparts with pale grey underbelly
-streaked upperparts, pale greyish-blue underparts
-grey head with darker grey wings and tail
-small seabird with long, narrow bill
-greyish brown upperparts with white throat
-the bird has a long pointed bill, mainly greyish brown above with whitish underparts.
-brownish-gray upperparts with black wings and tail, white underparts, pale gray sides
-small black seabird with white underbelly and tipped wings
-forked tail in flight
-adult has black head, neck, upper breast and nape while immature has brownish head, neck, upper breast and nape. The bill of both sexes is pink with dark tip; the iris is pale yellow and the legs are greenish gray. Its flight is characterized by a quick straight forward flying pattern interspersed with some glides
-brown upper parts with black streaks, white belly with darker streaking, and pale grey head.
-distinctive foraging method of flying out to sea then turning on its back to dive for small fish
-sharply pointed bill; grayish on top, pinkish on bottom
-pale greyish back with black wing feathers
-pale grey to white underparts, brown streaked on chest
-pale grey back and wings with darker bars and spots (usually blackish)
-long, tapering pointed bill, white in front with black tip
-small seabird with long pointed wings
-pale grey plumage
-short bill with greyish upperparts, white underparts
-long, rounded tail with white sides and a black tip
-pale, whitish face and belly, with black marking at the bill base.
-white body with black wing tips, tip of tail and underside (except under primary feathers)
-pointed wings with wedge-shaped tips; often seen hovering
-greyish brown upperparts and pale underparts (white or pale yellow)
-long tail extending beyond tip of wings when perched or in flight
-grey underparts with a black line down the middle from breast to flanks, and blackish wings with clear wing bar
-brownish gray above, pale on the sides of its body with some white below
-slender, light colored bill with a hook at the tip that helps it catch and hold onto prey
-bird with white forehead, white breast with brown streaks, black tail, yellowish legs and feet. It has a long pointy bill with a pink patch on the lower mandible (jaw) that flares out at the tip.
-bird with black upperparts, white underparts and wings striped darker or paler below, brownish head, grey nape. (Pictures may show a more pale look)
-a pale gray hindneck patch, which is more evident in summer.
-white above, brown below plumage pattern with black tip to the bill.
-small blackish-gray bird with white underparts and pale, faint streaks on the upper breast.
-white, fan-shaped tail; orange feet; light grey face and pinkish beak
-pale gray above and white below with dark spots on the wings and back
-small bird with short tail, usually brownish above, paler below. Juveniles duller and greyer.
-dark or pale brown head, throat, back, tail; pale gray breast; white underparts
-white throat and flanks with a black crescent above the eye
-greyish-brown plumage with black cap and back, white underparts. Dark wingtips
-duck with a white patch on the wing, darker than gray but lighter than black.
-brownish-grey plumage with white patches
-whitish wing patch on back visible at rest and while in flight
-small bird with gray back, wings and tail; white underparts with brown streaks on the flanks and chest and white mustache stripe
-has short wings, an elongated tail, and rounded body that is light gray above with black markings on the breast; head and throat are white.
-large grayish bill with black tip
-brown, grey or white upperparts with black on the wings
-white body with black wing tips and tail
-grey head, neck, wings and tail with black spots on the body;
-black body with white belly and wing patches, pale eyebrow stripe, red bill, gray breast, whitish tail
+069.Rufous_Hummingbird/Rufous_Hummingbird_0036_59562.jpg
+humming bird with red throat
+small hummingbird with metallic red throat feathers, white chest and flanks, gray back, black tail feathers, gray cap and greyish wings
+distinctive male appearance with bright blue throat, head, breast, belly, and back
+medium sized hummingbird, 4 inches long, with black chest
+large red spot on the left or right side of its bill depending on the gender
+male has a chestnut throat; female has a grayish brown throat
+male's plumage is iridescent green (brilliant metallic blue when viewed from the side) and red; female is duller
+Small perching bird with thin beak, short tail, and bright blue eyes.
+streaked or spotted flank with blue, purple, green, or rufous markings
+male has bright orange throat, while female has white spot on the lower breast.
+small migratory songbird weighing about 0.27–0.31 oz (7.7–8.8 g)
+female has brownish-grey upperparts, pale grey throat and vent area
+blue, green, or red throat patch.
+male has a black hood, white face, white throat, and grey back with black bars; female is similar but not as brightly colored.
+males sing loudly in territories, while females do not
+metallic green back, violet crown, and white underparts with black tail coverts, short red bill, long pointed wings
+narrow, pointed bill
+a small bird with long, slightly curved bill
+blueish-green bird with yellow belly, red and black face mask, and white wing patches
+small bird with long, pointed bill
+long, pointed bill with hooked tip
+blue or purple body, light green wing patches, pink face, dark bill, and black eyes
+purplish crown and rufous sides of the head
+narrow, pointed bill with distinctive brown spot near the tip of the upper mandible
+small gray bird with white belly and reddish crown.
 a pale gray throat with dark streaking on the breast.
-gray above, white below; some black on wings and tail
-duck with black back, white belly, white patches on wings, and grey head
-small greyish-brown bird with streaked breast
-flying tern, with short forked tail
-brown upperparts, white underparts, black cap, pale eyebrow stripe, pale wing bar and grey tail.
-long tail with white tip
-white in wings with black spots on inner primaries, brownish upperparts and underparts
-streaked brown upperparts, white underparts, black patches around the eyes, pale grey 'eyebrows' on each side of its head
-greyish-blue upperparts with white breast and belly
-has a white spot on the wing, and a faint gray wash of color on its chest
-small bird with dark grey upper parts, pale underparts and white supercilium. The tail is tipped with white. They have a distinctive black mask around the eyes
-black head with white wingtips, back, and underside (when flying)
-slender body, gray under parts, long tail (about twice length of its body), hooked bill, short rounded wings and black eyes
-pale grey belly, brown back and head, black cap and tail
-black head, throat, breast and flanks with white patches on the wing tips, sides of the tail and across the chest
-slate grey body, with white underparts (pale grey) and black wing tips (dark grey)
-light gray upper breast and wings
-grayish-brown upperparts and whitish underparts with dark bars on the flanks
-brownish-grey feathering on the wings
-large, gray bill
-brownish grey plumage with black streaks on the head, chest, back, wings and tail.
-greyish brown barred upperparts, whitish underparts, and long tail. Long legs with weak claws
-bird with greyish-brown plumage, whitish supercilium that extends from eye above bill
-Juvenile birds are grey, fading to a dull white.
-pale gray underparts with rusty flanks
-brown-grey upperparts with white patches on wings
-greyish-brown body plumage;
-pale brown with dark streaks on the breast, sides, wings, and back; white belly
-white throat and belly with some streaks on the underparts
-pale grayish body, with dark streaks on the breast or belly
-duck-like appearance; white body, black wings and tail
+small bird with pointed bill
+small, brightly colored bird
+male has two white wing bars and blue-gray face, while female has reddish-brown cap and striped plumage
+migratory songbird with black upperparts, white underparts, and a white eyebrow stripe
+metallic green back, sides of head and breast, rufous-colored flanks
+sharply pointed bill; grayish on top, pinkish on bottom
+long, curved bill with deep grooves on upper mandible
+brown body with pale belly, whitish-gray crown stripes, white eye ring, red spot on the chest, blue bill
+black, white, or rufous/buffish-brown upperparts
+long, pointed bill for probing insects from holes or in foliage
+small and bright blue bird with yellowish wash below breast
+small, long-tailed bird with downcurved bill
+a long pointed bill tipped by a hooked blunt tip
+small bird with short, conical bill
+grayer bill than other birds of the same size
+small head with pointed bill
+big bird with a gray crown, white eyebrows, reddish bill, whitish chest and flank.
+short, pointed bill
+small bird with long, decurved bill.
+iridescent blue, green or bluish black color on top of the bird’s head, nape, back, wings, and tail; white patches below wingtips
 male has black markings on its white throat; female has no markings on her white throat
-brown above with white belly, or greyish-brown above with white belly
-adults have black legs and feet, red to orange bill tipped with yellow, white head, gray upperparts and wings, and pale grey underparts with dark streaking on the flanks. Juveniles are similar but lack the adult's white face.
+small black cap with two white spots on forehead and white malar stripe (mustache)
+white throat and flanks with a black crescent above the eye
+small birds with short bills that feed on insects
+gray back and wings; reddish-brown head and breast; rufous flanks.
+small bird with dark upperparts, pale underparts, white eye ring, and a thin black bill. Male has a bright yellow throat patch which females lack;
+small pointed bill
+small bird with brown upperparts, white belly, and a black cap, collar, bib, and wing bars
+small, medium-sized bird
+greenish gray upper parts with rufous speckling on sides of the breast
+small bird with short, stout bill
+small, migratory bird
+bright red throat
+male has long curved bill with black and orange tips, female lacks bill
+white eye and forehead, reddish brown upper bill and legs. The bill has a hook at end of lower mandible.
+bird with red, blue, and black plumage
+male has yellow throat, breast, flanks, and forehead
+pale gray body, black wingtips, dark eye patch, red spot on bill
+small bird with an upright stance
+small-sized bird
+large, downward-curved bill
+a medium-sized bird with long tail
+adult females have dark bills while males have pale bill
+small beak, dark cap and bib
+a blue bird with white wing patches, black streaks on chest
+black bill tipped in yellow, green or blue
+red and green feathers on the top of its head, black plumage on the bottom.
+male has a bright orange throat patch
+medium sized, robust, long tailed bird
+male has a red cap
+male has an indigo crown patch
+white eye ring and distinctively short bill
+small songbird with rounded wings, long tail, and short beak
+male has distinctive blue tail feather
+small bird with dark cap, gray back and white belly;
+males sing during the breeding season
+large, pointed bill
+short, conical bill; heavy, compact body with relatively long tail that gives the bird an ungainly appearance when perched
+blue, green, or purple color on head and chest
+large red throat pouch on males
+dark plumage on back, whitish below with indistinct facial patterning
+black on top, white below, gray above the eye, and no eyebrow line or wing stripes.
+medium-sized bird with rounded body, conical bill, and long legs
+small bird with dark cap and black streaks on its face; white below the eyes, pale chest
+long and pointed bill
+small grey bird with black cap, white stripe over eye, red eyes, and yellow underparts.
+small, colorful bird with blue wing feathers and light chestnut wings
+bright, metallic blue upper parts
+long, pointed bill that curves downwards
+small bird with a slender bill, dark streaked crown, red patch on cheek, grey back, white belly and black tail.
+short bill, blue gray upperparts, bluish gray below
+short, pointed bill (foraging)
+grayish crown of the male contrasting with greenish back and wings; grayish tail with white outer feathers;
+rufous cap and collar

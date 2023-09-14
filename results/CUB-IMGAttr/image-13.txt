@@ -1,10 +1,7 @@
-040.Olive_sided_Flycatcher/Olive_Sided_Flycatcher_0077_30492.jpg
-1.0
+016.Painted_Bunting/Painted_Bunting_0069_16462.jpg
 0.0
 0.0
 0.0
-1.0
-1.0
 0.0
 0.0
 0.0
@@ -15,15 +12,6 @@
 0.0
 0.0
 1.0
-1.0
-0.0
-1.0
-0.0
-1.0
-0.0
-0.0
-1.0
-0.0
 0.0
 1.0
 0.0
@@ -33,10 +21,6 @@
 0.0
 0.0
 0.0
-0.0
-0.0
-0.0
-1.0
 0.0
 0.0
 0.0
@@ -54,114 +38,130 @@
 0.0
 0.0
 0.0
+0.0
+0.0
+1.0
+1.0
+0.0
+1.0
+1.0
+0.0
+0.0
+0.0
+0.0
+1.0
 1.0
 0.0
 0.0
 0.0
 0.0
 0.0
+0.0
+0.0
 1.0
+0.0
+0.0
 0.0
 0.0
 
-040.Olive_sided_Flycatcher/Olive_Sided_Flycatcher_0077_30492.jpg
-small flycatcher with pale bluish tinge on back, rump, and wings
-flycatcher species with black eyestripe and olive back
-long, thin bill with yellow tip
-long bill, which has an upper mandible that is yellow with black tip and lower mandible that is black;
-small flycatcher with brownish upperparts, white underparts, and pale superciliary stripe
-thin yellow bill
-long thin beak (bill)
-long, thin pointed bill
-long thin pointed bill tipped with black
-15cm long with greenish body, blackcap and wings, yellow underparts
-long yellow bill with black spot on lower mandible (the upper portion of the bill is mostly black)
-yellow underparts, white throat
-thin pointed bill
-little, thin, black bill with sharp lower mandible
-long yellow bill
-thin, pointed bill
-short, conical bill; heavy, compact body with relatively long tail that gives the bird an ungainly appearance when perched
-long pointed bill
-the long, pointed bill (yellow with black tip)
-long thin beak with yellow patches near the tip
-small pointed bill
-long, pointed bill
-long, slim bill pointed at the end
-narrow, pointed bill
-small, round bill; short neck
-slender body and pointed bill
-narrow, pointed bill with distinctive brown spot near the tip of the upper mandible
-long, pointed bill (black and yellow)
-blackish head with a white throat patch
-short conical bill
-long and pointed bill
-brown head, streaked back with fine darker lines and pale supercilium. Breeding males have rufous crown and pink supercilium with orange throat patch; nonbreeders lack coloration of breeding male.
-small bird with kite-like shape and long, pointed bill
-pointed bill with white patch on underside of the bill
-large, curved bill with long, pointed tip and yellow gape (area under the tip of the bill)
-slender bill that has the upper part dark and the lower part yellow
-yellowish bill
-brown above, white below with black mask (eye patch), white throat, yellow underside of tail.
-large, heavy bill that is yellow at tip and pinkish-gray otherwise
-small, conical bill for cracking seeds and grains; long legs; medium brown back with lighter belly; wings that fold in a sharp angle.
-brown streaked neck, chest, belly, under tail coverts
-small migratory passerine bird with short conical bill, small white eye crescents, and distinctive black stripe above eye
-large hooked bill, long thin beak
-short, pointed bill
-large bill, very dark cap with white eye and pale cheek patch.
-slender, pointed bill with hooked tip
-large conical bill
-sings in low, dry warble; often mimics other birds
-white throat patch
-short bill with greyish upperparts, white underparts
-long bill with distinctive shape
+016.Painted_Bunting/Painted_Bunting_0069_16462.jpg
+small, colourful songbird with short tail
+small, colorful bird with blue wing feathers and light chestnut wings
+medium-sized songbird with deep red male body
+small, colourful bird
+colorful bird with black mask and red body
+medium size bird with an orange belly, black back, white chest, blue head and red crown
 long, pointed bill for probing insects from holes or in foliage
-thin bill with pale spot near tip
-sharply pointed bill; grayish on top, pinkish on bottom
-greyish brown upperparts with white throat
-small bird with pale streaks across chest
-thin black bill
-long bill, finch-like shape with a short tail
-brown upperparts, white throat
-very small songbird with the length of 14.5 cm. (male)
-long beak with yellow spot on forehead
-small songbird of the New World tropics with yellow underparts, black eye stripes, white wing spots and a long tail
-yellow underbelly, rufous flanks and red eye ring
-Gray upperparts and pale underparts streaked with yellow
-long tail feather with pointed tips, sometimes with some yellow on bottom.
-long, curved bill with sharp tip
-yellowish bill, large head and orange patch on sides of neck
-long, pointed bill with dark stripes on it
-small songbird with distinctive high pitched buzzy songs
-long, slender, shiny black bill
-long, pointed bill with hooked tip
-dull white throat patch
-it has a long, slender bill that turns downward at the tip.
-large songbird with long tail, usually solitary or in pairs
-bird with long, pointed bill that protrudes from head
-long, spiked bill with black, yellow, white, brown, or red-brown
-small songbird with long tail
-white throat patches (buffy or yellow) under the cheeks on the sides of its face and below the eye;
-thin bill (tip of beak) with yellow near the end
-male has black markings on its white throat; female has no markings on her white throat
-large, round and yellow bill
-small songbird with black "sleeve" around neck, gray sideburns
-white throat with dark patch
-yellow-striped throat
-small bird with a slender bill, dark streaked crown, red patch on cheek, grey back, white belly and black tail.
-white throat, breast and belly
-large bill with ear-like flaps
-long, pointed black bill with slightly upturned tip
-white throat
 males sing loudly in territories, while females do not
-large bill with yellow patches
-long slender bill
+feathered males with red, dark green, rust, purple on the back of their head and neck
+small, brightly colored bird
+perched on tree branches, sometimes foraging below canopies
+medium-sized songbird with red body and wings
 usually hidden in tall grasses or dense vegetation while singing from elevated perches
-elongated yellow bill with bills curved downward near tip and flat at the base
-has a very characteristic shape with upright posture, short wings, long legs, small head and the body is 25–30 cm (10–12 inches) long. It has rufous upperparts, buff underparts and a blackish facial marking that may or may not extend down to the throat
-long, slender bill
-female has greenish-yellow bill (male's has orangey)
-long, slender, decurved bill
+small, colourful bird with black wings;
+colorful bird with bright blue head, tail, wings; overall greenish body
+small, colorful songbird
+adult males have iridescent, shimmering red feathers on wings and tail during breeding season; otherwise, they are dark
+purplish breast (colorful red, blue, green, yellow)
+medium-sized songbird with long tail
+metallic green back, violet crown, and white underparts with black tail coverts, short red bill, long pointed wings
+blueish-green bird with yellow belly, red and black face mask, and white wing patches
+bird with red, blue, and black plumage
+small, brightly colored bird with wings and tail with black spots
+a medium-sized bird with long tail
+birds that live in forests
+large songbird with long tail, usually solitary or in pairs
+male bird with red body plumage, black wings and tail
+male's plumage is iridescent green (brilliant metallic blue when viewed from the side) and red; female is duller
+medium-sized songbird with a long tail
+slender, long-tailed songbird with short wings
+bird, not fruit or vegetable
+blue or purple bird
+medium sized songbird with red-orange plumage
+male bird with grey, blue or purple head, chest and back
+small songbird of the New World tropics with yellow underparts, black eye stripes, white wing spots and a long tail
+colorful plumage on the head, wings, tail
+red-purple cap on its breast
+long, pointed bill that curves downwards
+small bird with red body and wings
+large body, long, narrow beak and large pink bill
+five limbed bird with long, thin tail
+four-limbed primate, bird
+medium sized, robust, long tailed bird
+bird with long neck and pointed bill
+medium-sized songbird with bright red breast and black mask
+brightly colored bird with black, white, and brown colors
+streaked or spotted flank with blue, purple, green, or rufous markings
+bird with small crested head, long neck, and large red and white bill
+small bird with long tail streamers
+two-limbed bird with long tail
+perches on tree branches or rocks along rivers
+male has an indigo crown patch
+four-limbed bird with short tail
+bird with red head and throat that can hover in place while it feeds on nectar from flowers
+small bird with a slender body
+males have purplish heads and breast
+Small perching bird with thin beak, short tail, and bright blue eyes.
+adult size bird of about 14 cm long with short tail, wings, and legs
+small bird with kite-like shape and long, pointed bill
+four-toed bird with long tail
+medium-sized bird with short tail
+male has a red cap
+small songbird with bright coloration
+a small bird with long, slightly curved bill
+red crown (males)
+colorful bird with brown upperparts, a white throat and breast, and grey underparts. They have an orange wash on the chest that distinguishes them from other sparrows
+small songbird with wings outstretched, often on top of a tree branch
+small bird with iridescent feathers
+distinctive male appearance with bright blue throat, head, breast, belly, and back
+brown body with white stripes on the front and red spots on head and wings. Red coloration may not always be visible (especially during breeding season). Bird has short, rounded tail and wings that droop when perched.
+red crown feathers (on male)
+four limbed bird, mostly the size of a dove or sparrow
+small bird with long, pointed bill
+blue, green, or purple color on head and chest
+blue, green, or red throat patch.
+male is known to have a red crown strip during breeding season and female has rusty color underparts.
+small, colorful bird with yellow crest
+small bird with long tail (length of body)
+small, slender bird with long tail
+perching bird with medium sized beak (1.5-2 cm)
+usually seen on the ground, perched in trees, or sitting singly
+mostly red body with black wing tips and tail tip
+bicolored bird with glossy black feathers on the top of its head, wings and tail. The breast, belly, sides, back and undertail coverts are iridescent red or orange.
+medium-sized songbird with short tail, pointed wings
+small passerine bird, sometimes placed in estrildid finches
+perches upright on tree trunks and branches, sometimes clinging head downward
+two-limbed bird with short legs
+broad bills (male) or straight bills (female), pinkish-red when irritated
 small bird with long, decurved bill.
-short, conical bill
+pointed bill with orange spot near tip
+medium sized songbird with long tail
+red nape (back) and neck (except for the females and immatures)
+long, thin pointed bill
+long beak (male)
+male has purplish head, back, breast, and rump
+reddish body (darker than cardinals, brighter than robins)
+sharply pointed bill; grayish on top, pinkish on bottom
+long and pointed bill
+bird with short, notched tail
+males sing during the breeding season

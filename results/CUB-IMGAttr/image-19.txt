@@ -1,6 +1,19 @@
-053.Western_Grebe/Western_Grebe_0044_36188.jpg
+022.Chuck_will_Widow/Chuck_Will_Widow_0011_796954.jpg
 0.0
 0.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
+0.0
+1.0
 0.0
 0.0
 0.0
@@ -11,31 +24,11 @@
 0.0
 0.0
 0.0
-0.0
-0.0
 1.0
-0.0
-1.0
-0.0
-1.0
-0.0
-0.0
 1.0
 0.0
 0.0
 0.0
-1.0
-0.0
-0.0
-0.0
-1.0
-0.0
-1.0
-0.0
-1.0
-0.0
-0.0
-1.0
 1.0
 1.0
 0.0
@@ -43,7 +36,10 @@
 0.0
 0.0
 0.0
+1.0
 0.0
+1.0
+1.0
 0.0
 1.0
 0.0
@@ -59,109 +55,113 @@
 0.0
 0.0
 1.0
+0.0
+1.0
+0.0
+0.0
 0.0
 0.0
 0.0
 0.0
 
-053.Western_Grebe/Western_Grebe_0044_36188.jpg
-western subspecies of the Eared Grebe with distinctive black eye stripe that extends behind eye.
-white, fan-shaped tail; orange feet; light grey face and pinkish beak
-long, rounded tail with white sides and a black tip
-swimming bird with black, white, or gray feathers
-water bird with black, white, red, yellow, or gray plumage
-bicolored back, grayish white below the tail, black above
-long thin beak with yellow patches near the tip
-medium-sized water bird with a short, pointed bill, body covered in small white spots
-sea bird with black, white, brown, or grey body
-aquatic bird with white underparts.
-thin bill (tip of beak) with yellow near the end
-adults have black legs and feet, red to orange bill tipped with yellow, white head, gray upperparts and wings, and pale grey underparts with dark streaking on the flanks. Juveniles are similar but lack the adult's white face.
-white on the belly; a black mask, line, or stripe above the bill extending across the eye; female has a reddish tail feather tips
-long tail with black, white, brown or gray on the head
-small seabird with long, narrow bill
-long tail with white outer feathers
-water bird with a narrow, pointed bill
-male has a distinctive black and white striped head
-white stripe near the eye above dark brown forehead with long, straight beak and pale gray cheeks
+022.Chuck_will_Widow/Chuck_Will_Widow_0011_796954.jpg
 long tail (24cm) with white spots on the outer edge near the tip
-long, thin beak with red tip
-Long tail with two white outer feathers.
-long-necked and small head with short beak
-black wings, tail and head (often streaked with yellow)
-small seabird with long pointed wings
-white markings on the face, above the eyes, and below the tail feathers
-adult has black head, neck, upper breast and nape while immature has brownish head, neck, upper breast and nape. The bill of both sexes is pink with dark tip; the iris is pale yellow and the legs are greenish gray. Its flight is characterized by a quick straight forward flying pattern interspersed with some glides
-has short wings, an elongated tail, and rounded body that is light gray above with black markings on the breast; head and throat are white.
-short, conical beak with black markings on its head
-white body with black wing tips, tip of tail and underside (except under primary feathers)
-long beak (male)
-long tail with white tips
-thick tail with a dark-tipped bushy white tip.
-white head with feathers of varying lengths, a black cap, short tail, large yellow bill, small dark beak, and legs.
-gray head with a black strip down center, streaks of light on sides of breast, and white underparts.
-large beak that is pale at the base, gradually darkens towards the tip.
-water bird with distinctive bill, which has a wide tip
-water bird with dull greenish back, white breast patches, grey head, and yellow bill
-yellowish beak with black tip
-brownish grey head, underparts are off white. The tail has two black streaks on the underside.
-large beak with thick, down-curved, and long bill
-large, white, roundish head with black spots on the cap; and white-gray beak with orange gape
-long-tailed seabird, similar in appearance to a gull
-medium to large seabird with long pointed wings, short tail, and black cap on head
-small, slender seabird with dark plumage
-long, pointed beak
-large body with webbed and pointed beak
-A black head with a red crest, white mustache, a white cheek spot, and a red eye stripe. It has a white patch on the top of its back
-seabird with large head, slender bill, and long pointed wings
-duck-like appearance; white body, black wings and tail
-yellow on its head, black wings and tail, white breast and flanks, gray belly with rufous sides
-large, pointed beak
-duck with reddish-brown head, large white patch on back of neck and body, gray wings with black spots and a dark tail.
-grey head, neck, wings and tail with black spots on the body;
-wide, pointed tail (only when swimming)
-grey, white, or blue-gray feathers on its back
-short thin beak with black upper parts
-A. aylmeri and S. wallacii have black beaks/rostrums, whereas those of S. arctica are pale grey; S. arctica also has dark eyes, while the others do not
-long tail with white tip
-grey head with darker grey wings and tail
-large head with curved beak and short tail
-has blue-gray feathers on its back and neck, orange chest and belly, pale yellow undertail coverts, and white wing bars.
-medium/large aquatic bird with wings that are more elongated than round, and not small like the albatrosses or gannets.
-black, white, or grey head with large black patches above the beak
-white-tipped tail
-pointed beak with black tip
+body covered with black-and-white speckles, except for its head and neck which are brown. It has a white patch on the side of its bill.
+yellow stripes on the sides of its neck
+mottled breast with horizontal white stripes (visible only from the side)
 long tail with a conspicuous white spot near the tip
-black and white plumage with yellow patches on cheeks or under the chin
-large, long-bodied seabird with wide wingspread and rounded tail
-long, tapered wings and narrow beak
-long tail with white, brown and black stripes
-large bill with gray upperparts and orange-yellow on face and hind neck
-long, straight beak (bill) with nostrils on the sides
-long beak with yellow spot on forehead
-black-and-white patterned plumage on its upper parts, white underparts and tail with brown streaks
-fine streaks across breast; square tail with long central feathers.
-long, thin tail with white tip
-small, round body, long tail, white belly with a black line across it, and yellow-brown feathers on its head
-white supercilium above the eye, black oval ear patches below, and yellow-greenish back with black wings
-large, light beak with long, dark tip, and pink feet
-white body with black wingtips, tail, and head
-white tip on tail feathers
-webbed feet with large, sharply pointed, black bills
-medium to long tail, usually with central white spot
-longish legs, with yellowish feet
-plumage with a grey head, brown back, black streaks on the breast, white stripe above eye and a yellow beak.
-a long pointed bill tipped by a hooked blunt tip
-a seabird with a black and white plumage
-long, black-tipped tail
-has white on most of its body, excepting a black cap and nape. The back is dark brownish gray, the breast is white, and there are white wing patches visible in flight. The bill is black.
-male has bright yellow body and wings with black markings on head and back; female similar but less colorful
-white head, neck and underparts with small black markings on the back of their heads
-black with white patches around the bill, neck, and forehead; dark body with pale gray underbelly
-duck with black back, white belly, white patches on wings, and grey head
-brownish-gray upperparts with black wings and tail, white underparts, pale gray sides
-grayish, dark, or smoky-colored plumage with white spots and streaks on the breast
-thin pointed beak
+black and white speckled feather pattern on its chest and underside of their long tail
+mostly brown body, with white striping on the sides of the neck and chest and pale gray-brown underparts.
+light-colored stripe along sides of the neck and mantle extending upward to underwing coverts
+grayish brown upper parts, white underparts with black stripes on sides
+black spotted crown, feathers with brown highlights on breast, gray head with white patches, under the tail.
+subdued gray or brown body with darker stripes
+15cm-long brownish, grassy, thickly streaked head with black feathers
 a long tail that has two distinctive white patches.
-long pointed beak
-small, rounded tail, darker feathers on top of wings
+long tail with white, brown and black stripes
+5 to 6 inches long; brown above with black cap, white below
+pale brown with black streaks on the breast, tail, and crown
+dark, grayish brown body with light belly
+yellow belly and white undertail coverts, with small white spots along side of flanks
+black with white patches around the bill, neck, and forehead; dark body with pale gray underbelly
+red male, yellowish white female with black stripes on the sides of body & long tail.
+slender body, gray under parts, long tail (about twice length of its body), hooked bill, short rounded wings and black eyes
+male has a distinctive black and white striped head
+black, grey, white, brown, or red-brown body with short tail
+brown-and-white striped face with black stripes on neck
+brown colouring on the back of its neck, with darker streaks running from head down shoulders. On top of that, it has a long black crest running along its back with white flashes at its sides and front
+Black and white striped body with a long tail
+a long tail with white markings on it
+long tail (length of body)
+black-and-white patterned plumage on its upper parts, white underparts and tail with brown streaks
+brown top, grey underparts, yellow flank striped with black and white on the head
+dark throat with light breast, stripes on neck
+red underparts with dark patches on the sides of the breast and flanks
+streaked flank with yellow underparts
+brown body with white spots below its belly
+male has bold black-and-white streaked head and upper body; female has duller olive back; both have cinnamon-colored breast
+striped head and throat, short bill
+gray head with a black strip down center, streaks of light on sides of breast, and white underparts.
+short tail (4–7 cm)
+brownish upper parts, white underparts with black spots on the head, neck and breast.
+A large, muscular reptile with a long tail and short legs.
+brown with striped head
+spine-like feathers above its tail
+white chest with black spots and stripes, large red patch on face
+grey-brown body with white underparts; females are duller than males, but hard to distinguish in photos
+long tail with black, white, brown or gray on the head
+white belly with black spots, sometimes showing a W shape or striped pattern
+long, rounded tail with white sides and a black tip
+bicolored back, grayish white below the tail, black above
+short, streaked tail
+brownish gray above, pale on the sides of its body with some white below
+has large head and eyes, black stripes around the face, and white spots on the chest.
+30 cm long, with an orange-yellow head and bill
+mottled upperparts and yellow underparts with heavy, dark eye stripe down the side of its face
+reddish brown upper parts and pale underparts, dark streaks on breast
+dark upper parts, pale underparts, streaked chest
+brown upper parts with black streaks, white belly with darker streaking, and pale grey head.
+long tail (generally longer than head)
+brown, black or grey stripes on the upper parts of the body
+black, white, or red-brown with large white patch at the back of its head
+white eyebrow, cheek stripe, patch on each side of the neck and chest
+fine streaks across breast; square tail with long central feathers.
+short slender tail with black center.
+round body with short, thick neck and long tail
+mostly yellow below, white above; streaked flanks and breast
+triangular white patches on the side of its head, like an eyebrow
+striped head, breast or belly (sometimes)
+dark brown streaked breast with buff flanks, belly, and undertail coverts
+prominent white eyebrow stripe that continues down the side of each neck and becomes broad collar at throat
+streaked plumage of various tones of brown, gray, black, and yellow on the face, breast, wings, back, and tail.
+yellowish brown upper parts with heavy black streaking on sides
+brown body with white face, throat, and breast with dark stripes on wings and tail
+yellow underside of the tail
+white cheeks, with distinctive dark streaking on the throat.
+adults are olive green above. Underneath is white with streaking.
+gray upperparts with fine black spots and stripes
+Large black body with white patches of the head, neck, chest.
+small, round body, long tail, white belly with a black line across it, and yellow-brown feathers on its head
+black frontal band on each side of head; two short, broad, white wing bars; a short tuft of feathers under the tail
+brown with pale stripes on its head or neck
+spotted tail, brown feathers on sides of head
+brown streaked neck, chest, belly, under tail coverts
+brownish head with white stripes on sides of neck
+brown above the neck, back, wings, tail; white below abdomen, undertail coverts, and rump
+streaked neck, breast, and flank areas
+brownish upperparts with black spots, striped chest, and whitish underparts
+gray female
+white underparts with black spots on the breast, flanks, and sides
+grey, white below with dark streaks on chest
+two black bars on its chest and two black stripes along each side of the body
+sooty-brown chest, belly and ventral side of the tail
+medium to long tail, usually with central white spot
+striped tail
+warm reddish-brown flanks, rump and tail coverts; white belly and undertail
+long, rectangular tail
+blackish-brown head, with conspicuous white coloring on the back of neck and body (with black around head)
+wide tail with white tips
+pale grayish body, with dark streaks on the breast or belly
+brown body with black speckles on upperparts, white belly and breast
+white under its tail
+large, triangular head

@@ -1,28 +1,4 @@
-153.Philadelphia_Vireo/Philadelphia_Vireo_0028_156510.jpg
-0.0
-0.0
-1.0
-0.0
-0.0
-0.0
-0.0
-1.0
-1.0
-0.0
-0.0
-0.0
-1.0
-0.0
-0.0
-0.0
-0.0
-1.0
-1.0
-1.0
-0.0
-0.0
-1.0
-0.0
+071.Long_tailed_Jaeger/Long_Tailed_Jaeger_0064_60999.jpg
 0.0
 0.0
 0.0
@@ -36,18 +12,25 @@
 0.0
 0.0
 0.0
-0.0
-0.0
-1.0
-0.0
 1.0
 0.0
 0.0
 0.0
-0.0
-1.0
 1.0
 0.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+0.0
+0.0
+1.0
 0.0
 0.0
 0.0
@@ -62,106 +45,123 @@
 0.0
 0.0
 1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
 1.0
+1.0
+0.0
+0.0
+0.0
+0.0
 
-153.Philadelphia_Vireo/Philadelphia_Vireo_0028_156510.jpg
-one of the North American wood warblers
-long, thin bill with yellow tip
-small, yellowish-green songbird with white stripe on forehead
-15cm long with greenish body, blackcap and wings, yellow underparts
-species of New World warblers (Parulidae)
-warbler species
-pale yellow underparts, often tinged with pink
-warbler with dark head, yellow belly
-large, round and yellow bill
-small, yellowish songbird
-bright yellow-green above, with white underside
-White patch below eye is larger than in other warblers.
-mostly yellow below, white above; streaked flanks and breast
-thin yellow bill
-plump body with a short tail, short yellow bill.
-a songbird species with the males having bright yellow underparts.
-small songbird with pale yellow head, back, sides, tail and wing patches
-thin bill with pale spot near tip
-small, grey-brown warblers
-small, compact warbler
-brown upper parts, white underparts with yellow throat, yellow eyebrow, and pale supercilium
-small songbird with distinctive pale eye stripe across face
-long yellow bill
-large, heavy bill that is yellow at tip and pinkish-gray otherwise
-small, colorful warbler with black mask around eyes
-long, thin pointed bill
-male has yellow throat, breast, flanks, and forehead
-small flycatcher with brownish upperparts, white underparts, and pale superciliary stripe
-short-tailed warbler with black and white plumage
-white eye stripe and malar stripe
-bright yellow underparts with no black spots on the wings or tail
-long thin beak with yellow patches near the tip
-distinctive white eye ring, brown cap, yellow body, dark bars on wings (male) or dark head and neck with lighter streaks below the throat (female).
-small pointed bill
-pale buff or grey underparts with white eye ring and supercilium
-thin pointed bill
-large, curved bill with long, pointed tip and yellow gape (area under the tip of the bill)
-thin, pointed bill
-brown cap on head; yellow streaks underneath, and cheeks
-yellow underparts with black streaks and spots
-short bill, usually with a prominent stripe
-short bill with greyish upperparts, white underparts
-small songbird with yellowish, tan or white under parts
-olive green body with white underparts, a gray mask around the eye and a black cap. Yellow on each side of the lower cheek is sometimes seen as well.
-short, pointed bill
-small songbird with black eye stripe
-warbler with stripes
-yellow-striped throat
-thin bill (tip of beak) with yellow near the end
-woodland bird with grey wings, yellow throat, white belly.
-bright yellow on wings and tail during spring
-long yellow bill with black spot on lower mandible (the upper portion of the bill is mostly black)
-small, thick yellow beak
-sharp beak with a small, pointed bill
-elongated yellow bill with bills curved downward near tip and flat at the base
-male usually has black cap
-yellow throat patch
-brown body, black cap, and white eye stripe
-small songbird of the New World tropics with yellow underparts, black eye stripes, white wing spots and a long tail
-yellow underparts with black band around neck
-common yellowthroats have bright yellow throat patches on the undersides of their breasts.
-bright yellow on head, throat and underparts with black spots above the bill
-gray with white eye stripes
-distinctive white eye stripe
-yellow throat with black stripe
-male has black bib and yellow breast band.
-the long, pointed bill (yellow with black tip)
-small songbird with black "sleeve" around neck, gray sideburns
-yellowish bill
-bright yellow underparts with black streaks on the chest
-small songbird with white undersides, gray upperparts with black spots and barring on wings, and yellowish bill
-short, pointed bill (foraging)
-migratory songbird with black upperparts, white underparts, and a white eyebrow stripe
-narrow, pointed bill
-medium-sized songbird of woodland edges, thickets, or gardens.
-small migratory songbird weighing about 0.27–0.31 oz (7.7–8.8 g)
-large bill, very dark cap with white eye and pale cheek patch.
-small songbird with yellow, white and black plumage
-white patch on each wing, and faint white eye stripe
-short legs with bright yellow feet (pictured)
-crests of white and yellow feathers on its forehead
-large, gray-yellow bill with red spot at the base of upper mandible
-yellow underparts, white throat
-bright yellow-buff crest with a grey-black band on the forehead
-yellow underparts (except for the black throat)
-small songbird, with white eye ring and black mask
-yellow wash below tail and above undertail coverts
-male has a black hood, white face, white throat, and grey back with black bars; female is similar but not as brightly colored.
-small songbird with blackish upperparts, gray underparts, and streaked breast
-dark hooded cap with white spot at base of lower bill
-narrow, pointed bill with distinctive brown spot near the tip of the upper mandible
-bright yellow body with black tail and head
-brown above, white below with black mask (eye patch), white throat, yellow underside of tail.
-male has bright yellow body and wings with black markings on head and back; female similar but less colorful
-small, plump bird with yellow wings
-gray body and yellow underparts
-bright yellow below its tails
-yellow-green hue around its eyes and on the sides of its head
-long thin pointed bill tipped with black
+071.Long_tailed_Jaeger/Long_Tailed_Jaeger_0064_60999.jpg
+distinctive foraging method of flying out to sea then turning on its back to dive for small fish
+small seabird with long pointed wings
+small seabird with long, narrow bill
+small black seabird with white underbelly and tipped wings
+seabird with large head, slender bill, and long pointed wings
+small seabird
+medium to large seabird with long pointed wings, short tail, and black cap on head
+seabird of the open ocean with powerful, rounded wings
+large grey bill with dark tip
+small, slender seabird with dark plumage
+small black, white or brown seabird with short legs and wings
+bluish-grey head, upperparts and breast
+sea bird with black, white, brown, or grey body
+grey underparts with a black line down the middle from breast to flanks, and blackish wings with clear wing bar
+medium-sized seabird; 40–50 cm (16–20 inches) long, with a wingspan of about 80 centimetres (31 inches) and weighing up to 700 g (1.5 lb); dark brown on back becoming paler below
+large, long-bodied seabird with wide wingspread and rounded tail
+small bird with dark grey upper parts, pale underparts and white supercilium. The tail is tipped with white. They have a distinctive black mask around the eyes
+small, slate-gray bird with a white line running from its bill through the eye to the back of the head; and red and black markings on wings.
+little, thin, black bill with sharp lower mandible
+has white on most of its body, excepting a black cap and nape. The back is dark brownish gray, the breast is white, and there are white wing patches visible in flight. The bill is black.
+black bill with a curved, sharp upper and lower mandible
+medium sized, black seabird with white patches at the base of its bill, and darker feathering on top of its head and tail. It has an indistinct eye ring which it uses to lure prey close enough for the bird to strike it with the sharp tip of its bill
 small bird with dark upperparts, pale underparts, white eye ring, and a thin black bill. Male has a bright yellow throat patch which females lack;
+grey-black body with wings that go almost entirely white (except for the tip) in flight
+small bird with short tail, usually brownish above, paler below. Juveniles duller and greyer.
+small bird with black spots on white chest, light gray head, and solid brown back with fine white or buff bars
+brownish upperparts with fine black streaks on a white belly, gray breast; pale crowned neck; whitish eye ring
+Dark back, wings, and tail. The head is white in adults; this extends to the neck of young birds.
+spotted breast, with white crescents on each wing
+white cheeks, with distinctive dark streaking on the throat.
+the gull with a white head, red bill and black wingtips. It has a black band across the tail in flight. It lacks the black markings on its face that masks its eye.
+adults often have blackish upperparts, pale underparts and breast bands, but younger birds can be difficult to separate from other species.
+small brown bird with long tail and whitish breast, flanks, and belly
+adult females have dark bills while males have pale bill
+medium-sized bird with blue-grey upperparts and white underparts
+black, white or grey bird with dark tips on wings
+medium-sized, 18–20 cm (7–8 inches) long sea bird with white body and black wings
+small brown bird with grey upperparts, pale sides, and thin, dark line above eye
+small songbird with blackish upperparts, gray underparts, and streaked breast
+small bird with short wings, long tail, black/brown markings on the throat, breast, and abdomen
+small bird with white underparts and dark upper parts
+gray head, back, wings and breast
+small grayish bird with white wings
+white-bodied, black-tipped wings and tail
+1m long seabird
+dark or pale brown head, throat, back, tail; pale gray breast; white underparts
+short black bill with white tip
+female has olive-grey upperparts, white belly and throat, orange breast patches on chest, and blue tail feather spots
+short bill with greyish upperparts, white underparts
+crow-sized black bird with white underparts, grey head and breast, brown upperparts, and white wing patches in flight.
+short, rounded wings with white patches that turn black before flight
+brown upper parts with black streaks, white belly with darker streaking, and pale grey head.
+forked tail in flight
+small, light brown bird with black masks
+small bird with black head, wings, and tail
+small blackish-gray bird with white underparts and pale, faint streaks on the upper breast.
+a seabird with a black and white plumage
+long-tailed seabird, similar in appearance to a gull
+grey wings with black tips and streaks on the upper surface
+bird with a hooked beak and long tail
+black beak with yellow tip
+small, brownish, predominantly underwing bird with black wingtips and white rump
+medium size bird with long bill
+white patch on wing and small white patches on head, throat, underparts, tail;
+small bird with long, narrow wings and short tail
+small bird with kite-like shape and long, pointed bill
+brownish bird with white wing patches and striping on its chest and throat. It has two or three black dots above the bill
+small, grayish-brown bird with white wing patches
+wings outspread when floating (but normally hidden under water)
+small brownish bird with white belly, wing bars, and whitish eye ring
+slender, light colored bill with a hook at the tip that helps it catch and hold onto prey
+medium grey head, neck, and underparts with pale cheeks and supercilium; blackish eye stripe with white spot above bill.
+small bird with brown upperparts and white underparts
+bird with short bill, black head
+small grey bird with streaked head, breast, and back
+small bird with short tail, dark cap on head that extends back as breast patch
+small, dull grey bird with white underneath the wings
+small bird with brown upperparts, white belly, and a black cap, collar, bib, and wing bars
+a long pointed bill tipped by a hooked blunt tip
+mostly white body with black wingtips and tail, but also exist black (females) or red birds (males)
+small, brownish bird with thin bill and long tail
+small bird with brown head, breast and wings
+small, white bird with black "hairy" wings and tail
+gray above, white below; some black on wings and tail
+dark grey bird with black speckles on upperparts
+bird with black cap, white chin and throat patch, wings with white bars on underparts, grey back, black wingtips
+dark cap, pale gray collar and breast, with streaked sides and flanks, white underparts
+blackish-grey upper parts, white underparts, yellow eye patches and bills
+black wings with white spot on shoulder; white underparts, grey crown, tail
+bird with distinctive, deeply forked tail, short wings and long pointed beak
+long yellow bill with black spot on lower mandible (the upper portion of the bill is mostly black)
+medium sized seabird with wingspan between 39 - 41 inches
+brownish black upperparts, white belly, red-crown patch on head, reddish throat and nape (back of neck)
+small black bird with pale or rufous sides, breast, and belly
+small bird with black wings, white breast, blue crown
+small, brownish, long-tailed bird with short, pointed wings
+head is white with grey feathers, and the wings have a grey cap above; red bill
+small bird with short, rounded wings and long tail
+brownish upper body with dark wings
+gray head with a black strip down center, streaks of light on sides of breast, and white underparts.

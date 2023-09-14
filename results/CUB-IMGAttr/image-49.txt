@@ -1,7 +1,16 @@
-100.Brown_Pelican/Brown_Pelican_0018_94432.jpg
+043.Yellow_bellied_Flycatcher/Yellow_Bellied_Flycatcher_0050_42598.jpg
 0.0
 0.0
+1.0
 0.0
+1.0
+0.0
+0.0
+1.0
+0.0
+1.0
+1.0
+1.0
 0.0
 0.0
 0.0
@@ -10,34 +19,6 @@
 0.0
 0.0
 1.0
-1.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-1.0
-0.0
-0.0
-0.0
-1.0
-1.0
-0.0
 0.0
 0.0
 0.0
@@ -55,113 +36,132 @@
 1.0
 0.0
 0.0
+1.0
+0.0
+0.0
+0.0
 0.0
 0.0
 0.0
 0.0
 1.0
 0.0
+1.0
+0.0
+1.0
+0.0
+1.0
+1.0
+0.0
+1.0
 0.0
 0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
 
-100.Brown_Pelican/Brown_Pelican_0018_94432.jpg
-pelican with white feather on beak, wings, body, legs and tail
-long pointed bill similar to those of herons, but stouter and thicker; upper mandible slightly downcurved
-white, fan-shaped tail; orange feet; light grey face and pinkish beak
-large body, long, narrow beak and large pink bill
-long thin beak (bill)
-long, straight beak (bill) with nostrils on the sides
-slim body with long narrow tail
-long beak (male)
-bird with long neck and pointed bill
-a long pointed bill tipped by a hooked blunt tip
-bicolored back, grayish white below the tail, black above
-white front of neck contrasts with black nape
-long, thin beak with red tip
-male has sky blue head and tail, female is brownish-grey overall
-long, thin tail with white tip
-large beak and long, thin neck
-large hooked bill, long thin beak
-long, rounded tail with white sides and a black tip
-long thin beak with yellow patches near the tip
-distinctive cone-shaped bill (a “bill” is the beak)
-white markings on the face, above the eyes, and below the tail feathers
-long, slender beak
-long, pointed beak
-long-necked and small head with short beak
-relatively large beak, 2.7cm long but only half the length of its body
-large hooked beak
-small head, long bill and tail
-long tail with white outer feathers
-white body with black wingtips, tail, and head
-long tail with white tips
-water bird with distinctive bill, which has a wide tip
-slender, light colored bill with a hook at the tip that helps it catch and hold onto prey
-medium sized, with long tail
-large, pointed beak
-long tail with white tip
-white head with black cap and mantle; long, pointed bill
-water bird with a narrow, pointed bill
-flat face with forward pointing eyes and hooked beak
-Long tail with two white outer feathers.
-long slender beak
-five limbed bird with long, thin tail
-white head, neck and underparts with small black markings on the back of their heads
-long pointed beak
-long thin beak
-long slender beak and short legs
-male has a distinctive black and white striped head
-large bill with ear-like flaps
-long, pouched beak
-large bird with dark beak, white head, black wingtips
-a medium-sized bird with long tail
-bright yellow on head, throat and underparts with black spots above the bill
-medium-sized bird with a long tail, short legs, and thin beak
-long bill, which has an upper mandible that is yellow with black tip and lower mandible that is black;
-large, sharp bill
-large, heavy bill that is yellow at tip and pinkish-gray otherwise
-long, thin bill with yellow tip
-long, upcurved beak
-white underparts with black streaks on the chest and sides, and white supercilium that extends up from below the eye to above the bill
-white underparts and forehead; grey upper parts
-a waterbird with short legs
-longish legs, with yellowish feet
-white mustache and eyebrows above the beak
-large head with curved beak and short tail
-long tail with a conspicuous white spot near the tip
-white on the belly; a black mask, line, or stripe above the bill extending across the eye; female has a reddish tail feather tips
+043.Yellow_bellied_Flycatcher/Yellow_Bellied_Flycatcher_0050_42598.jpg
+small songbird with white undersides, gray upperparts with black spots and barring on wings, and yellowish bill
+small bird with yellow chest, black cap, white eyebrow, and white stripes on the face
+migratory songbird with black upperparts, white underparts, and a white eyebrow stripe
+small, yellowish-green songbird with white stripe on forehead
+small songbird with yellowish, tan or white under parts
+small songbird with pale yellow head, back, sides, tail and wing patches
+small flycatcher with brownish upperparts, white underparts, and pale superciliary stripe
+small migratory passerine bird with short conical bill, small white eye crescents, and distinctive black stripe above eye
+small songbird with white patches on its face
+small songbird with blackish upperparts, gray underparts, and streaked breast
+small songbird with rounded wings, long tail, and short beak
+small, colorful warbler with black mask around eyes
+small songbird with black "sleeve" around neck, gray sideburns
+yellow eyebrows over the eyes, yellow-olive underparts, and a yellowish bill
+small songbird with distinctive pale eye stripe across face
+olive green body with white underparts, a gray mask around the eye and a black cap. Yellow on each side of the lower cheek is sometimes seen as well.
+small songbird with yellow, white and black plumage
+small bird with characteristic orange face, black eye stripes, and white wing bars
+small bird with olive green body, wings, neck, head and breast. Underparts are yellow while the back and belly have distinct brown streaks.
+white supercilium above the eye, black oval ear patches below, and yellow-greenish back with black wings
+small songbird with two white stripes on its head
+small songbird with white patches on the breast
+small songbird with white underparts, black mask across face, wings, and back
+small bird with brownish back, white belly and breast, and pale eyebrow stripes
+small bird with long tail, round head, and dark mask around the eyes
+small, olive green bird with white patches on its wings
+small bird with black body, white face, dark cap, red bill, and yellow legs
+small bird with pale streaks across chest
+olive green color with black spots on their back, wings, and tail. The head, throat, chest, belly, and sides are yellowish-green with orange patches at the bottom of their beaks.
+medium size passerine bird with olive green back, white belly, pale pink legs, and long thin grey beak. The male of the species is black on top with a bright yellow chest; while females are brown on top and have pale underparts. Yellow breasted chat mainly feeds on insects but also takes nectar and fruit.
+small songbird with colorful feathers, a black forehead patch and white wing bars
+small songbird with brown, tan, yellowish plumage
+small bird with dark upperparts, pale underparts, white eye ring, and a thin black bill. Male has a bright yellow throat patch which females lack;
+species of New World warblers (Parulidae)
+white cheek patches on the sides of face; eyebrow stripe above and below eye; gray cap at back of head; black line through eye; yellow eye ring; brown body, head and neck; light gray breast, belly, and undertail coverts with white edge on wings
+medium-sized songbird with black cap, white face, and grayish wings, with distinctive white eyebrow stripe and buffy flanks.
+small brown bird with white eyebrow stripes, yellow spots on its chest, and black stripes on the wings
+small grey bird with black cap, white stripe over eye, red eyes, and yellow underparts.
+olive green upperparts, yellow underparts, and white wing patches
+brown upperparts, greenish head with black stripe through eye and throat; white lower sides with grey wash; yellow rump
+medium sized songbird with greyish brown upper parts and yellow underparts
+small bird with dark cap and black streaks on its face; white below the eyes, pale chest
+small bird with white underparts and dark upper parts
+mostly yellow below, white above; streaked flanks and breast
+small, yellowish songbird
+small, colorful bird with yellow crest
+flycatcher species with black eyestripe and olive back
+Small bird with pale grey feathers on its head, chest, shoulders and tail.
+medium-sized bird with pale yellow upperparts
+small flycatcher with pale bluish tinge on back, rump, and wings
+small bird with pointed wings, short tail, and straight bill
+brown cap on head; yellow streaks underneath, and cheeks
+medium-sized songbird with short tail, pointed wings
+small, slender songbird with brown wings (not gray)
+small bird with brown streaked wings, white belly, dark-colored tail and whitish eye ring.
+small, bright yellow bird with black wing bars and white belly
+small bird with soft gray back, black wings, yellow belly, and white wing bars.
+small bird with pointed wings, yellow body, black cap, white throat
+small, short-tailed bird with an off-white body, black wings with white tips and yellow-orange undertail
+brown body with pale belly, whitish-gray crown stripes, white eye ring, red spot on the chest, blue bill
+small, plump bird with yellow wings
+small, short-tailed bird with rounded wings
+small songbird with head and breast in black, white, or streaked brown
+small songbird with brown wings, back and head
+olive green upperparts, whitish underparts with yellow tinting around the eye, and grey throat
+yellowish beak with black tip
+a small bird with long, slightly curved bill
+small, gray bird with a white eye ring and long, thin bill; wings folded against sides of body when at rest
+bird with an olive-green head and back, white underparts, black eyestripe across the eye, and white on forehead like a hood.
 has blue-gray feathers on its back and neck, orange chest and belly, pale yellow undertail coverts, and white wing bars.
-long tail (24cm) with white spots on the outer edge near the tip
-large, gray bill
-long, curved beak
-small, slender bird with long tail
-large, light beak with long, dark tip, and pink feet
-large beak with a straight top line
-long, slim bill pointed at the end
-long beak, and shorter than the rest of body
-white body with black wing tips, tip of tail and underside (except under primary feathers)
-large beak that is pale at the base, gradually darkens towards the tip.
-large beak with thick, down-curved, and long bill
-slender body, gray under parts, long tail (about twice length of its body), hooked bill, short rounded wings and black eyes
-small, slender bird with long slim beak
-thin pointed beak
-long thin bill
-two-limbed bird with long tail
-thin, pointy bill
-a crest and long tail
-a medium sized bird with grey streaked back, pale flanks, and white belly.
-short blunt bill with distinctive coloration (long, straight, and blackish at the tip)
-medium-sized water bird with a short, pointed bill, body covered in small white spots
-long pointy bill.
-bird with brown back, white underbelly, pink legs and beak
-male has blue breast, yellow head, orange underparts, white line along flank
-long tail (length of body)
-bird with a hooked beak and long tail
-long tail of medium length
-it has a long, slender bill that turns downward at the tip.
-a white or pale grey bill
-large bill with gray upperparts and orange-yellow on face and hind neck
-four-toed bird with long tail
-white underbelly, with reddish feathers on neck
-brownish grey head, underparts are off white. The tail has two black streaks on the underside.
-long, curved bill with deep grooves on upper mandible
+small, long-tailed bird with downcurved bill
+distinctive cone-shaped bill (a “bill” is the beak)
+white, olive green and yellow feathers on the back and underparts
+a songbird species with the males having bright yellow underparts.
+small brown bird with spotted breast, yellow eyes, white eyebrow stripe above eye
+medium-sized songbird with a brownish-gray back, grayish white underside, pinkish tail, and black streaks on breast
+small bird with dark grey upper parts, pale underparts and white supercilium. The tail is tipped with white. They have a distinctive black mask around the eyes
+slim-bodied and small headed songbird
+yellowish crown, neck and breast, with black streaks on head and breast
+small bird with yellow body plumage and black wings
+one of the North American wood warblers
+bird with yellow, white, or gray breast
+small song bird with brown plumage, black mask and white wing patches
+small bird with white wing patches and eye ring
+small bird with white underparts and brown upperparts
+bright yellow-buff crest with a grey-black band on the forehead
+small bird with short, rounded wings and long tail
+small, round body, long tail, white belly with a black line across it, and yellow-brown feathers on its head
+small, long-tailed bird with white underparts
+small bird with yellow belly and breast
+small songbird with wings outstretched, often on top of a tree branch
+white chest, yellow-green rump and wing bars
+slender, long-tailed songbird with short wings
+American passerine bird with yellow head, wings, and tail contrasting with olive back
+large, gray-yellow bill with red spot at the base of upper mandible
+black and white stripes on its forehead and chest, yellow cap, and pink legs.
+small bird with gray back, wings and tail; white underparts with brown streaks on the flanks and chest and white mustache stripe
+yellow-green birds with black caps and white streaks below the eyes
+small bird with black spots on the white feathers of its tail
+small bird (~15cm long) with large body, rounded head, short tail, and straight bill

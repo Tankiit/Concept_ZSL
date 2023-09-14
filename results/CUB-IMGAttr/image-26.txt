@@ -1,14 +1,4 @@
-069.Rufous_Hummingbird/Rufous_Hummingbird_0124_58465.jpg
-1.0
-0.0
-1.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
+026.Bronzed_Cowbird/Bronzed_Cowbird_0025_796213.jpg
 0.0
 1.0
 0.0
@@ -18,16 +8,14 @@
 0.0
 1.0
 0.0
-0.0
-1.0
-1.0
-0.0
-0.0
 1.0
 0.0
 0.0
 0.0
-1.0
+0.0
+0.0
+0.0
+0.0
 0.0
 0.0
 1.0
@@ -38,22 +26,12 @@
 0.0
 0.0
 1.0
-1.0
 0.0
 0.0
 0.0
 0.0
 0.0
 0.0
-0.0
-1.0
-0.0
-1.0
-1.0
-1.0
-0.0
-0.0
-1.0
 0.0
 0.0
 0.0
@@ -63,105 +41,127 @@
 0.0
 0.0
 0.0
+1.0
+0.0
+1.0
+1.0
+0.0
+0.0
+1.0
+0.0
+0.0
+1.0
+0.0
+1.0
+1.0
+0.0
+0.0
+1.0
+1.0
+0.0
+1.0
+0.0
+0.0
+1.0
 
-069.Rufous_Hummingbird/Rufous_Hummingbird_0124_58465.jpg
-humming bird with red throat
-adult males have iridescent, shimmering red feathers on wings and tail during breeding season; otherwise, they are dark
-black, white, or rufous/buffish-brown upperparts
-medium sized hummingbird, 4 inches long, with black chest
-red, white, green, or blue spots on the wings and tail
-rufous back
-white spots on the neck, back, wings, and tail (males have more than females)
-has a very characteristic shape with upright posture, short wings, long legs, small head and the body is 25–30 cm (10–12 inches) long. It has rufous upperparts, buff underparts and a blackish facial marking that may or may not extend down to the throat
-small hummingbird with metallic red throat feathers, white chest and flanks, gray back, black tail feathers, gray cap and greyish wings
-streaked or spotted flank with blue, purple, green, or rufous markings
-pinkish-red tipped tail feathers
-long, narrow wings that are spread open during flight creating the appearance of a beak and head
-long tail extending beyond tip of wings when perched or in flight
-male is known to have a red crown strip during breeding season and female has rusty color underparts.
-short tail and rufous flanks
-has long pointed wings that spread out when they land.
-wings that extend past tail when perching or flying
-has white wing bar and rufous sides on the breast
-male has black markings on its white throat; female has no markings on her white throat
-small, conical bill for cracking seeds and grains; long legs; medium brown back with lighter belly; wings that fold in a sharp angle.
-reddish-bronze back and flanks, green breast, white chin, black stripe through eye, white throat patch.
-small bird with long tail streamers
-long tail (slightly longer than wings)
-thin, long wings with pointed tails
-medium sized songbird with long tail
-streaked upperparts with brownish or greyish colors
-dark-colored head, throat, back, wing coverts, and tail with white or yellow spots on the wings.
-long tail and wings
-reddish back, wings and tail with black belly
-brown head, streaked back with fine darker lines and pale supercilium. Breeding males have rufous crown and pink supercilium with orange throat patch; nonbreeders lack coloration of breeding male.
-small bird with wings that are pointed when folded, short tails, long legs and small strong bills for probing food.
-metallic green back, sides of head and breast, rufous-colored flanks
-greenish-black upperparts, orange underparts
-small wings, short tail
-greenish back and wings, rufous underparts, and an orange chest patch
-has orange under tail feathers
-brownish upperparts, wings, and long pointed tail
-long, drooping tail feathers
-long narrow pointed wings
-brown streaked neck, chest, belly, under tail coverts
-metallic green upperparts
-distinctive white or pale gray spot on each wing; forked tail; male is more colourful than female
-slim-bodied and small headed songbird
-glossy bright green upperparts
-tail that appears as a dark fan shape, often when flapping its wings.
-long bill, which has an upper mandible that is yellow with black tip and lower mandible that is black;
-long thin pointed wings
-medium-sized songbird of woodland edges, thickets, or gardens.
-brown upperparts, white throat
-white spots on wings, tail feathers and above the eyes
-little, thin, black bill with sharp lower mandible
-yellow underbelly, rufous flanks and red eye ring
-black eye stripes on the wings.
+026.Bronzed_Cowbird/Bronzed_Cowbird_0025_796213.jpg
+medium-sized black bird with glossy feathers
+medium sized black bird with a yellow band across the chest, back, and tail
+darker than the spotted grackle with pale stripes at throat and cheeks
+medium sized black bird with distinctive glossy, iridescent black plumage
+medium-sized songbird with bright red breast and black mask
+black, white, or red feathered body with a large black spot on its head
+small, black bird with white underparts and yellow or olive upperparts
+small species of crow or starling, with all-black plumage except for their white eye patches
+all black with white patches on the chest, back, and wings; red throat pouch visible (mostly seen when male)
+cowbird with small, black head
+male has a black hood, white face, white throat, and grey back with black bars; female is similar but not as brightly colored.
+black-headed, olive back bird with red eyes that nests in tangled, wet forests on the eastern coast of North America.
+small black bird with red eyebrow
+black plumage on the top of its head, along its neck, and back
 males sing loudly in territories, while females do not
-bobbing head when singing; the female's song sounds like two single notes separated by a few hundredths of a second
-sleek profile, long wings and tail
-streaked upperparts with fine buff or brownish streaks on the breast.
-male has long curved bill with black and orange tips, female lacks bill
-small, migratory bird
-red underbelly with white spots on chest
-brownish upperparts with rufous crown, streaked flanks, and faint eyebrows
-brown, white, or black coloring with red patches on the wings and tail
-slim body with long narrow tail
-white spots on tail feathers
-long tail and brown wings
-long tail, pointed wings and long legs
-white spots on wings and tail
-red male, yellowish white female with black stripes on the sides of body & long tail.
-long tail feathers
-male has a chestnut throat; female has a grayish brown throat
-Long tail with two white outer feathers.
-sharp wing and tail feathers
-long pointed wings
-long wings (slightly longer than the tail)
-white patches on the wings and tail
-black, white, or brown with long, slender bill, short tail and wings;
-male has bright orange throat, while female has white spot on the lower breast.
-elongated tail feathers
-brown upperparts with black spotting on wings and tail, white belly, and bright yellow throat stripe (males only)
-long tail with white outer feathers
-small songbird (3 inches long)
-male has a bright orange throat patch
-has short, rounded wings
-small songbird with bright coloration
-sleek and glossy feathers on the upperparts
-small songbird
-smallish bird, longer wings than body
+small bird with dark cap and black streaks on its face; white below the eyes, pale chest
+small, black bird with white patches on its tail, wings and head. Juveniles have brown backs
+black wings with white spot on shoulder; white underparts, grey crown, tail
+black bird with spots, lines or patches of white on its underside
+bicolored bird with glossy black feathers on the top of its head, wings and tail. The breast, belly, sides, back and undertail coverts are iridescent red or orange.
+small songbird with black "sleeve" around neck, gray sideburns
+small black bird with pale or rufous sides, breast, and belly
+all-black bird with yellow beak and legs
+black bird with white spots under the wing, crown, cheeks, and neck.
+small bird with long tail, round head, and dark mask around the eyes
+small brown bird with white wing patches, red cap, black mask, and long tail
+bird with black body, white head, eyes and beak
+Large black body with white patches of the head, neck, chest.
+males sing during the breeding season
+adult females have dark bills while males have pale bill
+crow-sized black bird with white underparts, grey head and breast, brown upperparts, and white wing patches in flight.
+small bird with a slender bill, dark streaked crown, red patch on cheek, grey back, white belly and black tail.
+migratory songbird with black upperparts, white underparts, and a white eyebrow stripe
+distinctive jet black color with bright blue wings
+black body with white face, head, and chest feathers
+black upper body with white underparts
+yellow eyes with dark pupils, short and thick beak
+bird with a black mask on its eyes, nose, and cheeks
+small, slate-gray bird with a white line running from its bill through the eye to the back of the head; and red and black markings on wings.
+black plumage on short, wedge-shaped wings
+males have long black bills
+perches upright on tree trunks and branches, sometimes clinging head downward
+medium-sized blackish bird with small white spots on wings
+glossy black feathers on its crown, back, and wings
+warbling bird with black mask around eye
+medium size bird with an orange belly, black back, white chest, blue head and red crown
+small, slender bird with black wings and tail
+black bird with wings, body, head, tail and feet
+has dark, glossy feathers with white patch on the belly
+has black feathers on the head and wings, and bright yellow on the side of its upper body, throat, and breast
+small bird with short wings, long tail, black/brown markings on the throat, breast, and abdomen
+small, stout bird with dark brown upperparts
+usually seen on the ground, perched in trees, or sitting singly
+crested bird with a black mask on its face
+white cheeks, with distinctive dark streaking on the throat.
+medium-sized songbird with deep red male body
+small bird with dark upperparts, pale underparts, white eye ring, and a thin black bill. Male has a bright yellow throat patch which females lack;
+bright red body with black wings and face (with some white markings on the tail, neck, or chest)
+dark blue plumage with large white patch on the face that resembles an eye patch, and with the head shaped like a horseshoe. The eye patch is missing in some populations.
+all black bird with white eye markings, black beak, male has red flanks and black body, female has grey body
+black body with pink/red on the upper chest and belly
+brownish black upperparts, white belly, red-crown patch on head, reddish throat and nape (back of neck)
+black beak with red spot on head
+white head, neck, and underparts with black crown; blackish wings.
+medium sized bird with yellow underparts, blue above, black wings, whitish throat and forehead.
+small, black-and-white bird with white or yellowish forehead
+small, rounded head with reddish eye patches and black lores
+mostly white body with black wingtips and tail, but also exist black (females) or red birds (males)
 usually hidden in tall grasses or dense vegetation while singing from elevated perches
-white-tipped tail
-large songbird with long tail, usually solitary or in pairs
-mainly brown, with black spots on the wings, back and tail
-long beak (male)
-The male has a distinctive tuft of feathers on its head called a "horn," that it raises when excited or threatened.
-four-limbed songbird
-short, streaked tail
-has a small beak, short tail and narrow wings
-adults have bright orange color above their wings and tail.
-broad bills (male) or straight bills (female), pinkish-red when irritated
-has a white spot on the wing, and a faint gray wash of color on its chest
-long tail wtih whit-edged outer feathers
+black frontal band on each side of head; two short, broad, white wing bars; a short tuft of feathers under the tail
+medium bird with black body, white chest, brown wings with white patches,
+small reddish-brown bird with black face mask, white belly
+small songbird with white underparts, black mask across face, wings, and back
+black or dark brown beak
+medium-sized bird of the crow family (Corvidae)
+black bird with long tail
+medium sized with reddish brown back, wings, tail and head; white underparts with a conspicuous black streak from eye to bill on each side.
+males have a black "mask" that stretches down from the eyes and along the sides of the head. The mask has a white border on each side of it. Females are similar but lack the mask.
+black with white patches around the bill, neck, and forehead; dark body with pale gray underbelly
+has a black cap, white cheeks, and a red dot on its forehead (males)
+brownish bird with white wing patches and striping on its chest and throat. It has two or three black dots above the bill
+medium to large, blue black bird with white wing bars that resembles a female blackbird or a male grosbeak
+dark head with yellow eye patches, pale cheeks, and a streaked breast
+large crow with black and white feathers, red-brown face patches, and white necklace.
+the black feathers of the chest, breast and belly extend to cover the sides of the body
+males have purplish heads and breast
+large, dark beak with stout crest; black head and neck
+small, medium-sized bird with black back and white underbelly (breast)
+male has a black “hood” on its head
+male has bold black-and-white streaked head and upper body; female has duller olive back; both have cinnamon-colored breast
+small black beak, usually with dark markings on the back and sides of the mouth
+reddish breast with black spots, gray upperparts
+males have red eyes
+dark plumage on back, whitish below with indistinct facial patterning
+dark mask on the face and throat, white chest, flanks, underparts, and belly with black spots
+bird with brown upper parts, black crown, white chest and belly, black bib, orange-red breast, white throat, wing bar, and tail tip.
+has a distinctive, long, black, chicken-like bill
+perched on tree branches, sometimes foraging below canopies
+small bird with white underparts and dark upper parts
+dark eyeline running through the eyes and extending upward around the neck, which contrasts with the bright yellow throat patch

@@ -44,7 +44,7 @@ TOPK = 100
 
 import clip
 device = "cuda" if torch.cuda.is_available() else "cpu"
-model, preprocess = clip.load("ViT-B/32", device=device)
+model, preprocess = clip.load("ViT-B/16", device=device)
 
 print("Encoding captions...")
 

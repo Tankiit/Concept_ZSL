@@ -1,22 +1,4 @@
-115.Brewer_Sparrow/Brewer_Sparrow_0042_796721.jpg
-1.0
-0.0
-1.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-1.0
-0.0
-0.0
-1.0
+053.Western_Grebe/Western_Grebe_0044_36188.jpg
 0.0
 0.0
 0.0
@@ -25,31 +7,6 @@
 0.0
 0.0
 1.0
-1.0
-0.0
-0.0
-0.0
-0.0
-0.0
-1.0
-0.0
-0.0
-0.0
-0.0
-1.0
-0.0
-0.0
-0.0
-0.0
-0.0
-1.0
-0.0
-0.0
-0.0
-0.0
-0.0
-1.0
-0.0
 0.0
 0.0
 0.0
@@ -61,107 +18,150 @@
 1.0
 0.0
 1.0
+0.0
+0.0
+1.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+0.0
+1.0
+0.0
+1.0
+0.0
+1.0
+0.0
+0.0
+1.0
+1.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
 0.0
 0.0
 
-115.Brewer_Sparrow/Brewer_Sparrow_0042_796721.jpg
-large size for a sparrow (larger than other Eurasian Sparrows)
-small songbird with distinctive pale eye stripe across face
-gray sparrow with black-tipped wings, white spots under its tail and a black cap on the back of its head
-medium-sized sparrow, about 16 cm long
-medium-sized sparrow with a large head, short bill, long wings, and dark central tail stripe.
-small brownish sparrow with white stripe above eye, dark front, and pale back
-small songbird with black "sleeve" around neck, gray sideburns
-a small bird with a short upturned bill, a streaked breast, and buff flanks. The field sparrow is the most common sparrow around birdfeeders. A male’s song is a series of thin, high trills that sound like bells.
-small migratory passerine bird with short conical bill, small white eye crescents, and distinctive black stripe above eye
-small songbird with blackish upperparts, gray underparts, and streaked breast
-small songbird with white patches on the breast
-small, yellowish-green songbird with white stripe on forehead
-small bird with pale streaks across chest
-small songbird with black eye stripe
-small, brown sparrow with a black head, tail, and eye-ring
-small passerine bird, sometimes placed in estrildid finches
-sparrow with distinctive white head, throat, eyebrows and breast (males)
-medium-sized sparrow-like bird
-thin pointed bill
-small bird with grey, brown, green body
-small bird with dark cap and black streaks on its face; white below the eyes, pale chest
-plump sparrow with streaked head, brown upperparts and white undertail coverts
-small pointed bill
-small bird with long, pointed bill
-brown or gray sparrow with white belly
-sparrow-sized songbird with long tail
-male usually has black cap
-small songbird with white chest and grey head and wings
-small sparrow
-sparrow with large eyes, short bill, and short tail
-small, plump finch with short wings
-white throat with dark patch
-thin, pointed bill
-small passerine bird with narrow bill
-short, broad bill
+053.Western_Grebe/Western_Grebe_0044_36188.jpg
+white body, black back and wings; long neck, large red bill
+water bird with black, white, red, yellow, or gray plumage
+white face with black cap, dark stripe above eye, orange bill tipped with black
+water bird with distinctive bill, which has a wide tip
+long, slender, shiny black bill
+three-toed feet, with long bills, long wings, white tail tips and sharply contrasting black wingtips.
+medium-sized water bird with a short, pointed bill, body covered in small white spots
+short and stocky bill, thick neck, and body with black-and-white plumage.
+long, tapering pointed bill, white in front with black tip
+water bird with dull greenish back, white breast patches, grey head, and yellow bill
+long-necked and small head with short beak
+duck-like bird with long, slender neck and bill
+long tail with white outer feathers
+water bird with a narrow, pointed bill
+long, thin, black bill, slightly curved upwards at end
+black bill with a curved, sharp upper and lower mandible
+slender body, gray under parts, long tail (about twice length of its body), hooked bill, short rounded wings and black eyes
+a bird with a gray bill, crown and nape
+Long tail with two white outer feathers.
+medium bird with white body, black wingtips and orange bills and feet.
+long, slender black bill
+adults have black legs and feet, red to orange bill tipped with yellow, white head, gray upperparts and wings, and pale grey underparts with dark streaking on the flanks. Juveniles are similar but lack the adult's white face.
+long neck with a long, straight bill
+long bill, which has an upper mandible that is yellow with black tip and lower mandible that is black;
+black body with white belly and wing patches, pale eyebrow stripe, red bill, gray breast, whitish tail
+black head with long plumage above the eyes that extends backward and downward, forming a thin "moustache"
+long-tailed, medium-sized bird with brown upperparts, white underparts, and a yellow bill
+short black bill with white tip
+a long tail that has two distinctive white patches.
+swimming bird with black, white, or gray feathers
+black with white patches around the bill, neck, and forehead; dark body with pale gray underbelly
+long neck with a large bill
+long tail with black, white, brown or gray on the head
+duck-like body with white sides, red-brown back, black and white head, yellow bill
+long bill with distinctive shape
+has blue-gray feathers on its back and neck, orange chest and belly, pale yellow undertail coverts, and white wing bars.
+thin bill with black tip
+sea bird with black, white, brown, or grey body
+long slender beak and short legs
+bird with white head, black bill, green upperparts, yellow underparts, and long tail
+aquatic bird with white underparts.
+black bill with red spot on it at its base
+the long, pointed bill (yellow with black tip)
+metallic green back, violet crown, and white underparts with black tail coverts, short red bill, long pointed wings
+small, duck-like bird with long neck and legs
+long, black bill
+big bird with a gray crown, white eyebrows, reddish bill, whitish chest and flank.
+black bill (on male)
+black bill with an orange spot on the lower mandible (like a bird's eye)
+long, thin beak with red tip
+bird with small crested head, long neck, and large red and white bill
+a waterbird with short legs
+a medium-sized bird with long tail
+birds with short tails, long pointed wings, and narrow bills
+long, slender beak
+white body with black wingtips, tail, and head
+long slender bill that is either black or orange at the tip and has a dark band near middle of the lower mandible
+long, rounded tail with white sides and a black tip
+large body, long, narrow beak and large pink bill
+small, round body, long tail, white belly with a black line across it, and yellow-brown feathers on its head
+blue, white, or black plumage, gray wings with brown spots on the wingtips
+has short, dark bill and long, black bill
+duck-like wading bird with an elongated central tail feather, often used for display purposes.
+black plumage on the top of its head, along its neck, and back
+long pointed bill similar to those of herons, but stouter and thicker; upper mandible slightly downcurved
+long thin beak with yellow patches near the tip
+black, white, or grey plumage with dark markings around the eyes
+long tail with a conspicuous white spot near the tip
+black head with white forehead and eye stripes, red bill
+long, straight beak (bill) with nostrils on the sides
+long, slender bill with a small hook at the end
+small, slender seabird with dark plumage
+medium-sized bird with a long tail, short legs, and thin beak
+bird with white forehead, white breast with brown streaks, black tail, yellowish legs and feet. It has a long pointy bill with a pink patch on the lower mandible (jaw) that flares out at the tip.
+long, stout red-orange bill with a black mark near the tip
+black, white, or brown with long, slender bill, short tail and wings;
+mostly white body with black wingtips and tail, but also exist black (females) or red birds (males)
+long slender beak
+long tail with black tips
+white head with feathers of varying lengths, a black cap, short tail, large yellow bill, small dark beak, and legs.
+thin black bill
+medium-sized bird with rounded body, conical bill, and long legs
+wide, black bill with hooked tip
+western subspecies of the Eared Grebe with distinctive black eye stripe that extends behind eye.
 long, thin pointed bill
-small bird with brown upperparts and white underparts
-small passerine bird with greyish brown back, wings, head and underparts; black or dark brown lines above and below the eye
-Small bird with pale grey feathers on its head, chest, shoulders and tail.
-dull, dark olive-green head and upper back with white patch on forehead
-small passerine bird with short bill
-white throat and flanks with a black crescent above the eye
-small bird with brownish back, white belly and breast, and pale eyebrow stripes
-sharp beak with a small, pointed bill
-small bird with black upperparts
-small bird with white underparts, rusty upperparts, and grey tail
-small songbird with white patches on its face
-small bird with short, notched tail
-short, broad bill with small projections near tip
-small bird with streaked brown upperparts
-small bird with short, conical bill
-green feathered head with pinkish beak and legs
-a sparrow with a grey cap, a grey breast band, a white eye ring, and a brown back.
-narrow, pointed bill with distinctive brown spot near the tip of the upper mandible
-sparrow-like bird with brownish upperparts, lighter underneath
-feathered females have greenish color
-male has black markings on its white throat; female has no markings on her white throat
-small, brownish sparrow with white wing bars
-sings in low, dry warble; often mimics other birds
-small songbird with wings outstretched, often on top of a tree branch
-small head with pointed bill
-small bird with pointed bill
-small bird with a slender bill, dark streaked crown, red patch on cheek, grey back, white belly and black tail.
-small bird with short tail, usually brownish above, paler below. Juveniles duller and greyer.
-brown sparrow with crest on head
-small songbird with white undersides, gray upperparts with black spots and barring on wings, and yellowish bill
-small, stocky bird with short, stubby bill
-small bird with white underparts and brown upperparts
-small bird with short tail, dark cap on head that extends back as breast patch
-small songbird with medium size bill
-small, sparrow-like bird with black, white and grey feathering
-sparrow-sized bird
-small bird with streaked and speckled plumage;
-greyish brown upperparts with white throat
-small songbird with short tail
-blackish head with a white throat patch
-small flycatcher with brownish upperparts, white underparts, and pale superciliary stripe
-a songbird with speckled gray breast, buff flanks and white tail.
-distinctive tufts of feathers on top of head
-small bird with kite-like shape and long, pointed bill
-white throat and cheeks
-small songbird with distinctive high pitched buzzy songs
-small bird with white underparts and dark upper parts
-small bird with long, thin beak
-small passerine bird with slender body, short stout bill, long pointed wings with two bars of black on them and a tail with white outer feathers
-white throat patch that can be seen when the bird sits
-white throat patch
-female has brownish-grey upperparts, pale grey throat and vent area
-small bird with long tail streamers
-yellow-breasted, black-capped sparrow that lives in grassland near rivers and streams (sparrows belong to the same family as bobolink)
-small bird with white wing patches and eye ring
-pale buff or grey underparts with white eye ring and supercilium
-small songbird with yellowish, tan or white under parts
-pointed bill with white patch on underside of the bill
-small songbird with long tail
-small songbird with pale yellow head, back, sides, tail and wing patches
-small, gray bird with a white eye ring and long, thin bill; wings folded against sides of body when at rest
-very small songbird with the length of 14.5 cm. (male)
-small, slender songbird with brown wings (not gray)
-a sparrow with chestnut, brown or gray wings
+little, thin, black bill with sharp lower mandible
+plump body with a short tail, short yellow bill.
+aquatic bird which has the ability to walk on land as well as swim
+black bill with red and yellow patches
+black bill with white spot on it
+small bird with dark upperparts, pale underparts, white eye ring, and a thin black bill. Male has a bright yellow throat patch which females lack;
+large hooked bill, long thin beak
+black spotted crown, feathers with brown highlights on breast, gray head with white patches, under the tail.
+relatively large beak, 2.7cm long but only half the length of its body
+long bill with curved upper mandible
+dark plumage on back, whitish below with indistinct facial patterning
+long, thin bill curved slightly downward for spearing prey under water
+brown, black, and white plumage with pale gray underparts
+small, slender bird with long tail
+female has olive-grey upperparts, white belly and throat, orange breast patches on chest, and blue tail feather spots

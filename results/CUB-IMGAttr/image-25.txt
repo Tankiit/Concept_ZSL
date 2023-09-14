@@ -1,29 +1,4 @@
-069.Rufous_Hummingbird/Rufous_Hummingbird_0027_59456.jpg
-0.0
-0.0
-1.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-1.0
-0.0
-1.0
-0.0
-0.0
-1.0
-1.0
-0.0
-1.0
-0.0
-1.0
-0.0
-0.0
-0.0
+025.Pelagic_Cormorant/Pelagic_Cormorant_0092_23639.jpg
 0.0
 0.0
 0.0
@@ -35,6 +10,42 @@
 0.0
 0.0
 0.0
+1.0
+0.0
+1.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
 0.0
 0.0
 0.0
@@ -47,121 +58,110 @@
 0.0
 0.0
 1.0
-0.0
 1.0
 1.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-1.0
-0.0
 0.0
 0.0
 1.0
 
-069.Rufous_Hummingbird/Rufous_Hummingbird_0027_59456.jpg
-rufous crown, face, neck, breast, and flank patches
-rufous (or copper) feathers on back, head, throat, and upper breast
-brown upper body with rufous (reddish brown) crown, mantle, and tail
-purplish crown and rufous sides of the head
-rufous bird with white or buff breast, grey head, pale eye patches
-distinctive face pattern of rufous, yellow, blue and grey
-brown head, streaked back with fine darker lines and pale supercilium. Breeding males have rufous crown and pink supercilium with orange throat patch; nonbreeders lack coloration of breeding male.
-metallic green back, sides of head and breast, rufous-colored flanks
-rufous back
-brownish upperparts with rufous crown, streaked flanks, and faint eyebrows
-brown, grey, or rufous on head and back
-black, white, or rufous/buffish-brown upperparts
-gray back and wings; reddish-brown head and breast; rufous flanks.
-streaked or spotted flank with blue, purple, green, or rufous markings
-short tail and rufous flanks
-red breast, rufous underparts
-small bird with an upright stance
-yellow underbelly, rufous flanks and red eye ring
-small black bird with pale or rufous sides, breast, and belly
-has white wing bar and rufous sides on the breast
-greenish back and wings, rufous underparts, and an orange chest patch
-dark throat with light breast, stripes on neck
-rufous crown, underwings, flanks and tail
-medium sized songbird with red-orange plumage
-small bird with long tail streamers
-large songbird with long tail, usually solitary or in pairs
-small passerine bird with narrow bill
-bird with red head and throat that can hover in place while it feeds on nectar from flowers
-small song bird with short tail
-reddish body (darker than cardinals, brighter than robins)
-males sing during the breeding season
-short orange bill
-male has a bright orange throat patch
-sings in low, dry warble; often mimics other birds
-small bird with long tail (it does look like it has white spots above its wings, but that might be the sun shining through its feathers)
-pale brown underparts, with off-white belly and rufous tail
-bird with brown upper parts, black crown, white chest and belly, black bib, orange-red breast, white throat, wing bar, and tail tip.
-male has black markings on its white throat; female has no markings on her white throat
-medium-sized songbird with deep red male body
-greenish gray upper parts with rufous speckling on sides of the breast
-small, brown bird with white spots on its crown
-small passerine bird with greyish brown back, wings, head and underparts; black or dark brown lines above and below the eye
-small bird with a slender body
-small brown bird with an orange breast and belly
-long, stout red-orange bill with a black mark near the tip
-long, sharp beak with the top one-third of the bill shorter than the bottom two-thirds
-medium-sized songbird with long tail
-brown back, wings, and head with streaks of light orange-brown feathers on the sides
-males sing loudly in territories, while females do not
-medium-sized songbird with a long tail
-bright orange beak
-red breast, black throat
-small bird with short tail and long legs
-small bird with red body and wings
-small bird with large head, short tail, long legs, wings and back
-short bill with orange legs and feet
-long narrow orange beak
-small bird that looks like a robin, but is red with a black mask. Males have bright red feathers on the head and chest; females have yellowish red feathers.
-medium-sized songbird with red body and wings
-small bird with streaked brown upperparts
-male has bright orange throat, while female has white spot on the lower breast.
-bright orange-red beak & black head, chest and back
-medium sized songbird with long tail
-small bird with wings that are pointed when folded, short tails, long legs and small strong bills for probing food.
-red nape (back) and neck (except for the females and immatures)
-small bird with short tail, long legs and large head
-small bird about 6 inches (15 to 17 cm) long
-medium-sized songbird
-brown-headed small bird with long tail and curved beak
-narrow, pointed bill with distinctive brown spot near the tip of the upper mandible
-long, thin bill with orange base
-male has reddish cap and chestnut flanks; female lacks red on head.
-small, short-tailed bird
-pointed bill with orange spot near tip
-orange-red beak and feet
-brown above with rusty red breast and flanks
-small blackish bird of western North America with pointed bill and orange coloring on breast and flank
-small bird with a long tail
-male has long curved bill with black and orange tips, female lacks bill
-small, conical bill for cracking seeds and grains; long legs; medium brown back with lighter belly; wings that fold in a sharp angle.
-white patch above the eye and a rusty orange beak
-small bird (20 cm) with long tail
-bright red feathers on the area around their eyes on both males and females.
-small bird with short, rounded wings and long tail
-small bird with white underparts, rusty upperparts, and grey tail
-wings held downward when perching on wires
-adult size bird of about 14 cm long with short tail, wings, and legs
-small bird with long legs for perching on steep cliffs
-yellow, black, white and rufous plumage
-medium-sized songbird with short tail, pointed wings
-small passerine bird with short bill
-small, brownish, long-tailed bird with short, pointed wings
-slim-bodied and small headed songbird
-small bird with long tail
-medium or large sized, finch-like bird
-orange front edge of the beak
+025.Pelagic_Cormorant/Pelagic_Cormorant_0092_23639.jpg
+small, slender seabird with dark plumage
+black plumage on the top of its head, along its neck, and back
+small black seabird with white underbelly and tipped wings
+large, long-bodied seabird with wide wingspread and rounded tail
+water bird with a narrow, pointed bill
+seabird with large head, slender bill, and long pointed wings
+water bird with distinctive bill, which has a wide tip
+the only known species of cormorants with red face
+sea bird with black, white, brown, or grey body
+small seabird with long pointed wings
+medium-sized seabird; 40–50 cm (16–20 inches) long, with a wingspan of about 80 centimetres (31 inches) and weighing up to 700 g (1.5 lb); dark brown on back becoming paler below
+medium-sized water bird with a short, pointed bill, body covered in small white spots
+glossy black feathers on its crown, back, and wings
+black plumage on short, wedge-shaped wings
+long-tailed seabird, similar in appearance to a gull
+short and stocky bill, thick neck, and body with black-and-white plumage.
+red and green feathers on the top of its head, black plumage on the bottom.
+water bird with black, white, red, yellow, or gray plumage
+a seabird with a black and white plumage
+medium sized, black seabird with white patches at the base of its bill, and darker feathering on top of its head and tail. It has an indistinct eye ring which it uses to lure prey close enough for the bird to strike it with the sharp tip of its bill
+medium to large seabird with long pointed wings, short tail, and black cap on head
+bicolored bird with glossy black feathers on the top of its head, wings and tail. The breast, belly, sides, back and undertail coverts are iridescent red or orange.
 distinctive male appearance with bright blue throat, head, breast, belly, and back
-medium-sized songbird of woodland edges, thickets, or gardens.
-yellow lower belly, bright orange throat
-long, thin bill that bobs up and down while feeding on the ground
+small seabird with long, narrow bill
+long, pointed black bill with slightly upturned tip
+iridescent blue, green or bluish black color on top of the bird’s head, nape, back, wings, and tail; white patches below wingtips
+black head with long plumage above the eyes that extends backward and downward, forming a thin "moustache"
+small black, white or brown seabird with short legs and wings
+a bird with a gray bill, crown and nape
+grey wings with black tips and streaks on the upper surface
+bird with long, pointed bill that protrudes from head
+long-necked and small head with short beak
+three-toed feet, with long bills, long wings, white tail tips and sharply contrasting black wingtips.
+black with white head and underparts, but yellowish wings, tail, rump and back. This bird has short bills and sharply pointed wings. Juveniles are brown above and streaked below.
+black frontal band on each side of head; two short, broad, white wing bars; a short tuft of feathers under the tail
+black wings with white spot on shoulder; white underparts, grey crown, tail
+a long pointed bill tipped by a hooked blunt tip
+water bird with dull greenish back, white breast patches, grey head, and yellow bill
+streaked crown, cheeks, and flanks with a black spot on the throat
+dark plumage on back, whitish below with indistinct facial patterning
+a bird with brownish streaks on the back and rump, dark above and lighter below
+flightless seabirds of the north Pacific coast, with large black and white bills and blue feet.
+black with white patches around the bill, neck, and forehead; dark body with pale gray underbelly
+small head with pointed bill
+bird with long neck and pointed bill
+black spotted crown, feathers with brown highlights on breast, gray head with white patches, under the tail.
+relatively large beak, 2.7cm long but only half the length of its body
+metallic green back, violet crown, and white underparts with black tail coverts, short red bill, long pointed wings
+medium-sized, 18–20 cm (7–8 inches) long sea bird with white body and black wings
+dark brown streaked breast with buff flanks, belly, and undertail coverts
+yellow-green body plumage and black wings with greenish cast
+small, brownish, predominantly underwing bird with black wingtips and white rump
+short, thick neck with a round body
+duck-like bird with long, slender neck and bill
+swimming bird with black, white, or gray feathers
+bird with small crested head, long neck, and large red and white bill
+bird, brownish with black spots on wings and white patches around neck; sits with tail cocked upright
+aquatic seabird
+dark blue plumage with large white patch on the face that resembles an eye patch, and with the head shaped like a horseshoe. The eye patch is missing in some populations.
+white cheeks, with distinctive dark streaking on the throat.
+big bird with a gray crown, white eyebrows, reddish bill, whitish chest and flank.
+sharp beak with a small, pointed bill
+narrow, pointed bill with distinctive brown spot near the tip of the upper mandible
+small blackish bird of western North America with pointed bill and orange coloring on breast and flank
+the long, pointed bill (yellow with black tip)
+round body with short, thick neck and long tail
+bird with distinctive, deeply forked tail, short wings and long pointed beak
+dark, glossy back with lighter grey head and belly
+a pale gray throat with dark streaking on the breast.
+olive green color with black spots on their back, wings, and tail. The head, throat, chest, belly, and sides are yellowish-green with orange patches at the bottom of their beaks.
+small black tuft on its head
+medium sized black bird with distinctive glossy, iridescent black plumage
+bird with white head, black bill, green upperparts, yellow underparts, and long tail
+reddish brown plumage with black head, white underbelly and neck, shiny green head crest
+bird with white feathers on the throat, upper breast, rump, tail and wings, and greenish blue head and back.
+small bird with brown streaked wings, white belly, dark-colored tail and whitish eye ring.
+small, slender bird with black wings and tail
+a waterbird with short legs
+small seabird
+black bill (on male)
+breed on small rocky islands and coastal cliffs.
+the bird has a long pointed bill, mainly greyish brown above with whitish underparts.
+feathered males with red, dark green, rust, purple on the back of their head and neck
+male has a black hood, white face, white throat, and grey back with black bars; female is similar but not as brightly colored.
+long thin beak with yellow patches near the tip
+brown streaked neck, chest, belly, under tail coverts
+bird with grey plumage, brown wings, black feathers on its chest
+large, dark beak with stout crest; black head and neck
+large, light beak with long, dark tip, and pink feet
+brown colouring on the back of its neck, with darker streaks running from head down shoulders. On top of that, it has a long black crest running along its back with white flashes at its sides and front
+small, round body, long tail, white belly with a black line across it, and yellow-brown feathers on its head
+birds with short tails, long pointed wings, and narrow bills
+gray-green or bright blue feathers on the head, wings, and back with speckled underparts; also has black spots on the breast, and large white wing patches at the tips of the secondary flight feathers.
+distinctive jet black color with bright blue wings
+bird with white plumage and black patches on its head, wings, and tail
+seabird of the open ocean with powerful, rounded wings
+long, black bill
+large head with curved beak and short tail
+large eyes, long beak, pointed head, short legs, and rounded wings
+adult has black head, neck, upper breast and nape while immature has brownish head, neck, upper breast and nape. The bill of both sexes is pink with dark tip; the iris is pale yellow and the legs are greenish gray. Its flight is characterized by a quick straight forward flying pattern interspersed with some glides

@@ -1,5 +1,4 @@
-103.Sayornis/Sayornis_0075_98350.jpg
-0.0
+044.Frigatebird/Frigatebird_0031_42979.jpg
 0.0
 0.0
 0.0
@@ -8,24 +7,18 @@
 0.0
 0.0
 1.0
-1.0
-1.0
-0.0
-1.0
-1.0
-1.0
-1.0
-0.0
 0.0
 0.0
 0.0
 1.0
 0.0
-0.0
-0.0
+1.0
 0.0
 0.0
 1.0
+1.0
+0.0
+0.0
 0.0
 0.0
 0.0
@@ -41,16 +34,10 @@
 1.0
 0.0
 0.0
-1.0
-1.0
-0.0
-0.0
 0.0
 0.0
 1.0
 1.0
-0.0
-0.0
 1.0
 0.0
 0.0
@@ -58,110 +45,123 @@
 0.0
 0.0
 0.0
-1.0
 0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
+1.0
+1.0
 0.0
 0.0
 1.0
 
-103.Sayornis/Sayornis_0075_98350.jpg
-small bird with white underparts, rusty upperparts, and grey tail
-long-tailed, medium-sized bird with brown upperparts, white underparts, and a yellow bill
-distinctive face pattern of rufous, yellow, blue and grey
-small flycatcher with brownish upperparts, white underparts, and pale superciliary stripe
-small flycatcher with pale bluish tinge on back, rump, and wings
-brown above, white below with black mask (eye patch), white throat, yellow underside of tail.
-a songbird with speckled gray breast, buff flanks and white tail.
-brownish upperparts with rufous crown, streaked flanks, and faint eyebrows
-adults have black legs and feet, red to orange bill tipped with yellow, white head, gray upperparts and wings, and pale grey underparts with dark streaking on the flanks. Juveniles are similar but lack the adult's white face.
-medium-size, long-tailed bird with brownish upperparts, yellow underparts and wings, and white undertail coverts.
-brown, grey, or rufous on head and back
-medium-sized bluebird with a long tail
-small, long-tailed bird with white underparts
-small songbird with brown, tan, yellowish plumage
-small brown bird with grey upperparts, pale sides, and thin, dark line above eye
-white-throated bird with greyish upperparts, grayish brown head, and light buff underparts
-male has sky blue head and tail, female is brownish-grey overall
-gray back and wings; reddish-brown head and breast; rufous flanks.
-small bird with short tail, long legs and large head
-small, brownish, long-tailed bird with short, pointed wings
-the bird has a long pointed bill, mainly greyish brown above with whitish underparts.
-brownish-grey upperparts, white underparts, and orange or red rump patch
-muted yellowish brown above, pale gray below; male has red wash on face
-a songbird species with the males having bright yellow underparts.
-plump body with a short tail, short yellow bill.
-small, conical bill for cracking seeds and grains; long legs; medium brown back with lighter belly; wings that fold in a sharp angle.
-Small perching bird with thin beak, short tail, and bright blue eyes.
-medium-sized bird with blue-grey upperparts and white underparts
-small, short-tailed bird
-medium-sized bird with pale yellow upperparts
-small, slender songbird with brown wings (not gray)
-brown upper parts, white underparts with yellow throat, yellow eyebrow, and pale supercilium
-small bird with short tail, usually brownish above, paler below. Juveniles duller and greyer.
-a medium sized passerine bird with dark brown/grey upper parts, white underparts, grey head and black eyeline
-small songbird with pale yellow head, back, sides, tail and wing patches
-four-toed bird with long tail
-the long, pointed bill (yellow with black tip)
+044.Frigatebird/Frigatebird_0031_42979.jpg
+medium-sized seabird; 40–50 cm (16–20 inches) long, with a wingspan of about 80 centimetres (31 inches) and weighing up to 700 g (1.5 lb); dark brown on back becoming paler below
+seabird of the open ocean with powerful, rounded wings
+seabird with large head, slender bill, and long pointed wings
+large, long-bodied seabird with wide wingspread and rounded tail
+medium sized seabird with wingspan between 39 - 41 inches
+the dark feet of this albatross compared to its light body, wings, and head;
+1m long seabird
+small black, white or brown seabird with short legs and wings
+medium-sized, 18–20 cm (7–8 inches) long sea bird with white body and black wings
+medium/large aquatic bird with wings that are more elongated than round, and not small like the albatrosses or gannets.
+white-bodied, black-tipped wings and tail
+medium to large seabird with long pointed wings, short tail, and black cap on head
+large sea bird
+small black seabird with white underbelly and tipped wings
+The head of the adult is a striking mixture of black and white. Adults have a small hook on the end of their upper beak (used for fighting), but juveniles only have a small notch at the tip of their bill (thus distinguishing them from other albatrosses).
+a seabird with a black and white plumage
+sea bird with black, white, brown, or grey body
+small seabird with long pointed wings
+very large wingspan of up to 6 feet (1.83 meters) or twice the size of its body
+distinctive foraging method of flying out to sea then turning on its back to dive for small fish
+three-toed feet, with long bills, long wings, white tail tips and sharply contrasting black wingtips.
+large wingspan, 180–240 cm (6.0–7.9 ft)
+long-tailed seabird, similar in appearance to a gull
+medium sized, black seabird with white patches at the base of its bill, and darker feathering on top of its head and tail. It has an indistinct eye ring which it uses to lure prey close enough for the bird to strike it with the sharp tip of its bill
+grey-black body with wings that go almost entirely white (except for the tip) in flight
+large size bird with wingspan about 150 cm
+aquatic seabird
+birds with short tails, long pointed wings, and narrow bills
+grey wings with black tips and streaks on the upper surface
+gray above, white below; some black on wings and tail
+small, slender seabird with dark plumage
+white tummy, dark-coloured wings and tail
+long, narrow wings that are spread open during flight creating the appearance of a beak and head
+medium-sized bird with wings, long tail and short legs
+male has glossy iridescent black feathers on the wings and tail with broad white patches on outer primaries
+blue-grey wings with white tips
+black wings with white spot on shoulder; white underparts, grey crown, tail
+grey head, neck, wings and tail with black spots on the body;
+flightless, seabird
+small seabird with long, narrow bill
+black wings with heavy, square-shaped tails
+black, white, gray, or grayish brown with white tips on its wings
+blue and white wings with black tips, dark sides of head
+dark wings with light spotting on the belly area of the bird
+a medium-sized bird with long tail
+male has black wings with white spots, females have brown wings
+medium sized with reddish brown back, wings, tail and head; white underparts with a conspicuous black streak from eye to bill on each side.
+a white wing patch that can be seen from below
+brown above the neck, back, wings, tail; white below abdomen, undertail coverts, and rump
+large head, plumage, body, bill, wingspan
+light-colored chest and belly with rusty patches on wings
+medium-sized bird with long tail, wings, and legs
+large eyes, long beak, pointed head, short legs, and rounded wings
+black body, white neck and wings
+adult males have blue wings, head and body; females are brown
+white patches on the wings and tail
 white cheek patches on the sides of face; eyebrow stripe above and below eye; gray cap at back of head; black line through eye; yellow eye ring; brown body, head and neck; light gray breast, belly, and undertail coverts with white edge on wings
-female has brownish-grey upperparts, pale grey throat and vent area
-white head with feathers of varying lengths, a black cap, short tail, large yellow bill, small dark beak, and legs.
-rufous bird with white or buff breast, grey head, pale eye patches
-small brown bird with black masking over its head, white eye patches, rusty tail, and a faint white eyebrow
-pale brown underparts, with off-white belly and rufous tail
-medium size passerine bird with olive green back, white belly, pale pink legs, and long thin grey beak. The male of the species is black on top with a bright yellow chest; while females are brown on top and have pale underparts. Yellow breasted chat mainly feeds on insects but also takes nectar and fruit.
-small, brownish bird with thin bill and long tail
-short bill, blue gray upperparts, bluish gray below
-large bill with gray upperparts and orange-yellow on face and hind neck
-short crested tail; dull orange legs
-small bird with olive green body, wings, neck, head and breast. Underparts are yellow while the back and belly have distinct brown streaks.
-small bird with brown upperparts and white underparts
-medium-sized bird with rounded body, conical bill, and long legs
-small songbird with white chest and grey head and wings
-blue-gray upperparts and head
-small, olive-brown bird with a short bill
-small grey bird with black crown, white supercilium above eye, and bright orange nape.
-long thin beak with yellow patches near the tip
-greyish brown barred upperparts, whitish underparts, and long tail. Long legs with weak claws
-small bird with white underparts and brown upperparts
-olive-grey upperparts, white lower parts and yellowish under tail coverts
-flycatcher species with black eyestripe and olive back
-brown head, streaked back with fine darker lines and pale supercilium. Breeding males have rufous crown and pink supercilium with orange throat patch; nonbreeders lack coloration of breeding male.
-small bird with kite-like shape and long, pointed bill
-brown-gray bird with distinct white wing bars
-short legs with bright yellow feet (pictured)
-small songbird with blackish upperparts, gray underparts, and streaked breast
-bird with black upperparts, white underparts and wings striped darker or paler below, brownish head, grey nape. (Pictures may show a more pale look)
-mostly brownish gray, sometimes with pale buff or reddish underparts.
-migratory songbird with black upperparts, white underparts, and a white eyebrow stripe
-grey-brown body with white underparts; females are duller than males, but hard to distinguish in photos
-white head with black cap and mantle; long, pointed bill
-short bill with greyish upperparts, white underparts
-little bird with bluish back, brown breast and yellow underparts
-large songbird with long tail, usually solitary or in pairs
-long bill, which has an upper mandible that is yellow with black tip and lower mandible that is black;
-longish legs, with yellowish feet
-male has a black hood, white face, white throat, and grey back with black bars; female is similar but not as brightly colored.
-bird with yellow, white, or gray breast
-brown upperparts, white underparts, black cap, pale eyebrow stripe, pale wing bar and grey tail.
-long, stout red-orange bill with a black mark near the tip
-short tailed bird with a small head for its body size, small thin beak, and large rounded eyes.
-small brown bird with short, conical bill
-dark or pale brown head, throat, back, tail; pale gray breast; white underparts
-rufous crown, face, neck, breast, and flank patches
+medium bird with black body, white chest, brown wings with white patches,
+brown head, chest, back, wings with white or pale pink feathers on the sides of their face and throat.
+black-tipped tail and wings, and white wing patches
+black, white, or brown with long, slender bill, short tail and wings;
+grey underparts with a black line down the middle from breast to flanks, and blackish wings with clear wing bar
+male has black face, chest and wings with yellow patches on its wings and tail. White patch below eye of female. Patches are often washed out by rain and not visible at times
+long, pointed wings when flying
+bluish-grey head, upperparts and breast
+white cheeks, with distinctive dark streaking on the throat.
+white wing linings, blackish wings and tail feathers with white edges (sometimes darker) and a white rump patch
+white forehead, cheeks, flanks, and ventral surface of the wings. The rest of the head and underparts are grey.
+black head, throat, breast and flanks with white patches on the wing tips, sides of the tail and across the chest
+black head with white wings that meet on the back at the center of the tail
+black frontal band on each side of head; two short, broad, white wing bars; a short tuft of feathers under the tail
+dark grey wings with white tips and brown streaks on the underparts.
+broad pointed wings with long primary feathers
+large wingspan (which makes it look like a gull)
+pelican with white feather on beak, wings, body, legs and tail
+white head, neck, and underparts with black crown; blackish wings.
+bird with dark blue wings, whitish below
+Dark back, wings, and tail. The head is white in adults; this extends to the neck of young birds.
+black with white patches around the bill, neck, and forehead; dark body with pale gray underbelly
+with large bill, black cap, white face, and wings with black pattern on it.
+White underparts with black streaks in the breast and flanks. The belly is mostly white except
+brown, white, or black coloring with red patches on the wings and tail
 has blue-gray feathers on its back and neck, orange chest and belly, pale yellow undertail coverts, and white wing bars.
-brownish grey plumage with black streaks on the head, chest, back, wings and tail.
-brownish-gray upperparts with black wings and tail, white underparts, pale gray sides
-small bird with pointed wings, short tail, and straight bill
-grayish or whitish bird with black tipped wings, back and tail
-males sing loudly in territories, while females do not
-medium-sized songbird with long tail
-greyish brown upperparts with white throat
-streaked or spotted flank with blue, purple, green, or rufous markings
-two-limbed land bird with short tail
-short, conical bill and reddish yellow legs and feet
-small songbird with black "sleeve" around neck, gray sideburns
-small, mostly brown bird with buffy underparts and white markings on the wings.
-small bird with black upperparts
-yellowish feathered head with small red eye spot
-pointed bill with orange spot near tip
-usually seen on the ground, perched in trees, or sitting singly
+yellowish-brown, gray, and white coloring (especially on wings)
+wing span of over 250cm
+large wingspans
+grayish crown of the male contrasting with greenish back and wings; grayish tail with white outer feathers;
+bird with brown upper parts, black head, white chest, brown belly and wings, and whitish tail feathers.
+dark grey body with distinctive white patches on wings, head and neck
+tail that appears as a dark fan shape, often when flapping its wings.
+black with white head and underparts, but yellowish wings, tail, rump and back. This bird has short bills and sharply pointed wings. Juveniles are brown above and streaked below.
+aquatic bird with white underparts.
+bird with distinctive, deeply forked tail, short wings and long pointed beak
+white face and lower neck with brown head, back, wings, belly, breast, tail
+mainly pale, white or black birds with long tails. Some species have red gular throat pouches (see the photos of the Magnificent Frigate Birds)
+males have streaked breasts and white throats
+medium sized bird with brown upperparts, white undersides, a faint eyebrow stripe over the eye and chestnut wings
+white body with black wing tips, tip of tail and underside (except under primary feathers)
+40–50 cm long, with short, broad, strong wings, and large sharp claws
+blue-gray head, neck, wings, back, and tail

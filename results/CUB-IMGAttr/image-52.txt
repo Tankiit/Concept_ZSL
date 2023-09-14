@@ -1,4 +1,7 @@
-103.Sayornis/Sayornis_0116_98939.jpg
+049.Boat_tailed_Grackle/Boat_Tailed_Grackle_0009_33373.jpg
+1.0
+0.0
+0.0
 0.0
 0.0
 0.0
@@ -12,23 +15,6 @@
 0.0
 0.0
 0.0
-1.0
-0.0
-1.0
-1.0
-0.0
-0.0
-0.0
-1.0
-0.0
-0.0
-1.0
-1.0
-0.0
-0.0
-0.0
-0.0
-0.0
 0.0
 0.0
 0.0
@@ -36,6 +22,16 @@
 0.0
 1.0
 0.0
+1.0
+1.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
+1.0
 0.0
 0.0
 1.0
@@ -44,124 +40,128 @@
 0.0
 0.0
 0.0
-1.0
 0.0
 0.0
-0.0
-1.0
 0.0
 0.0
 1.0
-0.0
-0.0
 0.0
 1.0
 0.0
 0.0
 0.0
 0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
 1.0
-1.0
-1.0
+0.0
+0.0
+0.0
+0.0
+0.0
 
-103.Sayornis/Sayornis_0116_98939.jpg
-small flycatcher with brownish upperparts, white underparts, and pale superciliary stripe
-small songbird with black "sleeve" around neck, gray sideburns
-black cap on head, forehead and nape; thin white eye stripes extend from the bill to above the eye on each side of the head
-cowbird with small, black head
-small, brown, gray, or black bird with white marks on face.
-long, slender, shiny black bill
-small, black bird with white patches on its tail, wings and head. Juveniles have brown backs
-male usually has black cap
-black cap, belly, and throat
+049.Boat_tailed_Grackle/Boat_Tailed_Grackle_0009_33373.jpg
+male has an indigo crown patch
+a blue bird with white wing patches, black streaks on chest
+male bird with grey, blue or purple head, chest and back
+blue head with white chest, black face, and grayish wings
+blue head with black marking, white underparts, and crest,
+bright blue color (or gray with white wing bars)
+blue or purple bird
+medium-sized bird with blue-grey upperparts and white underparts
+dark blue plumage with large white patch on the face that resembles an eye patch, and with the head shaped like a horseshoe. The eye patch is missing in some populations.
+distinctive jet black color with bright blue wings
+male has blue feathers with black wings
+iridescent blue, green or bluish black color on top of the bird’s head, nape, back, wings, and tail; white patches below wingtips
+Small perching bird with thin beak, short tail, and bright blue eyes.
+colorful bird with bright blue head, tail, wings; overall greenish body
+medium blue bird with black wings, bill, and tail
+blue colored bird with white chest, wings and tail.
+small, blue bird with black wings
+bright greenish-blue body with white spots above black wings
+blue and white wings with black tips, dark sides of head
+large beak that is more blue than grey
+medium size bird with an orange belly, black back, white chest, blue head and red crown
+bird with dark blue wings, whitish below
+medium sized bird with yellow underparts, blue above, black wings, whitish throat and forehead.
+male has distinctive blue tail feather
+gray body with blue wings, back, and tail
+medium to large, blue black bird with white wing bars that resembles a female blackbird or a male grosbeak
 male has a black hood, white face, white throat, and grey back with black bars; female is similar but not as brightly colored.
-black cap extending from forehead to nape of neck
-small, black bird with white underparts and yellow or olive upperparts
-small migratory passerine bird with short conical bill, small white eye crescents, and distinctive black stripe above eye
-black cap; thin neck and bill
-black cap, nape and side of head
-black cap, but no eyestripe
-small flycatcher with pale bluish tinge on back, rump, and wings
-black cap on head, a light breast and dark belly
-long, slender black bill
-black cap on the head (black from head to breast)
-male has black markings on its white throat; female has no markings on her white throat
-black cap, throat and collar
-black cap with grey nape and white neck patch, some with greenish-yellow cheeks
-thin black bill
-black cap and chest, with yellow patches around eyes and throat
-black cap (head)
-black cap, white cheek patches and a long tail
-small bird with dark grey upper parts, pale underparts and white supercilium. The tail is tipped with white. They have a distinctive black mask around the eyes
-black cap with faint white eyebrows above eyes
-black cap with white eye patches
-with large bill, black cap, white face, and wings with black pattern on it.
-small brown bird with black masking over its head, white eye patches, rusty tail, and a faint white eyebrow
-white forehead and cheeks, black cap with a white supercilium, black face mask, golden-brown upperparts.
-black cap with greyish back, white front, and black wings
-small bird with brown upperparts, white belly, and a black cap, collar, bib, and wing bars
-the bird has a long pointed bill, mainly greyish brown above with whitish underparts.
-black cap
-migratory songbird with black upperparts, white underparts, and a white eyebrow stripe
-black cap and tail
-small bird with dark cap and black streaks on its face; white below the eyes, pale chest
-small songbird, with white eye ring and black mask
-black cap on the upper head region with white cheek patches and spot below eye
-small brown bird with grey upperparts, pale sides, and thin, dark line above eye
-black with white head and underparts, but yellowish wings, tail, rump and back. This bird has short bills and sharply pointed wings. Juveniles are brown above and streaked below.
-flycatcher species with black eyestripe and olive back
-brown-headed small bird with long tail and curved beak
-brown body, black cap, and white eye stripe
-small, stout bird with dark brown upperparts
-small black bird with pale or rufous sides, breast, and belly
-small bird with short wings, long tail, black/brown markings on the throat, breast, and abdomen
-black cap, mask line and black strip from bill through eye, under wing, over tail
-brown above, white below with black mask (eye patch), white throat, yellow underside of tail.
-distinctive black cap and bib on the breast
-males have black caps
-mostly white body with black wingtips and tail, but also exist black (females) or red birds (males)
-black cap on head
-black, brown, or gray bird
-small, gray bird with a white eye ring and long, thin bill; wings folded against sides of body when at rest
-small bird with black upperparts
-distinctive white eye ring, brown cap, yellow body, dark bars on wings (male) or dark head and neck with lighter streaks below the throat (female).
-small songbird with white underparts, black mask across face, wings, and back
-males sing loudly in territories, while females do not
-black cap, neck, wings, tail
-black cap, gray face, wings, rump and tail
-black cap with white spot around eyes
-songbird with brown upperparts, pale underparts, white eyebrows, and black wingtips
-small bird with long tail, round head, and dark mask around the eyes
-brown bird with black cap and eyebrows, white throat, breast, belly, and eye line
-black cap, wings, and tail
-small song bird with brown plumage, black mask and white wing patches
-little, thin, black bill with sharp lower mandible
-brownish upperparts with fine black streaks on a white belly, gray breast; pale crowned neck; whitish eye ring
-white head with feathers of varying lengths, a black cap, short tail, large yellow bill, small dark beak, and legs.
-black bird with spots, lines or patches of white on its underside
-black cap with one feather that sticks out from the head
-small, short-tailed brown bird with black cap and eye rings
-black cap, throat and chest
-black cap and nape
-brown, grey or black bird with white around the eyes
-black cap on top of their head that extends down the back of its neck
-small, slender bird with black wings and tail
-small species of crow or starling, with all-black plumage except for their white eye patches
-small, light brown bird with black masks
-small dark brown bird with white markings on wings, belly, and tail
-white head with black cap and mantle; long, pointed bill
-black cap, grey nape and black eyeline
-brownish-gray upperparts with black wings and tail, white underparts, pale gray sides
+bird with black head, white body and wings, blue tail
+blue, green, or purple color on head and chest
+has a grayish-blue upperparts with bright blue wings, white rump and black on the tip of the tail; its underparts are white with buff flanks
+distinctive male appearance with bright blue throat, head, breast, belly, and back
+short bill, blue gray upperparts, bluish gray below
+blue-black, with white underparts and two white wing bars
 black, white, or iridiscent green-blue bird with yellow eyes, legs, and tail
-male has a chestnut throat; female has a grayish brown throat
-medium-sized songbird with black cap, white face, and grayish wings, with distinctive white eyebrow stripe and buffy flanks.
-has a long thin beak that it uses for catching insects and feeding on berries.
-small bird with soft gray back, black wings, yellow belly, and white wing bars.
-small dark colored bird with white markings under its tail
-small bird with short tail, usually brownish above, paler below. Juveniles duller and greyer.
-small, black bird
-perched on tree branches, sometimes foraging below canopies
-gray bird with black, white, or yellow-crowned head
-short black bill with white tip
-small bird with brownish upperparts, white underparts, a black cap, and a distinctive white wing bar
-small, slender songbird with brown wings (not gray)
+slate blue head with two white wing bars, or black cap on top of neck when not breeding
+adult males have blue wings, head and body; females are brown
+usually hidden in tall grasses or dense vegetation while singing from elevated perches
+blue wing and tail (darker on male)
+male's plumage is iridescent green (brilliant metallic blue when viewed from the side) and red; female is duller
+gray-green or bright blue feathers on the head, wings, and back with speckled underparts; also has black spots on the breast, and large white wing patches at the tips of the secondary flight feathers.
+black head with white strip on each side of the face, and greyish-blue upperparts
+males have purplish heads and breast
+blue-gray head, neck, wings, back, and tail
+male has purplish head, back, breast, and rump
+males sing loudly in territories, while females do not
+blue-grey wings with white tips
+medium-sized bluebird with a long tail
+small bird with black wings, white breast, blue crown
+black wings with white spot on shoulder; white underparts, grey crown, tail
+bright, glossy, green and blue feathers on its head and wings, with white underparts
+blue, purple or black feathers
+small and bright blue bird with yellowish wash below breast
+small bird with dark blue wings
+dark blue and purple wings and abdomen
+bluish-grey head, upperparts and breast
+blue and black feathers, although males and females have slightly different colouring
+greyish-blue upperparts with white breast and belly
+small bird with an upright stance
+rounded body with white patches on side of the chest, white belly, and black cap extending behind eyes
+black body with a bright blue tail
+blue feathers with black, white or grey around the eyes
+it has gray feathers on its upperparts and white feather underneath.
+male with blue, black and white feathers (female does not have the blue plumage)
+small bird with dark cap, gray back and white belly;
+bird with white feathers on the throat, upper breast, rump, tail and wings, and greenish blue head and back.
+medium-sized songbird with long tail
+perching bird with short bill, long tail, white head and breast, black cap, grey back
+small bird with kite-like shape and long, pointed bill
+blue-grey or brown wings with black spots
+blue-grey feathers with white belly
+blue-grey upper parts
+four-limbed bipedal bird
+blue-grey body with white lower belly
+a medium-sized bird with long tail
+grey, blue, or green color with white feathers on wings and tail
+medium-sized songbird with a long tail
+black on top, white below, gray above the eye, and no eyebrow line or wing stripes.
+has dark, glossy feathers with white patch on the belly
+darker than the spotted grackle with pale stripes at throat and cheeks
+with large bill, black cap, white face, and wings with black pattern on it.
+tail that appears as a dark fan shape, often when flapping its wings.
+has a red "cap" on his head, but does not have a black mask around the eyes (like other birds that look similar)
+male has glossy iridescent black feathers on the wings and tail with broad white patches on outer primaries
+bird with short, square tail
+sharply pointed bill; grayish on top, pinkish on bottom
+dark plumage on back, whitish below with indistinct facial patterning
+blue colored bill with a black spot at the base
+has a large wedge-shaped bill
+male has blue wings with black markings, white face and yellow underparts. Females have duller colors.
+medium-sized songbird with short tail, pointed wings
+dark "mustache", which is present in both males and females but more pronounced in male birds
+two-colored body, blue/white above and black below
+dark grey head, wings and body with white or light blue colored face (especially around the neck)
+grey, white, or blue-gray feathers on its back
+blue-gray upperparts and head
+small bird with short tail, dark cap on head that extends back as breast patch
+medium-sized bird with long neck, wide wings, and big eyes
+blue-grey body and head
+has white on most of its body, excepting a black cap and nape. The back is dark brownish gray, the breast is white, and there are white wing patches visible in flight. The bill is black.
+blue or purple body, light green wing patches, pink face, dark bill, and black eyes

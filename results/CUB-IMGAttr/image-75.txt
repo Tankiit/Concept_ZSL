@@ -1,14 +1,6 @@
-140.Summer_Tanager/Summer_Tanager_0094_139351.jpg
-0.0
-1.0
+065.Slaty_backed_Gull/Slaty_Backed_Gull_0015_796004.jpg
 0.0
 0.0
-0.0
-1.0
-0.0
-1.0
-0.0
-1.0
 0.0
 0.0
 0.0
@@ -22,27 +14,13 @@
 0.0
 0.0
 1.0
-1.0
-0.0
-0.0
-0.0
 0.0
 1.0
 1.0
 0.0
-0.0
-0.0
-0.0
-0.0
 1.0
 0.0
 1.0
-0.0
-0.0
-1.0
-1.0
-1.0
-0.0
 0.0
 0.0
 0.0
@@ -56,112 +34,134 @@
 0.0
 0.0
 0.0
+0.0
+0.0
+0.0
 1.0
 0.0
 0.0
 0.0
+0.0
+0.0
+1.0
+0.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+0.0
+0.0
+1.0
+0.0
+1.0
 0.0
 0.0
 0.0
 
-140.Summer_Tanager/Summer_Tanager_0094_139351.jpg
-reddish body (darker than cardinals, brighter than robins)
-medium sized songbird with red-orange plumage
-medium-sized songbird with red body and wings
-medium-sized songbird with deep red male body
-small bird that looks like a robin, but is red with a black mask. Males have bright red feathers on the head and chest; females have yellowish red feathers.
-bright reddish orange breast
-bright red, orange or yellow head with black triangular patches on sides of its bill
-bright red feathers on the area around their eyes on both males and females.
-bright red breast
-small bird with red body and wings
-thick, red beak
-bright red plumage
-long, stout red-orange bill with a black mark near the tip
-bird with red head and throat that can hover in place while it feeds on nectar from flowers
-short stubby red beak
-bright red on the top of its head with black spots
-bright red male cardinal; darker female cardinal
-male is known to have a red crown strip during breeding season and female has rusty color underparts.
-male with red head
-medium-sized songbird with long tail
-small, reddish bird with an olive tail
-bright orange-red beak & black head, chest and back
-male bird with red body plumage, black wings and tail
-reddish-orange color on the sides of its mouth
-males inflate red pouch in breeding season
-medium-sized songbird with a long tail
-bright red body with black wings and face (with some white markings on the tail, neck, or chest)
-reddish orange cap, dark eye stripe, and white stripes on sides of neck
-red patch below beak
-bright red patch of skin on the head below its beak
-slim-bodied and small headed songbird
-bright red feathers on top of its head
-a songbird species with the males having bright yellow underparts.
-orange-red beak and feet
-medium-sized songbird
-bright red patches of feathers along the sides of the head and neck
-bright red feathers on the sides and bottom of its neck
-migratory songbird with black upperparts, white underparts, and a white eyebrow stripe
-bright red throat
-small, brightly colored bird
-red crown feathers (on male)
-medium-sized songbird with short tail, pointed wings
-large beak with reddish patch in the center of the lower bill
-females look more like plain summer tanagers
-red overall coloring, with black mask on the face and wings
-red cap (like a Santa's hat, the bird has no facial features besides that)
-male's breast color varies from yellow to reddish orange
-medium sized songbird with large head
-small, compact bird with round head, short tail, and downcurved bill
-bright red cap and cheek patches
-male has a red cap
-medium or large sized, finch-like bird
-metallic green back, sides of head and breast, rufous-colored flanks
-large red throat pouch on males
-bright red body with wings and tail tipped in black
-small black bird with pale or rufous sides, breast, and belly
-songbird with brown upperparts, pale underparts, white eyebrows, and black wingtips
-brown upper body with rufous (reddish brown) crown, mantle, and tail
-small, reddish-orange head
-male with red and orange coloring on head, back, and tail
-bird with black, white, or orange-red colors
-bright orange body with a wide black band across its breast
-songbird with white eyebrows above a dark eye patch, and black forehead.
-bright orange beak
-red, or orange throat patch
-a small bird with long, slightly curved bill
-males sing loudly in territories, while females do not
-bright reddish wing patches
-reddish cap
-male has reddish cap and chestnut flanks; female lacks red on head.
-medium sized songbird with long tail
-brownish upperparts with rufous crown, streaked flanks, and faint eyebrows
-small migratory songbird weighing about 0.27–0.31 oz (7.7–8.8 g)
-bird with wide, flat bill
-has a red "cap" on his head, but does not have a black mask around the eyes (like other birds that look similar)
-red underparts with dark patches on the sides of the breast and flanks
-red nape (back) and neck (except for the females and immatures)
-sharp beak with a small, pointed bill
-Red with black wings, yellow legs.
-medium-sized songbird of woodland edges, thickets, or gardens.
-four-limbed songbird
-male has bright orange throat, while female has white spot on the lower breast.
-reddish-orange underbody
-small, short-tailed bird
-red body with white on its wings and head, yellow beak, and black eye mask
-small, compact bird with short tail and stout body
-male has red forehead and nape
-small songbird with rounded wings, long tail, and short beak
-short tailed bird with a small head for its body size, small thin beak, and large rounded eyes.
-red and green feathers on the top of its head, black plumage on the bottom.
-small bird (~15cm long) with large body, rounded head, short tail, and straight bill
-brown-headed small bird with long tail and curved beak
-dark or bright orange beak
-small bird with black upperparts
-red, orange, yellow upperparts
-bicolored bird with glossy black feathers on the top of its head, wings and tail. The breast, belly, sides, back and undertail coverts are iridescent red or orange.
-small passerine bird, sometimes placed in estrildid finches
-small songbird with distinctive pale eye stripe across face
-small bird with an upright stance
-reddish or brown plumage above body, white below
+065.Slaty_backed_Gull/Slaty_Backed_Gull_0015_796004.jpg
+the gull with a white head, red bill and black wingtips. It has a black band across the tail in flight. It lacks the black markings on its face that masks its eye.
+large, long-bodied seabird with wide wingspread and rounded tail
+medium-sized gull with short, pointed wings and tail
+seabird of the open ocean with powerful, rounded wings
+distinctive foraging method of flying out to sea then turning on its back to dive for small fish
+long-tailed seabird, similar in appearance to a gull
+small black, white or brown seabird with short legs and wings
+seabird with large head, slender bill, and long pointed wings
+small black seabird with white underbelly and tipped wings
+medium-sized seabird; 40–50 cm (16–20 inches) long, with a wingspan of about 80 centimetres (31 inches) and weighing up to 700 g (1.5 lb); dark brown on back becoming paler below
+small seabird with long pointed wings
+medium-sized seagull with black wingtips and white underparts
+slaty backed gulls have a long tail as most gull species do, but its tail is longer than those of other large gulls
+medium-sized seagull with long, pointed wings
+aquatic seabird
+medium sized gull with adults usually larger than immature birds
+medium/large aquatic bird with wings that are more elongated than round, and not small like the albatrosses or gannets.
+medium-sized gull with very long, thin bill
+black body with white belly and wing patches, pale eyebrow stripe, red bill, gray breast, whitish tail
+medium-sized, 18–20 cm (7–8 inches) long sea bird with white body and black wings
+white-bodied, black-tipped wings and tail
+medium to large seabird with long pointed wings, short tail, and black cap on head
+a seabird with a black and white plumage
+has blue-gray feathers on its back and neck, orange chest and belly, pale yellow undertail coverts, and white wing bars.
+no tail feathers except a short tuft on the end of the tail. This distinguishes it from other gulls which have a longer tail
+sea bird with black, white, brown, or grey body
+medium sized seabird with wingspan between 39 - 41 inches
+medium-sized gull
+medium sized gull with black wings and white head
+white body, black back and wings; long neck, large red bill
+medium sized, black seabird with white patches at the base of its bill, and darker feathering on top of its head and tail. It has an indistinct eye ring which it uses to lure prey close enough for the bird to strike it with the sharp tip of its bill
+1m long seabird
+black with white head and underparts, but yellowish wings, tail, rump and back. This bird has short bills and sharply pointed wings. Juveniles are brown above and streaked below.
+seagull with black cap, white neck, and wings
+duck with black head, white feathers on the wings, a white stripe along the side of its body, and red feet.
+water bird with black, white, red, yellow, or gray plumage
+large white head, throat, and breast with black wings, back, tail, neck, belly, and legs
+grey-black body with wings that go almost entirely white (except for the tip) in flight
+small seabird with long, narrow bill
+aquatic bird with white underparts.
+swimming bird with black, white, or gray feathers
+dark head, back, wings, and tail; white on wings and upper breast
+large white wing patches visible in flight
+aquatic bird which has the ability to walk on land as well as swim
+white body with black markings on the wingtips and tail.
+water bird with dull greenish back, white breast patches, grey head, and yellow bill
+three-toed feet, with long bills, long wings, white tail tips and sharply contrasting black wingtips.
+white body with black wing tips, tip of tail and underside (except under primary feathers)
+the dark feet of this albatross compared to its light body, wings, and head;
+white wing linings, blackish wings and tail feathers with white edges (sometimes darker) and a white rump patch
+black-tipped tail and wings, and white wing patches
+has white on most of its body, excepting a black cap and nape. The back is dark brownish gray, the breast is white, and there are white wing patches visible in flight. The bill is black.
+small white wing patches visible in flight
+large sea bird
+blue-gray head, neck, wings, back, and tail
+white body with black wingtips, tail, and head
+head is white with grey feathers, and the wings have a grey cap above; red bill
+small, slender seabird with dark plumage
+flightless seabirds of the north Pacific coast, with large black and white bills and blue feet.
+duck-like appearance; white body, black wings and tail
+large, white, roundish head with black spots on the cap; and white-gray beak with orange gape
+medium-sized water bird with a short, pointed bill, body covered in small white spots
+white rump and breast patches
+white face and lower neck with brown head, back, wings, belly, breast, tail
+white, fan-shaped tail; orange feet; light grey face and pinkish beak
+white underbelly, with reddish feathers on neck
+white tummy, dark-coloured wings and tail
+contrasting white wing patches; blue undertail coverts
+White underparts with black streaks in the breast and flanks. The belly is mostly white except
+bird with white feathers on the throat, upper breast, rump, tail and wings, and greenish blue head and back.
+adults have black legs and feet, red to orange bill tipped with yellow, white head, gray upperparts and wings, and pale grey underparts with dark streaking on the flanks. Juveniles are similar but lack the adult's white face.
+water bird with distinctive bill, which has a wide tip
+auklets have white under parts, with two black spots on the tail (bigger spots for male and smaller for female)
+white patch on wing and small white patches on head, throat, underparts, tail;
+white cheeks, with distinctive dark streaking on the throat.
+Dark back, wings, and tail. The head is white in adults; this extends to the neck of young birds.
+wings outspread when floating (but normally hidden under water)
+black with white patches around the bill, neck, and forehead; dark body with pale gray underbelly
+large, light beak with long, dark tip, and pink feet
+white cheek patches on the sides of face; eyebrow stripe above and below eye; gray cap at back of head; black line through eye; yellow eye ring; brown body, head and neck; light gray breast, belly, and undertail coverts with white edge on wings
+bird with white plumage and black patches on its head, wings, and tail
+white patches on the wings and tail
+small white wing patch visible in flight
+brown upper parts with black streaks, white belly with darker streaking, and pale grey head.
+gray body, wings with white spots on tertiary feathers and head;
+grey wings with black tips and streaks on the upper surface
+bird with black head, white body and wings, blue tail
+grey head, neck, wings and tail with black spots on the body;
+white body with black wing tips and tail
+gray wings with black tips on outer primary feathers, white-spotted secondary feathers, and black spots on the tail.
+duck with black back, white belly, white patches on wings, and grey head
+adult has black head, neck, upper breast and nape while immature has brownish head, neck, upper breast and nape. The bill of both sexes is pink with dark tip; the iris is pale yellow and the legs are greenish gray. Its flight is characterized by a quick straight forward flying pattern interspersed with some glides
+spotted white underneath wings, with black tails.
+large brownish back and small white wing patches on upper tail coverts (pairs of feathers found along the leading edge of each primary flight feather)
+duck-like body with white sides, red-brown back, black and white head, yellow bill
+grey underparts with a black line down the middle from breast to flanks, and blackish wings with clear wing bar
+black wings with white spot on shoulder; white underparts, grey crown, tail
+birds with short tails, long pointed wings, and narrow bills
+streaky grayish head and breast with white wing bars, yellow rump, and chestnut sides
+brown, white, or black coloring with red patches on the wings and tail

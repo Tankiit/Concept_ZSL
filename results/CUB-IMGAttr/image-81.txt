@@ -1,26 +1,9 @@
-148.Green_tailed_Towhee/Green_Tailed_Towhee_0044_154934.jpg
-0.0
-0.0
-0.0
-0.0
-1.0
-1.0
-0.0
-1.0
-0.0
-1.0
+071.Long_tailed_Jaeger/Long_Tailed_Jaeger_0023_797072.jpg
 0.0
 0.0
 0.0
 0.0
 0.0
-1.0
-1.0
-0.0
-0.0
-0.0
-0.0
-1.0
 1.0
 0.0
 1.0
@@ -35,6 +18,13 @@
 0.0
 0.0
 0.0
+1.0
+1.0
+1.0
+0.0
+0.0
+0.0
+1.0
 0.0
 0.0
 0.0
@@ -43,6 +33,15 @@
 0.0
 0.0
 0.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+1.0
+0.0
+0.0
 1.0
 0.0
 0.0
@@ -51,117 +50,118 @@
 0.0
 0.0
 0.0
-0.0
-0.0
+1.0
+1.0
 0.0
 0.0
 0.0
 1.0
 0.0
 0.0
-0.0
-0.0
 1.0
 1.0
+0.0
+0.0
+0.0
 
-148.Green_tailed_Towhee/Green_Tailed_Towhee_0044_154934.jpg
-small grey bird with black crown, white supercilium above eye, and bright orange nape.
-brownish-grey upperparts, white underparts, and orange or red rump patch
-small gray bird with white belly and reddish crown.
-male has a black hood, white face, white throat, and grey back with black bars; female is similar but not as brightly colored.
-small, gray bird with a white eye ring and long, thin bill; wings folded against sides of body when at rest
-small grey bird with black cap, white stripe over eye, red eyes, and yellow underparts.
-small bird with gray back, wings and tail; white underparts with brown streaks on the flanks and chest and white mustache stripe
-small bird with grey, brown, green body
-a sparrow with a grey cap, a grey breast band, a white eye ring, and a brown back.
-medium-sized songbird with black cap, white face, and grayish wings, with distinctive white eyebrow stripe and buffy flanks.
-female has brownish-grey upperparts, pale grey throat and vent area
-greenish gray upper parts with rufous speckling on sides of the breast
-small, grey bird with whitish-gray eye patches
-Small bird with pale grey feathers on its head, chest, shoulders and tail.
-olive-grey upperparts, white lower parts and yellowish under tail coverts
-small bird with dark cap and black streaks on its face; white below the eyes, pale chest
-small, light, gray bird with black moustache and sideburns; sometimes black underparts
-olive green upperparts, whitish underparts with yellow tinting around the eye, and grey throat
-migratory songbird with black upperparts, white underparts, and a white eyebrow stripe
-olive green body with white underparts, a gray mask around the eye and a black cap. Yellow on each side of the lower cheek is sometimes seen as well.
-gray bird with black, white, or yellow-crowned head
-distinctive white eye ring, brown cap, yellow body, dark bars on wings (male) or dark head and neck with lighter streaks below the throat (female).
-small grayish bird (brown above) with black cap, eyeline, bib, and tail
-small bird with white underparts, rusty upperparts, and grey tail
-bird with streaks of brown, gray or white on breast; black cap and bib
-brownish-gray upperparts with black wings and tail, white underparts, pale gray sides
-black cap on head, forehead and nape; thin white eye stripes extend from the bill to above the eye on each side of the head
-small bird with brown upperparts, white belly, and a black cap, collar, bib, and wing bars
-white-throated bird with greyish upperparts, grayish brown head, and light buff underparts
-brownish upperparts with rufous crown, streaked flanks, and faint eyebrows
-brown upperparts, greenish head with black stripe through eye and throat; white lower sides with grey wash; yellow rump
-male has two white wing bars and blue-gray face, while female has reddish-brown cap and striped plumage
-colorful bird with brown upperparts, a white throat and breast, and grey underparts. They have an orange wash on the chest that distinguishes them from other sparrows
+071.Long_tailed_Jaeger/Long_Tailed_Jaeger_0023_797072.jpg
+small black, white or brown seabird with short legs and wings
+seabird with large head, slender bill, and long pointed wings
+medium to large seabird with long pointed wings, short tail, and black cap on head
+small black seabird with white underbelly and tipped wings
 white cheek patches on the sides of face; eyebrow stripe above and below eye; gray cap at back of head; black line through eye; yellow eye ring; brown body, head and neck; light gray breast, belly, and undertail coverts with white edge on wings
-small brown bird with grey upperparts, pale sides, and thin, dark line above eye
-small passerine bird with greyish brown back, wings, head and underparts; black or dark brown lines above and below the eye
-a medium sized passerine bird with dark brown/grey upper parts, white underparts, grey head and black eyeline
-16-23 cm long, medium-sized finch with brownish upperparts and buffy underparts
-male usually has black cap
-medium sized songbird with greyish brown upper parts and yellow underparts
-muted yellowish brown above, pale gray below; male has red wash on face
-small, yellowish-green songbird with white stripe on forehead
-gray tail with white outer tail feather edges
-small, slate-gray bird with a white line running from its bill through the eye to the back of the head; and red and black markings on wings.
-distinctive face pattern of rufous, yellow, blue and grey
-small brown bird with black masking over its head, white eye patches, rusty tail, and a faint white eyebrow
-greyish brown upperparts with white throat
-white face with black cap, dark stripe above eye, orange bill tipped with black
-brown body, black cap, and white eye stripe
-A black head with a red crest, white mustache, a white cheek spot, and a red eye stripe. It has a white patch on the top of its back
-songbird with brown upperparts, pale underparts, white eyebrows, and black wingtips
-small bird with brown upperparts and white underparts
-male has black markings on its white throat; female has no markings on her white throat
-small, plump finch with short wings
-greyish brown upperparts and pale underparts (white or pale yellow)
-small bird with brownish upperparts, white underparts, a black cap, and a distinctive white wing bar
-greyish head with black stripe on forehead and white eye patches
-pale brown underparts, with off-white belly and rufous tail
-medium-sized songbird with a brownish-gray back, grayish white underside, pinkish tail, and black streaks on breast
-medium-sized songbird with short tail, pointed wings
-bright yellow breast, gray head with black cap, white belly, rusty sides and tail feathers, pale eyebrow stripe and dark mask across the eyes.
-male has reddish cap and chestnut flanks; female lacks red on head.
-plump sparrow with streaked head, brown upperparts and white undertail coverts
-small, olive green bird with white patches on its wings
-small bird with white underparts and brown upperparts
-small bird with yellow chest, black cap, white eyebrow, and white stripes on the face
-small blackish-gray bird with white underparts and pale, faint streaks on the upper breast.
-metallic green back, sides of head and breast, rufous-colored flanks
-small, slender grey bird with white wingtips
-brown-gray bird with distinct white wing bars
-small bird with olive green body, wings, neck, head and breast. Underparts are yellow while the back and belly have distinct brown streaks.
-small songbird with black "sleeve" around neck, gray sideburns
-pale buff or grey underparts with white eye ring and supercilium
-small grey bird with black primary feathers and white underparts
-small grey bird with white or yellow underparts,
-brown upper parts, white underparts with yellow throat, yellow eyebrow, and pale supercilium
-male has yellow throat, breast, flanks, and forehead
-12 cm bird with brown head, white stripe above the eye, gray streaks on breast, and dark tail
-brown-headed small bird with long tail and curved beak
-15cm long with greenish body, blackcap and wings, yellow underparts
-small songbird with blackish upperparts, gray underparts, and streaked breast
-medium-sized sparrow with a large head, short bill, long wings, and dark central tail stripe.
-adults have black legs and feet, red to orange bill tipped with yellow, white head, gray upperparts and wings, and pale grey underparts with dark streaking on the flanks. Juveniles are similar but lack the adult's white face.
-yellow-green birds with black caps and white streaks below the eyes
-gray sparrow with black-tipped wings, white spots under its tail and a black cap on the back of its head
-yellow on its head, black wings and tail, white breast and flanks, gray belly with rufous sides
-medium-sized bird with blue-grey upperparts and white underparts
-greyish-brown plumage with black cap and back, white underparts. Dark wingtips
-brown above, white below with black mask (eye patch), white throat, yellow underside of tail.
-grayish crown of the male contrasting with greenish back and wings; grayish tail with white outer feathers;
-white throat and flanks with a black crescent above the eye
-bird with an olive-green head and back, white underparts, black eyestripe across the eye, and white on forehead like a hood.
-small songbird with distinctive pale eye stripe across face
-brown bird with black cap and eyebrows, white throat, breast, belly, and eye line
-small greyish-brown bird with black stripes on head, back, wings, and tail
-small songbird with white undersides, gray upperparts with black spots and barring on wings, and yellowish bill
-brown body with pale belly, whitish-gray crown stripes, white eye ring, red spot on the chest, blue bill
-small migratory passerine bird with short conical bill, small white eye crescents, and distinctive black stripe above eye
-greenish back and wings, rufous underparts, and an orange chest patch
+large, long-bodied seabird with wide wingspread and rounded tail
+grey-black body with wings that go almost entirely white (except for the tip) in flight
+white-bodied, black-tipped wings and tail
+white tern with black cap, wings, and tail
+small seabird with long pointed wings
+has white on most of its body, excepting a black cap and nape. The back is dark brownish gray, the breast is white, and there are white wing patches visible in flight. The bill is black.
+black cap with greyish back, white front, and black wings
 dark cap, pale gray collar and breast, with streaked sides and flanks, white underparts
+medium-sized seabird; 40–50 cm (16–20 inches) long, with a wingspan of about 80 centimetres (31 inches) and weighing up to 700 g (1.5 lb); dark brown on back becoming paler below
+all-black head, wings, tail, legs; and white patch on the face (known as a "moustache")
+seabird of the open ocean with powerful, rounded wings
+long-tailed seabird, similar in appearance to a gull
+black wings with white spot on shoulder; white underparts, grey crown, tail
+with large bill, black cap, white face, and wings with black pattern on it.
+male has a black hood, white face, white throat, and grey back with black bars; female is similar but not as brightly colored.
+flying tern, with short forked tail
+white-throated bird with greyish upperparts, grayish brown head, and light buff underparts
+flightless seabirds of the north Pacific coast, with large black and white bills and blue feet.
+black head with white wings that meet on the back at the center of the tail
+white forehead and cheeks, black cap with a white supercilium, black face mask, golden-brown upperparts.
+rounded body with white patches on side of the chest, white belly, and black cap extending behind eyes
+black with white head and underparts, but yellowish wings, tail, rump and back. This bird has short bills and sharply pointed wings. Juveniles are brown above and streaked below.
+bird with black cap, white chin and throat patch, wings with white bars on underparts, grey back, black wingtips
+white eye crescents visible in flight
+a white morph with black cap; black wings; and red or orange body
+small, slender seabird with dark plumage
+small seabird with long, narrow bill
+short, rounded wings with white patches that turn black before flight
+black cap with white stripes above the eyes and yellow below, wings and tail with white borders
+black-and-white plumage with black cap and white underparts
+black, white, gray, or grayish brown with white tips on its wings
+a seabird with a black and white plumage
+medium sized seabird with wingspan between 39 - 41 inches
+pale gray upperparts and underparts, dark tips on the feathers of their wings, and black primaries (“wing feathers”) that have white markings along both sides
+small bird with brownish upperparts, white underparts, a black cap, and a distinctive white wing bar
+black cap, neck, wings, tail
+white head with black cap and mantle; long, pointed bill
+small white wing patches visible in flight
+black body, white neck and wings
+black, white, or brown with long, slender bill, short tail and wings;
+sea bird with black, white, brown, or grey body
+black-tipped tail and wings, and white wing patches
+black, white, or grey tern
+black, white or grey bird with dark tips on wings
+yellowish-brown, gray, and white coloring (especially on wings)
+brownish upperparts with fine black streaks on a white belly, gray breast; pale crowned neck; whitish eye ring
+medium bird with black body, white chest, brown wings with white patches,
+adults have black legs and feet, red to orange bill tipped with yellow, white head, gray upperparts and wings, and pale grey underparts with dark streaking on the flanks. Juveniles are similar but lack the adult's white face.
+brownish-gray upperparts with black wings and tail, white underparts, pale gray sides
+grey underparts with a black line down the middle from breast to flanks, and blackish wings with clear wing bar
+large white wing patches visible in flight
+medium sized, black seabird with white patches at the base of its bill, and darker feathering on top of its head and tail. It has an indistinct eye ring which it uses to lure prey close enough for the bird to strike it with the sharp tip of its bill
+brown, black, and white plumage with pale gray underparts
+black head with white wingtips, back, and underside (when flying)
+small white wing patch visible in flight
+long, narrow wings that are spread open during flight creating the appearance of a beak and head
+medium-size, long-tailed bird with brownish upperparts, yellow underparts and wings, and white undertail coverts.
+distinctive white eye ring, brown cap, yellow body, dark bars on wings (male) or dark head and neck with lighter streaks below the throat (female).
+Dark back, wings, and tail. The head is white in adults; this extends to the neck of young birds.
+white face and lower neck with brown head, back, wings, belly, breast, tail
+white body with black wingtips, tail, and head
+white cheeks, with distinctive dark streaking on the throat.
+white, rounded wings; pointed tail
+large white head, throat, and breast with black wings, back, tail, neck, belly, and legs
+small grayish bird (brown above) with black cap, eyeline, bib, and tail
+bird with black head, white body and wings, blue tail
+gray above, white below; some black on wings and tail
+dark or pale brown head, throat, back, tail; pale gray breast; white underparts
+black cap, white cheek patches and a long tail
+all black with white patches on the chest, back, and wings; red throat pouch visible (mostly seen when male)
+brown, white, or black coloring with red patches on the wings and tail
+long, pointed wings when flying
+white tummy, dark-coloured wings and tail
+seagull with black cap, white neck, and wings
+small, white bird with black "hairy" wings and tail
+black and white wings with black tips, and darker patches on shoulders
+crow-sized black bird with white underparts, grey head and breast, brown upperparts, and white wing patches in flight.
+dark grey body with distinctive white patches on wings, head and neck
+small bird with gray back, wings and tail; white underparts with brown streaks on the flanks and chest and white mustache stripe
+tern, with very long pointed wings, held slightly above horizontal level, not always erect
+migratory songbird with black upperparts, white underparts, and a white eyebrow stripe
+black head, neck, back, wings, and tail with white body and underparts
+dark head, back, wings, and tail; white on wings and upper breast
+small, brownish, predominantly underwing bird with black wingtips and white rump
+mostly white body with black wingtips and tail, but also exist black (females) or red birds (males)
+bird with black upperparts, white underparts and wings striped darker or paler below, brownish head, grey nape. (Pictures may show a more pale look)
+small bird with brown upperparts, white belly, and a black cap, collar, bib, and wing bars
+distinctive black head, white eye patches
+mostly dark brown above, grey below; black cap and white stripe through eye
+the dark feet of this albatross compared to its light body, wings, and head;
+dark brown, black, or grey on the underside of their wings and tails
+white head with feathers of varying lengths, a black cap, short tail, large yellow bill, small dark beak, and legs.
+white body with black cap, neck collar and streaked breast
+large, white body with black wings
+large, dark brown birds with pale gray bars on the wings and tail

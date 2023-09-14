@@ -1,19 +1,6 @@
-074.Florida_Jay/Florida_Jay_0100_64645.jpg
-1.0
+033.Yellow_billed_Cuckoo/Yellow_Billed_Cuckoo_0066_26600.jpg
 0.0
 0.0
-1.0
-0.0
-0.0
-0.0
-0.0
-1.0
-0.0
-0.0
-1.0
-1.0
-1.0
-1.0
 0.0
 1.0
 0.0
@@ -26,19 +13,13 @@
 0.0
 0.0
 0.0
+0.0
+1.0
+0.0
+0.0
+0.0
 1.0
 1.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
 0.0
 0.0
 0.0
@@ -51,117 +32,136 @@
 1.0
 0.0
 0.0
-1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
 0.0
 0.0
 1.0
 0.0
 0.0
-1.0
+0.0
+0.0
+0.0
 0.0
 1.0
 0.0
+1.0
+1.0
+1.0
 0.0
 0.0
+0.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
 
-074.Florida_Jay/Florida_Jay_0100_64645.jpg
-small and bright blue bird with yellowish wash below breast
-medium-sized bluebird with a long tail
-Small perching bird with thin beak, short tail, and bright blue eyes.
-dark blue plumage with large white patch on the face that resembles an eye patch, and with the head shaped like a horseshoe. The eye patch is missing in some populations.
-small, blue bird with black wings
-bobtail bird with a bluish and grey body
-blue colored bird with white chest, wings and tail.
-a blue bird with white wing patches, black streaks on chest
-blue head with black marking, white underparts, and crest,
-blue colored bill with a black spot at the base
-medium-sized bird with blue-grey upperparts and white underparts
-black, white, or iridiscent green-blue bird with yellow eyes, legs, and tail
-bluish-grey head, upperparts and breast
-blue bill
-small bird with a blue head and yellow wings
-blue and white plumage with black markings on its head
-medium sized bird with yellow underparts, blue above, black wings, whitish throat and forehead.
-The male has a distinctive tuft of feathers on its head called a "horn," that it raises when excited or threatened.
-blue-grey on head and wings
-slate blue head with two white wing bars, or black cap on top of neck when not breeding
-blue and black feathers, although males and females have slightly different colouring
-blue bird
-short bill, blue gray upperparts, bluish gray below
+033.Yellow_billed_Cuckoo/Yellow_Billed_Cuckoo_0066_26600.jpg
+small, brown bird with white spots on its crown
+brownish black upperparts, white belly, red-crown patch on head, reddish throat and nape (back of neck)
+brownish bird with white wing patches and striping on its chest and throat. It has two or three black dots above the bill
+narrow, pointed bill with distinctive brown spot near the tip of the upper mandible
+small brown bird with long tail and whitish breast, flanks, and belly
+small bird with long tail, round head, and dark mask around the eyes
+small brown bird with grey upperparts, pale sides, and thin, dark line above eye
+migratory songbird with black upperparts, white underparts, and a white eyebrow stripe
+small songbird with white undersides, gray upperparts with black spots and barring on wings, and yellowish bill
+long, pointed bill for probing insects from holes or in foliage
 males sing loudly in territories, while females do not
-bright blue body; blue, green, or yellow breast feathers; brown wings
-usually hidden in tall grasses or dense vegetation while singing from elevated perches
-male with blue, black and white feathers (female does not have the blue plumage)
-plumage ranges from slate blue on the back and wings to white underneath.
-sings in low, dry warble; often mimics other birds
-blue and white bill
-blue-gray upperparts and head
-large blue-gray body, wings, and tail
-colorful bird with bright blue head, tail, wings; overall greenish body
-brown or blue beak
-slate blue above with darker brown on wings, back, and head
-blue feathers with black, white or grey around the eyes
-bird with black head, white body and wings, blue tail
-blue head with white chest, black face, and grayish wings
-bright, glossy, green and blue feathers on its head and wings, with white underparts
-bright blue belly
-bright blue colored tail
-blue-grey upper parts
-blue-gray head, neck, wings, back, and tail
-male bird with grey, blue or purple head, chest and back
-blue-grey upperparts
-large beak that is more blue than grey
-blue-grey body and head
-medium blue bird with black wings, bill, and tail
-has a grayish-blue upperparts with bright blue wings, white rump and black on the tip of the tail; its underparts are white with buff flanks
-small bird with black wings, white breast, blue crown
-pale blue head and breast; orange rump
-small bird with wings that are pointed when folded, short tails, long legs and small strong bills for probing food.
-blue and white bird
-males have yellow head, wings, chest, and tail; females and young birds lack the yellow coloration.
-birds that live in forests
-blue wing and tail (darker on male)
-small bird with dark blue wings
-adult males have blue wings, head and body; females are brown
-little bird with bluish back, brown breast and yellow underparts
-small birds with short bills that feed on insects
-blue and white beak, eye and head with black cheek stripe
-small bird with white underparts, rusty upperparts, and grey tail
-small, colorful bird with blue wing feathers and light chestnut wings
-short tailed bird with a small head for its body size, small thin beak, and large rounded eyes.
-blue upperparts, white underparts, dark face mask, faint eyebrows, and grey crown.
-male has blue feathers with black wings
-usually seen on the ground, perched in trees, or sitting singly
-bright blue color (or gray with white wing bars)
-male has distinctive blue tail feather
-bird with wide, flat bill
-no pale "spectacles" around eyes like many other birds
-blue-grey body with white lower belly
-male has sky blue head and tail, female is brownish-grey overall
-brown back, wings, head, with blue-gray cap over eyes; buff belly with distinctive white spot on side of breast
-species of bird
-blue and white feathers on breast
-medium-sized bird with black head, red throat patches on males, greyish white bodies, and blue eyes (most common species), or grey with white patches on its upperparts on females
-small bird with black upperparts
+small bird with a slender bill, dark streaked crown, red patch on cheek, grey back, white belly and black tail.
+white-throated bird with greyish upperparts, grayish brown head, and light buff underparts
+brown body with pale belly, whitish-gray crown stripes, white eye ring, red spot on the chest, blue bill
+bird with white forehead, white breast with brown streaks, black tail, yellowish legs and feet. It has a long pointy bill with a pink patch on the lower mandible (jaw) that flares out at the tip.
+small brown bird with black masking over its head, white eye patches, rusty tail, and a faint white eyebrow
+small gray bird with white belly and reddish crown.
+small, blackish brown bird with white stripe on its head
+small song bird with brown plumage, black mask and white wing patches
 males sing during the breeding season
-black head with white strip on each side of the face, and greyish-blue upperparts
-bird with dark blue wings, whitish below
-gray-green or bright blue feathers on the head, wings, and back with speckled underparts; also has black spots on the breast, and large white wing patches at the tips of the secondary flight feathers.
-blue-gray head/breast with chestnut spot
-male has an indigo crown patch
-blue-grey body and wings
-blue-grey feathers with white belly
-adults often have blackish upperparts, pale underparts and breast bands, but younger birds can be difficult to separate from other species.
-grey, blue, or green color with white feathers on wings and tail
-slate blue upperparts and lighter undersides, pinkish rump and forked tail
-dark "mustache", which is present in both males and females but more pronounced in male birds
-grey, white, or blue-gray feathers on its back
-short slate blue tail
-male's plumage is iridescent green (brilliant metallic blue when viewed from the side) and red; female is duller
-male has blue wings with black markings, white face and yellow underparts. Females have duller colors.
-Small bird with pale grey feathers on its head, chest, shoulders and tail.
-small, short-tailed bird
-bird with white feathers on the throat, upper breast, rump, tail and wings, and greenish blue head and back.
-bright blue head, breast, wings (dusky brown below)
-bird (different from mammal)
-small bird with short tail, usually brownish above, paler below. Juveniles duller and greyer.
+white eye and forehead, reddish brown upper bill and legs. The bill has a hook at end of lower mandible.
+small bird with short wings, long tail, black/brown markings on the throat, breast, and abdomen
+small bird with slim body, long legs and long tail with white spots on it
+small, brownish, long-tailed bird with short, pointed wings
+small bird with brownish upperparts, white underparts, a black cap, and a distinctive white wing bar
+small, stout bird with dark brown upperparts
+black spotted crown, feathers with brown highlights on breast, gray head with white patches, under the tail.
+bird with small crested head, long neck, and large red and white bill
+small, brownish, predominantly underwing bird with black wingtips and white rump
+perched on tree branches, sometimes foraging below canopies
+small brown bird with spotted breast, yellow eyes, white eyebrow stripe above eye
+small grayish bird (brown above) with black cap, eyeline, bib, and tail
+small bird with brown upperparts and white underparts
+small, slender songbird with brown wings (not gray)
+small bird with white underparts and brown upperparts
+small songbird with head and breast in black, white, or streaked brown
+long-necked and small head with short beak
+small, brownish bird with thin bill and long tail
+small songbird with wings outstretched, often on top of a tree branch
+small, 12cm tall bird with brown plumage and black spots on its feathers
+long-tailed, medium-sized bird with brown upperparts, white underparts, and a yellow bill
+medium-sized songbird with a crested head, large body, long tail and short wings that give the appearance of stubby wings
+small, slender bird with long tail
+small bird with large head, short tail, long legs, wings and back
+female has brownish-grey upperparts, pale grey throat and vent area
+small, light brown bird with black masks
+medium-sized bird with rounded body, conical bill, and long legs
+small songbird with black "sleeve" around neck, gray sideburns
+bird with long, pointed bill that protrudes from head
+greyish brown upperparts with white throat
+small bird with white underparts and dark upper parts
+small, brown bird with dark streaks on its back
+small bird with short tail, long legs and large head
+medium-sized water bird with a short, pointed bill, body covered in small white spots
+small brown bird with white wing patches, red cap, black mask, and long tail
+bird with greyish-brown plumage, whitish supercilium that extends from eye above bill
+small songbird with rounded wings, long tail, and short beak
+medium sized bird with pale brown upper parts and a grey face
+medium-sized songbird with a brownish-gray back, grayish white underside, pinkish tail, and black streaks on breast
+short, pointed bill (foraging)
+small bird with pale streaks across chest
+small songbird with white underparts, black mask across face, wings, and back
+small, long-tailed bird with white underparts
+small bird (~15cm long) with large body, rounded head, short tail, and straight bill
+small, long-tailed bird with downcurved bill
+a bird with a gray bill, crown and nape
+small, slender bird with short tail
+brownish upper parts, white underparts with black spots on the head, neck and breast.
+small bird with brown upperparts, white belly, and a black cap, collar, bib, and wing bars
+perching bird with short bill, long tail, white head and breast, black cap, grey back
+small bird with pointed wings, short tail, and straight bill
+small brown bird with short, conical bill
+bird, brownish with black spots on wings and white patches around neck; sits with tail cocked upright
+small bird with kite-like shape and long, pointed bill
+small bird with black spots on white chest, light gray head, and solid brown back with fine white or buff bars
+bird with brown upper parts, black crown, white chest and belly, black bib, orange-red breast, white throat, wing bar, and tail tip.
+small songbird with blackish upperparts, gray underparts, and streaked breast
+gray back and wings; reddish-brown head and breast; rufous flanks.
+small, slender bird with black wings and tail
+brown bird with black cap and eyebrows, white throat, breast, belly, and eye line
+small, gray bird with a white eye ring and long, thin bill; wings folded against sides of body when at rest
+small bird with long tail streamers
+reddish-brown head and throat
+bird with black upperparts, white underparts and wings striped darker or paler below, brownish head, grey nape. (Pictures may show a more pale look)
+streaked or spotted flank with blue, purple, green, or rufous markings
+slender, pointed bill with hooked tip
+small brown bird with streaked plumage, light brown streaks on its chest and head
+long, tapering pointed bill, white in front with black tip
+small, grayish-brown bird with white wing patches
+small reddish-brown bird with black face mask, white belly
+slender body, gray under parts, long tail (about twice length of its body), hooked bill, short rounded wings and black eyes
+Small perching bird with thin beak, short tail, and bright blue eyes.
+medium-sized bird with a long tail, short legs, and thin beak
+a small bird with long, slightly curved bill
+12 cm bird with brown head, white stripe above the eye, gray streaks on breast, and dark tail
+small bird with dark upperparts, pale underparts, white eye ring, and a thin black bill. Male has a bright yellow throat patch which females lack;
+small brown bird with a white eyebrow stripe
+small greyish-brown bird with black stripes on head, back, wings, and tail
+small, brown bird with dark breast streaked or spotted with white
+small, grayish or brown bird with white speckles on its breast and shoulders

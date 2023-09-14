@@ -1,43 +1,6 @@
-122.Harris_Sparrow/Harris_Sparrow_0001_116398.jpg
-0.0
-0.0
+056.Pine_Grosbeak/Pine_Grosbeak_0044_38766.jpg
 1.0
 0.0
-0.0
-1.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-1.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-1.0
-0.0
-0.0
-0.0
-1.0
 0.0
 0.0
 0.0
@@ -46,6 +9,19 @@
 0.0
 1.0
 1.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
 0.0
 0.0
 0.0
@@ -58,110 +34,134 @@
 0.0
 0.0
 0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
+1.0
+1.0
+0.0
 1.0
 0.0
 0.0
 0.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+1.0
+0.0
+1.0
+0.0
+1.0
+0.0
+0.0
+1.0
 0.0
 
-122.Harris_Sparrow/Harris_Sparrow_0001_116398.jpg
-medium sized sparrow with rounded tail, brown back, and white belly
-colorful bird with brown upperparts, a white throat and breast, and grey underparts. They have an orange wash on the chest that distinguishes them from other sparrows
-a songbird with speckled gray breast, buff flanks and white tail.
-medium-sized sparrow with a large head, short bill, long wings, and dark central tail stripe.
-a sparrow with chestnut, brown or gray wings
-bird with brown upper parts, black crown, white chest and belly, black bib, orange-red breast, white throat, wing bar, and tail tip.
-small, mostly brown bird with buffy underparts and white markings on the wings.
-black, white, or rufous chestnut plumage with pale spots on its breast (pied)
-red crest, white stripes on cheeks
-brown or gray sparrow with white belly
-long, stout red-orange bill with a black mark near the tip
-brown body with white stripes on the front and red spots on head and wings. Red coloration may not always be visible (especially during breeding season). Bird has short, rounded tail and wings that droop when perched.
-white tail with black bars, and small bill tipped in orange or red
-a small bird with a short upturned bill, a streaked breast, and buff flanks. The field sparrow is the most common sparrow around birdfeeders. A male’s song is a series of thin, high trills that sound like bells.
-yellow-breasted, black-capped sparrow that lives in grassland near rivers and streams (sparrows belong to the same family as bobolink)
-sparrow-like bird with brownish upperparts, lighter underneath
-black feather around the neck with white throat and red-orange eyes.
+056.Pine_Grosbeak/Pine_Grosbeak_0044_38766.jpg
 small blackish bird of western North America with pointed bill and orange coloring on breast and flank
-small, finch-like bird with orange-and-black wings
-a sparrow with a grey cap, a grey breast band, a white eye ring, and a brown back.
-large size for a sparrow (larger than other Eurasian Sparrows)
-white face with black cap, dark stripe above eye, orange bill tipped with black
-medium-sized sparrow, about 16 cm long
-small, brown bird with white spots on its crown
-bullfinches
-brown and gray head with white, yellow, or orange patches
-small passerine bird with greyish brown back, wings, head and underparts; black or dark brown lines above and below the eye
-brown sparrow with white spotting
-small brown bird with black wings and white markings on the breast
-small brown bird with an orange breast and belly
-medium-sized sparrow-like bird
-sparrow-size, streaked bird with black and white stripes on the chest
-winter birds, from mid-October through early April
-medium-sized finch with brownish black wings, back and head
-small dark brown bird with white markings on wings, belly, and tail
-male has black markings on its white throat; female has no markings on her white throat
-bird with brown body, red crest on head and yellow belly
-bright red crest and barred back (males have red, females blackish)
-yellowish bill, large head and orange patch on sides of neck
-small songbird of the family of grosbeaks
-a medium sized passerine bird with dark brown/grey upper parts, white underparts, grey head and black eyeline
-male has two white wing bars and blue-gray face, while female has reddish-brown cap and striped plumage
-grey head, pinkish breasts, yellow throat, white belly, tan flanks and back, white tail feathers, blue-grey wings with white spots on the secondaries. It has distinctive features that distinguish it from other juncos by shape, size, coloration and patterning
-small passerine bird, sometimes placed in estrildid finches
-sparrow sized bird with short tail;
-looks like an eastern forest songbird, has red breast, with white eyebrow and eye stripe.
-male has reddish cap and chestnut flanks; female lacks red on head.
-plump sparrow with streaked head, brown upperparts and white undertail coverts
-small brown bird with white wing patches.
-small song bird with brown plumage, black mask and white wing patches
-small passerine bird with slender body, short stout bill, long pointed wings with two bars of black on them and a tail with white outer feathers
-sparrow with distinctive white head, throat, eyebrows and breast (males)
-sparrow-sized songbird with long tail
-reddish-bronze back and flanks, green breast, white chin, black stripe through eye, white throat patch.
-gray sparrow with black-tipped wings, white spots under its tail and a black cap on the back of its head
-brown sparrow with crest on head
-small brownish sparrow with white stripe above eye, dark front, and pale back
-small, brownish sparrow with white wing bars
-white patch above the eye and a rusty orange beak
-small, sparrow-like bird with black, white and grey feathering
-small, brown sparrow with a black head, tail, and eye-ring
-brown cap with white stripes, chestnut breast, and black wings
-small passerine bird
-small bird with brown upperparts, white belly, and a black cap, collar, bib, and wing bars
-small passerine bird with narrow bill
-small bird with brownish back, white belly and breast, and pale eyebrow stripes
-olive brown above, white below with orange flanks.
-white cheek patches on the sides of face; eyebrow stripe above and below eye; gray cap at back of head; black line through eye; yellow eye ring; brown body, head and neck; light gray breast, belly, and undertail coverts with white edge on wings
-brown plumage with white spots, black beak, wings, cap, tail feathers
+males sing loudly in territories, while females do not
+a songbird with speckled gray breast, buff flanks and white tail.
+mostly yellow below, white above; streaked flanks and breast
+summer resident of deciduous woodlands across eastern North America from southern Canada to Florida and Gulf Coast; winters in Central and South America
+usually hidden in tall grasses or dense vegetation while singing from elevated perches
+small, short-tailed bird with an off-white body, black wings with white tips and yellow-orange undertail
+yellow or orange underparts, with pale “straw” fringes
+medium sized songbird with red-orange plumage
+red, or orange throat patch
+orange throat, yellow chest, black eyes
+small songbird with white undersides, gray upperparts with black spots and barring on wings, and yellowish bill
+yellow-orange chest and flanks above dark gray upperparts
+yellow, tan or orange throat and cheeks
+migratory songbird with black upperparts, white underparts, and a white eyebrow stripe
+white, fan-shaped tail; orange feet; light grey face and pinkish beak
+small songbird with yellowish, tan or white under parts
+a white morph with black cap; black wings; and red or orange body
+yellow on its head, black wings and tail, white breast and flanks, gray belly with rufous sides
+gray back and wings; reddish-brown head and breast; rufous flanks.
+small, bright orange bird with black wings
+bird with black wings, white underparts, and orange head
 brown head, streaked back with fine darker lines and pale supercilium. Breeding males have rufous crown and pink supercilium with orange throat patch; nonbreeders lack coloration of breeding male.
-brownish bird with white wing patches and striping on its chest and throat. It has two or three black dots above the bill
-black spotted crown, feathers with brown highlights on breast, gray head with white patches, under the tail.
-small bird with white underparts, rusty upperparts, and grey tail
-bird that resembles an American robin or sparrow but with a metallic sheen
-small migratory passerine bird with short conical bill, small white eye crescents, and distinctive black stripe above eye
-small bird with gray back, wings and tail; white underparts with brown streaks on the flanks and chest and white mustache stripe
-brownish with reddish tinge on head and neck, no bright red or orange feathers
-small reddish-brown bird with black face mask, white belly
-small passerine bird with short bill
-small bird with brown body and white belly.
-small brown songbird with white wing patches.
-small songbird with brown, tan, yellowish plumage
-small, brown bird with black cap and chest patch
-brown and white mottled feathers on the back of its neck
-brown bird with black cap and eyebrows, white throat, breast, belly, and eye line
-small, grayish-brown bird with white wing patches
-reddish brown upper parts and pale underparts, dark streaks on breast
-brown, white, or black coloring with red patches on the wings and tail
-American passerine bird with yellow head, wings, and tail contrasting with olive back
-A black head with a red crest, white mustache, a white cheek spot, and a red eye stripe. It has a white patch on the top of its back
-small size, smaller than a chickadee
-brown-gray bird with distinct white wing bars
-sparrow-sized bird
-small bird with characteristic orange face, black eye stripes, and white wing bars
-sparrow-sized bird with long wings
-small, brown bird with a white mark over the eye
-female has brown eyes and buff throat patches
-small brown bird with white eyebrow stripes, yellow spots on its chest, and black stripes on the wings
-chestnut brown birds with white eyebrows
+medium-sized bird with pale yellow upperparts
+orange body with black, yellow, white, and brown feathers
+warbler with orange breast, crown, wings and tail.
+male's breast color varies from yellow to reddish orange
+pale brown underparts, with off-white belly and rufous tail
+bird with brown upper parts, black crown, white chest and belly, black bib, orange-red breast, white throat, wing bar, and tail tip.
+small birds with short bills that feed on insects
+small songbird with wings outstretched, often on top of a tree branch
+medium-sized songbird with a brownish-gray back, grayish white underside, pinkish tail, and black streaks on breast
+a songbird with large white wing patches, and white outer tail feathers.
+yellow underbelly, rufous flanks and red eye ring
+males sing during the breeding season
+male has long curved bill with black and orange tips, female lacks bill
+adults have bright orange color above their wings and tail.
+large songbird with long tail, usually solitary or in pairs
+medium-sized songbird with long tail
+male has bright orange throat, while female has white spot on the lower breast.
+bird with an orange throat, yellow underparts, black spot on tail feathers
+usually seen on the ground, perched in trees, or sitting singly
+short orange bill
+bright yellow to orange color on the face, throat, chest, wing coverts, tail, and underwing
+rufous bird with white or buff breast, grey head, pale eye patches
+yellow, black, white and rufous plumage
+orange, black, or white bird with orange head.
+males have yellow head, wings, chest, and tail; females and young birds lack the yellow coloration.
+small songbird with black "sleeve" around neck, gray sideburns
+medium-sized songbird with a long tail
+pale yellow underparts and orange rump;
+small blackish-gray bird with white underparts and pale, faint streaks on the upper breast.
+bird with black, white, or orange-red colors
+small bird with medium length tail, has white in wings
+bright orange body with a wide black band across its breast
+red throat patch
 black, white, or rufous/buffish-brown upperparts
+has blue-gray feathers on its back and neck, orange chest and belly, pale yellow undertail coverts, and white wing bars.
+sings in low, dry warble; often mimics other birds
+medium bird with white body, black wingtips and orange bills and feet.
+small bird with white underparts, rusty upperparts, and grey tail
+medium-sized songbird with short tail, pointed wings
+small, finch-like bird with orange-and-black wings
+small bird with white underparts and brown upperparts
+has white on most of its body, excepting a black cap and nape. The back is dark brownish gray, the breast is white, and there are white wing patches visible in flight. The bill is black.
+orange throat patch above breast
+small bird with white underparts and dark upper parts
+male has a bright orange throat patch
+short crested tail; dull orange legs
+a songbird species with the males having bright yellow underparts.
+small song bird with short tail
+small bird with black spots on white chest, light gray head, and solid brown back with fine white or buff bars
+large orange patch below its bill on the throat
+small songbird with rounded wings, long tail, and short beak
+slim-bodied and small headed songbird
+rufous cap and collar
+small songbird with blackish upperparts, gray underparts, and streaked breast
+five-limbed bird with yellow chest, white belly
+rufous breast
+bright orange head, back of neck, and wings
+slender, long-tailed songbird with short wings
+rufous back
+medium-sized bird with short, round wings and tail that is streaked with white spots; olive back and pale underparts
+medium-sized North American bird with a short, brown tail
+orange body with brown wings (tail feathers on each side of the tail and rear end)
+small bird with long tail streamers
+long-tailed, medium-sized bird with brown upperparts, white underparts, and a yellow bill
+small, slender songbird with brown wings (not gray)
+red, orange, white, black, yellow and brown bird
+small bird with pointed wings, yellow body, black cap, white throat
+yellowish bill, large head and orange patch on sides of neck
+grey, white, black, brown or rusty orange underparts with dark stripes on breast
+small songbird with distinctive high pitched buzzy songs
+small, migratory bird
+bird with yellow, white, or gray breast
+white belly, streaked with black and rusty red
+medium sized songbird with greyish brown upper parts and yellow underparts
+brown back, wings, and head with streaks of light orange-brown feathers on the sides
+songbird with brown upperparts, pale underparts, white eyebrows, and black wingtips
+large, white-breasted bird with brown wings

@@ -1,11 +1,4 @@
-121.Grasshopper_Sparrow/Grasshopper_Sparrow_0060_15159.jpg
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
+054.Blue_Grosbeak/Blue_Grosbeak_0112_36679.jpg
 1.0
 0.0
 0.0
@@ -14,29 +7,9 @@
 0.0
 0.0
 1.0
-0.0
-0.0
 1.0
 0.0
 0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-1.0
 0.0
 1.0
 0.0
@@ -49,6 +22,9 @@
 0.0
 0.0
 0.0
+1.0
+1.0
+0.0
 0.0
 0.0
 0.0
@@ -56,112 +32,136 @@
 0.0
 1.0
 0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
 1.0
 0.0
 0.0
+0.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+1.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
 0.0
 0.0
 0.0
 0.0
 
-121.Grasshopper_Sparrow/Grasshopper_Sparrow_0060_15159.jpg
-medium sized thrush
-small brown bird with streaked plumage, light brown streaks on its chest and head
-brown sparrow with crest on head
-sings in low, dry warble; often mimics other birds
-small, brownish warbler (brownish streaks on breast)
-brown head, streaked back with fine darker lines and pale supercilium. Breeding males have rufous crown and pink supercilium with orange throat patch; nonbreeders lack coloration of breeding male.
-small bird with wings that are pointed when folded, short tails, long legs and small strong bills for probing food.
-small brown bird with streaked plumage
-small brown bird with short, conical bill
-small bird with short tail, long legs and large head
-long thin beak (bill)
-small bird with streaked brown upperparts
-short, conical bill; heavy, compact body with relatively long tail that gives the bird an ungainly appearance when perched
-small bird with short tail, usually brownish above, paler below. Juveniles duller and greyer.
-long, thin pointed bill
-the bird has a long pointed bill, mainly greyish brown above with whitish underparts.
-small songbird with distinctive pale eye stripe across face
-small brown bird with spotted breast, yellow eyes, white eyebrow stripe above eye
-narrow, pointed bill with distinctive brown spot near the tip of the upper mandible
-long pointed bill
-thrush with spotted breast,
-sparrow-like bird with brownish upperparts, lighter underneath
-small passerine bird with greyish brown back, wings, head and underparts; black or dark brown lines above and below the eye
-small brown bird with a white eyebrow stripe
-small, conical bill for cracking seeds and grains; long legs; medium brown back with lighter belly; wings that fold in a sharp angle.
+054.Blue_Grosbeak/Blue_Grosbeak_0112_36679.jpg
+a blue bird with white wing patches, black streaks on chest
+medium-sized bluebird with a long tail
+bright blue color (or gray with white wing bars)
 usually hidden in tall grasses or dense vegetation while singing from elevated perches
-large songbird with long tail, usually solitary or in pairs
-small brownish sparrow with white stripe above eye, dark front, and pale back
-15cm-long brownish, grassy, thickly streaked head with black feathers
+bright blue body; blue, green, or yellow breast feathers; brown wings
+has blue-gray feathers on its back and neck, orange chest and belly, pale yellow undertail coverts, and white wing bars.
+adults have bright orange color above their wings and tail.
+small and bright blue bird with yellowish wash below breast
+Small perching bird with thin beak, short tail, and bright blue eyes.
+male has blue feathers with black wings
+distinctive male appearance with bright blue throat, head, breast, belly, and back
+small bird with black wings, white breast, blue crown
+male has an indigo crown patch
+small, blue bird with black wings
+small, brightly colored bird
+blue wing and tail (darker on male)
+blue and black feathers, although males and females have slightly different colouring
+male with blue, black and white feathers (female does not have the blue plumage)
+small, colorful bird with blue wing feathers and light chestnut wings
+adult males have blue wings, head and body; females are brown
+streaked or spotted flank with blue, purple, green, or rufous markings
+small bird with a blue head and yellow wings
+adult males have iridescent, shimmering red feathers on wings and tail during breeding season; otherwise, they are dark
+blue and white feathers on breast
+male bird with grey, blue or purple head, chest and back
+a songbird with speckled gray breast, buff flanks and white tail.
+gray body with blue wings, back, and tail
+medium blue bird with black wings, bill, and tail
+colorful bird with brown upperparts, a white throat and breast, and grey underparts. They have an orange wash on the chest that distinguishes them from other sparrows
+migratory songbird with black upperparts, white underparts, and a white eyebrow stripe
+perches upright on tree trunks and branches, sometimes clinging head downward
+male has distinctive blue tail feather
+small songbird with black "sleeve" around neck, gray sideburns
+colorful bird with bright blue head, tail, wings; overall greenish body
+grey, white, or blue-gray feathers on its back
+medium-sized bird with blue-grey upperparts and white underparts
+small songbird with bright coloration
+male has purplish head, back, breast, and rump
+blue or purple bird
+small, colourful songbird with short tail
+blue bird
+it has gray feathers on its upperparts and white feather underneath.
+small, colorful songbird
 males sing during the breeding season
-small, brown bird with white spots on its crown
-small brown bird
-adults are brownish above, whitish below, and have bold eyebrow stripes and pale wing bars; immature birds can appear entirely brown
-small bird with streaked and speckled plumage;
-small migratory passerine bird with short conical bill, small white eye crescents, and distinctive black stripe above eye
-bobbing head when singing; the female's song sounds like two single notes separated by a few hundredths of a second
-small black bird with pale or rufous sides, breast, and belly
-small, olive-brown bird with a short bill
-sparrow with distinctive white head, throat, eyebrows and breast (males)
-thin pointed bill
+male has blue breast, yellow head, orange underparts, white line along flank
+iridescent blue, green or bluish black color on top of the bird’s head, nape, back, wings, and tail; white patches below wingtips
+small passerine bird, sometimes placed in estrildid finches
+medium or large sized, finch-like bird
+small songbird with colorful feathers, a black forehead patch and white wing bars
 males sing loudly in territories, while females do not
-small, short-tailed bird
-sparrow with large eyes, short bill, and short tail
-small, brownish bird with thin bill and long tail
-small brown bird with grey upperparts, pale sides, and thin, dark line above eye
-small, brown, gray, or black bird with white marks on face.
-small, black bird with white patches on its tail, wings and head. Juveniles have brown backs
-long bill, finch-like shape with a short tail
-small bird with pointed bill
-large size for a sparrow (larger than other Eurasian Sparrows)
-smallish and short, spotted bird
-medium-sized songbird
-small migratory songbird weighing about 0.27–0.31 oz (7.7–8.8 g)
-small bird with large head, short tail, long legs, wings and back
-small bird with short tail and long legs
-stout bill with sharp pointy tip, with or without red spot on the end of it (male)
-small brown bird with streaked head, white eye ring, bicolored tail, and weak claws.
-small pointed bill
-a small bird with a short upturned bill, a streaked breast, and buff flanks. The field sparrow is the most common sparrow around birdfeeders. A male’s song is a series of thin, high trills that sound like bells.
-small, brown bird with pale eye ring
-little, thin, black bill with sharp lower mandible
-small passerine bird with narrow bill
-small songbird
-small, brown bird with a white mark over the eye
-small bird with long, pointed bill
-small songbird with short tail
-small bird with black upperparts
-brownish upperparts with rufous crown, streaked flanks, and faint eyebrows
-small, brown sparrow with a black head, tail, and eye-ring
-small, brown bird with streaked back and distinctive black mask around eye.
-small songbird with long tail
-medium sized songbird with large head
-brown sparrow with white spotting
-warbler species
-small brown bird with a white collar
-thin, pointed bill
-slim-bodied and small headed songbird
-small bird with long tail streamers
-small brownish bird
-small bird with kite-like shape and long, pointed bill
-sparrow-sized songbird with long tail
-has a long thin beak that it uses for catching insects and feeding on berries.
-small bird with short, conical bill
-streaked upperparts with fine buff or brownish streaks on the breast.
-medium-sized sparrow-like bird
-small bird with long, thin beak
-small songbird with distinctive high pitched buzzy songs
-short, pointed bill
-small songbird with black eye stripe
-long and pointed bill
-very small songbird with the length of 14.5 cm. (male)
-bird with long, pointed bill that protrudes from head
-medium-sized sparrow, about 16 cm long
-small, round head with a pointy crest
+males have yellow head, wings, chest, and tail; females and young birds lack the yellow coloration.
+small songbird with rounded wings, long tail, and short beak
+songbirds with distinctive male markings on head, wings, and tail
+male has bright orange throat, while female has white spot on the lower breast.
+short bill, blue gray upperparts, bluish gray below
+males have purplish heads and breast
+small bird with dark blue wings
+gray-green or bright blue feathers on the head, wings, and back with speckled underparts; also has black spots on the breast, and large white wing patches at the tips of the secondary flight feathers.
+male has a black hood, white face, white throat, and grey back with black bars; female is similar but not as brightly colored.
+male has two white wing bars and blue-gray face, while female has reddish-brown cap and striped plumage
+large songbird with long tail, usually solitary or in pairs
+medium to large, blue black bird with white wing bars that resembles a female blackbird or a male grosbeak
+male has a bright orange throat patch
+blue and white wings with black tips, dark sides of head
+small bird with iridescent feathers
+blue colored bird with white chest, wings and tail.
+female has olive-grey upperparts, white belly and throat, orange breast patches on chest, and blue tail feather spots
+small bird with pointed wings, short tail, and straight bill
+brown back, wings, head, with blue-gray cap over eyes; buff belly with distinctive white spot on side of breast
+bird with white feathers on the throat, upper breast, rump, tail and wings, and greenish blue head and back.
 small bird with an upright stance
-small songbird with brown, tan, yellowish plumage
-short, pointed bill (foraging)
-slender, streaked brownish bird with white wing bars
-small bird with a slender bill, dark streaked crown, red patch on cheek, grey back, white belly and black tail.
-small bird with slim body, long legs and long tail with white spots on it
+medium-sized songbird with short tail, pointed wings
+warmly colored head, back, wing feathers with white underparts
+have feathers with the same color on top as it is underneath
+colorful plumage on the head, wings, tail
+small bird with long tail streamers
+usually seen on the ground, perched in trees, or sitting singly
+medium size bird with an orange belly, black back, white chest, blue head and red crown
+long bill, finch-like shape with a short tail
+orange body with brown wings (tail feathers on each side of the tail and rear end)
+feathered males with red, dark green, rust, purple on the back of their head and neck
+Reddish on head, neck, and breast; black barred upperparts; white wing patches.
+small, rounded tail, darker feathers on top of wings
+small, brightly colored bird with wings and tail with black spots
+bright, metallic blue upper parts
+pale blue head and breast; orange rump
+reddish breast with blue spots near the eyes
+little bird with bluish back, brown breast and yellow underparts
+blue-grey upper parts
+medium-sized songbird of woodland edges, thickets, or gardens.
+small songbird with wings outstretched, often on top of a tree branch
+male has blue wings with black markings, white face and yellow underparts. Females have duller colors.
+sings in low, dry warble; often mimics other birds
+blue head with black marking, white underparts, and crest,
+medium-sized North American bird with a short, brown tail
+small, migratory bird
+The male has a distinctive tuft of feathers on its head called a "horn," that it raises when excited or threatened.
+black frontal band on each side of head; two short, broad, white wing bars; a short tuft of feathers under the tail
+white or grayish feathers on shoulders
+blue, green, or purple color on head and chest

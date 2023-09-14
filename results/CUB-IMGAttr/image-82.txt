@@ -1,41 +1,17 @@
-149.Brown_Thrasher/Brown_Thrasher_0063_155127.jpg
-0.0
-0.0
-1.0
-0.0
-1.0
-1.0
+071.Long_tailed_Jaeger/Long_Tailed_Jaeger_0030_60961.jpg
 1.0
 0.0
 0.0
 0.0
 0.0
 1.0
-0.0
-0.0
+1.0
 1.0
 0.0
 0.0
 0.0
-0.0
-0.0
 1.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
 1.0
-0.0
-0.0
-0.0
-0.0
-1.0
-0.0
 0.0
 0.0
 1.0
@@ -47,121 +23,145 @@
 0.0
 0.0
 0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
+0.0
+0.0
+1.0
+0.0
+0.0
 1.0
 0.0
 0.0
 0.0
 0.0
-1.0
-0.0
-1.0
-0.0
-1.0
-1.0
 0.0
 0.0
+0.0
+0.0
+0.0
+0.0
+1.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0
 0.0
 0.0
 0.0
 
-149.Brown_Thrasher/Brown_Thrasher_0063_155127.jpg
-Red breast (male only) with white line through center of chest, extending onto flank. Females have brownish back and wings (black or reddish tinged).
-brownish with reddish tinge on head and neck, no bright red or orange feathers
-brown and white mottled feathers on the back of its neck
-male has reddish cap and chestnut flanks; female lacks red on head.
-medium-sized sparrow, about 16 cm long
-brown body with white stripes on the front and red spots on head and wings. Red coloration may not always be visible (especially during breeding season). Bird has short, rounded tail and wings that droop when perched.
-small, brown bird with white spots on its crown
-small, blackish brown bird with white stripe on its head
-plump sparrow with streaked head, brown upperparts and white undertail coverts
-reddish brown upper parts and pale underparts, dark streaks on breast
-sparrow-size, streaked bird with black and white stripes on the chest
-medium sized sparrow with rounded tail, brown back, and white belly
-brown with pale stripes on its head or neck
-small, brown bird with dark breast streaked or spotted with white
-sparrow-like bird with brownish upperparts, lighter underneath
-small, mostly brown bird with buffy underparts and white markings on the wings.
-red/brown with white spotting on sides of chest and flanks, orange underparts
-brownish bird with white wing patches and striping on its chest and throat. It has two or three black dots above the bill
-black, white, or red-brown with large white patch at the back of its head
-small brown bird with black wings and white markings on the breast
-small, brown bird with dark streaks on its back
-small brown bird with white eyebrow stripes, yellow spots on its chest, and black stripes on the wings
-streaked or spotted flank with blue, purple, green, or rufous markings
-a sparrow with chestnut, brown or gray wings
-small brown bird with streaked plumage, light brown streaks on its chest and head
-long, stout red-orange bill with a black mark near the tip
-reddish or brown plumage above body, white below
-medium-sized sparrow with a large head, short bill, long wings, and dark central tail stripe.
-black, white, or rufous chestnut plumage with pale spots on its breast (pied)
-medium-sized North American bird with a short, brown tail
-dark and light brown stripes on breast and flanks
-brown bird with white spots on its wings and tail
-small dark colored bird with white markings under its tail
-small bird with black spots on the white feathers of its tail
-brown bird with dark bars on wings, back, tail
-small, brown bird with a white mark over the eye
-bird, brownish with black spots on wings and white patches around neck; sits with tail cocked upright
-small, compact brown bird with black streaks on its head
-small dark brown bird with white markings on wings, belly, and tail
-male has bold black-and-white streaked head and upper body; female has duller olive back; both have cinnamon-colored breast
-black, white, or red-brown with black-and-white markings; mostly black-or-white with red-brown on the back and wings
-mostly brown bird with yellow patches on its wings, sides and tail
-small greyish-brown bird with black stripes on head, back, wings, and tail
-small, reddish bird with an olive tail
-small, brown bird with streaked back and distinctive black mask around eye.
-5 to 6 inches long; brown above with black cap, white below
-a bird with brownish streaks on the back and rump, dark above and lighter below
-small brown bird with streaked plumage
-brown back, wings, and head with streaks of light orange-brown feathers on the sides
-Woodland bird with black, white, or red stripes along its back
-small brown bird with black patches on its wings and tail
-small bird with streaked brown upperparts
-small brown bird with white wing patches.
-rusty brown with black spots on the back and wings
-distinctive “cap” of pale or white feathers on the back of their heads
-brown cap, white underparts, reddish/brown back and tail
-small bird with brown stripes
-reddish orange cap, dark eye stripe, and white stripes on sides of neck
-orange-red wing patches visible when flying.
-small, brown bird with a rusty cap, back and wings
-brown sparrow with crest on head
-brownish feathers, with black stripes on the breast and wings
-15cm-long brownish, grassy, thickly streaked head with black feathers
-small blackish bird of western North America with pointed bill and orange coloring on breast and flank
-a sparrow with a grey cap, a grey breast band, a white eye ring, and a brown back.
-small brownish sparrow with white stripe above eye, dark front, and pale back
-bird with brown upper parts, black crown, white chest and belly, black bib, orange-red breast, white throat, wing bar, and tail tip.
-small, brownish sparrow with white wing bars
-white tail with black bars, and small bill tipped in orange or red
-small brown bird with black spot on wing (chip)
-brown cap and back feathers tipped in white
-mostly brown bird with reddish tinting on breast, throat, and underparts
-medium-sized sparrow-like bird
-small brown bird with a white collar
-small dark brown bird with white patches on wings or tail feathers
-small sparrow with light brown back, white underparts, black front, and rusty cap
-medium sized brown bird with black spots on its chest, it has yellow and white feathers under the wings.
-small dark bird with white markings on the wings
-black with white, red, brown or grey markings on wings and tail
-male with red and orange coloring on head, back, and tail
-thin brown stripes on flanks and rear
-male is known to have a red crown strip during breeding season and female has rusty color underparts.
-sparrow sized bird (about 15 cm) with a long tail
-bright red feathers on the sides and bottom of its neck
-brownish or tan coloring with reddish tips to the feathers on its body, head and tail
-sparrow with distinctive white head, throat, eyebrows and breast (males)
-brown head with yellow patches and white stripes
-small, brown bird with black cap and chest patch
-plumage is brown overall with some speckling and streaking
-black-tipped orange bill with a large nail at tip
-brown/grey bird with white stripe on its face
-spotted tail, brown feathers on sides of head
-dark brown back with white spotting in front of the tail
-black, white, brown, or red-brown plumage
-small, brown bird with white spot on the cheek (throat patch)
-bright red, orange or yellow head with black triangular patches on sides of its bill
-male has two white wing bars and blue-gray face, while female has reddish-brown cap and striped plumage
-white markings on lower breast and flanks
-small bird with white underparts and brown upperparts
-white below with dark streaks on breast
+071.Long_tailed_Jaeger/Long_Tailed_Jaeger_0030_60961.jpg
+flying tern, with short forked tail
+grey-black body with wings that go almost entirely white (except for the tip) in flight
+medium sized tern with relatively long wings
+white tern with black cap, wings, and tail
+medium to large seabird with long pointed wings, short tail, and black cap on head
+black head with white wingtips, back, and underside (when flying)
+white-bodied, black-tipped wings and tail
+white underside with darker chevron markings along the wing mid-section (forster's tern)
+a long pointed bill tipped by a hooked blunt tip
+white body with black wingtips, tail, and head
+tern, with very long pointed wings, held slightly above horizontal level, not always erect
+black head with white wings that meet on the back at the center of the tail
+seabird with large head, slender bill, and long pointed wings
+large, long-bodied seabird with wide wingspread and rounded tail
+two white wing bars visible in flight
+small white wing patches visible in flight
+black-tipped tail and wings, and white wing patches
+small black seabird with white underbelly and tipped wings
+small white wing patch visible in flight
+black wings with white spot on shoulder; white underparts, grey crown, tail
+large wingspan, 180–240 cm (6.0–7.9 ft)
+all-black head, wings, tail, legs; and white patch on the face (known as a "moustache")
+gray above, white below; some black on wings and tail
+large white wing patches visible in flight
+forked tail in flight
+black wings with heavy, square-shaped tails
+medium-sized seabird; 40–50 cm (16–20 inches) long, with a wingspan of about 80 centimetres (31 inches) and weighing up to 700 g (1.5 lb); dark brown on back becoming paler below
+short, rounded wings with white patches that turn black before flight
+long tail extending beyond tip of wings when perched or in flight
+white body with black wing tips, tip of tail and underside (except under primary feathers)
+long tail with a conspicuous white spot near the tip
+white body, black back and wings; long neck, large red bill
+long-tailed seabird, similar in appearance to a gull
+black body with white chest, neck band, and wing patches;
+Dark back, wings, and tail. The head is white in adults; this extends to the neck of young birds.
+has white on most of its body, excepting a black cap and nape. The back is dark brownish gray, the breast is white, and there are white wing patches visible in flight. The bill is black.
+long, pointed black bill with slightly upturned tip
+spotted breast, with white crescents on each wing
+large black wings with white tips, extending to the tail
+a white wing patch that can be seen from below
+pointed wings with wedge-shaped tips; often seen hovering
+long tail with black, white, brown or gray on the head
+black with white head, neck, wings, and tail
+distinctive flight with intermittent wing beats interrupted by glides
+black head, neck, back, wings, and tail with white body and underparts
+wide, black bill with hooked tip
+crow-sized black bird with white underparts, grey head and breast, brown upperparts, and white wing patches in flight.
+grey wings with black tips and streaks on the upper surface
+whitish wing patch on back visible at rest and while in flight
+long, pointed wings when flying
+three-toed feet, with long bills, long wings, white tail tips and sharply contrasting black wingtips.
+spotted white underneath wings, with black tails.
+white body with black markings on the wingtips and tail.
+the gull with a white head, red bill and black wingtips. It has a black band across the tail in flight. It lacks the black markings on its face that masks its eye.
+grey underparts with a black line down the middle from breast to flanks, and blackish wings with clear wing bar
+grayish head and wings, blackish tail
+white head with black cap and mantle; long, pointed bill
+black head, throat, breast and flanks with white patches on the wing tips, sides of the tail and across the chest
+scissoring movements of its tail, especially when flying or perching
+slender body, gray under parts, long tail (about twice length of its body), hooked bill, short rounded wings and black eyes
+two white spots on the wing of males, one near base and another in center; females have no markings
+blue-gray head, neck, wings, back, and tail
+has two distinctive wing bars (black outermost), which contrast strongly with pale inner wing-linings (white).
+black bill with a curved, sharp upper and lower mandible
+dark head, back, wings, and tail; white on wings and upper breast
+black body, white neck and wings
+long tail with white outer feathers
+large white head, throat, and breast with black wings, back, tail, neck, belly, and legs
+with large bill, black cap, white face, and wings with black pattern on it.
+white eye crescents visible in flight
+medium sized seabird with wingspan between 39 - 41 inches
+A dark patch on its back behind the head that appears as two triangles when it takes off or lands, which gives rise to its other name, “splittee.”
+bird with black head, white body and wings, blue tail
+black, white, or grey tern
+dark grey body with distinctive white patches on wings, head and neck
+mostly white body with black wingtips and tail, but also exist black (females) or red birds (males)
+small bird with kite-like shape and long, pointed bill
+short black bill with white tip
+all black with white patches on the chest, back, and wings; red throat pouch visible (mostly seen when male)
+black plumage on short, wedge-shaped wings
+tail that appears as a dark fan shape, often when flapping its wings.
+white cheeks, with distinctive dark streaking on the throat.
+a long tail that has two distinctive white patches.
+slender, pointed bill with hooked tip
+white body with black wing tips and tail
+sea bird with black, white, brown, or grey body
+long tail with a fan-shaped tip
+blue head with white chest, black face, and grayish wings
+blue and white wings with black tips, dark sides of head
+bright yellow chest with black streaks on the wing and tail
+male has a black hood, white face, white throat, and grey back with black bars; female is similar but not as brightly colored.
+bird with black cap, white chin and throat patch, wings with white bars on underparts, grey back, black wingtips
+black and white wings with black tips, and darker patches on shoulders
+long, pointed bill with hooked tip
+grayish wings with two distinct wing bars and pale spots on the upper sides
+long, tapering pointed bill, white in front with black tip
+brownish black upperparts, white belly, red-crown patch on head, reddish throat and nape (back of neck)
+small bird with brown upperparts, white belly, and a black cap, collar, bib, and wing bars
+black wingtips, white underparts, white head
+long tail (24cm) with white spots on the outer edge near the tip

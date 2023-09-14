@@ -1,7 +1,5 @@
-111.Loggerhead_Shrike/Loggerhead_Shrike_0101_105392.jpg
-0.0
-0.0
-0.0
+051.Horned_Grebe/Horned_Grebe_0057_34590.jpg
+1.0
 0.0
 0.0
 1.0
@@ -10,16 +8,12 @@
 0.0
 0.0
 1.0
+0.0
+0.0
+0.0
+0.0
+0.0
 1.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
 0.0
 0.0
 0.0
@@ -31,13 +25,6 @@
 0.0
 1.0
 0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-0.0
-1.0
 0.0
 0.0
 1.0
@@ -59,109 +46,122 @@
 0.0
 0.0
 1.0
+1.0
+0.0
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
 0.0
 0.0
 1.0
+1.0
+1.0
+0.0
 0.0
 
-111.Loggerhead_Shrike/Loggerhead_Shrike_0101_105392.jpg
-large grey bill with dark tip
-all-white with grey eye or sooty-brown above
-white below with dark streaks on breast
-Juvenile birds are grey, fading to a dull white.
-with large bill, black cap, white face, and wings with black pattern on it.
-small bird with dark grey upper parts, pale underparts and white supercilium. The tail is tipped with white. They have a distinctive black mask around the eyes
-pale grey plumage
-a white or pale grey bill
-pale grey underparts
-male usually has black cap
-black cap and bib and some faint streaking above the eye
-black cap, white cheek patches and a long tail
-white patch near beak
-pale grey upper parts
-large spot of white in area above the bill
-pale gray underparts
-black cap, but no eyestripe
-Small bird with pale grey feathers on its head, chest, shoulders and tail.
-distinctive “cap” of pale or white feathers on the back of their heads
-small, mostly white bird with black markings on its wings and underparts
-small, slender grey bird with white wingtips
-grey, white, or blue-gray feathers on its back
-large, gray bill
-long, tapering pointed bill, white in front with black tip
-pale greyish back with black wing feathers
-pale grey above with black crown, red eyes and black mask around the beak.
-has white on most of its body, excepting a black cap and nape. The back is dark brownish gray, the breast is white, and there are white wing patches visible in flight. The bill is black.
-small blackish-gray bird with white underparts and pale, faint streaks on the upper breast.
-white or pale grey underparts
-a pale gray hindneck patch, which is more evident in summer.
-pale grey back and wings with darker bars and spots (usually blackish)
-large bill, very dark cap with white eye and pale cheek patch.
-small, sparrow-like bird with black, white and grey feathering
-bird with grey, white, or black feathers
-black cap around the base of the bill
-white head with black cap and mantle; long, pointed bill
-white throat and flanks with a black crescent above the eye
-thin bill with pale spot near tip
-black cap and white face
-small, grey bird with whitish-gray eye patches
-small bird with short tail, usually brownish above, paler below. Juveniles duller and greyer.
-small, grey bird
-pale gray back, whitish underparts
-black cap on head, forehead and nape; thin white eye stripes extend from the bill to above the eye on each side of the head
-small flycatcher with pale bluish tinge on back, rump, and wings
-pale grey or white head and body
-blue-grey on head and wings
-small bird with pale streaks across chest
-dull gray body with a pale belly
-small grey bird with black primary feathers and white underparts
-slate grey body, with white underparts (pale grey) and black wing tips (dark grey)
-black face, gray breast and white crown
-adult male bird with grey, white and black head
-very small, plain gray bird
-pale, whitish face and belly, with black marking at the bill base.
-male has black markings on its white throat; female has no markings on her white throat
-blue and white bill
-small dark bird with white markings on the wings
-pale grey back and wings with darker streaking
-sings in low, dry warble; often mimics other birds
-very white plumage with black flight feathers on the underside of wings
-white throat patch that can be seen when the bird sits
-black back, white front with faint streaks
-grey, white, black or brown bird with long tail
-small, white bird with black "hairy" wings and tail
-white underparts and forehead; grey upper parts
-small songbird with black "sleeve" around neck, gray sideburns
-short bill with greyish upperparts, white underparts
-male has a black hood, white face, white throat, and grey back with black bars; female is similar but not as brightly colored.
-white underparts with darker upper parts
-stout bill with sharp pointy tip, with or without red spot on the end of it (male)
-small songbird with white chest and grey head and wings
-round head with long bill curving down slightly at tip
-small grayish bird with white wings
-medium grey above and white below with darker breast spot
-gray head with a black strip down center, streaks of light on sides of breast, and white underparts.
-grayish white feathers of medium density
-pointed bill with white patch on underside of the bill
-white throat with dark patch
-white throat
-black cap; thin neck and bill
-greyish back with black spots and lighter underparts
-perching bird with short bill, long tail, white head and breast, black cap, grey back
-dark blue plumage with large white patch on the face that resembles an eye patch, and with the head shaped like a horseshoe. The eye patch is missing in some populations.
-small migratory passerine bird with short conical bill, small white eye crescents, and distinctive black stripe above eye
-small black beak, usually with dark markings on the back and sides of the mouth
-black cap on head, a light breast and dark belly
-white front of neck contrasts with black nape
-pale gray underparts with rusty flanks
-grey back, white underparts
-small, light, gray bird with black moustache and sideburns; sometimes black underparts
-white patch on each wing, and faint white eye stripe
-mostly white underparts, grey on top and sides
-distinctive black cap and bib on the breast
-black cap, grey nape and black eyeline
-white underparts with streaks on breast
-a pale gray throat with dark streaking on the breast.
-the bird has a long pointed bill, mainly greyish brown above with whitish underparts.
-gray tail with white outer tail feather edges
-small pointed bill
+051.Horned_Grebe/Horned_Grebe_0057_34590.jpg
+western subspecies of the Eared Grebe with distinctive black eye stripe that extends behind eye.
+bright red feathers on the sides and bottom of its neck
+short crested tail; dull orange legs
+bright red patches of feathers along the sides of the head and neck
+rufous crown, face, neck, breast, and flank patches
+brownish black upperparts, white belly, red-crown patch on head, reddish throat and nape (back of neck)
+duck with red bill, black head with white patches above eye, and crested head
+bird with small crested head, long neck, and large red and white bill
+duck-like body with white sides, red-brown back, black and white head, yellow bill
+bright red on the top of its head with black spots
+bright red, orange or yellow head with black triangular patches on sides of its bill
+mostly red body with black wing tips and tail tip
+bright red feathers on top of its head
+reddish brown plumage with black head, white underbelly and neck, shiny green head crest
+Reddish on head, neck, and breast; black barred upperparts; white wing patches.
+reddish head, neck, breast
+duck-like with crested head, short bill and webbed feet
+black, red, or brown plumage
+bright red body with black wings and face (with some white markings on the tail, neck, or chest)
+reddish head and nape
+males have a reddish brown head and neck while females look more like the other female ducks. The young resemble adult females but lack an adult crest.
+warm reddish-brown flanks, rump and tail coverts; white belly and undertail
+brown crown feathers that taper downwards with curving edges
+duck with a red patch on its head, resembling a hood, hence the common name "hooded merganser"
+red-yellow-orange breast, belly and flanks with black on top of the head and tail
+black head with long plumage above the eyes that extends backward and downward, forming a thin "moustache"
+black, white, brown, or red-brown plumage
+duck-like bird with long, slender neck and bill
+red nape (back) and neck (except for the females and immatures)
+crested head with a small tuft of feathers coming from each side of the neck
+brown head, streaked back with fine darker lines and pale supercilium. Breeding males have rufous crown and pink supercilium with orange throat patch; nonbreeders lack coloration of breeding male.
+rufous crown, underwings, flanks and tail
+gray back and wings; reddish-brown head and breast; rufous flanks.
+streaked crown, cheeks, and flanks with a black spot on the throat
+bicolored bird with glossy black feathers on the top of its head, wings and tail. The breast, belly, sides, back and undertail coverts are iridescent red or orange.
+reddish-brown head and throat
+red underparts with dark patches on the sides of the breast and flanks
+red and green feathers on the top of its head, black plumage on the bottom.
+reddish-brown wing patches
+black plumage on the top of its head, along its neck, and back
+brown upper body with rufous (reddish brown) crown, mantle, and tail
+brown head, chest, back, wings with white or pale pink feathers on the sides of their face and throat.
+black, grey, white, brown, or red-brown plumage
+male has red forehead and nape
+brown back, wings, and head with streaks of light orange-brown feathers on the sides
+short, thick neck with a round body
+brown head with reddish crown stripe and black lores (cheek feathers)
+gray-brown back with reddish wingtips and head;
+black head, throat, breast and flanks with white patches on the wing tips, sides of the tail and across the chest
+red/brown with white spotting on sides of chest and flanks, orange underparts
+black, white or brown head with distinctive red moustache
+water bird with black, white, red, yellow, or gray plumage
+black, white, or red-brown with large white patch at the back of its head
+yellow underbelly, rufous flanks and red eye ring
+black spotted crown, feathers with brown highlights on breast, gray head with white patches, under the tail.
+small, duck-like bird with long neck and legs
+duck with reddish-brown head, large white patch on back of neck and body, gray wings with black spots and a dark tail.
+brownish or tan coloring with reddish tips to the feathers on its body, head and tail
+black bill with red and yellow patches
+the bird has a red head, neck, shoulder, back, and belly with black wings, tail, and bill.
+round body with short, thick neck and long tail
+black, white, grey, brown, or red-brown plumage
+red or orange tail feathers
+pinkish-red tipped tail feathers
+brown wings, back, head, stomach, neck, and tail with white patches on the forehead and throat
+male bird with red body plumage, black wings and tail
+large, light beak with long, dark tip, and pink feet
+red head, back, breast, belly and tail with black wing tips
+The male has a distinctive tuft of feathers on its head called a "horn," that it raises when excited or threatened.
+reddish brown head, breast and wings
+long, stout red-orange bill with a black mark near the tip
+black, white, or red feathered body with a large black spot on its head
+rusty red breast, throat and lower back
+spotted tail, brown feathers on sides of head
+black, white, or yellow patches on the top of its head with a brown forehead
+brown head, neck, and breast
+aquatic bird with white underparts.
+feathered males with red, dark green, rust, purple on the back of their head and neck
+reddish, brown or grey feathers
+the only known species of cormorants with red face
+Reddish-brown head and throat.
+reddish or brown plumage above body, white below
+Red breast (male only) with white line through center of chest, extending onto flank. Females have brownish back and wings (black or reddish tinged).
+a waterbird with short legs
+aquatic bird which has the ability to walk on land as well as swim
+bright orange-red beak & black head, chest and back
+mostly has red on head and sides of neck
+rusty or brown plumage
+bright red breast
+water bird with distinctive bill, which has a wide tip
+adults have black legs and feet, red to orange bill tipped with yellow, white head, gray upperparts and wings, and pale grey underparts with dark streaking on the flanks. Juveniles are similar but lack the adult's white face.
+purplish crown and rufous sides of the head
+rounded head with pronounced forehead, no ear tufts or plumes; short bill
+brown plumage with streaks and flecking on the head, breast, belly, and flanks
+bright red patch of skin on the head below its beak
+brownish head, back, and tail
+reddish-bronze back and flanks, green breast, white chin, black stripe through eye, white throat patch.
+white wingtips, black wing lining, and rusty red body with grey head and back
+adult males have iridescent, shimmering red feathers on wings and tail during breeding season; otherwise, they are dark
+a bird with a gray bill, crown and nape
