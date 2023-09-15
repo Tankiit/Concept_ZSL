@@ -50,7 +50,7 @@ for filename in os.listdir(attributes_root):
                 feature_attributes[keyword][activated_attribute] += 1
 
 # get most common attribute for feature N
-target_feature = 1
+target_feature = 46
 sorted_feature_attributes = sorted(feature_attributes.items(), key=lambda x: x[1][target_feature], reverse=True)
 
 # remove single word nouns
@@ -58,7 +58,7 @@ final_feature_attributes = []
 for feature_attribute in sorted_feature_attributes:
     if len(feature_attribute[0].split()) > 1:
         final_feature_attributes.append(feature_attribute)
-    elif not feature_attribute[0] in ["tail", "head", "wings", "chest", "bird", "eye", "neck", "male", "breast", "back", "bill", "throat", "flanks", "belly"]:
+    elif not feature_attribute[0] in ["tail", "head", "wings", "chest", "bird", "eye", "neck", "male", "breast", "back", "bill", "throat", "flanks", "belly", "feathers"]:
         final_feature_attributes.append(feature_attribute)
 
 sorted_feature_attributes = final_feature_attributes
@@ -67,4 +67,11 @@ ATTRIBUTE_COUNT = 50
 
 most_common_attributes = [x[0] for x in sorted_feature_attributes[:ATTRIBUTE_COUNT]]
 
-print(most_common_attributes)
+final_attributes = []
+for attribute in most_common_attributes:
+    sorted_occurences = sorted(feature_attributes[attribute], reverse=True)[:20]
+    if feature_attributes[attribute][target_feature] > sorted_occurences[-1]:
+        final_attributes.append(attribute)
+
+print(f"Most common attributes for feature {target_feature}:")
+print(final_attributes)

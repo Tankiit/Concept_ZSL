@@ -1,5 +1,5 @@
 from torchvision.io.image import read_image
-from torchvision.transforms.functional import normalize, resize, to_pil_image
+from torchvision.transforms.functional import normalize, resize
 
 print("1========================================================================")
 
