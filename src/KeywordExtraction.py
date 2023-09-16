@@ -1,7 +1,7 @@
 import nltk
-nltk.download('stopwords')
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
+nltk.download('stopwords', quiet=True)
+nltk.download('punkt', quiet=True)
+nltk.download('averaged_perceptron_tagger', quiet=True)
 
 from rake_nltk import Rake
 rake_nltk_var = Rake()
@@ -29,7 +29,7 @@ for filename in os.listdir(attributes_root):
             text += line + ". " if line[-1] != "." else line
 
     rake_nltk_var.extract_keywords_from_text(text)
-    keyword_extracted = rake_nltk_var.get_ranked_phrases()
+    keyword_extracted = set(rake_nltk_var.get_ranked_phrases())
 
     # remove any punctuation at the end of the keyword like "yellow )." or "yellow ."
     cleaned_keyword_extracted = []
@@ -50,28 +50,55 @@ for filename in os.listdir(attributes_root):
                 feature_attributes[keyword][activated_attribute] += 1
 
 # get most common attribute for feature N
-target_feature = 46
+target_feature = 55
 sorted_feature_attributes = sorted(feature_attributes.items(), key=lambda x: x[1][target_feature], reverse=True)
+
+to_remove = ["sized bird", "sleeve", "around neck", "adults", "sized songbird", "breeding season", "tail", "face", "sides", "females", "side", "top", "similar", "underparts", "female", "eyes", "body", "males", "head", "wings", "chest", "bird", "eye", "neck", "male", "breast", "back", "bill", "throat", "flanks", "belly", "feathers"]
 
 # remove single word nouns
 final_feature_attributes = []
 for feature_attribute in sorted_feature_attributes:
-    if len(feature_attribute[0].split()) > 1:
+    if not feature_attribute[0] in to_remove:
         final_feature_attributes.append(feature_attribute)
-    elif not feature_attribute[0] in ["tail", "head", "wings", "chest", "bird", "eye", "neck", "male", "breast", "back", "bill", "throat", "flanks", "belly", "feathers"]:
-        final_feature_attributes.append(feature_attribute)
-
-sorted_feature_attributes = final_feature_attributes
 
 ATTRIBUTE_COUNT = 50
 
-most_common_attributes = [x[0] for x in sorted_feature_attributes[:ATTRIBUTE_COUNT]]
+most_common_attributes = [x[0] for x in final_feature_attributes[:ATTRIBUTE_COUNT]]
+
+# only keep attributes that are above the average by more than the standard deviation
+def mean(lst):
+    return sum(lst) / len(lst)
+
+def stdev(lst):
+    avg = mean(lst)
+    return avg, (sum([(x - avg) ** 2 for x in lst]) / len(lst)) ** 0.5
 
 final_attributes = []
 for attribute in most_common_attributes:
-    sorted_occurences = sorted(feature_attributes[attribute], reverse=True)[:20]
-    if feature_attributes[attribute][target_feature] > sorted_occurences[-1]:
+    counts = feature_attributes[attribute]
+    avg, std = stdev(counts)
+    if counts[target_feature] > avg + std*0.5:
         final_attributes.append(attribute)
+
+final_attributes = [(feature_attributes[x][target_feature], mean(feature_attributes[x]),x) for x in final_attributes]
 
 print(f"Most common attributes for feature {target_feature}:")
 print(final_attributes)
+
+print("=====================================")
+
+CMAO_attributes = sorted(feature_attributes.items(), key=lambda x: x[1][target_feature] / mean(x[1]), reverse=True)
+
+final_feature_attributes = []
+for feature_attribute in CMAO_attributes:
+    if not feature_attribute[0] in to_remove:
+        final_feature_attributes.append(feature_attribute)
+
+threshold = 30
+CMAO_attributes = [(feature_attributes[x[0]][target_feature], mean(feature_attributes[x[0]]),x[0]) for x in final_feature_attributes if feature_attributes[x[0]][target_feature] > threshold]
+
+print(CMAO_attributes[:ATTRIBUTE_COUNT])
+
+print("=====================================")
+
+print(most_common_attributes)

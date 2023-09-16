@@ -89,6 +89,13 @@ for filename in os.listdir(attributes_root):
             for activated_attribute in activated_attributes:
                 feature_attributes[keyword][activated_attribute] += 1
 
+def mean(lst):
+    return sum(lst) / len(lst)
+
+def stdev(lst):
+    avg = mean(lst)
+    return avg, (sum([(x - avg) ** 2 for x in lst]) / len(lst)) ** 0.5
+
 common_attributes = []
 for target_feature in active_attributes:
     sorted_feature_attributes = sorted(feature_attributes.items(), key=lambda x: x[1][target_feature], reverse=True)
@@ -103,11 +110,12 @@ for target_feature in active_attributes:
         elif not feature_attribute[0] in ["tail", "face", "sides", "females", "side", "top", "similar", "underparts", "female", "eyes", "body", "males", "head", "wings", "chest", "bird", "eye", "neck", "male", "breast", "back", "bill", "throat", "flanks", "belly", "feathers"]:
             final_feature_attributes.append(feature_attribute)
 
-    ATTRIBUTE_COUNT = 20
+    # only keep attributes that are above the average by more than the standard deviation
+    sorted_feature_attributes = final_feature_attributes
+    avg, std = stdev([x[1][target_feature] for x in sorted_feature_attributes])
+    sorted_feature_attributes = [[x[1][target_feature], x[0]] for x in sorted_feature_attributes if x[1][target_feature] > avg + std]
 
-    most_common_attributes = [[x[1][target_feature],x[0]] for x in final_feature_attributes[:ATTRIBUTE_COUNT]]
-
-    for st in most_common_attributes:
+    for st in sorted_feature_attributes:
         for st2 in common_attributes:
             if st[1] == st2[1]:
                 st2[0] += st[0]
@@ -121,7 +129,6 @@ print(common_attributes)
 # ====================================================
 # clean with CLIP
 print("Cleaning with CLIP...")
-from tqdm import tqdm
 from PIL import Image
 
 import clip
