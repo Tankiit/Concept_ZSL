@@ -2,8 +2,7 @@ import numpy as np
 import os
 
 from collections import defaultdict
-from tqdm.autonotebook import tqdm
-
+from tqdm import tqdm
 
 def _add_channels(img, total_channels=3):
   while len(img.shape) < 3:  # third axis is the channels
