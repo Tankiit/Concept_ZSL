@@ -25,12 +25,15 @@ def train_one_epoch(model, optimizer, NUM_FEATURES, FT_WEIGHT, POS_FT_WEIGHT):
         outputs, commit_loss, predicate_matrix = model(inputs)
 
         # Compute the loss and its gradients
+        if torch.any(torch.isnan(model.predicate_matrix)):
+            exit()
         loss = loss_fn(outputs, labels, predicate_matrix, NUM_FEATURES, FT_WEIGHT, POS_FT_WEIGHT) + commit_loss
+        torch.nn.utils.clip_grad_norm_(model.parameters(), 1)
         loss.backward()
 
         # Adjust learning weights
         optimizer.step()
-
+        
         # Gather data and report
         running_loss += loss.item()
 
@@ -65,8 +68,8 @@ def objective(trial):
     global trial_num
     trial_num += 1
     print(f"Starting trial {trial_num}")
-    NUM_FEATURES = trial.suggest_int("num_features", 1, 24)
-    FT_WEIGHT = trial.suggest_float("ft_weight", 0, 3)
+    NUM_FEATURES = 1
+    FT_WEIGHT = trial.suggest_float("ft_weight", 0, 2)
     #POS_FT_WEIGHT = trial.suggest_float("pos_ft_weight", 0, 2)
     POS_FT_WEIGHT = 0
     # Generate the model.
@@ -75,7 +78,7 @@ def objective(trial):
     # Generate the optimizers.
     lr = trial.suggest_float("lr", 2e-5, 2e-3, log=True)
     optimizer = optim.Adam(model.parameters(), lr=lr)
-
+    
     EPOCHS = 30
 
     best_acc = 0.0
@@ -105,9 +108,11 @@ def objective(trial):
         if avg_acc > best_acc:
             best_acc = avg_acc
 
-        if epoch == 1 and best_acc < 0.1:
+        if epoch == 4 and best_acc < 0.1:
             raise optuna.TrialPruned()
-        elif epoch == 4 and best_acc < 0.3:
+        elif epoch == 9 and best_acc < 0.3:
+            raise optuna.TrialPruned()
+        elif epoch == 19 and best_acc < 0.5:
             raise optuna.TrialPruned()
     
     return best_acc
