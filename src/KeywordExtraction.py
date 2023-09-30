@@ -50,7 +50,7 @@ for filename in os.listdir(attributes_root):
                 feature_attributes[keyword][activated_attribute] += 1
 
 # get most common attribute for feature N
-target_feature = 55
+target_feature = 2
 sorted_feature_attributes = sorted(feature_attributes.items(), key=lambda x: x[1][target_feature], reverse=True)
 
 to_remove = ["sized bird", "sleeve", "around neck", "adults", "sized songbird", "breeding season", "tail", "face", "sides", "females", "side", "top", "similar", "underparts", "female", "eyes", "body", "males", "head", "wings", "chest", "bird", "eye", "neck", "male", "breast", "back", "bill", "throat", "flanks", "belly", "feathers"]

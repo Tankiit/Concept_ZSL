@@ -100,8 +100,9 @@ for i in range(NUM_FEATURES):
             final_keywords.append(feature_attribute)
 
     sorted_keywords = final_keywords
-    predicate_keywords.append(sorted_keywords[:20])
+    predicate_keywords.append([x for x in sorted_keywords if x[1] > 1])
 
 # ====================================================
-target_feature = 2
-print(predicate_keywords[target_feature])
+
+for i, predicate_keyword in enumerate(predicate_keywords):
+    print(f"Predicate {i}: {predicate_keyword}")

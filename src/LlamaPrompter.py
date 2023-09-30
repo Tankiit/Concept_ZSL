@@ -1,5 +1,14 @@
-from llama_cpp import Llama
-LLM = Llama(model_path="data/llama-2-7b.Q4_0.gguf")
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+model_name_or_path = "TheBloke/Llama-2-7B-GPTQ"
+# To use a different branch, change revision
+# For example: revision="main"
+model = AutoModelForCausalLM.from_pretrained(model_name_or_path,
+                                             device_map="auto",
+                                             trust_remote_code=True,
+                                             revision="main")
+
+tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, use_fast=True)
 
 classes_path = "data/CUB_200_2011/CUB_200_2011/classes.txt"
 
@@ -28,7 +37,9 @@ Q: What are useful visual features to distinguish {class_name} in a photo?
 A: There are several useful visual feature to tell there is a {class_name} in a photo:\n"""
 
         # generate a response (takes several seconds)
-        output = LLM.create_completion(prompt, max_tokens=512, top_k=100, stop=["Q:"])["choices"][0]["text"]
+        input_ids = tokenizer(prompt, return_tensors='pt').input_ids.cuda()
+        output = model.generate(inputs=input_ids, temperature=0.7, do_sample=True, top_p=0.95, top_k=40, max_new_tokens=512)
+        output = tokenizer.decode(output[0])
 
         buffer = ""
 
