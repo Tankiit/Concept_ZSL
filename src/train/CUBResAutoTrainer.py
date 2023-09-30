@@ -92,11 +92,11 @@ print(f"Device: {device}")
 
 # Trial 93 finished with value: 0.6725443601608276 and parameters: {'num_features': 6, 'ft_weight': 0.11113670076359503, 'ft_pos_weight': 0.5169318900688755, 'lr': 0.00018327854921225235}.
 NUM_CLASSES = 200
-NUM_FEATURES = 64
-EPOCHS = 50
+NUM_FEATURES = 32
+EPOCHS = 30
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
 
-FT_WEIGHT = 1
+FT_WEIGHT = 0.2
 
 import sys
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
@@ -170,4 +170,4 @@ for epoch in tqdm(range(EPOCHS)):
 
 print(best_stats)
 
-torch.save(model.state_dict(), "CUBRes18AutoPred.pt")
+torch.save(model.state_dict(), "CUBRes18AutoPred16F.pt")

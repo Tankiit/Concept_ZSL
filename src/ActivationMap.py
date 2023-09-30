@@ -1,4 +1,4 @@
-from torchvision.io.image import read_image
+from torchvision.io.image import read_image, ImageReadMode
 from torchvision.transforms.functional import normalize, resize, to_pil_image
 from torchcam.methods import SmoothGradCAMpp
 
@@ -43,13 +43,22 @@ from tqdm import tqdm
 
 print("3========================================================================")
 
-cam = SmoothGradCAMpp(model.resnet)
-for i, image in tqdm(enumerate(images)):
-    img = read_image(os.path.join(root, 'CUB_200_2011/images', image))
+import matplotlib.pyplot as plt
+
+cam_extractor = SmoothGradCAMpp(model.resnet, ["layer1", "layer2", "layer3", "layer4"])
+for i, image in tqdm(enumerate(images[:200])):
+    img = read_image(os.path.join(root, 'CUB_200_2011/images', image), ImageReadMode.RGB)
     input_tensor = normalize(resize(img, (224, 224)) / 255., [0.485, 0.456, 0.406], [0.229, 0.224, 0.225]).to(device)
     voutputs, _, _ = model(input_tensor.unsqueeze(0))
+    
+    os.mkdir(f"results/CUB-CAM/img{i}")
     for j in range(NUM_FEATURES):
         if voutputs[0][j] == 1:
-            activation_map = cam(j, voutputs)
-            result = overlay_mask(to_pil_image(img), to_pil_image(activation_map[0].squeeze(0), mode='F'), alpha=0.5)
-            result.save(f"results/CUB-CAM/img{i}-feature{j}.jpg")
+            activation_map = cam_extractor(j, voutputs)
+            
+            os.mkdir(f"results/CUB-CAM/img{i}/feature{j}")
+            
+            # The raw CAM
+            for idx, name, cam in zip(range(len(cam_extractor.target_names)), cam_extractor.target_names, activation_map):
+                result = overlay_mask(to_pil_image(img), to_pil_image(cam.squeeze(0), mode='F'), alpha=0.5)
+                result.save(f"results/CUB-CAM/img{i}/feature{j}/layer-{name}.jpg")
