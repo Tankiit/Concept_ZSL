@@ -38,7 +38,7 @@ def get_keywords_from_file(file_path):
 
     keyword_extracted = cleaned_keyword_extracted
 
-    to_remove = ["sized bird", "members", "neck", "slightly", "long", "others", "sleeve", "around neck", "adults", "sized songbird", "breeding season", "tail", "face", "sides", "females", "side", "top", "similar", "underparts", "female", "eyes", "body", "males", "head", "wings", "chest", "bird", "eye", "neck", "male", "breast", "back", "bill", "throat", "flanks", "belly", "feathers"]
+    to_remove = ["sized bird", "members", "neck", "slightly", "long", "legs", "others", "sleeve", "around neck", "adults", "sized songbird", "breeding season", "tail", "face", "sides", "females", "side", "top", "similar", "underparts", "female", "eyes", "body", "males", "head", "wings", "chest", "bird", "eye", "neck", "male", "breast", "back", "bill", "throat", "flanks", "belly", "feathers"]
 
     # remove single word nouns
     final_feature_attributes = []
@@ -60,9 +60,27 @@ def get_keywords_from_folder(folder_path):
     return file_keywords
 
 import torch
-def keywords_to_predicate_mat(keywords_dict, N):
+def build_predicate_matrix(sorted_keyword_occurence, keywords_dict, N):
     predicate_matrix = torch.zeros((len(keywords_dict), N))
 
+    for i, (keyword, _) in enumerate(sorted_keyword_occurence[:N]):
+        for j, (_, keywords) in enumerate(keywords_dict.items()):
+            if keyword in keywords:
+                predicate_matrix[j][i] = 1
+
+    # Make sure no row is subset of another row
+
+    for i in range(predicate_matrix.shape[0]):
+        for j in range(predicate_matrix.shape[0]):
+            if i == j:
+                continue
+            
+            if torch.all(predicate_matrix[i] <= predicate_matrix[j]):
+                return None
+            
+    return predicate_matrix
+
+def keywords_to_predicate_mat(keywords_dict, N):
     keyword_occurence = {}
     for keywords in keywords_dict.values():
         for keyword in keywords:
@@ -73,10 +91,10 @@ def keywords_to_predicate_mat(keywords_dict, N):
 
     sorted_keyword_occurence = sorted(keyword_occurence.items(), key=lambda x: x[1], reverse=True)
 
-    for i, (keyword, _) in enumerate(sorted_keyword_occurence[:N]):
-        for j, (image, keywords) in enumerate(keywords_dict.items()):
-            if keyword in keywords:
-                predicate_matrix[j][i] = 1
+    predicate_matrix = build_predicate_matrix(sorted_keyword_occurence, keywords_dict, N)
+    while predicate_matrix is None:
+        N += 1
+        predicate_matrix = build_predicate_matrix(sorted_keyword_occurence, keywords_dict, N)
 
     return predicate_matrix
 
@@ -84,18 +102,5 @@ if __name__ == "__main__":
     folder = "results/CUB-Attributes"
     file_keywords = get_keywords_from_folder(folder)
 
-    preds = keywords_to_predicate_mat(file_keywords, 64)
-    print(preds)
-    
-    # Make sure no row is subset of another row
-
-    for i in range(preds.shape[0]):
-        for j in range(preds.shape[0]):
-            if i == j:
-                continue
-            
-            if torch.all(preds[i] <= preds[j]):
-                print(f"Row {i} is subset of row {j}")
-                print(preds[i])
-                print(preds[j])
-                print()
+    preds = keywords_to_predicate_mat(file_keywords, 32)
+    print(preds.shape)
