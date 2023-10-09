@@ -6,11 +6,14 @@ from torch.utils.data import Dataset
 class Cub2011(Dataset):
     base_folder = 'CUB_200_2011/images'
 
-    def __init__(self, root, train=True, transform=None, loader=default_loader):
+    def __init__(self, root, train=True, transform=None, loader=default_loader, exclude=[]):
         self.root = os.path.expanduser(root)
         self.transform = transform
         self.loader = default_loader
         self.train = train
+        
+        include = list(range(1, 200 + 1))
+        self.include = [x for x in include if x not in exclude]
 
         if not self._check_integrity():
             raise RuntimeError('Dataset not found or corrupted.' +
@@ -26,16 +29,19 @@ class Cub2011(Dataset):
 
         data = images.merge(image_class_labels, on='img_id')
         self.data = data.merge(train_test_split, on='img_id')
-
+        
+        self.data = self.data[self.data['target'].isin(self.include)]
+        
         if self.train:
             self.data = self.data[self.data.is_training_img == 1]
         else:
             self.data = self.data[self.data.is_training_img == 0]
-
+            
     def _check_integrity(self):
         try:
             self._load_metadata()
-        except Exception:
+        except Exception as e:
+            print(e)
             return False
 
         for index, row in self.data.iterrows():
