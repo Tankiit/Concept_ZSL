@@ -21,7 +21,7 @@ val_transform = transforms.Compose([
                                      std=[0.229, 0.224, 0.225])
 ])
 
-NUM_EXCLUDE = 10
+NUM_EXCLUDE = 20
 
 trainset, valset, ZSL_trainset, ZSL_valset = make_ZSL_sets(NUM_EXCLUDE, train_transform, val_transform)
 
@@ -96,7 +96,7 @@ print(f"Device: {device}")
 
 NUM_CLASSES = 200
 NUM_FEATURES = 64
-EPOCHS = 50
+EPOCHS = 30
 
 FT_WEIGHT = 1
 

@@ -70,11 +70,11 @@ import numpy as np
 def make_ZSL_sets(NUM_EXCLUDE, train_transform, val_transform):
     indices = (np.random.permutation(200)+1).tolist()
     
-    ZSL_train_set = Cub2011("/storage/CUB", transform=val_transform, exclude = indices[NUM_EXCLUDE:])
+    ZSL_train_set = Cub2011("/storage/CUB", transform=train_transform, exclude = indices[NUM_EXCLUDE:])
     train_set = Cub2011("/storage/CUB", transform=train_transform, exclude = indices[:NUM_EXCLUDE])
     
     ZSL_test_set = Cub2011("/storage/CUB", transform=val_transform, train=False, exclude = indices[NUM_EXCLUDE:])
-    test_set = Cub2011("/storage/CUB", transform=train_transform, train=False, exclude = indices[:NUM_EXCLUDE])
+    test_set = Cub2011("/storage/CUB", transform=val_transform, train=False, exclude = indices[:NUM_EXCLUDE])
     
     return train_set, test_set, ZSL_train_set, ZSL_test_set
     
