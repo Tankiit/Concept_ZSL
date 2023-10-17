@@ -27,7 +27,7 @@ validation_loader = torch.utils.data.DataLoader(
 training_loader = torch.utils.data.DataLoader(
         trainset, batch_size=128, shuffle=True, num_workers=4)
 
-def train_one_epoch():
+def train_one_epoch(scheduler):
     running_loss = 0.
 
     # Here, we use enumerate(training_loader) instead of
@@ -55,7 +55,8 @@ def train_one_epoch():
         # Adjust learning weights
         optimizer.step()
         
-        scheduler.step()
+        if scheduler is not None:
+            scheduler.step()
 
         # Gather data and report
         running_loss += loss.item()
@@ -89,20 +90,21 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Device: {device}")
 
 NUM_CLASSES = 200
-NUM_FEATURES = 64
-EPOCHS = 50
+NUM_FEATURES = 96
+EPOCHS = 100
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
 
-FT_WEIGHT = 1
+FT_WEIGHT = 0.7
 
 import sys
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
-from ResnetAutoPredicates import ResExtr
+from VGGAutoPredicates import ResExtr
 
-model = ResExtr(NUM_FEATURES, NUM_CLASSES, resnet_type=18, pretrained=True).to(device)
+model = ResExtr(NUM_FEATURES, NUM_CLASSES).to(device)
 
 optimizer = torch.optim.Adam(model.parameters(), lr=3e-4, weight_decay=1e-5)
-scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, 2e-3, epochs=EPOCHS, steps_per_epoch=len(training_loader))
+scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, 1e-3, epochs=EPOCHS, steps_per_epoch=len(training_loader))
+#scheduler = None
 
 best_stats = {
     "epoch": 0,
@@ -118,7 +120,7 @@ from tqdm import tqdm
 for epoch in tqdm(range(EPOCHS)):
     # Make sure gradient tracking is on, and do a pass over the data
     model.train(True)
-    avg_loss = train_one_epoch()
+    avg_loss = train_one_epoch(scheduler)
 
     running_vloss = 0.0
     # Set the model to evaluation mode, disabling dropout and using population
@@ -167,4 +169,4 @@ for epoch in tqdm(range(EPOCHS)):
 
 print(best_stats)
 
-#torch.save(model.state_dict(), "CUBRes18AutoPred.pt")
+#torch.save(model.state_dict(), "CUBVGGAutoPred.pt")

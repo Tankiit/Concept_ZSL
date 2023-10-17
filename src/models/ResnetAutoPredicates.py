@@ -16,7 +16,7 @@ class ResBlock(nn.Module):
 
 from vector_quantize_pytorch import VectorQuantize
 from resnet import ResNet18, ResNet34, ResNet50
-from torchvision.models import resnet18, ResNet18_Weights, resnet34, ResNet34_Weights, resnet50, ResNet50_Weights
+from torchvision.models import resnet18, ResNet18_Weights, resnet34, ResNet34_Weights, resnet50, ResNet50_Weights, resnet101, ResNet101_Weights, resnet152, ResNet152_Weights
 class ResExtr(nn.Module):
     def __init__(self, features, classes, pretrained=False, resnet_type=18, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
@@ -38,6 +38,18 @@ class ResExtr(nn.Module):
         elif resnet_type == 50:
             if pretrained:
                 self.resnet = resnet50(weights=ResNet50_Weights.DEFAULT)
+                self.resnet.fc = nn.Linear(2048, features)
+            else:
+                self.resnet = ResNet50(num_classes=features)
+        elif resnet_type == 101:
+            if pretrained:
+                self.resnet = resnet101(weights=ResNet101_Weights.DEFAULT)
+                self.resnet.fc = nn.Linear(2048, features)
+            else:
+                self.resnet = ResNet50(num_classes=features)
+        elif resnet_type == 152:
+            if pretrained:
+                self.resnet = resnet152(weights=ResNet152_Weights.DEFAULT)
                 self.resnet.fc = nn.Linear(2048, features)
             else:
                 self.resnet = ResNet50(num_classes=features)
@@ -71,5 +83,5 @@ if __name__ == "__main__":
     FEATURES = 85
     CLASSES = 50
 
-    model = ResExtr(2048, FEATURES).to(device)
+    model = ResExtr(2048, FEATURES, pretrained=True, resnet_type=152).to(device)
     print(model.bin_quantize._codebook.embed)

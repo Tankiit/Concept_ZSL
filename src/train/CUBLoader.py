@@ -11,9 +11,7 @@ class Cub2011(Dataset):
         self.transform = transform
         self.loader = default_loader
         self.train = train
-        
-        include = list(range(1, 200 + 1))
-        self.include = [x for x in include if x not in exclude]
+        self.exclude = exclude
 
         if not self._check_integrity():
             raise RuntimeError('Dataset not found or corrupted.' +
@@ -30,7 +28,10 @@ class Cub2011(Dataset):
         data = images.merge(image_class_labels, on='img_id')
         self.data = data.merge(train_test_split, on='img_id')
         
-        self.data = self.data[self.data['target'].isin(self.include)]
+        self.data = self.data[~self.data['target'].isin(self.exclude)]
+        
+        self.data['target'] = pd.factorize(self.data['target'])[0]
+        
         
         if self.train:
             self.data = self.data[self.data.is_training_img == 1]
@@ -57,7 +58,7 @@ class Cub2011(Dataset):
     def __getitem__(self, idx):
         sample = self.data.iloc[idx]
         path = os.path.join(self.root, self.base_folder, sample.filepath)
-        target = sample.target - 1  # Targets start at 1 by default, so shift to 0
+        target = sample.target
         img = self.loader(path)
 
         if self.transform is not None:
@@ -65,6 +66,22 @@ class Cub2011(Dataset):
             
         return {"images": img, "labels": target}
 
+import numpy as np
+def make_ZSL_sets(NUM_EXCLUDE, train_transform, val_transform):
+    indices = (np.random.permutation(200)+1).tolist()
+    
+    ZSL_train_set = Cub2011("/storage/CUB", transform=val_transform, exclude = indices[NUM_EXCLUDE:])
+    train_set = Cub2011("/storage/CUB", transform=train_transform, exclude = indices[:NUM_EXCLUDE])
+    
+    ZSL_test_set = Cub2011("/storage/CUB", transform=val_transform, train=False, exclude = indices[NUM_EXCLUDE:])
+    test_set = Cub2011("/storage/CUB", transform=train_transform, train=False, exclude = indices[:NUM_EXCLUDE])
+    
+    return train_set, test_set, ZSL_train_set, ZSL_test_set
+    
 if __name__ == "__main__":
-    dset = Cub2011("/storage/CUB")
-    print(dset[0])
+    indices = (np.random.permutation(200)+1).tolist()
+    
+    selected = indices[20:]
+    print(min(selected), max(selected))
+    
+    dset = Cub2011("/storage/CUB", exclude = selected)
