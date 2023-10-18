@@ -21,7 +21,7 @@ val_transform = transforms.Compose([
                                      std=[0.229, 0.224, 0.225])
 ])
 
-NUM_EXCLUDE = 50
+NUM_EXCLUDE = 20
 
 trainset, valset, ZSL_trainset, ZSL_valset = make_ZSL_sets(NUM_EXCLUDE, train_transform, val_transform)
 
@@ -49,6 +49,7 @@ def loss_fn(out, labels, predicate_matrix):
     missing_attr = (predicate_matrix[labels] - out + diff_square).sum() / batch_size
     
     loss_ft = (1 + false_positives + missing_attr)
+    
     loss_ft *= loss_cl.item()/(loss_ft.item() + eps)
     
     return loss_cl + loss_ft * FT_WEIGHT
@@ -97,17 +98,28 @@ NUM_CLASSES = 200
 NUM_FEATURES = 64
 EPOCHS = 50
 
-FT_WEIGHT = 1
+FT_WEIGHT = 0.7
 
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES - NUM_EXCLUDE, top_k=1).to(device)
 
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
-from ResnetAutoPredicates import ResExtr
+from ConvNextAutoPredicates import ResExtr
 
-model = ResExtr(NUM_FEATURES, NUM_CLASSES - NUM_EXCLUDE, resnet_type=152, pretrained=True).to(device)
+model = ResExtr(NUM_FEATURES, NUM_CLASSES - NUM_EXCLUDE, 2).to(device)
 
 optimizer = torch.optim.Adam(model.parameters(), lr=3e-4, weight_decay=1e-5)
-scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, 2e-3, epochs=EPOCHS, steps_per_epoch=len(training_loader))
+scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, 1e-3, epochs=EPOCHS, steps_per_epoch=len(training_loader))
+#scheduler = None
+
+best_stats = {
+    "epoch": 0,
+    "train_loss": 0,
+    "val_loss": 0,
+    "val_acc": 0,
+    "fp": 0,
+    "ma": 0,
+    "oa": 0
+}
 
 from tqdm import tqdm
 for epoch in tqdm(range(EPOCHS)):
@@ -146,21 +158,30 @@ for epoch in tqdm(range(EPOCHS)):
     avg_oa = running_out_attributes / (i + 1)
     print(f"LOSS: {avg_vloss}, ACC: {avg_acc}, FP: {avg_fp}, MA: {avg_ma}, OA: {avg_oa}")
 
-print(f"Seen ACC: {avg_acc}, FP: {avg_fp}, MA: {avg_ma}, OA: {avg_oa}, Val Loss: {avg_vloss}, Train Loss: {avg_loss}")
+    if best_stats["val_acc"] < avg_acc:
+        best_stats["epoch"] = epoch
+        best_stats["train_loss"] = avg_loss
+        best_stats["val_loss"] = avg_vloss
+        best_stats["val_acc"] = avg_acc.item()
+        best_stats["fp"] = avg_fp.item()
+        best_stats["ma"] = avg_ma.item()
+        best_stats["oa"] = avg_oa.item()
+
+print(best_stats)
+
+attributes_per_class = best_stats["oa"] - best_stats["fp"] + best_stats["ma"]
 
 print("===============================================================")
 print(f"Started Training On {NUM_EXCLUDE} Excluded Classes")
-
-attributes_per_class = avg_oa.item() - avg_fp.item() + avg_ma.item()
 
 validation_loader = torch.utils.data.DataLoader(
         ZSL_valset, batch_size=128, shuffle=False, num_workers=4)
 training_loader = torch.utils.data.DataLoader(
         ZSL_trainset, batch_size=128, shuffle=True, num_workers=4)
 
-predis = torch.zeros(NUM_EXCLUDE, NUM_FEATURES).to(device)
+accuracy = Accuracy(task="multiclass", num_classes=NUM_EXCLUDE, top_k=1).to(device)
 
-results = [[0, 0]] * NUM_EXCLUDE
+predis = torch.zeros(NUM_EXCLUDE, NUM_FEATURES).to(device)
 
 model.eval()
 with torch.no_grad():
@@ -182,6 +203,13 @@ new_predicate_matrix.scatter_(1, indices, 1)
 model.classes = NUM_EXCLUDE
 model.predicate_matrix = torch.nn.Parameter(new_predicate_matrix)
 
+running_vloss = 0.0
+# Set the model to evaluation mode, disabling dropout and using population
+# statistics for batch normalization.
+running_acc = 0.0
+running_false_positives = 0.0
+running_missing_attr = 0.0
+running_out_attributes = 0.0
 with torch.no_grad():
     for i, vdata in enumerate(validation_loader):
         vinputs, vlabels = vdata["images"], vdata["labels"]
@@ -191,22 +219,7 @@ with torch.no_grad():
         voutputs = voutputs.view(-1, 1, NUM_FEATURES)
         ANDed = voutputs * predicate_matrix
         diff = ANDed - voutputs
+        running_acc += accuracy(diff.sum(dim=2), vlabels)
 
-        preds = diff.sum(dim=2)
-        # Add to results[label] the number of correct predictions and the number of predictions
-        for i in range(len(preds)):
-            results[vlabels[i]][0] += torch.argmax(preds[i]) == vlabels[i]
-            results[vlabels[i]][1] += 1
-
-
-accuracy = 0
-for i in range(NUM_EXCLUDE):
-    accuracy += results[i][0] / results[i][1]
-
-unseen_acc = accuracy / NUM_EXCLUDE
-
-print(f"Unseen ACC: {unseen_acc}")
-
-harmonic_mean = 2 * avg_acc * unseen_acc / (avg_acc + unseen_acc)
-
-print(f"Harmonic Mean: {harmonic_mean}")
+avg_acc = running_acc / (i + 1)
+print(f"ACC: {avg_acc}")

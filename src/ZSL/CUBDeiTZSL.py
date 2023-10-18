@@ -49,6 +49,7 @@ def loss_fn(out, labels, predicate_matrix):
     missing_attr = (predicate_matrix[labels] - out + diff_square).sum() / batch_size
     
     loss_ft = (1 + false_positives + missing_attr)
+    
     loss_ft *= loss_cl.item()/(loss_ft.item() + eps)
     
     return loss_cl + loss_ft * FT_WEIGHT
@@ -95,19 +96,23 @@ print(f"Device: {device}")
 
 NUM_CLASSES = 200
 NUM_FEATURES = 64
-EPOCHS = 50
+EPOCHS = 30
 
 FT_WEIGHT = 1
 
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES - NUM_EXCLUDE, top_k=1).to(device)
 
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
-from ResnetAutoPredicates import ResExtr
+from DeiTAutoPredicates import ResExtr
 
-model = ResExtr(NUM_FEATURES, NUM_CLASSES - NUM_EXCLUDE, resnet_type=152, pretrained=True).to(device)
+model = ResExtr(NUM_FEATURES, NUM_CLASSES - NUM_EXCLUDE, pretrained=True).to(device)
 
-optimizer = torch.optim.Adam(model.parameters(), lr=3e-4, weight_decay=1e-5)
-scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, 2e-3, epochs=EPOCHS, steps_per_epoch=len(training_loader))
+base_lr, max_lr = 3e-4, 1e-3
+
+optimizer = torch.optim.Adam(model.parameters(), lr=base_lr, weight_decay=1e-5)
+scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, max_lr, epochs=EPOCHS, steps_per_epoch=len(training_loader))
+
+print(f"Hyperparams: {FT_WEIGHT}, {base_lr}, {max_lr}")
 
 from tqdm import tqdm
 for epoch in tqdm(range(EPOCHS)):
@@ -148,10 +153,10 @@ for epoch in tqdm(range(EPOCHS)):
 
 print(f"Seen ACC: {avg_acc}, FP: {avg_fp}, MA: {avg_ma}, OA: {avg_oa}, Val Loss: {avg_vloss}, Train Loss: {avg_loss}")
 
+attributes_per_class = avg_oa.item() - avg_fp.item() + avg_ma.item()
+
 print("===============================================================")
 print(f"Started Training On {NUM_EXCLUDE} Excluded Classes")
-
-attributes_per_class = avg_oa.item() - avg_fp.item() + avg_ma.item()
 
 validation_loader = torch.utils.data.DataLoader(
         ZSL_valset, batch_size=128, shuffle=False, num_workers=4)

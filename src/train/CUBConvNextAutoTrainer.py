@@ -1,9 +1,6 @@
+from CUBLoader import Cub2011
 import torchvision.transforms as transforms
 import torch
-import sys
-
-sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/train")
-from CUBLoader import make_ZSL_sets
 
 train_transform =  transforms.Compose([
     transforms.RandomResizedCrop(224),
@@ -13,6 +10,8 @@ train_transform =  transforms.Compose([
                                      std=[0.229, 0.224, 0.225])
 ])
 
+trainset = Cub2011("/storage/CUB", transform=train_transform)
+
 val_transform = transforms.Compose([
     transforms.Resize(256),
     transforms.CenterCrop(224),
@@ -21,38 +20,12 @@ val_transform = transforms.Compose([
                                      std=[0.229, 0.224, 0.225])
 ])
 
-NUM_EXCLUDE = 20
-
-trainset, valset, ZSL_trainset, ZSL_valset = make_ZSL_sets(NUM_EXCLUDE, train_transform, val_transform)
+valset = Cub2011("/storage/CUB", train=False, transform=val_transform)
 
 validation_loader = torch.utils.data.DataLoader(
         valset, batch_size=128, shuffle=False, num_workers=4)
 training_loader = torch.utils.data.DataLoader(
         trainset, batch_size=128, shuffle=True, num_workers=4)
-
-eps=1e-10
-def loss_fn(out, labels, predicate_matrix):
-    out = out.view(-1, 1, NUM_FEATURES) # out is a batch of 1D binary vectors
-    ANDed = out * predicate_matrix # AND operation
-    diff = ANDed - out # Difference of ANDed and out => if equal, then out is a subset of its class' predicates
-
-    entr_loss = torch.nn.CrossEntropyLoss()
-    
-    loss_cl = entr_loss(diff.sum(dim=2), labels) # Is "out" a subset of its class' predicates?
-
-    batch_size = out.shape[0]
-
-    out = out.view(-1, NUM_FEATURES)
-    diff_square = (out - predicate_matrix[labels]).pow(2)
-    
-    false_positives = (out - predicate_matrix[labels] + diff_square).sum() / batch_size
-    missing_attr = (predicate_matrix[labels] - out + diff_square).sum() / batch_size
-    
-    loss_ft = (1 + false_positives + missing_attr)
-    
-    loss_ft *= loss_cl.item()/(loss_ft.item() + eps)
-    
-    return loss_cl + loss_ft * FT_WEIGHT
 
 def train_one_epoch(scheduler):
     running_loss = 0.
@@ -84,32 +57,54 @@ def train_one_epoch(scheduler):
         
         if scheduler is not None:
             scheduler.step()
-    
+
         # Gather data and report
         running_loss += loss.item()
 
     return running_loss / (i+1)
+
+eps=1e-10
+def loss_fn(out, labels, predicate_matrix):
+    out = out.view(-1, 1, NUM_FEATURES) # out is a batch of 1D binary vectors
+    ANDed = out * predicate_matrix # AND operation
+    diff = ANDed - out # Difference of ANDed and out => if equal, then out is a subset of its class' predicates
+
+    entr_loss = torch.nn.CrossEntropyLoss()
+    loss_cl = entr_loss(diff.sum(dim=2), labels) # Is "out" a subset of its class' predicates?
+
+    batch_size = out.shape[0]
+
+    out = out.view(-1, NUM_FEATURES)
+    diff_square = (out - predicate_matrix[labels]).pow(2)
+    
+    false_positives = (out - predicate_matrix[labels] + diff_square).sum() / batch_size
+    missing_attr = (predicate_matrix[labels] - out + diff_square).sum() / batch_size
+    
+    loss_ft = (1 + false_positives + missing_attr)
+    loss_ft *= loss_cl.item()/(loss_ft.item() + eps)
+    
+    return loss_cl + loss_ft * FT_WEIGHT
 
 from torchmetrics import Accuracy
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Device: {device}")
 
 NUM_CLASSES = 200
-NUM_FEATURES = 64
-EPOCHS = 50
+NUM_FEATURES = 96
+EPOCHS = 100
+accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
 
 FT_WEIGHT = 0.7
 
-accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES - NUM_EXCLUDE, top_k=1).to(device)
-
+import sys
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
-from VGGAutoPredicates import ResExtr
+from ConvNextAutoPredicates import ResExtr
 
-model = ResExtr(NUM_FEATURES, NUM_CLASSES - NUM_EXCLUDE).to(device)
+model = ResExtr(NUM_FEATURES, NUM_CLASSES).to(device)
 
 optimizer = torch.optim.Adam(model.parameters(), lr=3e-4, weight_decay=1e-5)
-scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, 1e-3, epochs=EPOCHS, steps_per_epoch=len(training_loader))
-#scheduler = None
+#scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, 1e-3, epochs=EPOCHS, steps_per_epoch=len(training_loader))
+scheduler = None
 
 best_stats = {
     "epoch": 0,
@@ -123,17 +118,20 @@ best_stats = {
 
 from tqdm import tqdm
 for epoch in tqdm(range(EPOCHS)):
+    # Make sure gradient tracking is on, and do a pass over the data
     model.train(True)
     avg_loss = train_one_epoch(scheduler)
 
     running_vloss = 0.0
-
+    # Set the model to evaluation mode, disabling dropout and using population
+    # statistics for batch normalization.
     model.eval()
     running_acc = 0.0
     running_false_positives = 0.0
     running_missing_attr = 0.0
     running_out_attributes = 0.0
 
+    # Disable gradient computation and reduce memory consumption.
     with torch.no_grad():
         for i, vdata in enumerate(validation_loader):
             vinputs, vlabels = vdata["images"], vdata["labels"]
@@ -157,6 +155,8 @@ for epoch in tqdm(range(EPOCHS)):
     avg_ma = running_missing_attr / (i + 1)
     avg_oa = running_out_attributes / (i + 1)
     print(f"LOSS: {avg_vloss}, ACC: {avg_acc}, FP: {avg_fp}, MA: {avg_ma}, OA: {avg_oa}")
+    #with open("CUBRes18AutoPredData.csv", "a") as f:
+        #f.write(f"{epoch}, {avg_loss}, {avg_vloss}, {avg_acc}, {avg_fp}, {avg_ma}, {avg_oa}\n")
 
     if best_stats["val_acc"] < avg_acc:
         best_stats["epoch"] = epoch
@@ -169,57 +169,4 @@ for epoch in tqdm(range(EPOCHS)):
 
 print(best_stats)
 
-attributes_per_class = best_stats["oa"] - best_stats["fp"] + best_stats["ma"]
-
-print("===============================================================")
-print(f"Started Training On {NUM_EXCLUDE} Excluded Classes")
-
-validation_loader = torch.utils.data.DataLoader(
-        ZSL_valset, batch_size=128, shuffle=False, num_workers=4)
-training_loader = torch.utils.data.DataLoader(
-        ZSL_trainset, batch_size=128, shuffle=True, num_workers=4)
-
-accuracy = Accuracy(task="multiclass", num_classes=NUM_EXCLUDE, top_k=1).to(device)
-
-predis = torch.zeros(NUM_EXCLUDE, NUM_FEATURES).to(device)
-
-model.eval()
-with torch.no_grad():
-    for i, vdata in enumerate(training_loader):
-        vinputs, vlabels = vdata["images"], vdata["labels"]
-        vinputs = vinputs.to(device)
-        vlabels = vlabels.to(device)
-        voutputs, vcommit_loss, predicate_matrix = model(vinputs)
-        
-        for i in range(len(voutputs)):
-            predis[vlabels[i]] += voutputs[i]
-            
-K = int(attributes_per_class+1)
-topk, indices = torch.topk(predis, K, dim=1)
-      
-new_predicate_matrix = torch.zeros(NUM_EXCLUDE, NUM_FEATURES).to(device)
-new_predicate_matrix.scatter_(1, indices, 1)
-    
-model.classes = NUM_EXCLUDE
-model.predicate_matrix = torch.nn.Parameter(new_predicate_matrix)
-
-running_vloss = 0.0
-# Set the model to evaluation mode, disabling dropout and using population
-# statistics for batch normalization.
-running_acc = 0.0
-running_false_positives = 0.0
-running_missing_attr = 0.0
-running_out_attributes = 0.0
-with torch.no_grad():
-    for i, vdata in enumerate(validation_loader):
-        vinputs, vlabels = vdata["images"], vdata["labels"]
-        vinputs = vinputs.to(device)
-        vlabels = vlabels.to(device)
-        voutputs, vcommit_loss, predicate_matrix = model(vinputs)
-        voutputs = voutputs.view(-1, 1, NUM_FEATURES)
-        ANDed = voutputs * predicate_matrix
-        diff = ANDed - voutputs
-        running_acc += accuracy(diff.sum(dim=2), vlabels)
-
-avg_acc = running_acc / (i + 1)
-print(f"ACC: {avg_acc}")
+#torch.save(model.state_dict(), "CUBVGGAutoPred.pt")

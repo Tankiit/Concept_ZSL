@@ -49,10 +49,12 @@ def loss_fn(out, labels, predicate_matrix):
     missing_attr = (predicate_matrix[labels] - out + diff_square).sum() / batch_size
     
     loss_ft = (1 + false_positives + missing_attr)
+    
     loss_ft *= loss_cl.item()/(loss_ft.item() + eps)
     
     return loss_cl + loss_ft * FT_WEIGHT
 
+from sam import SAM
 def train_one_epoch(scheduler):
     running_loss = 0.
 
@@ -64,22 +66,20 @@ def train_one_epoch(scheduler):
         inputs, labels = data["images"], data["labels"]
         inputs = inputs.to(device)
         labels = labels.to(device)
-
-        # Zero your gradients for every batch!
-        optimizer.zero_grad()
-
-        # Make predictions for this batch
+        
         outputs, commit_loss, predicate_matrix = model(inputs)
-
-        # Compute the loss and its gradients
-        if torch.any(torch.isnan(model.predicate_matrix)):
-            exit()
         loss = loss_fn(outputs, labels, predicate_matrix) + commit_loss
-        torch.nn.utils.clip_grad_norm_(model.parameters(), 1)
+        
+        # first forward-backward pass
         loss.backward()
+        optimizer.first_step(zero_grad=True)
 
-        # Adjust learning weights
-        optimizer.step()
+        outputs, commit_loss, predicate_matrix = model(inputs)
+        loss = loss_fn(outputs, labels, predicate_matrix) + commit_loss
+        
+        # second forward-backward pass
+        loss.backward()  # make sure to do a full forward pass
+        optimizer.second_step(zero_grad=True)
         
         if scheduler is not None:
             scheduler.step()
@@ -95,19 +95,21 @@ print(f"Device: {device}")
 
 NUM_CLASSES = 200
 NUM_FEATURES = 64
-EPOCHS = 50
+EPOCHS = 70
 
-FT_WEIGHT = 1
+FT_WEIGHT = 0.7
 
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES - NUM_EXCLUDE, top_k=1).to(device)
 
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
-from ResnetAutoPredicates import ResExtr
+from DeiTAutoPredicates import ResExtr
 
-model = ResExtr(NUM_FEATURES, NUM_CLASSES - NUM_EXCLUDE, resnet_type=152, pretrained=True).to(device)
+model = ResExtr(NUM_FEATURES, NUM_CLASSES - NUM_EXCLUDE).to(device)
 
-optimizer = torch.optim.Adam(model.parameters(), lr=3e-4, weight_decay=1e-5)
-scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, 2e-3, epochs=EPOCHS, steps_per_epoch=len(training_loader))
+base_optimizer = torch.optim.Adam
+optimizer = SAM(model.parameters(), base_optimizer, lr=3e-5, weight_decay=1e-5)
+scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer.base_optimizer, 1e-4, epochs=EPOCHS, steps_per_epoch=len(training_loader))
+#scheduler = None
 
 from tqdm import tqdm
 for epoch in tqdm(range(EPOCHS)):
@@ -147,20 +149,20 @@ for epoch in tqdm(range(EPOCHS)):
     print(f"LOSS: {avg_vloss}, ACC: {avg_acc}, FP: {avg_fp}, MA: {avg_ma}, OA: {avg_oa}")
 
 print(f"Seen ACC: {avg_acc}, FP: {avg_fp}, MA: {avg_ma}, OA: {avg_oa}, Val Loss: {avg_vloss}, Train Loss: {avg_loss}")
+    
+attributes_per_class = best_stats["oa"] - best_stats["fp"] + best_stats["ma"]
 
 print("===============================================================")
 print(f"Started Training On {NUM_EXCLUDE} Excluded Classes")
-
-attributes_per_class = avg_oa.item() - avg_fp.item() + avg_ma.item()
 
 validation_loader = torch.utils.data.DataLoader(
         ZSL_valset, batch_size=128, shuffle=False, num_workers=4)
 training_loader = torch.utils.data.DataLoader(
         ZSL_trainset, batch_size=128, shuffle=True, num_workers=4)
 
-predis = torch.zeros(NUM_EXCLUDE, NUM_FEATURES).to(device)
+accuracy = Accuracy(task="multiclass", num_classes=NUM_EXCLUDE, top_k=1).to(device)
 
-results = [[0, 0]] * NUM_EXCLUDE
+predis = torch.zeros(NUM_EXCLUDE, NUM_FEATURES).to(device)
 
 model.eval()
 with torch.no_grad():
@@ -182,6 +184,7 @@ new_predicate_matrix.scatter_(1, indices, 1)
 model.classes = NUM_EXCLUDE
 model.predicate_matrix = torch.nn.Parameter(new_predicate_matrix)
 
+results = [[0,0]] * NUM_EXCLUDE
 with torch.no_grad():
     for i, vdata in enumerate(validation_loader):
         vinputs, vlabels = vdata["images"], vdata["labels"]
@@ -191,7 +194,6 @@ with torch.no_grad():
         voutputs = voutputs.view(-1, 1, NUM_FEATURES)
         ANDed = voutputs * predicate_matrix
         diff = ANDed - voutputs
-
         preds = diff.sum(dim=2)
         # Add to results[label] the number of correct predictions and the number of predictions
         for i in range(len(preds)):

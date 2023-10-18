@@ -167,4 +167,41 @@ for epoch in tqdm(range(EPOCHS)):
 
 print(best_stats)
 
-#torch.save(model.state_dict(), "CUBRes18AutoPred.pt")
+print("===============================================================")
+
+attributes_per_class = best_stats["oa"] - best_stats["fp"] + best_stats["ma"]
+
+predis = torch.zeros(NUM_CLASSES, NUM_FEATURES).to(device)
+
+model.eval()
+with torch.no_grad():
+    for i, vdata in enumerate(training_loader):
+        vinputs, vlabels = vdata["images"], vdata["labels"]
+        vinputs = vinputs.to(device)
+        vlabels = vlabels.to(device)
+        voutputs, vcommit_loss, predicate_matrix = model(vinputs)
+        
+        for i in range(len(voutputs)):
+            predis[vlabels[i]] += voutputs[i]
+            
+    K = int(attributes_per_class+1)
+    topk, indices = torch.topk(predis, K, dim=1)
+
+    new_predicate_matrix = torch.zeros(NUM_CLASSES, NUM_FEATURES).to(device)
+    new_predicate_matrix.scatter_(1, indices, 1)
+
+    model.predicate_matrix = torch.nn.Parameter(new_predicate_matrix)
+
+    running_acc = 0.0
+    for i, vdata in enumerate(validation_loader):
+        vinputs, vlabels = vdata["images"], vdata["labels"]
+        vinputs = vinputs.to(device)
+        vlabels = vlabels.to(device)
+        voutputs, vcommit_loss, predicate_matrix = model(vinputs)
+        voutputs = voutputs.view(-1, 1, NUM_FEATURES)
+        ANDed = voutputs * predicate_matrix
+        diff = ANDed - voutputs
+        running_acc += accuracy(diff.sum(dim=2), vlabels)
+
+avg_acc = running_acc / (i + 1)
+print(f"ACC: {avg_acc}")
