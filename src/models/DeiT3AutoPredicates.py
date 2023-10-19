@@ -17,13 +17,20 @@ class ResBlock(nn.Module):
 from vector_quantize_pytorch import VectorQuantize
 import timm
 class ResExtr(nn.Module):
-    def __init__(self, features, classes, pretrained=False, *args, **kwargs) -> None:
+    def __init__(self, features, classes, deit_type=1, pretrained=False, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.features = features
         self.classes = classes
 
-        self.deit = timm.create_model("deit3_large_patch16_384.fb_in22k_ft_in1k", pretrained=True)
-        self.deit.head = nn.Linear(1024, features)
+        if deit_type == 1:
+            self.deit = timm.create_model("deit3_medium_patch16_224.fb_in22k_ft_in1k", pretrained=True)
+            self.deit.head = nn.Linear(512, features)
+        elif deit_type == 2:
+            self.deit = timm.create_model("deit3_base_patch16_224.fb_in22k_ft_in1k", pretrained=True)
+            self.deit.head = nn.Linear(768, features)
+        else:
+            self.deit = timm.create_model("deit3_large_patch16_384.fb_in22k_ft_in1k", pretrained=True)
+            self.deit.head = nn.Linear(1024, features)
         
         self.bin_quantize = VectorQuantize(
                             dim = 1,
@@ -52,7 +59,7 @@ if __name__ == "__main__":
     FEATURES = 85
     CLASSES = 50
 
-    model = ResExtr(FEATURES, CLASSES, pretrained=True).to(device)
+    model = ResExtr(FEATURES, CLASSES, deit_type=2, pretrained=True).to(device)
     
-    inp = torch.randn(1, 3, 384, 384).to(device)
+    inp = torch.randn(1, 3, 224, 224).to(device)
     print(model(inp)[0].shape)

@@ -3,7 +3,7 @@ import torch
 import sys
 
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/train")
-from CUBLoader import make_ZSL_sets
+from CUBLoader import Cub2011
 
 train_transform =  transforms.Compose([
     transforms.RandomResizedCrop(224),
@@ -23,12 +23,31 @@ val_transform = transforms.Compose([
 
 NUM_EXCLUDE = 50
 
-trainset, valset, ZSL_trainset, ZSL_valset = make_ZSL_sets(NUM_EXCLUDE, train_transform, val_transform)
+from util import get_CUB_test_labels
+def make_ZSL_sets(train_transform, val_transform):
+    indices = list(range(1, 201))
+    
+    test_labels = get_CUB_test_labels("src/ZSL/splits/CUBtestclasses.txt")
+    train_indices = [x for x in indices if x not in test_labels]
+    
+    print(f"Training data: {len(train_indices)}, Testing data: {len(test_labels)}")
+    
+    ZSL_train_set = Cub2011("/storage/CUB", transform=train_transform, exclude = train_indices)
+    train_set = Cub2011("/storage/CUB", transform=train_transform, exclude = test_labels)
+    
+    ZSL_test_set = Cub2011("/storage/CUB", transform=val_transform, train=False, exclude = train_indices)
+    test_set = Cub2011("/storage/CUB", transform=val_transform, train=False, exclude = test_labels)
+    
+    return train_set, test_set, ZSL_train_set, ZSL_test_set
+
+trainset, valset, ZSL_trainset, ZSL_valset = make_ZSL_sets(train_transform, val_transform)
+
+BATCH_SIZE = 64
 
 validation_loader = torch.utils.data.DataLoader(
-        valset, batch_size=128, shuffle=False, num_workers=4)
+        valset, batch_size=BATCH_SIZE, shuffle=False, num_workers=4)
 training_loader = torch.utils.data.DataLoader(
-        trainset, batch_size=128, shuffle=True, num_workers=4)
+        trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
 
 eps=1e-10
 def loss_fn(out, labels, predicate_matrix):
@@ -94,17 +113,17 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Device: {device}")
 
 NUM_CLASSES = 200
-NUM_FEATURES = 64
-EPOCHS = 70
+NUM_FEATURES = 80
+EPOCHS = 50
 
 FT_WEIGHT = 0.7
 
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES - NUM_EXCLUDE, top_k=1).to(device)
 
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
-from DeiTAutoPredicates import ResExtr
+from DeiT3AutoPredicates import ResExtr
 
-model = ResExtr(NUM_FEATURES, NUM_CLASSES - NUM_EXCLUDE).to(device)
+model = ResExtr(NUM_FEATURES, NUM_CLASSES - NUM_EXCLUDE, deit_type=2).to(device)
 
 base_optimizer = torch.optim.Adam
 optimizer = SAM(model.parameters(), base_optimizer, lr=3e-5, weight_decay=1e-5)
@@ -156,9 +175,9 @@ print(f"Started Training On {NUM_EXCLUDE} Excluded Classes")
 attributes_per_class = avg_oa.item() - avg_fp.item() + avg_ma.item()
 
 validation_loader = torch.utils.data.DataLoader(
-        ZSL_valset, batch_size=128, shuffle=False, num_workers=4)
+        ZSL_valset, batch_size=BATCH_SIZE, shuffle=False, num_workers=4)
 training_loader = torch.utils.data.DataLoader(
-        ZSL_trainset, batch_size=128, shuffle=True, num_workers=4)
+        ZSL_trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
 
 accuracy = Accuracy(task="multiclass", num_classes=NUM_EXCLUDE, top_k=1).to(device)
 

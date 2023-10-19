@@ -6,7 +6,7 @@ sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/train")
 from CUBLoader import make_ZSL_sets
 
 train_transform =  transforms.Compose([
-    transforms.RandomResizedCrop(384),
+    transforms.RandomResizedCrop(224),
     transforms.RandomHorizontalFlip(),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406],
@@ -14,8 +14,8 @@ train_transform =  transforms.Compose([
 ])
 
 val_transform = transforms.Compose([
-    transforms.Resize(416),
-    transforms.CenterCrop(384),
+    transforms.Resize(256),
+    transforms.CenterCrop(224),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                      std=[0.229, 0.224, 0.225])
@@ -25,10 +25,12 @@ NUM_EXCLUDE = 50
 
 trainset, valset, ZSL_trainset, ZSL_valset = make_ZSL_sets(NUM_EXCLUDE, train_transform, val_transform)
 
+BATCH_SIZE = 64
+
 validation_loader = torch.utils.data.DataLoader(
-        valset, batch_size=32, shuffle=False, num_workers=4)
+        valset, batch_size=BATCH_SIZE, shuffle=False, num_workers=4)
 training_loader = torch.utils.data.DataLoader(
-        trainset, batch_size=32, shuffle=True, num_workers=4)
+        trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
 
 eps=1e-10
 def loss_fn(out, labels, predicate_matrix):
@@ -156,9 +158,9 @@ print(f"Started Training On {NUM_EXCLUDE} Excluded Classes")
 attributes_per_class = avg_oa.item() - avg_fp.item() + avg_ma.item()
 
 validation_loader = torch.utils.data.DataLoader(
-        ZSL_valset, batch_size=32, shuffle=False, num_workers=4)
+        ZSL_valset, batch_size=BATCH_SIZE, shuffle=False, num_workers=4)
 training_loader = torch.utils.data.DataLoader(
-        ZSL_trainset, batch_size=32, shuffle=True, num_workers=4)
+        ZSL_trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
 
 accuracy = Accuracy(task="multiclass", num_classes=NUM_EXCLUDE, top_k=1).to(device)
 
