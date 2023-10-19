@@ -27,7 +27,7 @@ from util import get_CUB_test_labels
 def make_ZSL_sets(train_transform, val_transform):
     indices = list(range(1, 201))
     
-    test_labels = get_CUB_test_labels("src/ZSL/splits/CUBtestclasses.txt")
+    test_labels = get_CUB_test_labels("src/ZSL/splits/CUB/CUBtestclasses.txt")
     train_indices = [x for x in indices if x not in test_labels]
     
     print(f"Training data: {len(train_indices)}, Testing data: {len(test_labels)}")
