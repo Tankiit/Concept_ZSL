@@ -6,12 +6,17 @@ from torch.utils.data import Dataset
 class Cub2011(Dataset):
     base_folder = 'CUB_200_2011/images'
 
-    def __init__(self, root, train=True, transform=None, loader=default_loader, exclude=[]):
+    def __init__(self, root, train=True, transform=None, all_data=False, train_split_file=None, loader=default_loader, exclude=[]):
         self.root = os.path.expanduser(root)
         self.transform = transform
         self.loader = default_loader
         self.train = train
         self.exclude = exclude
+        self.all_data = all_data
+        if train_split_file == None:
+            self.train_split_file = os.path.join(self.root, 'CUB_200_2011', 'train_test_split.txt')
+        else:
+            self.train_split_file = train_split_file
 
         if not self._check_integrity():
             raise RuntimeError('Dataset not found or corrupted.' +
@@ -22,7 +27,7 @@ class Cub2011(Dataset):
                              names=['img_id', 'filepath'])
         image_class_labels = pd.read_csv(os.path.join(self.root, 'CUB_200_2011', 'image_class_labels.txt'),
                                          sep=' ', names=['img_id', 'target'])
-        train_test_split = pd.read_csv(os.path.join(self.root, 'CUB_200_2011', 'train_test_split.txt'),
+        train_test_split = pd.read_csv(self.train_split_file,
                                        sep=' ', names=['img_id', 'is_training_img'])
 
         data = images.merge(image_class_labels, on='img_id')
@@ -32,11 +37,11 @@ class Cub2011(Dataset):
         
         self.data['target'] = pd.factorize(self.data['target'])[0]
         
-        
-        if self.train:
-            self.data = self.data[self.data.is_training_img == 1]
-        else:
-            self.data = self.data[self.data.is_training_img == 0]
+        if not self.all_data:
+            if self.train:
+                self.data = self.data[self.data.is_training_img == 1]
+            else:
+                self.data = self.data[self.data.is_training_img == 0]
             
     def _check_integrity(self):
         try:
@@ -66,6 +71,31 @@ class Cub2011(Dataset):
             
         return {"images": img, "labels": target}
 
+from random import sample
+from collections import Counter
+def make_train_split_file(images_per_class, output_file, root):
+    # creates a train split file with the given number of images per class in the training set
+    # the rest of the images are in the test set
+    # train_test_split.txt is of the form: <image_id> <is_training_image>\n<image_id> <is_training_image>\n...
+
+    data = pd.read_csv(os.path.join(root, 'CUB_200_2011', 'image_class_labels.txt'), sep=' ', names=['img_id', 'target'])
+    
+    # count how many elements in each class and randomly sample
+    counts = dict(Counter(data['target']))
+    train_split = {}
+    curr_index = 1
+    for key in counts.keys():
+        train_split[key] = [x+curr_index for x in sample(range(counts[key]), images_per_class)]
+        curr_index += counts[key]
+
+    # create the train_test_split.txt file
+    with open(output_file, "w") as f:
+        for _, row in data.iterrows():
+            if row['img_id'] in train_split[row['target']]:
+                f.write(str(row['img_id']) + " 1\n")
+            else:
+                f.write(str(row['img_id']) + " 0\n")
+    
 import numpy as np
 def make_ZSL_sets(NUM_EXCLUDE, train_transform, val_transform):
     indices = (np.random.permutation(200)+1).tolist()

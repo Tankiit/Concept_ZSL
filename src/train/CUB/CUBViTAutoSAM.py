@@ -39,21 +39,19 @@ def train_one_epoch(scheduler):
         inputs = inputs.to(device)
         labels = labels.to(device)
 
-        # Zero your gradients for every batch!
-        optimizer.zero_grad()
-
-        # Make predictions for this batch
         outputs, commit_loss, predicate_matrix = model(inputs)
-
-        # Compute the loss and its gradients
-        if torch.any(torch.isnan(model.predicate_matrix)):
-            exit()
         loss = loss_fn(outputs, labels, predicate_matrix) + commit_loss
-        torch.nn.utils.clip_grad_norm_(model.parameters(), 1)
+        
+        # first forward-backward pass
         loss.backward()
+        optimizer.first_step(zero_grad=True)
 
-        # Adjust learning weights
-        optimizer.step()
+        outputs, commit_loss, predicate_matrix = model(inputs)
+        loss = loss_fn(outputs, labels, predicate_matrix) + commit_loss
+        
+        # second forward-backward pass
+        loss.backward()  # make sure to do a full forward pass
+        optimizer.second_step(zero_grad=True)
         
         if scheduler is not None:
             scheduler.step()
@@ -99,11 +97,14 @@ FT_WEIGHT = 0.5
 import sys
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
 from ViTAutoPredicates import ResExtr
+sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/ZSL")
+from sam import SAM
 
 model = ResExtr(NUM_FEATURES, NUM_CLASSES).to(device)
 
-optimizer = torch.optim.Adam(model.parameters(), lr=3e-5, weight_decay=1e-5)
-scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, 1e-4, epochs=EPOCHS, steps_per_epoch=len(training_loader))
+base_optimizer = torch.optim.Adam
+optimizer = SAM(model.parameters(), base_optimizer, lr=3e-5, weight_decay=1e-5)
+scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer.base_optimizer, 1e-4, epochs=EPOCHS, steps_per_epoch=len(training_loader))
 #scheduler = None
 
 best_stats = {

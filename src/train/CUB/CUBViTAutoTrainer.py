@@ -27,7 +27,7 @@ validation_loader = torch.utils.data.DataLoader(
 training_loader = torch.utils.data.DataLoader(
         trainset, batch_size=128, shuffle=True, num_workers=4)
 
-def train_one_epoch():
+def train_one_epoch(scheduler):
     running_loss = 0.
 
     # Here, we use enumerate(training_loader) instead of
@@ -55,7 +55,8 @@ def train_one_epoch():
         # Adjust learning weights
         optimizer.step()
         
-        scheduler.step()
+        if scheduler is not None:
+            scheduler.step()
 
         # Gather data and report
         running_loss += loss.item()
@@ -89,20 +90,21 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Device: {device}")
 
 NUM_CLASSES = 200
-NUM_FEATURES = 64
+NUM_FEATURES = 80
 EPOCHS = 50
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
 
-FT_WEIGHT = 1
+FT_WEIGHT = 0.5
 
 import sys
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
-from ResnetAutoPredicates import ResExtr
+from ViTAutoPredicates import ResExtr
 
-model = ResExtr(NUM_FEATURES, NUM_CLASSES, resnet_type=18, pretrained=True).to(device)
+model = ResExtr(NUM_FEATURES, NUM_CLASSES).to(device)
 
-optimizer = torch.optim.Adam(model.parameters(), lr=3e-4, weight_decay=1e-5)
-scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, 2e-3, epochs=EPOCHS, steps_per_epoch=len(training_loader))
+optimizer = torch.optim.Adam(model.parameters(), base_optimizer, lr=3e-5, weight_decay=1e-5)
+scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, 1e-4, epochs=EPOCHS, steps_per_epoch=len(training_loader))
+#scheduler = None
 
 best_stats = {
     "epoch": 0,
@@ -118,7 +120,7 @@ from tqdm import tqdm
 for epoch in tqdm(range(EPOCHS)):
     # Make sure gradient tracking is on, and do a pass over the data
     model.train(True)
-    avg_loss = train_one_epoch()
+    avg_loss = train_one_epoch(scheduler)
 
     running_vloss = 0.0
     # Set the model to evaluation mode, disabling dropout and using population
@@ -167,41 +169,4 @@ for epoch in tqdm(range(EPOCHS)):
 
 print(best_stats)
 
-print("===============================================================")
-
-attributes_per_class = best_stats["oa"] - best_stats["fp"] + best_stats["ma"]
-
-predis = torch.zeros(NUM_CLASSES, NUM_FEATURES).to(device)
-
-model.eval()
-with torch.no_grad():
-    for i, vdata in enumerate(training_loader):
-        vinputs, vlabels = vdata["images"], vdata["labels"]
-        vinputs = vinputs.to(device)
-        vlabels = vlabels.to(device)
-        voutputs, vcommit_loss, predicate_matrix = model(vinputs)
-        
-        for i in range(len(voutputs)):
-            predis[vlabels[i]] += voutputs[i]
-            
-    K = int(attributes_per_class+1)
-    topk, indices = torch.topk(predis, K, dim=1)
-
-    new_predicate_matrix = torch.zeros(NUM_CLASSES, NUM_FEATURES).to(device)
-    new_predicate_matrix.scatter_(1, indices, 1)
-
-    model.predicate_matrix = torch.nn.Parameter(new_predicate_matrix)
-
-    running_acc = 0.0
-    for i, vdata in enumerate(validation_loader):
-        vinputs, vlabels = vdata["images"], vdata["labels"]
-        vinputs = vinputs.to(device)
-        vlabels = vlabels.to(device)
-        voutputs, vcommit_loss, predicate_matrix = model(vinputs)
-        voutputs = voutputs.view(-1, 1, NUM_FEATURES)
-        ANDed = voutputs * predicate_matrix
-        diff = ANDed - voutputs
-        running_acc += accuracy(diff.sum(dim=2), vlabels)
-
-avg_acc = running_acc / (i + 1)
-print(f"ACC: {avg_acc}")
+#torch.save(model.state_dict(), "CUBVGGAutoPred.pt")
