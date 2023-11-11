@@ -1,7 +1,7 @@
 import torch
 from vector_quantize_pytorch import VectorQuantize
 
-class SSLoss(torch.nn.Module):
+class BSSLoss(torch.nn.Module):
     def __init__(self, n_features, add_predicate_matrix=False, n_classes=None, ft_weight=1, mean_attr_weight=2, eps=1e-10, pre_quantized=False, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.n_features = n_features
@@ -60,8 +60,9 @@ class SSLoss(torch.nn.Module):
         x = x.view(-1, 1, self.n_features)
 
         ANDed = x * predicate_matrix
+        
         diff = ANDed - x
-
+        
         loss_cl = self.ent_loss(diff.sum(dim=2), labels)
 
         batch_size = x.shape[0]

@@ -80,14 +80,14 @@ def train_one_epoch(scheduler):
         inputs = inputs.to(device)
         labels = labels.to(device)
         
-        outputs = model(inputs)
-        loss = criterion(outputs, labels)
+        outputs, commit_loss, predicate_matrix = model(inputs)
+        loss = criterion(outputs, labels, predicate_matrix) + commit_loss
         
         loss.backward()
         optimizer.first_step(zero_grad=True)
 
-        outputs = model(inputs)
-        loss = criterion(outputs, labels)
+        outputs, commit_loss, predicate_matrix = model(inputs)
+        loss = criterion(outputs, labels, predicate_matrix) + commit_loss
         
         loss.backward()  # make sure to do a full forward pass
         optimizer.second_step(zero_grad=True)
@@ -107,19 +107,22 @@ NUM_CLASSES = 196
 NUM_FEATURES = 80
 EPOCHS = 20
 
+FT_WEIGHT = 0.7
+
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES - NUM_EXCLUDE, top_k=1).to(device)
 
-import timm
-model = timm.create_model("deit3_medium_patch16_224.fb_in22k_ft_in1k", pretrained=True).to(device)
-model.head = torch.nn.Linear(512, NUM_FEATURES).to(device)
+sys.path.insert(0, "/".join(__file__.split("/")[:-3]) + "/models")
+from DeiT3AutoPredicates import ResExtr
 
-sys.path.insert(0, "/".join(__file__.split("/")[:-3]))
-from SubsetLoss import SSLoss
-criterion = SSLoss(NUM_FEATURES, add_predicate_matrix=True, n_classes=NUM_CLASSES - NUM_EXCLUDE).to(device)
+model = ResExtr(NUM_FEATURES, NUM_CLASSES - NUM_EXCLUDE).to(device)
 
 from sam import SAM
 base_optimizer = torch.optim.Adam
-optimizer = SAM(list(model.parameters()) + list(criterion.parameters()), base_optimizer, lr=3e-5, weight_decay=1e-5)
+optimizer = SAM(model.parameters(), base_optimizer, lr=3e-5, weight_decay=1e-5)
+
+sys.path.insert(0, "/".join(__file__.split("/")[:-3]))
+from SubsetLoss import BSSLoss
+criterion = BSSLoss(NUM_FEATURES, pre_quantized=True).to(device)
 
 scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer.base_optimizer, 1e-4, epochs=EPOCHS, steps_per_epoch=len(training_loader))
 #scheduler = None
@@ -142,11 +145,9 @@ for epoch in tqdm(range(EPOCHS)):
             vinputs, vlabels = vdata["images"], vdata["labels"]
             vinputs = vinputs.to(device)
             vlabels = vlabels.to(device)
-            voutputs = model(vinputs)
-            vloss = criterion(voutputs, vlabels)
-            predicate_matrix = criterion.get_predicate_matrix()
+            voutputs, vcommit_loss, predicate_matrix = model(vinputs)
+            vloss = criterion(voutputs, vlabels, predicate_matrix) + vcommit_loss
             running_vloss += vloss.item()
-            voutputs = criterion.binarize_output(voutputs)
             voutputs = voutputs.view(-1, 1, NUM_FEATURES)
             ANDed = voutputs * predicate_matrix
             diff = ANDed - voutputs
@@ -185,7 +186,7 @@ with torch.no_grad():
         vinputs, vlabels = vdata["images"], vdata["labels"]
         vinputs = vinputs.to(device)
         vlabels = vlabels.to(device)
-        voutputs = model(vinputs)
+        voutputs, vcommit_loss, predicate_matrix = model(vinputs)
         
         for i in range(len(voutputs)):
             predis[vlabels[i]] += voutputs[i]
@@ -202,7 +203,7 @@ with torch.no_grad():
         vinputs, vlabels = vdata["images"], vdata["labels"]
         vinputs = vinputs.to(device)
         vlabels = vlabels.to(device)
-        voutputs = model(vinputs)
+        voutputs, _, _ = model(vinputs)
         voutputs = voutputs.view(-1, 1, NUM_FEATURES)
         ANDed = voutputs * new_predicate_matrix
         diff = ANDed - voutputs
@@ -232,7 +233,7 @@ with torch.no_grad():
         vinputs, vlabels = vdata["images"], vdata["labels"]
         vinputs = vinputs.to(device)
         vlabels = vlabels.to(device)
-        voutputs = model(vinputs)
+        voutputs, _, _ = model(vinputs)
         voutputs = voutputs.view(-1, 1, NUM_FEATURES)
         ANDed = voutputs * new_predicate_matrix
         diff = ANDed - voutputs
