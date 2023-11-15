@@ -120,7 +120,7 @@ NUM_CLASSES = 200
 NUM_FEATURES = 80
 EPOCHS = 50
 
-FT_WEIGHT = 0.7
+FT_WEIGHT = 1
 
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES - NUM_EXCLUDE, top_k=1).to(device)
 
@@ -224,7 +224,6 @@ with torch.no_grad():
         for i in range(len(preds)):
             results[vlabels[i]][0] += torch.argmax(preds[i]) == vlabels[i]
             results[vlabels[i]][1] += 1
-
 
 accuracy = 0
 for i in range(NUM_EXCLUDE):

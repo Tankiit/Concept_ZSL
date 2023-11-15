@@ -50,30 +50,6 @@ validation_loader = torch.utils.data.DataLoader(
 training_loader = torch.utils.data.DataLoader(
         trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
 
-eps=1e-10
-def loss_fn(out, labels, predicate_matrix):
-    out = out.view(-1, 1, NUM_FEATURES) # out is a batch of 1D binary vectors
-    ANDed = out * predicate_matrix # AND operation
-    diff = ANDed - out # Difference of ANDed and out => if equal, then out is a subset of its class' predicates
-
-    entr_loss = torch.nn.CrossEntropyLoss()
-    
-    loss_cl = entr_loss(diff.sum(dim=2), labels) # Is "out" a subset of its class' predicates?
-
-    batch_size = out.shape[0]
-
-    out = out.view(-1, NUM_FEATURES)
-    diff_square = (out - predicate_matrix[labels]).pow(2)
-    
-    false_positives = (out - predicate_matrix[labels] + diff_square).sum() / batch_size
-    missing_attr = (predicate_matrix[labels] - out + diff_square).sum() / batch_size
-    
-    loss_mean_attr = (predicate_matrix.sum(dim=1).mean() - NUM_FEATURES//2).pow(2)
-    loss_ft = 2*loss_mean_attr + false_positives + missing_attr
-    loss_ft *= loss_cl.item()/(loss_ft.item() + eps)
-    
-    return loss_cl + loss_ft * FT_WEIGHT
-
 def train_one_epoch(scheduler):
     running_loss = 0.
 
@@ -86,15 +62,15 @@ def train_one_epoch(scheduler):
         inputs = inputs.to(device)
         labels = labels.to(device)
         
-        outputs, commit_loss, predicate_matrix = model(inputs)
-        loss = loss_fn(outputs, labels, predicate_matrix) + commit_loss
+        outputs = model(inputs)
+        loss = loss_fn(outputs, labels)
         
         # first forward-backward pass
         loss.backward()
         optimizer.first_step(zero_grad=True)
 
-        outputs, commit_loss, predicate_matrix = model(inputs)
-        loss = loss_fn(outputs, labels, predicate_matrix) + commit_loss
+        outputs = model(inputs)
+        loss = loss_fn(outputs, labels)
         
         # second forward-backward pass
         loss.backward()  # make sure to do a full forward pass
@@ -113,22 +89,24 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Device: {device}")
 
 NUM_CLASSES = 196
-NUM_FEATURES = 80
+NUM_FEATURES = 72
 EPOCHS = 30
-
-FT_WEIGHT = 1
 
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
 
-sys.path.insert(0, "/".join(__file__.split("/")[:-3]) + "/models")
-from DeiT3AutoPredicates import ResExtr
+import timm
+model = timm.create_model("deit3_medium_patch16_224.fb_in22k_ft_in1k", pretrained=True).to(device)
+model.head = torch.nn.Linear(512, NUM_FEATURES).to(device)
 
-model = ResExtr(NUM_FEATURES, NUM_CLASSES).to(device)
+import sys
+sys.path.insert(0, "/".join(__file__.split("/")[:-3]))
+from SubsetLoss import BSSLoss
+loss_fn = BSSLoss(NUM_FEATURES, add_predicate_matrix=True, n_classes=NUM_CLASSES).to(device)
 
 sys.path.insert(0, "/".join(__file__.split("/")[:-3]) + "/ZSL")
 from sam import SAM
 base_optimizer = torch.optim.Adam
-optimizer = SAM(model.parameters(), base_optimizer, lr=3e-5, weight_decay=1e-5)
+optimizer = SAM(list(model.parameters()) + list(loss_fn.parameters()), base_optimizer, lr=3e-5, weight_decay=1e-5)
 scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer.base_optimizer, 1e-4, epochs=EPOCHS, steps_per_epoch=len(training_loader))
 #scheduler = None
 
@@ -160,10 +138,12 @@ for epoch in tqdm(range(EPOCHS)):
             vinputs, vlabels = vdata["images"], vdata["labels"]
             vinputs = vinputs.to(device)
             vlabels = vlabels.to(device)
-            voutputs, vcommit_loss, predicate_matrix = model(vinputs)
-            vloss = loss_fn(voutputs, vlabels, predicate_matrix) + vcommit_loss
+            voutputs = model(vinputs)
+            vloss = loss_fn(voutputs, vlabels)
             running_vloss += vloss.item()
+            voutputs = loss_fn.binarize_output(voutputs)
             voutputs = voutputs.view(-1, 1, NUM_FEATURES)
+            predicate_matrix = loss_fn.get_predicate_matrix()
             ANDed = voutputs * predicate_matrix
             diff = ANDed - voutputs
             running_acc += accuracy(diff.sum(dim=2), vlabels)
@@ -187,7 +167,7 @@ for epoch in tqdm(range(EPOCHS)):
         best_stats["ma"] = avg_ma.item()
         best_stats["oa"] = avg_oa.item()
         print("New best, saving!")
-        torch.save(model.state_dict(), "CarsDeiT3.pt")
+        torch.save(model.state_dict(), "CarsDeiT3Auto.pt")
     
     print(f"LOSS: {avg_vloss}, ACC: {avg_acc}, FP: {avg_fp}, MA: {avg_ma}, OA: {avg_oa}")
 

@@ -50,7 +50,7 @@ model.eval()
 
 predis = torch.zeros(NUM_CLASSES - NUM_EXCLUDE, NUM_FEATURES).to(device)
 
-attributes_per_class = 40
+attributes_per_class = 30
 
 print("===============================================================")
 def make_ZSL_sets(val_transform, split_file):
