@@ -37,6 +37,9 @@ class BSSLoss(torch.nn.Module):
         predicate_matrix, _, _ = self.bin_quantize(self.predicate_matrix.view(self.n_classes * self.n_features, 1))
         return predicate_matrix.view(self.n_classes, self.n_features)
     
+    def soft_threshold(self, x):
+        return torch.clamp(x, min=0) * torch.clamp(torch.abs(x)+1, max=1)
+    
     def binarize_output(self, x):
         if not self.pre_quantized:
             x, _, _ = self.bin_quantize(x.view(-1, self.n_features, 1))
@@ -86,3 +89,10 @@ class BSSLoss(torch.nn.Module):
             return loss_cl + loss_ft * self.ft_weight + commit_loss + commit_loss2
         else:
             return loss_cl + loss_ft * self.ft_weight
+        
+if __name__ == "__main__":
+    loss_fn = BSSLoss(64)
+    
+    a = torch.randn(5)
+    print(a)
+    print(loss_fn.soft_threshold(a))

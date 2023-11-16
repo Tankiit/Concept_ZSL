@@ -168,6 +168,7 @@ for epoch in tqdm(range(EPOCHS)):
         best_stats["oa"] = avg_oa.item()
         print("New best, saving!")
         torch.save(model.state_dict(), "CarsDeiT3Auto.pt")
+        torch.save(loss_fn.state_dict(), "CarsDeiT3AutoLossFN.pt")
     
     print(f"LOSS: {avg_vloss}, ACC: {avg_acc}, FP: {avg_fp}, MA: {avg_ma}, OA: {avg_oa}")
 

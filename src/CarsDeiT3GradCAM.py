@@ -15,7 +15,6 @@ from pytorch_grad_cam import GradCAM, \
     LayerCAM, \
     FullGrad
 
-from pytorch_grad_cam import GuidedBackpropReLUModel
 from pytorch_grad_cam.utils.image import show_cam_on_image, \
     preprocess_image
 from pytorch_grad_cam.ablation_layer import AblationLayerVit
@@ -103,12 +102,18 @@ if __name__ == '__main__':
     print("1========================================================================")
 
     NUM_FEATURES = 72
+    NUM_CLASSES = 196
     
     import timm
     model = timm.create_model("deit3_medium_patch16_224.fb_in22k_ft_in1k", pretrained=True).cuda()
     model.head = torch.nn.Linear(512, NUM_FEATURES).cuda()
     model.load_state_dict(torch.load("CarsDeiT3Auto.pt"))
     model.eval()
+    
+    from SubsetLoss import BSSLoss
+    loss_fn = BSSLoss(NUM_FEATURES, add_predicate_matrix=True, n_classes=NUM_CLASSES).cuda()
+    loss_fn.load_state_dict(torch.load("CarsDeiT3AutoLossFN.pt"))
+    loss_fn.eval()
 
     print("2========================================================================")
 
@@ -120,8 +125,12 @@ if __name__ == '__main__':
                                    reshape_transform=reshape_transform)
     cam.batch_size = 32
     
+    predicate_matrix = loss_fn.get_predicate_matrix()
+    print(predicate_matrix.shape)
+    
     from tqdm import tqdm
     for i, image in enumerate(tqdm(images[:100])):
+        c = classes.index(image.split("/")[-2])
         rgb_img = cv2.imread(image, 1)[:, :, ::-1]
         rgb_img = cv2.resize(rgb_img, (224, 224))
         rgb_img = np.float32(rgb_img) / 255
@@ -141,4 +150,8 @@ if __name__ == '__main__':
                 grayscale_cam = grayscale_cam[0, :]
 
                 cam_image = show_cam_on_image(rgb_img, grayscale_cam)
-                cv2.imwrite(f"results/Cars-CAM/img{i}/feature{j}.jpg", cam_image)
+                
+                if predicate_matrix[c][j] == 1:
+                    cv2.imwrite(f"results/Cars-CAM/img{i}/feature{j}.jpg", cam_image)
+                else:
+                    cv2.imwrite(f"results/Cars-CAM/img{i}/NOTfeature{j}.jpg", cam_image)
