@@ -2,12 +2,13 @@ import torch
 from vector_quantize_pytorch import VectorQuantize
 
 class BSSLoss(torch.nn.Module):
-    def __init__(self, n_features, add_predicate_matrix=False, n_classes=None, ft_weight=1, mean_attr_weight=2, eps=1e-10, pre_quantized=False, *args, **kwargs) -> None:
+    def __init__(self, n_features, use_loss_ft=True, add_predicate_matrix=False, n_classes=None, ft_weight=1, mean_attr_weight=2, eps=1e-10, pre_quantized=False, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.n_features = n_features
         self.ft_weight = ft_weight
         self.mean_attr_weight = mean_attr_weight
         self.pre_quantized = pre_quantized
+        self.use_loss_ft = use_loss_ft
 
         self.eps = eps
 
@@ -80,6 +81,7 @@ class BSSLoss(torch.nn.Module):
 
         loss_ft = self.mean_attr_weight*loss_mean_attr + false_positives + missing_attr
         loss_ft *= loss_cl.item()/(loss_ft.item() + self.eps)
+        loss_ft = loss_ft if self.use_loss_ft else 0
 
         if hasattr(self, 'predicate_matrix') and not self.pre_quantized:
             return loss_cl + loss_ft * self.ft_weight + commit_loss + commit_loss2

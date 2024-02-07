@@ -1,6 +1,0 @@
-Samples1-9 : ft_weight = 0.1
-Samples10-19 : ft_weight = 0.3
-Samples20-29 : ft_weight = 1
-Samples30-39 : ft_weight = 1 (Proper)
-Samples40-49 : ft_weight = 1, pos_ft_weight = 0.1
-Samples50-59 : ft_weight = 1, pos_ft_weight = 0.05

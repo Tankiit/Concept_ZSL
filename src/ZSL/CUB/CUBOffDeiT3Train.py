@@ -51,32 +51,6 @@ validation_loader = torch.utils.data.DataLoader(
 training_loader = torch.utils.data.DataLoader(
         trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
 
-eps=1e-10
-def loss_fn(out, labels, predicate_matrix):
-    out = out.view(-1, 1, NUM_FEATURES) # out is a batch of 1D binary vectors
-    ANDed = out * predicate_matrix # AND operation
-    diff = ANDed - out # Difference of ANDed and out => if equal, then out is a subset of its class' predicates
-
-    entr_loss = torch.nn.CrossEntropyLoss()
-    
-    loss_cl = entr_loss(diff.sum(dim=2), labels) # Is "out" a subset of its class' predicates?
-
-    batch_size = out.shape[0]
-
-    out = out.view(-1, NUM_FEATURES)
-    diff_square = (out - predicate_matrix[labels]).pow(2)
-    
-    false_positives = (out - predicate_matrix[labels] + diff_square).sum() / batch_size
-    missing_attr = (predicate_matrix[labels] - out + diff_square).sum() / batch_size
-    
-    loss_mean_attr = (predicate_matrix.sum(dim=1).mean() - NUM_FEATURES//2).pow(2)
-    
-    loss_ft = 2*loss_mean_attr + false_positives + missing_attr
-    
-    loss_ft *= loss_cl.item()/(loss_ft.item() + eps)
-    
-    return loss_cl + loss_ft * FT_WEIGHT
-
 from sam import SAM
 def train_one_epoch(scheduler):
     running_loss = 0.
@@ -91,14 +65,14 @@ def train_one_epoch(scheduler):
         labels = labels.to(device)
         
         outputs, commit_loss, predicate_matrix = model(inputs)
-        loss = loss_fn(outputs, labels, predicate_matrix) + commit_loss
+        loss = criterion(outputs, labels, predicate_matrix) + commit_loss
         
         # first forward-backward pass
         loss.backward()
         optimizer.first_step(zero_grad=True)
 
         outputs, commit_loss, predicate_matrix = model(inputs)
-        loss = loss_fn(outputs, labels, predicate_matrix) + commit_loss
+        loss = criterion(outputs, labels, predicate_matrix) + commit_loss
         
         # second forward-backward pass
         loss.backward()  # make sure to do a full forward pass
@@ -134,6 +108,10 @@ optimizer = SAM(model.parameters(), base_optimizer, lr=3e-5, weight_decay=1e-5)
 scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer.base_optimizer, 1e-4, epochs=EPOCHS, steps_per_epoch=len(training_loader))
 #scheduler = None
 
+sys.path.insert(0, "/".join(__file__.split("/")[:-3]))
+from SubsetLoss import BSSLoss
+criterion = BSSLoss(NUM_FEATURES, pre_quantized=True).to(device)
+
 from tqdm import tqdm
 for epoch in tqdm(range(EPOCHS)):
     model.train(True)
@@ -153,7 +131,7 @@ for epoch in tqdm(range(EPOCHS)):
             vinputs = vinputs.to(device)
             vlabels = vlabels.to(device)
             voutputs, vcommit_loss, predicate_matrix = model(vinputs)
-            vloss = loss_fn(voutputs, vlabels, predicate_matrix) + vcommit_loss
+            vloss = criterion(voutputs, vlabels, predicate_matrix) + vcommit_loss
             running_vloss += vloss.item()
             voutputs = voutputs.view(-1, 1, NUM_FEATURES)
             ANDed = voutputs * predicate_matrix

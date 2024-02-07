@@ -1,3 +1,5 @@
 *.pt
 test.*
-
+datasets
+__pycache__
+.ipynb_checkpoints

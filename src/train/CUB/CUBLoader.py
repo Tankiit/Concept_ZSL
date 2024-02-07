@@ -97,14 +97,14 @@ def make_train_split_file(images_per_class, output_file, root):
                 f.write(str(row['img_id']) + " 0\n")
     
 import numpy as np
-def make_ZSL_sets(NUM_EXCLUDE, train_transform, val_transform):
+def make_ZSL_sets(root, NUM_EXCLUDE, train_transform, val_transform):
     indices = (np.random.permutation(200)+1).tolist()
     
-    ZSL_train_set = Cub2011("/storage/CUB", transform=train_transform, exclude = indices[NUM_EXCLUDE:])
-    train_set = Cub2011("/storage/CUB", transform=train_transform, exclude = indices[:NUM_EXCLUDE])
+    ZSL_train_set = Cub2011(root, transform=train_transform, exclude = indices[NUM_EXCLUDE:])
+    train_set = Cub2011(root, transform=train_transform, exclude = indices[:NUM_EXCLUDE])
     
-    ZSL_test_set = Cub2011("/storage/CUB", transform=val_transform, train=False, exclude = indices[NUM_EXCLUDE:])
-    test_set = Cub2011("/storage/CUB", transform=val_transform, train=False, exclude = indices[:NUM_EXCLUDE])
+    ZSL_test_set = Cub2011(root, transform=val_transform, train=False, exclude = indices[NUM_EXCLUDE:])
+    test_set = Cub2011(root, transform=val_transform, train=False, exclude = indices[:NUM_EXCLUDE])
     
     return train_set, test_set, ZSL_train_set, ZSL_test_set
     
@@ -114,4 +114,5 @@ if __name__ == "__main__":
     selected = indices[20:]
     print(min(selected), max(selected))
     
-    dset = Cub2011("/storage/CUB", exclude = selected)
+    root = "datasets/"
+    dset = Cub2011(root, exclude = selected)

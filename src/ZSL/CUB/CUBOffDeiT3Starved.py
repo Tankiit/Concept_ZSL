@@ -37,7 +37,7 @@ avg_acc = 0.887456476688385
 model.load_state_dict(torch.load("CUBOfficialSplitDeiT3.pt"))
 
 print("===============================================================")
-def make_ZSL_sets(train_transform, val_transform):
+def make_ZSL_sets(val_transform):
         indices = list(range(1, 201))
 
         test_labels = get_CUB_test_labels("src/ZSL/splits/CUB/CUBtestclasses.txt")
@@ -61,7 +61,7 @@ def get_acc_avg_n_img_per_class(image_count, samples, split_file):
     for i in tqdm(range(samples)):
         make_train_split_file(image_count, split_file, "/storage/CUB")
 
-        ZSL_trainset, ZSL_valset = make_ZSL_sets(train_transform, val_transform)
+        ZSL_trainset, ZSL_valset = make_ZSL_sets(val_transform)
 
         validation_loader = torch.utils.data.DataLoader(
                 ZSL_valset, batch_size=BATCH_SIZE, shuffle=False, num_workers=4)
@@ -76,7 +76,7 @@ def get_acc_avg_n_img_per_class(image_count, samples, split_file):
                 vinputs, vlabels = vdata["images"], vdata["labels"]
                 vinputs = vinputs.to(device)
                 vlabels = vlabels.to(device)
-                voutputs, vcommit_loss, predicate_matrix = model(vinputs)
+                voutputs, _, _ = model(vinputs)
 
                 for i in range(len(voutputs)):
                     predis[vlabels[i]] += voutputs[i]

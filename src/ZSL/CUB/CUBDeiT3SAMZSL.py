@@ -2,7 +2,7 @@ import torchvision.transforms as transforms
 import torch
 import sys
 
-sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/train")
+sys.path.insert(0, "/".join(__file__.split("/")[:-3]) + "/train/CUB")
 from CUBLoader import make_ZSL_sets
 
 train_transform =  transforms.Compose([
@@ -23,7 +23,7 @@ val_transform = transforms.Compose([
 
 NUM_EXCLUDE = 50
 
-trainset, valset, ZSL_trainset, ZSL_valset = make_ZSL_sets(NUM_EXCLUDE, train_transform, val_transform)
+trainset, valset, ZSL_trainset, ZSL_valset = make_ZSL_sets("datasets/", NUM_EXCLUDE, train_transform, val_transform)
 
 BATCH_SIZE = 64
 
@@ -32,30 +32,7 @@ validation_loader = torch.utils.data.DataLoader(
 training_loader = torch.utils.data.DataLoader(
         trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
 
-eps=1e-10
-def loss_fn(out, labels, predicate_matrix):
-    out = out.view(-1, 1, NUM_FEATURES) # out is a batch of 1D binary vectors
-    ANDed = out * predicate_matrix # AND operation
-    diff = ANDed - out # Difference of ANDed and out => if equal, then out is a subset of its class' predicates
-
-    entr_loss = torch.nn.CrossEntropyLoss()
-    
-    loss_cl = entr_loss(diff.sum(dim=2), labels) # Is "out" a subset of its class' predicates?
-
-    batch_size = out.shape[0]
-
-    out = out.view(-1, NUM_FEATURES)
-    diff_square = (out - predicate_matrix[labels]).pow(2)
-    
-    false_positives = (out - predicate_matrix[labels] + diff_square).sum() / batch_size
-    missing_attr = (predicate_matrix[labels] - out + diff_square).sum() / batch_size
-    
-    loss_ft = (1 + false_positives + missing_attr)
-    
-    loss_ft *= loss_cl.item()/(loss_ft.item() + eps)
-    
-    return loss_cl + loss_ft * FT_WEIGHT
-
+sys.path.insert(0, "/".join(__file__.split("/")[:-2]))
 from sam import SAM
 def train_one_epoch(scheduler):
     running_loss = 0.
@@ -69,15 +46,15 @@ def train_one_epoch(scheduler):
         inputs = inputs.to(device)
         labels = labels.to(device)
         
-        outputs, commit_loss, predicate_matrix = model(inputs)
-        loss = loss_fn(outputs, labels, predicate_matrix) + commit_loss
+        outputs = model(inputs)
+        loss = criterion(outputs, labels)
         
         # first forward-backward pass
         loss.backward()
         optimizer.first_step(zero_grad=True)
 
-        outputs, commit_loss, predicate_matrix = model(inputs)
-        loss = loss_fn(outputs, labels, predicate_matrix) + commit_loss
+        outputs = model(inputs)
+        loss = criterion(outputs, labels)
         
         # second forward-backward pass
         loss.backward()  # make sure to do a full forward pass
@@ -99,17 +76,20 @@ NUM_CLASSES = 200
 NUM_FEATURES = 64
 EPOCHS = 50
 
-FT_WEIGHT = 0.7
-
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES - NUM_EXCLUDE, top_k=1).to(device)
 
-sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/models")
-from DeiT3AutoPredicates import ResExtr
+import timm
+model = timm.create_model("deit3_medium_patch16_224.fb_in22k_ft_in1k", pretrained=True).to(device)
+model.head = torch.nn.Linear(512, NUM_FEATURES).to(device)
 
-model = ResExtr(NUM_FEATURES, NUM_CLASSES - NUM_EXCLUDE).to(device)
+sys.path.insert(0, "/".join(__file__.split("/")[:-3]))
+from SubsetLoss import BSSLoss
+criterion = BSSLoss(NUM_FEATURES, add_predicate_matrix=True, n_classes=NUM_CLASSES - NUM_EXCLUDE).to(device)
 
+from sam import SAM
 base_optimizer = torch.optim.Adam
-optimizer = SAM(model.parameters(), base_optimizer, lr=3e-5, weight_decay=1e-5)
+optimizer = SAM(list(model.parameters()) + list(criterion.parameters()), base_optimizer, lr=3e-5, weight_decay=1e-5)
+
 scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer.base_optimizer, 1e-4, epochs=EPOCHS, steps_per_epoch=len(training_loader))
 #scheduler = None
 
@@ -131,9 +111,11 @@ for epoch in tqdm(range(EPOCHS)):
             vinputs, vlabels = vdata["images"], vdata["labels"]
             vinputs = vinputs.to(device)
             vlabels = vlabels.to(device)
-            voutputs, vcommit_loss, predicate_matrix = model(vinputs)
-            vloss = loss_fn(voutputs, vlabels, predicate_matrix) + vcommit_loss
+            voutputs = model(vinputs)
+            vloss = criterion(voutputs, vlabels)
+            predicate_matrix = criterion.get_predicate_matrix()
             running_vloss += vloss.item()
+            voutputs = criterion.binarize_output(voutputs)
             voutputs = voutputs.view(-1, 1, NUM_FEATURES)
             ANDed = voutputs * predicate_matrix
             diff = ANDed - voutputs
@@ -157,9 +139,9 @@ print(f"Started Training On {NUM_EXCLUDE} Excluded Classes")
 
 attributes_per_class = avg_oa.item() - avg_fp.item() + avg_ma.item()
 
-validation_loader = torch.utils.data.DataLoader(
+ZSL_test_loader = torch.utils.data.DataLoader(
         ZSL_valset, batch_size=BATCH_SIZE, shuffle=False, num_workers=4)
-training_loader = torch.utils.data.DataLoader(
+ZSL_training_loader = torch.utils.data.DataLoader(
         ZSL_trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
 
 accuracy = Accuracy(task="multiclass", num_classes=NUM_EXCLUDE, top_k=1).to(device)
@@ -168,40 +150,37 @@ predis = torch.zeros(NUM_EXCLUDE, NUM_FEATURES).to(device)
 
 model.eval()
 with torch.no_grad():
-    for i, vdata in enumerate(training_loader):
+    for i, vdata in enumerate(ZSL_training_loader):
         vinputs, vlabels = vdata["images"], vdata["labels"]
         vinputs = vinputs.to(device)
         vlabels = vlabels.to(device)
-        voutputs, vcommit_loss, predicate_matrix = model(vinputs)
+        voutputs = model(vinputs)
         
         for i in range(len(voutputs)):
             predis[vlabels[i]] += voutputs[i]
             
 K = int(attributes_per_class+1)
+print(f"K: {K}")
 topk, indices = torch.topk(predis, K, dim=1)
       
 new_predicate_matrix = torch.zeros(NUM_EXCLUDE, NUM_FEATURES).to(device)
 new_predicate_matrix.scatter_(1, indices, 1)
     
-model.classes = NUM_EXCLUDE
-model.predicate_matrix = torch.nn.Parameter(new_predicate_matrix)
-
 results = [[0,0]] * NUM_EXCLUDE
 with torch.no_grad():
-    for i, vdata in enumerate(validation_loader):
+    for i, vdata in enumerate(ZSL_test_loader):
         vinputs, vlabels = vdata["images"], vdata["labels"]
         vinputs = vinputs.to(device)
         vlabels = vlabels.to(device)
-        voutputs, vcommit_loss, predicate_matrix = model(vinputs)
+        voutputs = model(vinputs)
         voutputs = voutputs.view(-1, 1, NUM_FEATURES)
-        ANDed = voutputs * predicate_matrix
+        ANDed = voutputs * new_predicate_matrix
         diff = ANDed - voutputs
         preds = diff.sum(dim=2)
         # Add to results[label] the number of correct predictions and the number of predictions
         for i in range(len(preds)):
             results[vlabels[i]][0] += torch.argmax(preds[i]) == vlabels[i]
             results[vlabels[i]][1] += 1
-
 
 accuracy = 0
 for i in range(NUM_EXCLUDE):

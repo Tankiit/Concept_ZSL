@@ -1,21 +1,21 @@
      1	antelope
-     2	grizzly_bear
-     3	killer_whale
+     2	grizzly+bear
+     3	killer+whale
      4	beaver
      5	dalmatian
-     6	persian_cat
+     6	persian+cat
      7	horse
-     8	german_shepherd
-     9	blue_whale
-    10	siamese_cat
+     8	german+shepherd
+     9	blue+whale
+    10	siamese+cat
     11	skunk
     12	mole
     13	tiger
     14	hippopotamus
     15	leopard
     16	moose
-    17	spider_monkey
-    18	humpback_whale
+    17	spider+monkey
+    18	humpback+whale
     19	elephant
     20	gorilla
     21	ox
@@ -36,13 +36,13 @@
     36	otter
     37	buffalo
     38	zebra
-    39	giant_panda
+    39	giant+panda
     40	deer
     41	bobcat
     42	pig
     43	lion
     44	mouse
-    45	polar_bear
+    45	polar+bear
     46	collie
     47	walrus
     48	raccoon
