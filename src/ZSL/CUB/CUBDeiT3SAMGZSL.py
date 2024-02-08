@@ -136,6 +136,8 @@ print(f"Seen ACC: {avg_acc}, FP: {avg_fp}, MA: {avg_ma}, OA: {avg_oa}, Val Loss:
 print("===============================================================")
 print(f"Started Training On {NUM_EXCLUDE} Excluded Classes")
 
+model.eval()
+
 attributes_per_class = avg_oa.item() - avg_fp.item() + avg_ma.item()
 
 ZSL_test_loader = torch.utils.data.DataLoader(
@@ -147,48 +149,63 @@ accuracy = Accuracy(task="multiclass", num_classes=NUM_EXCLUDE, top_k=1).to(devi
 
 predis = torch.zeros(NUM_EXCLUDE, NUM_FEATURES).to(device)
 
-model.eval()
 with torch.no_grad():
     for i, vdata in enumerate(ZSL_training_loader):
         vinputs, vlabels = vdata["images"], vdata["labels"]
         vinputs = vinputs.to(device)
         vlabels = vlabels.to(device)
         voutputs = model(vinputs)
-        
+
         for i in range(len(voutputs)):
             predis[vlabels[i]] += voutputs[i]
-            
-K = int(attributes_per_class+1)
-print(f"K: {K}")
-topk, indices = torch.topk(predis, K, dim=1)
-      
-new_predicate_matrix = torch.zeros(NUM_EXCLUDE, NUM_FEATURES).to(device)
-new_predicate_matrix.scatter_(1, indices, 1)
     
-results = [[0,0]] * NUM_EXCLUDE
-with torch.no_grad():
+    K = int(attributes_per_class+1)
+    print(f"K: {K}")
+    topk, indices = torch.topk(predis, K, dim=1)
+
+    new_predicate_matrix = torch.zeros(NUM_EXCLUDE, NUM_FEATURES).to(device)
+    new_predicate_matrix.scatter_(1, indices, 1)
+    
+    catted = torch.cat((criterion.get_predicate_matrix(), new_predicate_matrix), dim=0)
+
+    unseen_results = [[0,0]] * NUM_EXCLUDE
     for i, vdata in enumerate(ZSL_test_loader):
         vinputs, vlabels = vdata["images"], vdata["labels"]
         vinputs = vinputs.to(device)
         vlabels = vlabels.to(device)
         voutputs = model(vinputs)
         voutputs = voutputs.view(-1, 1, NUM_FEATURES)
-        ANDed = voutputs * new_predicate_matrix
+        ANDed = voutputs * catted
         diff = ANDed - voutputs
         preds = diff.sum(dim=2)
         # Add to results[label] the number of correct predictions and the number of predictions
         for i in range(len(preds)):
-            results[vlabels[i]][0] += torch.argmax(preds[i]) == vlabels[i]
-            results[vlabels[i]][1] += 1
+            unseen_results[vlabels[i]][0] += torch.argmax(preds[i]) == vlabels[i]+150
+            unseen_results[vlabels[i]][1] += 1
+            
+    seen_results = [[0,0]] * (NUM_CLASSES-NUM_EXCLUDE)
+    for i, vdata in enumerate(valset):
+        vinputs, vlabels = vdata["images"], vdata["labels"]
+        vinputs = vinputs.to(device)
+        vlabels = vlabels.to(device)
+        voutputs, _, _ = model(vinputs)
+        voutputs = voutputs.view(-1, 1, NUM_FEATURES)
+        ANDed = voutputs * catted
+        diff = ANDed - voutputs
+        preds = diff.sum(dim=2)
+        for i in range(len(preds)):
+            seen_results[vlabels[i]][0] += torch.argmax(preds[i]) == vlabels[i]
+            seen_results[vlabels[i]][1] += 1
 
-accuracy = 0
+unseen_acc = 0
 for i in range(NUM_EXCLUDE):
-    accuracy += results[i][0] / results[i][1]
+    unseen_acc += unseen_results[i][0] / unseen_results[i][1]
+    
+seen_acc = 0
+for i in range(NUM_CLASSES-NUM_EXCLUDE):
+    seen_acc += seen_results[i][0] / seen_results[i][1]
+    
+unseen_acc = unseen_acc / NUM_EXCLUDE
+seen_acc = seen_acc / (NUM_CLASSES-NUM_EXCLUDE)
 
-unseen_acc = accuracy / NUM_EXCLUDE
-
-print(f"Unseen ACC: {unseen_acc}")
-
-harmonic_mean = 2 * avg_acc * unseen_acc / (avg_acc + unseen_acc)
-
-print(f"Harmonic Mean: {harmonic_mean}")
+print(f"Unseen ACC: {unseen_acc}, Seen ACC: {seen_acc}, Harmonic ACC: {2*seen_acc*unseen_acc/(seen_acc+unseen_acc)}")

@@ -1,13 +1,15 @@
-import torchvision.transforms as transforms
+import torchvision.transforms.v2 as transforms
+from torch.utils.data import Subset
 import torch
 import sys
 
-sys.path.insert(0, "/".join(__file__.split("/")[:-3]) + "/train/CUB")
-from CUBLoader import make_ZSL_sets
+sys.path.insert(0, "/".join(__file__.split("/")[:-3]) + "/train/AwA2")
+from AwA2Loader import AwA2Dataset
 
 train_transform =  transforms.Compose([
     transforms.RandomResizedCrop(224),
     transforms.RandomHorizontalFlip(),
+    transforms.RandomRotation(40),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                      std=[0.229, 0.224, 0.225])
@@ -21,13 +23,43 @@ val_transform = transforms.Compose([
                                      std=[0.229, 0.224, 0.225])
 ])
 
-NUM_EXCLUDE = 50
+sys.path.insert(0, "/".join(__file__.split("/")[:-2]))
+from util import get_AwA2_test_labels
+import random
+def make_ZSL_sets(train_transform, val_transform):
+    
+    test_labels = get_AwA2_test_labels("src/ZSL/splits/AwA2/AwA2testclasses.txt")
+    train_labels = get_AwA2_test_labels("src/ZSL/splits/AwA2/AwA2trainclasses.txt")
+    val_labels = []
+    
+    print(f"Training data: {50-len(test_labels)-len(val_labels)}, Testing data: {len(test_labels)}, Validation data: {len(val_labels)}")
+    
+    root = "datasets/Animals_with_Attributes2/JPEGImages"
 
-trainset, valset, ZSL_trainset, ZSL_valset = make_ZSL_sets("datasets/", NUM_EXCLUDE, train_transform, val_transform)
+    tr_dataset = AwA2Dataset(root=root, transform=train_transform, exclude=test_labels)
+    val_dataset = AwA2Dataset(root=root, transform=val_transform, exclude=test_labels)
+
+    all_indices = list(range(len(tr_dataset)))
+    train_length = int(len(tr_dataset) * 0.8)
+
+    train_idx = random.sample(all_indices, train_length)
+    val_idx = [i for i in all_indices if i not in train_idx]
+
+    train_set = Subset(tr_dataset, indices=train_idx)
+    val_set = Subset(val_dataset, indices=val_idx)
+    
+    IMAGES_PER_CLASS = 10
+    
+    ZSL_test_set = AwA2Dataset(root=root, transform=val_transform, exclude=train_labels, skip_first_n=IMAGES_PER_CLASS)
+    ZSL_train_set = AwA2Dataset(root=root, transform=val_transform, exclude=train_labels, end_at_n=IMAGES_PER_CLASS)
+
+    return train_set, val_set, ZSL_train_set, ZSL_test_set
+
+trainset, valset, ZSL_train_set, ZSL_test_set = make_ZSL_sets(train_transform, val_transform)
 
 BATCH_SIZE = 64
 
-validation_loader = torch.utils.data.DataLoader(
+seen_val_loader = torch.utils.data.DataLoader(
         valset, batch_size=BATCH_SIZE, shuffle=False, num_workers=4)
 training_loader = torch.utils.data.DataLoader(
         trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
@@ -35,11 +67,7 @@ training_loader = torch.utils.data.DataLoader(
 def train_one_epoch(scheduler):
     running_loss = 0.
 
-    # Here, we use enumerate(training_loader) instead of
-    # iter(training_loader) so that we can track the batch
-    # index and do some intra-epoch reporting
     for i, data in enumerate(training_loader):
-        # Every data instance is an input + label pair
         inputs, labels = data["images"], data["labels"]
         inputs = inputs.to(device)
         labels = labels.to(device)
@@ -47,21 +75,18 @@ def train_one_epoch(scheduler):
         outputs = model(inputs)
         loss = criterion(outputs, labels)
         
-        # first forward-backward pass
         loss.backward()
         optimizer.first_step(zero_grad=True)
 
         outputs = model(inputs)
         loss = criterion(outputs, labels)
         
-        # second forward-backward pass
-        loss.backward()  # make sure to do a full forward pass
+        loss.backward()
         optimizer.second_step(zero_grad=True)
         
         if scheduler is not None:
             scheduler.step()
     
-        # Gather data and report
         running_loss += loss.item()
 
     return running_loss / (i+1)
@@ -70,9 +95,10 @@ from torchmetrics import Accuracy
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Device: {device}")
 
-NUM_CLASSES = 200
-NUM_FEATURES = 64
-EPOCHS = 50
+NUM_CLASSES = 50
+NUM_EXCLUDE = 10
+NUM_FEATURES = 48
+EPOCHS = 10
 
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES - NUM_EXCLUDE, top_k=1).to(device)
 
@@ -106,7 +132,7 @@ for epoch in tqdm(range(EPOCHS)):
     running_out_attributes = 0.0
 
     with torch.no_grad():
-        for i, vdata in enumerate(validation_loader):
+        for i, vdata in enumerate(seen_val_loader):
             vinputs, vlabels = vdata["images"], vdata["labels"]
             vinputs = vinputs.to(device)
             vlabels = vlabels.to(device)
@@ -136,12 +162,13 @@ print(f"Seen ACC: {avg_acc}, FP: {avg_fp}, MA: {avg_ma}, OA: {avg_oa}, Val Loss:
 print("===============================================================")
 print(f"Started Training On {NUM_EXCLUDE} Excluded Classes")
 
-attributes_per_class = avg_oa.item() - avg_fp.item() + avg_ma.item()
+attributes_per_class = NUM_FEATURES // 2
+#attributes_per_class = int(avg_oa.item() - avg_fp.item() + avg_ma.item()) + 1
 
-ZSL_test_loader = torch.utils.data.DataLoader(
-        ZSL_valset, batch_size=BATCH_SIZE, shuffle=False, num_workers=4)
-ZSL_training_loader = torch.utils.data.DataLoader(
-        ZSL_trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
+unseen_training_loader = torch.utils.data.DataLoader(
+        ZSL_train_set, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
+unseen_val_loader = torch.utils.data.DataLoader(
+        ZSL_test_set, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
 
 accuracy = Accuracy(task="multiclass", num_classes=NUM_EXCLUDE, top_k=1).to(device)
 
@@ -149,7 +176,7 @@ predis = torch.zeros(NUM_EXCLUDE, NUM_FEATURES).to(device)
 
 model.eval()
 with torch.no_grad():
-    for i, vdata in enumerate(ZSL_training_loader):
+    for i, vdata in enumerate(unseen_training_loader):
         vinputs, vlabels = vdata["images"], vdata["labels"]
         vinputs = vinputs.to(device)
         vlabels = vlabels.to(device)
@@ -167,7 +194,7 @@ new_predicate_matrix.scatter_(1, indices, 1)
     
 results = [[0,0]] * NUM_EXCLUDE
 with torch.no_grad():
-    for i, vdata in enumerate(ZSL_test_loader):
+    for i, vdata in enumerate(unseen_val_loader):
         vinputs, vlabels = vdata["images"], vdata["labels"]
         vinputs = vinputs.to(device)
         vlabels = vlabels.to(device)
