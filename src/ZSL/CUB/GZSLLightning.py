@@ -32,7 +32,7 @@ torch.set_float32_matmul_precision('medium')
 import lightning as L
 import timm
 sys.path.insert(0, "/".join(__file__.split("/")[:-3]))
-from SubsetLoss import BSSLoss
+from SubsetLoss import BSSLoss, pack_model
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]))
 from sam import SAM
 from torchmetrics import Accuracy
@@ -47,10 +47,20 @@ class GZSLDeiT3(L.LightningModule):
         optimizer = self.configure_optimizers()
         self.scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer.base_optimizer, 1e-4, epochs=EPOCHS, steps_per_epoch=len(training_loader))
 
+        self.running_false_positives = 0
+        self.running_missing_attr = 0
+        self.running_out_attributes = 0
+        self.step_count = 0
+
     def forward(self, x):
         return self.model(x)
 
     def training_step(self, batch, batch_idx):
+        self.running_false_positives = 0
+        self.running_missing_attr = 0
+        self.running_out_attributes = 0
+        self.step_count = 0
+
         inputs, labels = batch["images"], batch["labels"]
         outputs = self.model(inputs)
         loss = self.criterion(outputs, labels)
@@ -91,6 +101,11 @@ class GZSLDeiT3(L.LightningModule):
             'val_ma': running_missing_attr,
             'val_oa': running_out_attributes
             }, prog_bar=True)
+        
+        self.running_false_positives += running_false_positives
+        self.running_missing_attr += running_missing_attr
+        self.running_out_attributes += running_out_attributes
+        self.step_count += 1
 
     def configure_optimizers(self):
         base_optimizer = torch.optim.Adam
@@ -106,6 +121,91 @@ class GZSLDeiT3(L.LightningModule):
     
 training_loader = torch.utils.data.DataLoader(trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
 
-model = GZSLDeiT3()
+lightning_model = GZSLDeiT3()
 trainer = L.Trainer(devices=1, max_epochs=EPOCHS, precision=16)
-trainer.fit(model)
+trainer.fit(lightning_model)
+
+# Pack model
+model = pack_model(lightning_model.model, lightning_model.criterion)
+
+print("===============================================================")
+print(f"Started On {NUM_EXCLUDE} Excluded Classes")
+
+model.eval()
+
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
+avg_oa = lightning_model.running_out_attributes / lightning_model.step_count
+avg_fp = lightning_model.running_false_positives / lightning_model.step_count
+avg_ma = lightning_model.running_missing_attr / lightning_model.step_count
+attributes_per_class = avg_oa - avg_fp + avg_ma
+
+ZSL_test_loader = torch.utils.data.DataLoader(
+        ZSL_valset, batch_size=BATCH_SIZE, shuffle=False, num_workers=4)
+ZSL_training_loader = torch.utils.data.DataLoader(
+        ZSL_trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
+
+accuracy = Accuracy(task="multiclass", num_classes=NUM_EXCLUDE, top_k=1).to(device)
+
+predis = torch.zeros(NUM_EXCLUDE, NUM_FEATURES).to(device)
+
+with torch.no_grad():
+    for i, vdata in enumerate(ZSL_training_loader):
+        vinputs, vlabels = vdata["images"], vdata["labels"]
+        vinputs = vinputs.to(device)
+        vlabels = vlabels.to(device)
+        voutputs = model(vinputs)
+
+        for i in range(len(voutputs)):
+            predis[vlabels[i]] += voutputs[i]
+    
+    K = int(attributes_per_class+1)
+    print(f"K: {K}")
+    topk, indices = torch.topk(predis, K, dim=1)
+
+    new_predicate_matrix = torch.zeros(NUM_EXCLUDE, NUM_FEATURES).to(device)
+    new_predicate_matrix.scatter_(1, indices, 1)
+    
+    catted = torch.cat((model.predicate_matrix, new_predicate_matrix), dim=0)
+
+    unseen_results = [[0,0]] * NUM_EXCLUDE
+    for i, vdata in enumerate(ZSL_test_loader):
+        vinputs, vlabels = vdata["images"], vdata["labels"]
+        vinputs = vinputs.to(device)
+        vlabels = vlabels.to(device)
+        voutputs = model(vinputs)
+        voutputs = voutputs.view(-1, 1, NUM_FEATURES)
+        ANDed = voutputs * catted
+        diff = ANDed - voutputs
+        preds = diff.sum(dim=2)
+        # Add to results[label] the number of correct predictions and the number of predictions
+        for i in range(len(preds)):
+            unseen_results[vlabels[i]][0] += torch.argmax(preds[i]) == vlabels[i]+150
+            unseen_results[vlabels[i]][1] += 1
+            
+    seen_results = [[0,0]] * (NUM_CLASSES-NUM_EXCLUDE)
+    for i, vdata in enumerate(valset):
+        vinputs, vlabels = vdata["images"], vdata["labels"]
+        vinputs = vinputs.to(device)
+        vlabels = vlabels.to(device)
+        voutputs, _, _ = model(vinputs)
+        voutputs = voutputs.view(-1, 1, NUM_FEATURES)
+        ANDed = voutputs * catted
+        diff = ANDed - voutputs
+        preds = diff.sum(dim=2)
+        for i in range(len(preds)):
+            seen_results[vlabels[i]][0] += torch.argmax(preds[i]) == vlabels[i]
+            seen_results[vlabels[i]][1] += 1
+
+unseen_acc = 0
+for i in range(NUM_EXCLUDE):
+    unseen_acc += unseen_results[i][0] / unseen_results[i][1]
+    
+seen_acc = 0
+for i in range(NUM_CLASSES-NUM_EXCLUDE):
+    seen_acc += seen_results[i][0] / seen_results[i][1]
+    
+unseen_acc = unseen_acc / NUM_EXCLUDE
+seen_acc = seen_acc / (NUM_CLASSES-NUM_EXCLUDE)
+
+print(f"Unseen ACC: {unseen_acc}, Seen ACC: {seen_acc}, Harmonic ACC: {2*seen_acc*unseen_acc/(seen_acc+unseen_acc)}")

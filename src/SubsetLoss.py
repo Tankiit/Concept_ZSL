@@ -92,6 +92,26 @@ class BSSLoss(torch.nn.Module):
         else:
             return loss_cl + loss_ft * self.ft_weight
         
+import torch.nn as nn
+class Packed(nn.Module):
+    def __init__(self, model, BSSLossObj) -> None:
+        super().__init__()
+        self.model = model
+        self.predicate_matrix = BSSLossObj.get_predicate_matrix()
+        self.n_features = BSSLossObj.n_features
+
+    def forward(self, x):
+        x = self.model(x).view(-1, 1, self.n_features)
+
+        ANDed = x * self.predicate_matrix
+        
+        diff = ANDed - x
+        
+        return diff.sum(dim=2)
+    
+def pack_model(model, BSSLossObj):
+    return Packed(model, BSSLossObj)
+
 if __name__ == "__main__":
     loss_fn = BSSLoss(64)
     
