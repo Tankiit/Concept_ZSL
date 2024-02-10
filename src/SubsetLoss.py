@@ -97,7 +97,7 @@ class Packed(nn.Module):
     def __init__(self, model, BSSLossObj) -> None:
         super().__init__()
         self.model = model
-        self.predicate_matrix = BSSLossObj.get_predicate_matrix()
+        self.predicate_matrix = nn.Parameter(BSSLossObj.get_predicate_matrix())
         self.n_features = BSSLossObj.n_features
 
     def forward(self, x):

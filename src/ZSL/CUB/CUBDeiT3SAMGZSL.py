@@ -184,11 +184,11 @@ with torch.no_grad():
             unseen_results[vlabels[i]][1] += 1
             
     seen_results = [[0,0]] * (NUM_CLASSES-NUM_EXCLUDE)
-    for i, vdata in enumerate(valset):
+    for i, vdata in enumerate(validation_loader):
         vinputs, vlabels = vdata["images"], vdata["labels"]
         vinputs = vinputs.to(device)
         vlabels = vlabels.to(device)
-        voutputs, _, _ = model(vinputs)
+        voutputs = model(vinputs)
         voutputs = voutputs.view(-1, 1, NUM_FEATURES)
         ANDed = voutputs * catted
         diff = ANDed - voutputs
