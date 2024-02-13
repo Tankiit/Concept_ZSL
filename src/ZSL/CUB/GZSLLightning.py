@@ -34,7 +34,7 @@ import timm
 sys.path.insert(0, "/".join(__file__.split("/")[:-3]))
 from SubsetLoss import BSSLoss, pack_model
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]))
-from sam import SAM
+from Concept_ZSL.src.sam import SAM
 from torchmetrics import Accuracy
 class GZSLDeiT3(L.LightningModule):
     def __init__(self):

@@ -147,7 +147,7 @@ from DeiT3AutoPredicates import ResExtr
 
 model = ResExtr(NUM_FEATURES, NUM_CLASSES - NUM_EXCLUDE).to(device)
 
-from sam import SAM
+from Concept_ZSL.src.sam import SAM
 base_optimizer = torch.optim.Adam
 optimizer = SAM(model.parameters(), base_optimizer, lr=3e-5, weight_decay=1e-5)
 scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer.base_optimizer, 1e-4, epochs=EPOCHS, steps_per_epoch=len(training_loader))
