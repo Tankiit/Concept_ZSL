@@ -1,5 +1,9 @@
-import torch
+import torch, sys
 torch.set_float32_matmul_precision('medium')
+
+from torch.utils.data import Subset
+sys.path.insert(0, "/".join(__file__.split("/")[:-3]) + "/train/AwA2")
+from AwA2Loader import AwA2Dataset
 
 import torchvision.transforms as transforms
 train_transform =  transforms.Compose([
@@ -18,16 +22,45 @@ val_transform = transforms.Compose([
                                      std=[0.229, 0.224, 0.225])
 ])
 
-NUM_CLASSES = 200
-NUM_FEATURES = 80
-EPOCHS = 50
-NUM_EXCLUDE = 50
-BATCH_SIZE = 64
+sys.path.insert(0, "/".join(__file__.split("/")[:-2]))
+from util import get_AwA2_test_labels
+import random
+def make_ZSL_sets(train_transform, val_transform):
+    
+    test_labels = get_AwA2_test_labels("src/ZSL/splits/AwA2/AwA2testclasses.txt")
+    train_labels = get_AwA2_test_labels("src/ZSL/splits/AwA2/AwA2trainclasses.txt")
+    val_labels = []
+    
+    print(f"Training data: {50-len(test_labels)-len(val_labels)}, Testing data: {len(test_labels)}, Validation data: {len(val_labels)}")
+    
+    root = "datasets/Animals_with_Attributes2/JPEGImages"
 
-import sys
-sys.path.insert(0, "/".join(__file__.split("/")[:-3]) + "/train/CUB")
-from CUBLoader import make_ZSL_sets
-trainset, valset, ZSL_trainset, ZSL_valset = make_ZSL_sets("datasets/", NUM_EXCLUDE, train_transform, val_transform)
+    tr_dataset = AwA2Dataset(root=root, transform=train_transform, exclude=test_labels)
+    val_dataset = AwA2Dataset(root=root, transform=val_transform, exclude=test_labels)
+
+    all_indices = list(range(len(tr_dataset)))
+    train_length = int(len(tr_dataset) * 0.8)
+
+    train_idx = random.sample(all_indices, train_length)
+    val_idx = [i for i in all_indices if i not in train_idx]
+
+    train_set = Subset(tr_dataset, indices=train_idx)
+    val_set = Subset(val_dataset, indices=val_idx)
+    
+    IMAGES_PER_CLASS = 10
+    
+    ZSL_test_set = AwA2Dataset(root=root, transform=val_transform, exclude=train_labels, skip_first_n=IMAGES_PER_CLASS)
+    ZSL_train_set = AwA2Dataset(root=root, transform=val_transform, exclude=train_labels, end_at_n=IMAGES_PER_CLASS)
+
+    return train_set, val_set, ZSL_train_set, ZSL_test_set
+
+trainset, valset, ZSL_trainset, ZSL_valset = make_ZSL_sets(train_transform, val_transform)
+
+NUM_CLASSES = 50
+NUM_FEATURES = 64
+EPOCHS = 10
+NUM_EXCLUDE = 10
+BATCH_SIZE = 64
     
 training_loader = torch.utils.data.DataLoader(trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
 validation_loader = torch.utils.data.DataLoader(valset, batch_size=BATCH_SIZE, shuffle=False, num_workers=4)
@@ -95,7 +128,7 @@ with torch.no_grad():
         preds = model(vinputs)
         # Add to results[label] the number of correct predictions and the number of predictions
         for i in range(len(preds)):
-            unseen_results[vlabels[i]][0] += torch.argmax(preds[i]) == vlabels[i]+150
+            unseen_results[vlabels[i]][0] += torch.argmax(preds[i]) == vlabels[i]+40
             unseen_results[vlabels[i]][1] += 1
             
     seen_results = [[0,0]] * (NUM_CLASSES-NUM_EXCLUDE)
