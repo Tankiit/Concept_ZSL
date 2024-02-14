@@ -32,8 +32,8 @@ trainset, valset, ZSL_trainset, ZSL_valset = make_ZSL_sets("datasets/", NUM_EXCL
 training_loader = torch.utils.data.DataLoader(trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
 validation_loader = torch.utils.data.DataLoader(valset, batch_size=BATCH_SIZE, shuffle=False, num_workers=4)
 
-sys.path.insert(0, "/".join(__file__.split("/")[:-2]))
-from Concept_ZSL.src.LightningTrainerNoSAM import GZSLDeiT3
+sys.path.insert(0, "/".join(__file__.split("/")[:-3]))
+from LightningTrainerNoSAM import GZSLDeiT3
 lightning_model = GZSLDeiT3(NUM_CLASSES, NUM_FEATURES, EPOCHS, NUM_EXCLUDE, training_loader, validation_loader)
 
 import lightning as L

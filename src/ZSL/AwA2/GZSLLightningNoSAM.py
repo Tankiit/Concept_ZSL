@@ -65,7 +65,7 @@ BATCH_SIZE = 64
 training_loader = torch.utils.data.DataLoader(trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
 validation_loader = torch.utils.data.DataLoader(valset, batch_size=BATCH_SIZE, shuffle=False, num_workers=4)
 
-sys.path.insert(0, "/".join(__file__.split("/")[:-2]))
+sys.path.insert(0, "/".join(__file__.split("/")[:-3]))
 from LightningTrainerNoSAM import GZSLDeiT3
 lightning_model = GZSLDeiT3(NUM_CLASSES, NUM_FEATURES, EPOCHS, NUM_EXCLUDE, training_loader, validation_loader)
 
