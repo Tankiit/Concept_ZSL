@@ -40,7 +40,7 @@ def make_ZSL_sets(train_transform, val_transform):
     
     print(f"Training data: {196-len(test_labels)-len(val_labels)}, Testing data: {len(test_labels)}, Validation data: {len(val_labels)}")
     
-    root_dir = "/storage/Cars"
+    root_dir = "datasets/Stanford Cars"
     
     tr_dataset = CarsZSLDataset(root=root_dir, transform=train_transform, exclude=test_labels)
     val_dataset = CarsZSLDataset(root=root_dir, transform=val_transform, exclude=test_labels)
@@ -105,9 +105,9 @@ print(f"Device: {device}")
 
 NUM_CLASSES = 196
 NUM_FEATURES = 80
-EPOCHS = 20
+EPOCHS = 1
 
-FT_WEIGHT = 0.7
+FT_WEIGHT = 1
 
 accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES - NUM_EXCLUDE, top_k=1).to(device)
 
@@ -116,7 +116,8 @@ from DeiT3AutoPredicates import ResExtr
 
 model = ResExtr(NUM_FEATURES, NUM_CLASSES - NUM_EXCLUDE).to(device)
 
-from Concept_ZSL.src.sam import SAM
+sys.path.insert(0, "/".join(__file__.split("/")[:-3]))
+from sam import SAM
 base_optimizer = torch.optim.Adam
 optimizer = SAM(model.parameters(), base_optimizer, lr=3e-5, weight_decay=1e-5)
 

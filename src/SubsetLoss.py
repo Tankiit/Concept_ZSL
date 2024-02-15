@@ -100,8 +100,19 @@ class Packed(nn.Module):
         self.predicate_matrix = nn.Parameter(BSSLossObj.get_predicate_matrix())
         self.n_features = BSSLossObj.n_features
 
+        self.bin_quantize = VectorQuantize(
+                            dim = 1,
+                            codebook_size = 2,
+                            ema_update = False
+                        )
+        self.bin_quantize.codebook = torch.tensor([[ 0.], [1.]])
+
+    def get_features(self, x):
+        x, _, _ = self.bin_quantize(self.model(x).view(-1, self.n_features, 1))
+        return x.view(-1, self.n_features)
+
     def forward(self, x):
-        x = self.model(x).view(-1, 1, self.n_features)
+        x = self.get_features(x).view(-1, 1, self.n_features)
 
         ANDed = x * self.predicate_matrix
         

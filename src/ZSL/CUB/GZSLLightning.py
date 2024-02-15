@@ -32,9 +32,13 @@ trainset, valset, ZSL_trainset, ZSL_valset = make_ZSL_sets("datasets/", NUM_EXCL
 training_loader = torch.utils.data.DataLoader(trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
 validation_loader = torch.utils.data.DataLoader(valset, batch_size=BATCH_SIZE, shuffle=False, num_workers=4)
 
+import timm
+model = timm.create_model("deit3_medium_patch16_224.fb_in22k_ft_in1k", pretrained=True)
+model.head = torch.nn.Linear(512, NUM_FEATURES)
+
 sys.path.insert(0, "/".join(__file__.split("/")[:-3]))
-from LightningTrainer import GZSLDeiT3
-lightning_model = GZSLDeiT3(NUM_CLASSES, NUM_FEATURES, EPOCHS, NUM_EXCLUDE, training_loader, validation_loader)
+from LightningTrainer import BSSTrainer
+lightning_model = BSSTrainer(model, NUM_CLASSES, NUM_FEATURES, EPOCHS, training_loader, validation_loader, NUM_EXCLUDE=NUM_EXCLUDE)
 
 import lightning as L
 trainer = L.Trainer(devices=1, max_epochs=EPOCHS, precision=16)
