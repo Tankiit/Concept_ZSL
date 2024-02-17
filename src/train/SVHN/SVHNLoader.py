@@ -23,7 +23,7 @@ class SVHNDataset(Dataset):
         return {"images": img}
 
 if __name__ == '__main__':
-    dataset = SVHNDataset(root='/storage/SVHN')
+    dataset = SVHNDataset(root='datasets/SVHN/train')
     print(len(dataset))
 
     train_length = int(len(dataset) * 0.8)

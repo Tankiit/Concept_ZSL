@@ -1,6 +1,9 @@
 import torchvision.transforms as transforms
-from torch.utils.data import Subset
 import torch
+
+import sys
+sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/AwA2")
+from AwA2Loader import AwA2Dataset
 
 val_transform = transforms.Compose([
     transforms.Resize(256),
@@ -10,33 +13,30 @@ val_transform = transforms.Compose([
                                      std=[0.229, 0.224, 0.225])
 ])
 
-from torchmetrics import Accuracy
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Device: {device}")
 
-NUM_CLASSES = 196
-NUM_FEATURES = 80
-accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES, top_k=1).to(device)
+import timm
+mod = timm.create_model("deit3_medium_patch16_224.fb_in22k_ft_in1k", pretrained=True)
+mod.head = torch.nn.Linear(512, 80)
 
-import sys
-sys.path.insert(0, "/".join(__file__.split("/")[:-3]) + "/models")
-from DeiT3AutoPredicates import ResExtr
-
-model = ResExtr(NUM_FEATURES, NUM_CLASSES).to(device)
-model.load_state_dict(torch.load("CarsDeiT3Null.pt"))
-
+sys.path.insert(0, "/".join(__file__.split("/")[:-3]))
+from SubsetLoss import Packed, BSSLoss
+criterion = BSSLoss(80, add_predicate_matrix=True, n_classes=196)
+model = Packed(mod, criterion).to(device)
+model.load_state_dict(torch.load("models/Cars/DeiT3-80f-AwA2ZeroOut.pth"))
 model.eval()
 
-root_dir = "/storage/Cars"
+print("Model loaded")
+
+root_dir = "datasets/Stanford Cars"
 
 from CarsLoader import CarsZSLDataset
     
 val_dataset = CarsZSLDataset(root=root_dir, transform=val_transform)
-validation_loader = torch.utils.data.DataLoader(
-        val_dataset, batch_size=128, shuffle=False, num_workers=4)
+validation_loader = torch.utils.data.DataLoader(val_dataset, batch_size=128, shuffle=False, num_workers=4)
 
 running_out_attributes = 0.0
-running_acc = 0.0
 
 out_count_Cars = []
 
@@ -46,28 +46,20 @@ with torch.no_grad():
         vinputs, vlabels = vdata["images"], vdata["labels"]
         vinputs = vinputs.to(device)
         vlabels = vlabels.to(device)
-        voutputs, vcommit_loss, predicate_matrix = model(vinputs)
-        voutputs = voutputs.view(-1, 1, NUM_FEATURES)
-        ANDed = voutputs * predicate_matrix
-        diff = ANDed - voutputs
-        running_acc += accuracy(diff.sum(dim=2), vlabels)
-        voutputs = voutputs.view(-1, NUM_FEATURES)
+        voutputs = model.get_features(vinputs)
         out_count_Cars.append(voutputs.sum(dim=1))
         running_out_attributes += voutputs.sum() / voutputs.shape[0]
         
 avg_oa = running_out_attributes / (i + 1)
-avg_acc = running_acc / (i + 1)
-print(f"OA: {avg_oa}, ACC: {avg_acc}")
+print(f"OA: {avg_oa}")
 
 # =============================================================================================
 
-import sys
-sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/AwA2")
-from AwA2Loader import AwA2Dataset
-val_dataset = AwA2Dataset(root='/storage/Animals_with_Attributes2/JPEGImages', transform=val_transform)
+import pickle
+with open("datasets/Animals_with_Attributes2/val_set.pkl", "rb") as f:
+    val_set = pickle.load(f)
 
-validation_loader = torch.utils.data.DataLoader(
-        val_dataset, batch_size=128, shuffle=False, num_workers=4)
+validation_loader = torch.utils.data.DataLoader(val_set, batch_size=128, shuffle=False, num_workers=4)
 
 running_out_attributes = 0.0
 
@@ -77,8 +69,7 @@ with torch.no_grad():
     for i, vdata in tqdm(enumerate(validation_loader)):
         vinputs = vdata["images"]
         vinputs = vinputs.to(device)
-        voutputs, vcommit_loss, predicate_matrix = model(vinputs)
-        voutputs = voutputs.view(-1, NUM_FEATURES)
+        voutputs = model.get_features(vinputs)
         out_count_AwA2.append(voutputs.sum(dim=1))
         running_out_attributes += voutputs.sum() / voutputs.shape[0]
 
@@ -87,13 +78,11 @@ print(f"OA: {avg_oa}")
 
 # =============================================================================================
 
-import sys
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]) + "/SVHN")
 from SVHNLoader import SVHNDataset
-val_dataset = SVHNDataset(root='/storage/SVHN', transform=val_transform)
+val_dataset = SVHNDataset(root='datasets/SVHN/train', transform=val_transform)
 
-validation_loader = torch.utils.data.DataLoader(
-        val_dataset, batch_size=128, shuffle=False, num_workers=4)
+validation_loader = torch.utils.data.DataLoader(val_dataset, batch_size=128, shuffle=False, num_workers=4)
 
 running_out_attributes = 0.0
 
@@ -103,8 +92,7 @@ with torch.no_grad():
     for i, vdata in tqdm(enumerate(validation_loader)):
         vinputs = vdata["images"]
         vinputs = vinputs.to(device)
-        voutputs, vcommit_loss, predicate_matrix = model(vinputs)
-        voutputs = voutputs.view(-1, NUM_FEATURES)
+        voutputs = model.get_features(vinputs)
         out_count_SVHN.append(voutputs.sum(dim=1))
         running_out_attributes += voutputs.sum() / voutputs.shape[0]
 
@@ -119,11 +107,23 @@ out_count_Cars = torch.cat(out_count_Cars).cpu()
 out_count_AwA2 = torch.cat(out_count_AwA2).cpu()
 out_count_SVHN = torch.cat(out_count_SVHN).cpu()
 
-import numpy as np
-plt.hist(out_count_Cars, bins=np.arange(min(out_count_Cars), max(out_count_Cars)+1), label="Cars Dist")
-plt.hist(out_count_AwA2, bins=np.arange(min(out_count_AwA2), max(out_count_AwA2)+1), label="AwA2 Dist")
-plt.hist(out_count_SVHN, bins=np.arange(min(out_count_SVHN), max(out_count_SVHN)+1), label="SVHN Dist")
+print(f"Cars std: {out_count_Cars.std()}")
+print(f"AwA2 std: {out_count_AwA2.std()}")
+print(f"SVHN std: {out_count_SVHN.std()}")
 
+import numpy as np
+
+plt.hist(out_count_Cars, weights=np.ones(len(out_count_Cars)) / len(out_count_Cars), bins=np.arange(min(out_count_Cars), max(out_count_Cars)+1), label="Cars")
+plt.hist(out_count_AwA2, weights=np.ones(len(out_count_AwA2)) / len(out_count_AwA2), bins=np.arange(min(out_count_AwA2), max(out_count_AwA2)+1), label="AwA2")
+plt.hist(out_count_SVHN, weights=np.ones(len(out_count_SVHN)) / len(out_count_SVHN), bins=np.arange(min(out_count_SVHN), max(out_count_SVHN)+1), label="SVHN")
+
+from matplotlib.ticker import PercentFormatter
+plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
+
+plt.xlabel("Number of Out Attributes")
+plt.ylabel("Percentage of Samples")
 plt.legend(loc='upper right')
 
-plt.savefig('src/train/Cars/CarsOODAwA2NullSVHN.png')
+#plt.savefig('src/train/Cars/CarsOODAwA2-ZerodOut-SVHN.png')
+
+plt.show()
