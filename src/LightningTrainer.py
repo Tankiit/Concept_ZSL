@@ -1,13 +1,12 @@
 import lightning as L
-import timm, torch, sys
+import torch, sys
 sys.path.insert(0, "/".join(__file__.split("/")[:-2]))
 from SubsetLoss import BSSLoss
 from torchmetrics import Accuracy
 from sam import SAM
 class BSSTrainer(L.LightningModule):
-    def __init__(self, model, NUM_CLASSES, NUM_FEATURES, EPOCHS, training_loader, validation_loader, NUM_EXCLUDE=0):
+    def __init__(self, model, NUM_CLASSES, NUM_FEATURES, EPOCHS, training_loader, validation_loader, NUM_EXCLUDE=0, ft_weight=1, mean_attr_weight=2):
         super().__init__()
-        self.save_hyperparameters()
 
         self.NUM_FEATURES = NUM_FEATURES
         self.training_loader = training_loader
@@ -15,7 +14,7 @@ class BSSTrainer(L.LightningModule):
 
         self.model = model
 
-        self.criterion = BSSLoss(NUM_FEATURES, add_predicate_matrix=True, n_classes=NUM_CLASSES - NUM_EXCLUDE)
+        self.criterion = BSSLoss(NUM_FEATURES, add_predicate_matrix=True, n_classes=NUM_CLASSES - NUM_EXCLUDE, ft_weight=ft_weight, mean_attr_weight=mean_attr_weight)
         self.accuracy = Accuracy(task="multiclass", num_classes=NUM_CLASSES - NUM_EXCLUDE, top_k=1)
 
         optimizer = self.configure_optimizers()

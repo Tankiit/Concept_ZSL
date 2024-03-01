@@ -50,10 +50,12 @@ class CarsZSLDataset(Dataset):
             
             test_files = [os.path.join(os.path.join(self.root, "test_images"), c, f) for f in os.listdir(os.path.join(os.path.join(self.root, "test_images"), c))][skip_first_n:]
             
-            if end_at_n is not None:
-                test_files = test_files[:end_at_n]
+            if end_at_n is not None and len(train_files) < end_at_n:
+                test_files = test_files[:end_at_n-len(train_files)]
             
-            self.data = self.data._append(pd.DataFrame({'image': test_files, 'label': i}), ignore_index=True)
+                self.data = self.data._append(pd.DataFrame({'image': test_files, 'label': i}), ignore_index=True)
+            else:
+                self.data = self.data._append(pd.DataFrame({'image': test_files, 'label': i}), ignore_index=True)
 
     def __len__(self):
         return len(self.data)

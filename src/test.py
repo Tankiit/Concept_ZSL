@@ -1,26 +1,38 @@
-import os
+import pandas as pd
 
-root='/notebooks/Concept_ZSL/results/AwA2-CAM'
-classes = [d.name for d in os.scandir(root) if d.is_dir()]
+df = pd.read_csv('/home/kyucilow/Code/AI/BSS/Concept_ZSL/results/CZSL - Results - ZSL.csv', header=None)
 
-feature_images = {}
+# only keep rows where 9th column is using 2*loss_mean_attr
+dataset = 'CUB'
+df = df[df[9] == 'using 2*loss_mean_attr']
+df = df[df[0] == dataset]
 
-for i, c in enumerate(classes):
-    for f in os.listdir(os.path.join(root, c)):
-        feat = f.split(".")[0]
-        if feat not in feature_images:
-            feature_images[feat] = [(os.path.join(root, c, f), c)]
-        else:
-            feature_images[feat].append((os.path.join(root, c, f), c))
+# only keep columns where 6th column == 7th column
+df[5] = df[5].str.replace('features', '').astype(int)
+df = df[df[6] == df[7]]
+df = df[df[5] < 300]
 
-def make_dir(path):
-    if not os.path.exists(path):
-        os.mkdir(path)
-        
-make_dir(f"results/AwA2-CAMAttr")
+# 5th column is the feature count. Calculate mean and std of 4th column (accuracy) for each feature count
+df = df[[2, 3, 4, 5]]
+df[2] = df[2].str.replace('%', '').astype(float)
+df[3] = df[3].str.replace('%', '').astype(float)
+df[4] = df[4].str.replace('%', '').astype(float)
+df = df.groupby(5).agg(['mean', 'std'])
 
-import shutil
-for key in feature_images:
-    make_dir(f"results/AwA2-CAMAttr/{key}")
-    for path, c in feature_images[key]:
-        shutil.copy(path, f"results/AwA2-CAMAttr/{key}/{c}.jpg")
+print(df)
+
+import matplotlib.pyplot as plt
+
+plt.errorbar(df.index, df[2]['mean'], yerr=df[2]['std'], fmt='o', label='Seen')
+plt.errorbar(df.index, df[3]['mean'], yerr=df[3]['std'], fmt='o', label='Unseen')
+plt.errorbar(df.index, df[4]['mean'], yerr=df[4]['std'], fmt='o', label='Harmonic Mean')
+
+plt.legend()
+
+plt.xticks(df.index)
+
+plt.xlabel('Feature Count')
+plt.ylabel('Accuracy')
+plt.title(f'Accuracy for different Feature Counts ({dataset})')
+
+plt.show()

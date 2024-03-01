@@ -62,7 +62,7 @@ def make_ZSL_sets(train_transform, val_transform):
 
 NUM_EXCLUDE = 49
 NUM_CLASSES = 196
-NUM_FEATURES = 80
+NUM_FEATURES = 128
 EPOCHS = 30
 BATCH_SIZE = 64
 
@@ -80,7 +80,7 @@ from LightningTrainer import BSSTrainer
 lightning_model = BSSTrainer(model, NUM_CLASSES, NUM_FEATURES, EPOCHS, training_loader, validation_loader, NUM_EXCLUDE=NUM_EXCLUDE)
 
 import lightning as L
-trainer = L.Trainer(devices=1, max_epochs=EPOCHS, precision=16)
+trainer = L.Trainer(devices=1, max_epochs=EPOCHS, precision="16-mixed")
 trainer.fit(lightning_model)
 
 print("===============================================================")
@@ -97,7 +97,7 @@ model.eval()
 avg_oa = lightning_model.running_out_attributes / lightning_model.step_count
 avg_fp = lightning_model.running_false_positives / lightning_model.step_count
 avg_ma = lightning_model.running_missing_attr / lightning_model.step_count
-attributes_per_class = int(avg_oa - avg_fp + avg_ma) + 1
+attributes_per_class = avg_oa - avg_fp + avg_ma
 
 unseen_training_loader = torch.utils.data.DataLoader(
         ZSL_trainset, batch_size=BATCH_SIZE, shuffle=True, num_workers=4)
@@ -116,7 +116,9 @@ with torch.no_grad():
         for j in range(len(voutputs)):
             predis[vlabels[j]] += voutputs[j]
 
-    topk, indices = torch.topk(predis, attributes_per_class, dim=1)
+    K = int(attributes_per_class+1)
+    print(f"K: {K}")
+    topk, indices = torch.topk(predis, K, dim=1)
 
     new_predicate_matrix = torch.zeros(NUM_EXCLUDE, NUM_FEATURES).to(device)
     new_predicate_matrix.scatter_(1, indices, 1)

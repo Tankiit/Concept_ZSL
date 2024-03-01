@@ -19,7 +19,7 @@ val_transform = transforms.Compose([
 ])
 
 NUM_CLASSES = 200
-NUM_FEATURES = 80
+NUM_FEATURES = 312 # Scale from 64 to 256 [64, 80, 128, 192, 256]
 EPOCHS = 50
 NUM_EXCLUDE = 50
 BATCH_SIZE = 64
@@ -41,7 +41,9 @@ from LightningTrainer import BSSTrainer
 lightning_model = BSSTrainer(model, NUM_CLASSES, NUM_FEATURES, EPOCHS, training_loader, validation_loader, NUM_EXCLUDE=NUM_EXCLUDE)
 
 import lightning as L
-trainer = L.Trainer(devices=1, max_epochs=EPOCHS, precision=16)
+trainer = L.Trainer(devices=1, max_epochs=EPOCHS, precision="16-mixed")
+
+print(f"Started Training")
 trainer.fit(lightning_model)
 
 print("===============================================================")
@@ -75,7 +77,7 @@ with torch.no_grad():
         vinputs, vlabels = vdata["images"], vdata["labels"]
         vinputs = vinputs.to(device)
         vlabels = vlabels.to(device)
-        voutputs = model.model(vinputs)
+        voutputs = model.get_features(vinputs)
 
         for i in range(len(voutputs)):
             predis[vlabels[i]] += voutputs[i]
